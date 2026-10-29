@@ -1,0 +1,6 @@
+{
+  "timestamp": "2026-10-12T13:00:00+00:00",
+  "status": "BLOCKED",
+  "reason": "HISTORICAL DATA REQUIRED",
+  "details": "Tidak tersedia file ekspor deret waktu (time-series) nyata untuk melakukan replay validation secara objektif. Pengujian dibatalkan untuk menghindari penggunaan data sintetis."
+}

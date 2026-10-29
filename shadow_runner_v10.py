@@ -1,0 +1,153 @@
+import unittest
+import pandas as pd
+import numpy as np
+import importlib.machinery
+import sys
+
+loader = importlib.machinery.SourceFileLoader('script_v10_shadow', '/tmp/aiops_staging_v8/script_aiops.py.candidate.v10')
+v10 = loader.load_module()
+
+class ShadowRunnerV10(unittest.TestCase):
+
+    def test_1_normal_data_execution(self):
+        now = pd.Timestamp.now(tz="UTC")
+        base_time = now - pd.Timedelta(minutes=10)
+        times = [base_time + pd.Timedelta(minutes=i) for i in range(15)]
+        series_map = {
+            'return.temp.c': pd.Series(np.linspace(20.0, 25.0, 15), index=times),
+            'supply.temp.c': pd.Series(np.linspace(15.0, 18.0, 15), index=times),
+            'return.humidity.rh': pd.Series(np.linspace(50.0, 55.0, 15), index=times)
+        }
+        latest_map = {k: times[-1] for k in series_map}
+        counts = {k: 15 for k in series_map}
+        
+        df, status, msg = v10.process_sensor_history_hardened(
+            series_map, latest_map, counts, v10.PAC_MANDATORY, now, max_age_seconds=600
+        )
+        self.assertEqual(status, "NORMAL")
+        self.assertIsNotNone(df)
+        pred, raw_score, health, ttf, conf = v10.calculate_multisensor_rul_v8(df, crit_val=35.0)
+        self.assertIsInstance(health, float)
+        self.assertGreaterEqual(health, 0.0)
+        self.assertLessEqual(health, 100.0)
+
+    def test_2_degraded_bounded_imputation(self):
+        now = pd.Timestamp.now(tz="UTC")
+        base_time = now - pd.Timedelta(minutes=10)
+        times = [base_time + pd.Timedelta(minutes=i) for i in range(15)]
+        s1 = pd.Series(np.linspace(20.0, 25.0, 15), index=times)
+        s1.iloc[5:7] = np.nan # 2 missing values (within limit=2)
+        
+        series_map = {
+            'return.temp.c': s1,
+            'supply.temp.c': pd.Series(np.linspace(15.0, 18.0, 15), index=times),
+            'return.humidity.rh': pd.Series(np.linspace(50.0, 55.0, 15), index=times)
+        }
+        latest_map = {k: times[-1] for k in series_map}
+        counts = {k: 15 for k in series_map}
+        
+        df, status, msg = v10.process_sensor_history_hardened(
+            series_map, latest_map, counts, v10.PAC_MANDATORY, now, max_age_seconds=600
+        )
+        self.assertEqual(status, "DEGRADED_DATA")
+        self.assertIsNotNone(df)
+
+    def test_3_stale_data_hard_gate(self):
+        now = pd.Timestamp.now(tz="UTC")
+        base_time = now - pd.Timedelta(hours=2) # 2 hours old (> 300s max_age)
+        times = [base_time + pd.Timedelta(minutes=i) for i in range(15)]
+        series_map = {
+            'return.temp.c': pd.Series(np.linspace(20.0, 25.0, 15), index=times),
+            'supply.temp.c': pd.Series(np.linspace(15.0, 18.0, 15), index=times),
+            'return.humidity.rh': pd.Series(np.linspace(50.0, 55.0, 15), index=times)
+        }
+        latest_map = {k: times[-1] for k in series_map}
+        counts = {k: 15 for k in series_map}
+        
+        df, status, msg = v10.process_sensor_history_hardened(
+            series_map, latest_map, counts, v10.PAC_MANDATORY, now, max_age_seconds=300
+        )
+        self.assertEqual(status, "STALE_DATA")
+        self.assertIsNone(df)
+
+    def test_4_missing_mandatory_features(self):
+        now = pd.Timestamp.now(tz="UTC")
+        base_time = now - pd.Timedelta(minutes=10)
+        times = [base_time + pd.Timedelta(minutes=i) for i in range(15)]
+        series_map = {
+            'return.temp.c': pd.Series(np.linspace(20.0, 25.0, 15), index=times)
+            # missing supply.temp.c and return.humidity.rh
+        }
+        latest_map = {k: times[-1] for k in series_map}
+        counts = {k: 15 for k in series_map}
+        
+        df, status, msg = v10.process_sensor_history_hardened(
+            series_map, latest_map, counts, v10.PAC_MANDATORY, now, max_age_seconds=600
+        )
+        self.assertEqual(status, "INSUFFICIENT_DATA")
+        self.assertIsNone(df)
+
+    def test_5_unavailable_health_action_status(self):
+        action = v10.determine_action_status_hardened(None, None)
+        self.assertEqual(action, -1) # UNAVAILABLE, not 0 (Normal)
+
+    def test_6_valid_health_null_ttf(self):
+        action = v10.determine_action_status_hardened(85.0, None)
+        self.assertEqual(action, 0) # Normal action status for high health
+
+    def test_7_nan_inf_rejection(self):
+        now = pd.Timestamp.now(tz="UTC")
+        base_time = now - pd.Timedelta(minutes=10)
+        times = [base_time + pd.Timedelta(minutes=i) for i in range(15)]
+        df_bad = pd.DataFrame({
+            'clock': times,
+            'return.temp.c': [np.nan] * 15,
+            'supply.temp.c': [np.inf] * 15,
+            'return.humidity.rh': np.linspace(50.0, 55.0, 15)
+        })
+        with self.assertRaises(ValueError):
+            v10.calculate_multisensor_rul_v8(df_bad, crit_val=35.0)
+
+    def test_8_non_positive_slope_abstention(self):
+        now = pd.Timestamp.now(tz="UTC")
+        base_time = now - pd.Timedelta(minutes=10)
+        times = [base_time + pd.Timedelta(minutes=i) for i in range(15)]
+        df = pd.DataFrame({
+            'clock': times,
+            'return.temp.c': np.linspace(25.0, 20.0, 15), # decreasing
+            'supply.temp.c': np.linspace(18.0, 15.0, 15),
+            'return.humidity.rh': np.linspace(55.0, 50.0, 15)
+        })
+        pred, raw_score, health, ttf, conf = v10.calculate_multisensor_rul_v8(df, crit_val=35.0)
+        self.assertIsNone(ttf)
+
+    def test_9_duplicate_timestamps(self):
+        now = pd.Timestamp.now(tz="UTC")
+        base_time = now - pd.Timedelta(minutes=10)
+        times = [base_time + pd.Timedelta(minutes=i) for i in range(15)]
+        times[3] = times[2] # duplicate timestamp
+        df = pd.DataFrame({
+            'clock': times,
+            'return.temp.c': np.linspace(20.0, 25.0, 15),
+            'supply.temp.c': np.linspace(15.0, 18.0, 15),
+            'return.humidity.rh': np.linspace(50.0, 55.0, 15)
+        })
+        pred, raw_score, health, ttf, conf = v10.calculate_multisensor_rul_v8(df, crit_val=35.0)
+        self.assertIsInstance(health, float)
+
+    def test_10_deterministic_execution(self):
+        now = pd.Timestamp.now(tz="UTC")
+        base_time = now - pd.Timedelta(minutes=10)
+        times = [base_time + pd.Timedelta(minutes=i) for i in range(15)]
+        df = pd.DataFrame({
+            'clock': times,
+            'return.temp.c': np.linspace(20.0, 25.0, 15),
+            'supply.temp.c': np.linspace(15.0, 18.0, 15),
+            'return.humidity.rh': np.linspace(50.0, 55.0, 15)
+        })
+        res1 = v10.calculate_multisensor_rul_v8(df, crit_val=35.0)
+        res2 = v10.calculate_multisensor_rul_v8(df, crit_val=35.0)
+        self.assertEqual(res1, res2)
+
+if __name__ == '__main__':
+    unittest.main()
