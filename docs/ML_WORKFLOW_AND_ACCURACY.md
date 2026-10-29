@@ -1,10 +1,46 @@
 # AIOps Machine Learning Workflow, Pipeline Flow & Accuracy Tolerances
 
-Dokumen ini menyajikan rincian teknis mengenai alur kerja (*workflow*) mesin prediktif AIOps V11, sumber data (*data sources*) dan provenansinya, spesifikasi parameter telemetri, tahapan pemrosesan, formulasi matematis regresi, serta toleransi akurasi prediksi dari hasil pengolahan model.
+Dokumen ini menyajikan rincian teknis mengenai alur kerja (*workflow*) mesin prediktif AIOps V11, spesifikasi teknis pengambilan data Zabbix API, sumber data (*data sources*) dan provenansinya, tahapan pemrosesan, formulasi matematis regresi, serta toleransi akurasi prediksi dari hasil pengolahan model.
 
 ---
 
-## 1. Sumber Data dan Provenansi (*Data Sources & Provenance*)
+## 1. Spesifikasi Teknis Pengambilan Data dari Zabbix (`Zabbix API Extraction & Query Specification`)
+
+Engine AIOps V11 berinteraksi secara aktif dengan Zabbix Server menggunakan **Zabbix JSON-RPC API** dan utilitas lokal **`zabbix_sender`**. Berikut adalah rincian teknis bagaimana data diambil, difilter, dan disiapkan untuk diolah oleh mesin learning:
+
+### A. Metode API Zabbix yang Digunakan
+1. **`host.get`:**
+   - **Tujuan:** Menemukan dan memetakan host fasilitas HPC yang terdaftar secara otomatis berdasarkan kelompok perangkat (*host groups*) UPS dan PAC.
+   - **Filter:** Berdasarkan penamaan konvensi host production (`ME_UPS1`, `ME_UPS2`, `ME_PAC1`, `ME_PAC2`, dll.).
+2. **`item.get`:**
+   - **Tujuan:** Mengambil ID item Zabbix unik (*itemid*) berdasarkan *key* sensor fisik aktual (misalnya `upsHighPrecBatteryActualVoltage`, `return.temp.c`, dll.).
+   - **Parameter Kunci (*Item Keys*):**
+     - UPS: `upsHighPrecBatteryActualVoltage`, `upsHighPrecBatteryCapacity`, `upsHighPrecOutputLoad`, `upsAdvBatteryRunTimeRemaining`.
+     - PAC: `return.temp.c`, `supply.temp.c`, `return.humidity.rh`, `evaporator.fan.speed`, `compressor.status`.
+3. **`history.get`:**
+   - **Tujuan:** Menarik data deret waktu (*time-series history*) dari *itemid* yang telah dipetakan dalam rentang waktu (*time window*) tertentu (default: 24 jam terakhir hingga histori agregasi 365 hari untuk pelatihan offline).
+   - **Parameter Kueri:**
+     - `history`: Tipe data numerik float (`0`).
+     - `time_from` & `time_till`: Batas jendela waktu kueri riwayat.
+     - `sortfield`: `clock` (diurutkan secara kronologis menaik).
+
+### B. Alur Ekstraksi Data Kueri ke Model ML
+```ascii
+[ Zabbix Server API ] 
+         │ (JSON-RPC: history.get)
+         ▼
+[ Raw Time-Series JSON ] 
+         │ (Timestamp `clock` & Value `value`)
+         ▼
+[ Pandas DataFrame Conversion ] 
+         │ (Sorting & Missing Value Masking)
+         ▼
+[ ML Preprocessing & Quality Gating ]
+```
+
+---
+
+## 2. Sumber Data dan Provenansi (*Data Sources & Provenance*)
 
 Engine AIOps V11 divalidasi dan dilatih menggunakan kombinasi data operasional nyata (*real-world operational telemetry*) dari infrastruktur data center serta dataset benchmark publik standar industri:
 
@@ -21,7 +57,7 @@ Untuk menguji kekhususan (*robustness*) deteksi anomali dan degradasi baterai/ko
 
 ---
 
-## 2. Spesifikasi Data Telemetri yang Diolah oleh Machine Learning
+## 3. Spesifikasi Data Telemetri yang Diolah oleh Machine Learning
 
 Engine AIOps V11 mengolah data time-series dari perangkat infrastruktur daya kritis (**UPS**) dan pendingin ruangan data center (**PAC**). Berikut adalah rincian parameter, satuan, dan fungsi metrik yang digunakan sebagai input model:
 
@@ -44,12 +80,12 @@ Engine AIOps V11 mengolah data time-series dari perangkat infrastruktur daya kri
 
 ---
 
-## 3. Alur Kerja Rinci Pipeline Machine Learning (Step-by-Step Flow)
+## 4. Alur Kerja Rinci Pipeline Machine Learning (Step-by-Step Flow)
 
 Proses pengolahan data dan prediksi pada engine AIOps berjalan dalam siklus tertutup setiap 60 detik melalui 5 tahapan utama:
 
 ```ascii
-[ Step 1: Telemetry Ingestion (Zabbix 365d & Benchmark Data Sources) ]
+[ Step 1: Telemetry Ingestion (Zabbix API history.get & Benchmark Data) ]
                                    │
                                    ▼
 [ Step 2: Quality Gating & Preprocessing ]
@@ -69,8 +105,8 @@ Proses pengolahan data dan prediksi pada engine AIOps berjalan dalam siklus tert
 ```
 
 ### Rincian Tiap Tahapan:
-1. **Step 1: Telemetry Ingestion (Pengambilan Data dari Sumber)**
-   - Engine mengambil data historis dan real-time dari sumber data Zabbix serta dataset benchmark publik.
+1. **Step 1: Telemetry Ingestion (Pengambilan Data dari Zabbix API)**
+   - Engine mengeksekusi kueri `history.get` via Zabbix JSON-RPC API untuk mengambil deret waktu dari parameter UPS dan PAC.
 2. **Step 2: Quality Gating & Preprocessing (Gerbang Kualitas)**
    - Validator memeriksa keberadaan nilai `NaN`, `Inf`, atau data kosong.
    - Mengkategorikan data ke dalam tiga status:
@@ -89,7 +125,7 @@ Proses pengolahan data dan prediksi pada engine AIOps berjalan dalam siklus tert
 
 ---
 
-## 4. Toleransi Akurasi Prediksi & Batas Keyakinan (*Accuracy Tolerances*)
+## 5. Toleransi Akurasi Prediksi & Batas Keyakinan (*Accuracy Tolerances*)
 
 Mengingat kompleksitas lingkungan data center HPC dan ketiadaan riwayat kegagalan perangkat keras jangka panjang (*ground truth failure data*), toleransi akurasi dan batas keyakinan model didefinisikan secara konservatif sebagai berikut:
 
