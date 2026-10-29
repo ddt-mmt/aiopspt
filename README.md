@@ -7,12 +7,13 @@ Sistem AIOps ini dirancang untuk pemantauan prediktif (*Predictive Maintenance*)
 ## 📋 Daftar Isi
 1. [Arsitektur Sistem & Diagram Alur (Flowchart)](#1-arsitektur-sistem--diagram-alur-flowchart)
 2. [Aliran Data (Data Flow Pipeline)](#2-aliran-data-data-flow-pipeline)
-3. [Status Implementasi & Runtime Aktif](#3-status-implementasi--runtime-aktif)
+3. [Spesifikasi Machine Learning & Cara Kerja Algoritma](#3-spesifikasi-machine-learning--cara-kerja-algoritma)
 4. [Quality Gating & Pencegahan Halusinasi Prediksi](#4-quality-gating--pencegahan-halusinasi-prediksi)
-5. [Struktur Direktori & Inventaris Script Utama](#5-struktur-direktori--inventaris-script-utama)
-6. [Panduan Pengujian Offline yang Aman](#6-panduan-pengujian-offline-yang-aman)
-7. [Riwayat Insiden & Penanganan Rollback (Phase 63)](#7-riwayat-insiden--penanganan-rollback-phase-63)
-8. [Batasan Validasi & Risiko](#8-batasan-validasi--risiko)
+5. [Status Implementasi & Runtime Aktif](#5-status-implementasi--runtime-aktif)
+6. [Struktur Direktori & Inventaris Script Utama](#6-struktur-direktori--inventaris-script-utama)
+7. [Panduan Pengujian Offline yang Aman](#7-panduan-pengujian-offline-yang-aman)
+8. [Riwayat Insiden & Penanganan Rollback (Phase 63)](#8-riwayat-insiden--penanganan-rollback-phase-63)
+9. [Batasan Validasi & Risiko](#9-batasan-validasi--risiko)
 
 ---
 
@@ -34,10 +35,11 @@ Berikut adalah diagram alur end-to-end (*flowchart*) operasional engine AIOps da
 |                        Runtime Engine: /app/script_aiops.py                     |
 |                                                                                 |
 |   ┌──────────────────────┐     ┌────────────────────────┐     ┌───────────────┐ |
-|   │ 1. Telemetry Fetch   │────▶│ 2. Data Quality Gating │────▶│ 3. TTF & RUL  │ |
-|   │    (Zabbix API)      │     │ (NORMAL / DEGRADED /   │     │    Analysis   │ |
-|   └──────────────────────┘     │  INSUFFICIENT DATA)    │     └───────┬───────┘ |
-|                                └────────────────────────┘             │         |
+|   │ 1. Telemetry Fetch   │────▶│ 2. Data Quality Gating │────▶│ 3. ML Model   │ |
+|   │    (Zabbix API)      │     │ (NORMAL / DEGRADED /   │     │ (Slope TTF &  │ |
+|   └──────────────────────┘     │  INSUFFICIENT DATA)    │     │  RUL Analysis)│ |
+|                                └────────────────────────┘     └───────┬───────┘ |
+|                                                                       │         |
 |                                                                       ▼         |
 |                                ┌──────────────────────────────────────────────┐ |
 |                                │ 4. Zabbix Sender (Local Metric Pushback)     │ |
@@ -63,18 +65,56 @@ Berikut adalah diagram alur end-to-end (*flowchart*) operasional engine AIOps da
 
 ## 2. Aliran Data (Data Flow Pipeline)
 
-Sistem bekerja dalam siklus tertutup (*closed-loop polling*) setiap 60 detik:
-1. **Pengambilan Data (Ingestion):** Engine `script_aiops.py` terhubung ke Zabbix API untuk mengambil riwayat metrik sensor terkini dari host UPS dan PAC.
-2. **Penyaringan Kualitas (Quality Gating):** Data mentah diperiksa terhadap nilai `NaN`, `Inf`, atau sampel yang kurang dari batas minimum. Status data dikategorikan menjadi:
-   - `NORMAL`: Data lengkap dan valid, analisis dilanjutkan.
-   - `DEGRADED_DATA`: Sebagian sensor *sparse* atau terputus, menggunakan interpolasi aman / nilai sebelumnya.
-   - `INSUFFICIENT_DATA`: Data tidak mencukupi, sistem melakukan **Abstain** (tidak mengeluarkan prediksi palsu).
-3. **Analisis Prediktif (TTF & RUL):** Menghitung tren degradasi linier (*slope regression*) untuk mengestimasi sisa waktu operasional (*Time to Failure*).
-4. **Pengiriman Kembali (Feedback Loop):** Hasil analisis dikirimkan ke Zabbix via `zabbix_sender`, yang kemudian divisualisasikan secara langsung melalui dasbor Grafana.
+Sistem bekerja dalam siklus tertutup (*closed-loop polling*) setiap 60 detik melalui tahapan berikut:
+1. **Pengambilan Telemetri (Ingestion):** Engine menghubungi Zabbix API untuk menarik riwayat metrik (*historical history*) dari sensor daya UPS dan pendingin PAC.
+2. **Penyaringan Kualitas (Quality Gating):** Validator memeriksa apakah data mentah mengandung nilai `NaN`, `Inf`, atau sampel yang tidak memenuhi syarat minimum.
+3. **Eksekusi Model Machine Learning:** Data yang lolos gerbang kualitas diproses oleh modul regresi linier dan analisis tren untuk menghitung *Time to Failure* (TTF).
+4. **Pengiriman Umpan Balik (Feedback Loop):** Hasil prediksi dikirimkan kembali ke Zabbix melalui `zabbix_sender` agar dapat divisualisasikan secara real-time pada dasbor Grafana.
 
 ---
 
-## 3. Status Implementasi & Runtime Aktif
+## 3. Spesifikasi Machine Learning & Cara Kerja Algoritma
+
+Mesin prediktif dalam engine AIOps V11 dirancang khusus untuk menangani karakteristik fasilitas data center (UPS dan PAC) tanpa memerlukan pelatihan ulang (*retraining*) yang berat secara online. Berikut adalah rincian cara kerja per tahapannya:
+
+### Tahap A: Normalisasi & Ekstraksi Fitur (*Feature Extraction & Preprocessing*)
+- **Input:** Deret waktu (*time-series*) dari sensor fisik (misalnya: *battery voltage*, *return temperature*, *fan speed*).
+- **Penanganan Sensor Sparse:** Sensor yang melaporkan data secara jarang (*sparse*, misal `battery.capacity`) diberi bobot toleransi jeda waktu (*tolerance window*) agar tidak memicu error data hilang.
+- **Pemisahan Fitur Diskrit & Kontinu:** 
+  - Fitur diskrit (seperti status biner kompresor `0` atau `1`) dipisahkan secara ketat dari perhitungan regresi kontinu untuk mencegah distorsi tren linier.
+
+### Tahap B: Gerbang Kualitas Data (*Data Quality Gating*)
+Sebelum model melakukan regresi, data dievaluasi ke dalam 3 status:
+1. **`NORMAL`**: Jumlah data historis mencukupi ($\ge N_{\min}$) dan bebas dari anomali `NaN`/`Inf`.
+2. **`DEGRADED_DATA`**: Sebagian data hilang namun dapat diinterpolasi secara aman menggunakan nilai observasi terakhir (*forward/backward fill* yang dikendalikan).
+3. **`INSUFFICIENT_DATA`**: Data kurang dari ambang batas minimum. Model otomatis melakukan **Abstain** (mengirim status abstain, tidak memproduksi angka RUL halusinasi).
+
+### Tahap C: Perhitungan Tren & Regresi Linier (*Slope Regression for TTF*)
+Untuk mendeteksi degradasi komponen sebelum terjadi kegagalan (*Predictive Maintenance*), model menggunakan pendekatan regresi linier berbasis waktu (*least squares slope estimation*):
+- Misalkan $X = [t_1, t_2, \dots, t_n]$ adalah waktu observasi dan $Y = [y_1, y_2, \dots, y_n]$ adalah nilai pembacaan sensor.
+- Model menghitung gradien tren (*slope*, $m$):
+  $$m = \frac{n \sum (t_i y_i) - \sum t_i \sum y_i}{n \sum (t_i^2) - (\sum t_i)^2}$$
+- **Time to Failure (TTF):** Jika gradien $m$ mengarah ke ambang batas kritis (*critical threshold* $Y_{\text{crit}}$), sisa waktu menuju kegagalan diestimasi secara proporsional:
+  $$\text{TTF} = \frac{Y_{\text{crit}} - y_{\text{current}}}{m}$$
+- **Remaining Useful Life (RUL):** Dihitung berdasarkan sisa durasi operasional aman sebelum komponen melewati batas toleransi pabrikan.
+
+### Tahap D: Output & Pushback
+- Model menghasilkan metrik keluaran:
+  - `aiops.compressor.status` (Status operasional)
+  - `aiops.predicted.ttf` (Estimasi waktu menuju kegagalan)
+  - `aiops.predicted.rul` (Sisa umur manfaat komponen)
+- Metrik ini dikirimkan ke Zabbix menggunakan utilitas `zabbix_sender`.
+
+---
+
+## 4. Quality Gating & Pencegahan Halusinasi Prediksi
+
+- **Pencegahan Data Leakage:** Mencegah penggunaan interpolasi masa depan (`bfill`) dalam pelatihan atau evaluasi offline.
+- **Logika Abstain Ketat:** Apabila tren linier mendatar ($m \approx 0$) pada sensor non-kritis atau data tidak stabil, engine tidak memaksakan estimasi RUL fiktif.
+
+---
+
+## 5. Status Implementasi & Runtime Aktif
 
 - **Host Produksi:** `prox-prod` (`10.28.1.110`)
 - **Docker Compose Service:** `aiops_engine`
@@ -85,16 +125,7 @@ Sistem bekerja dalam siklus tertutup (*closed-loop polling*) setiap 60 detik:
 
 ---
 
-## 4. Quality Gating & Pencegahan Halusinasi Prediksi
-
-Untuk mencegah prediksi keliru (*hallucination*) pada fasilitas data center:
-- **Pemeriksaan Sampel Minimum:** Menolak perhitungan tren jika data historis kurang dari ambang batas aman.
-- **Isolasi Fitur Diskrit:** Status biner kompresor atau status UPS dipisahkan dari perhitungan regresi kontinu (*slope TTF*).
-- **Logika Abstain Otomatis:** Jika sensor mengalami *stale* (tidak ada pembaruan dalam jendela waktu tertentu), engine otomatis mengirim status `ABSTAIN` daripada memaksakan angka RUL yang tidak akurat.
-
----
-
-## 5. Struktur Direktori & Inventaris Script Utama
+## 6. Struktur Direktori & Inventaris Script Utama
 
 ```text
 /root/grafan_aiops/
@@ -115,7 +146,7 @@ Untuk mencegah prediksi keliru (*hallucination*) pada fasilitas data center:
 
 ---
 
-## 6. Panduan Pengujian Offline yang Aman
+## 7. Panduan Pengujian Offline yang Aman
 
 Seluruh pengujian unit dan robustness dapat dijalankan secara lokal di lingkungan staging/offline tanpa memengaruhi backend Zabbix produksi:
 
@@ -133,7 +164,7 @@ python3 test_aiops_v5_extended.py
 
 ---
 
-## 7. Riwayat Insiden & Penanganan Rollback (Phase 63)
+## 8. Riwayat Insiden & Penanganan Rollback (Phase 63)
 
 - **Insiden Phase 63:** Pada uji coba deployment V11 pertama, kontainer mengalami *restart loop* karena script kandidat tidak menyertakan pemanggilan daemon `main()` (`if __name__ == "__main__": main()`). Python mengeksekusi definisi fungsi lalu langsung exit dengan kode 0.
 - **Tindakan Koreksi (Phase 64–65):** 
@@ -143,7 +174,7 @@ python3 test_aiops_v5_extended.py
 
 ---
 
-## 8. Batasan Validasi & Risiko
+## 9. Batasan Validasi & Risiko
 
 - **Akurasi RUL:** Status `NOT_MEASURABLE` secara statistik mutlak karena belum terkumpul catatan insiden kerusakan/kegagalan perangkat keras jangka panjang (*ground truth failure data*).
 - **Portainer Stack Definition:** Status sinkronisasi stack di manajemen Portainer tercatat `NOT_VERIFIED` (memerlukan akses UI eksternal).
