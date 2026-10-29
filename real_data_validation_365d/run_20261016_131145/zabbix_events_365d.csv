@@ -1,0 +1,3 @@
+eventid,host,source,object,objectid,clock,event_timestamp,severity,trigger_name,trigger_expression,r_eventid,r_clock,recovery_timestamp,duration_seconds,recovery_status,category,initial_label
+43982577,ME_UPS2,0,0,30103,1770109284,2026-02-03T09:01:24+00:00,1,APC UPS: : Sensor has status Not Applicable,{51297}=4,0,0,ACTIVE,22047021,ACTIVE_EVENT,SENSOR_OR_DATA_QUALITY_ISSUE,ACTIVE_EVENT
+43982576,ME_UPS2,0,0,30102,1770109283,2026-02-03T09:01:23+00:00,1,APC UPS: : Sensor has status Not Applicable,{51296}=4,0,0,ACTIVE,22047022,ACTIVE_EVENT,SENSOR_OR_DATA_QUALITY_ISSUE,ACTIVE_EVENT

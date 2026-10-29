@@ -1,0 +1,73 @@
+{
+  "execution_timestamp": "2026-10-16T13:42:10.545163+00:00",
+  "label_definition": "Binary classification: Positive (Severity >= 1, Warning/High/Disaster), Negative (Severity == 0, Not classified / Info). Derived strictly from Zabbix event metadata.",
+  "target_nature": "Zabbix alarm event severity prediction, NOT physical equipment failure or RUL.",
+  "test_samples": 27,
+  "confusion_matrix": {
+    "TP": 13,
+    "FP": 0,
+    "TN": 14,
+    "FN": 0
+  },
+  "per_class_metrics": {
+    "class_0_negative": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 14
+    },
+    "class_1_positive": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 13
+    }
+  },
+  "per_host_performance": {
+    "ME_UPS1": {
+      "samples": 2,
+      "accuracy": 1.0,
+      "status": "EVALUATED"
+    },
+    "ME_UPS2": {
+      "samples": 17,
+      "accuracy": 1.0,
+      "status": "EVALUATED"
+    },
+    "ME_UPS3": {
+      "samples": 8,
+      "accuracy": 1.0,
+      "status": "EVALUATED"
+    },
+    "ME_PAC1": {
+      "samples": 0,
+      "accuracy": null,
+      "status": "NOT_EVALUABLE"
+    },
+    "ME_PAC2": {
+      "samples": 0,
+      "accuracy": null,
+      "status": "NOT_EVALUABLE"
+    },
+    "ME_PAC3": {
+      "samples": 0,
+      "accuracy": null,
+      "status": "NOT_EVALUABLE"
+    },
+    "ME_PAC4": {
+      "samples": 0,
+      "accuracy": null,
+      "status": "NOT_EVALUABLE"
+    }
+  },
+  "limitations": [
+    "Small test set size (27 samples).",
+    "Target represents Zabbix event alarm severity, not verified physical damage.",
+    "Hosts ME_PAC2, ME_PAC3, ME_PAC4 have 0 events in dataset and are marked NOT_EVALUABLE."
+  ],
+  "decision": "PARTIAL",
+  "production_changes": 0,
+  "zabbix_write_operations": 0,
+  "restarts": 0,
+  "deployment_authorization": "NOT_AUTHORIZED_FOR_DEPLOYMENT"
+}

@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-10-15T05:19:41.571136",
+  "phase": "Phase G.14A",
+  "shadow_version": "v5",
+  "target_hosts_checked": [
+    "ME_UPS1",
+    "ME_PAC1",
+    "ME_PAC2",
+    "ME_PAC3",
+    "ME_PAC4",
+    "ME_UPS2",
+    "ME_UPS3"
+  ],
+  "g14_plan_coverage_gap": "Phase G.14 execution plan currently covers only host 10688 (ME_UPS1). The other 6 hosts (ME_UPS2-3, ME_PAC1-4) are not yet included in the 24h expansion request plan.",
+  "host_statistics": {
+    "ME_UPS1": {
+      "hostid": "10688",
+      "total_items": 48,
+      "priority_numeric": 23
+    },
+    "ME_PAC1": {
+      "hostid": "10689",
+      "total_items": 43,
+      "priority_numeric": 6
+    },
+    "ME_PAC2": {
+      "hostid": "10690",
+      "total_items": 17,
+      "priority_numeric": 6
+    },
+    "ME_PAC3": {
+      "hostid": "10696",
+      "total_items": 15,
+      "priority_numeric": 6
+    },
+    "ME_PAC4": {
+      "hostid": "10698",
+      "total_items": 15,
+      "priority_numeric": 6
+    },
+    "ME_UPS2": {
+      "hostid": "10697",
+      "total_items": 54,
+      "priority_numeric": 27
+    },
+    "ME_UPS3": {
+      "hostid": "10701",
+      "total_items": 48,
+      "priority_numeric": 24
+    }
+  },
+  "transport_security_risk": "TRANSPORT_HTTP_RISK: Plain unencrypted HTTP in use. Private network assumption is insufficient; requires explicit operator sign-off.",
+  "api_requests": 0,
+  "history_collected": false,
+  "production_changes": 0,
+  "model_training": false,
+  "automatic_remediation": false,
+  "final_status": "COVERAGE_AUDIT_COMPLETED"
+}

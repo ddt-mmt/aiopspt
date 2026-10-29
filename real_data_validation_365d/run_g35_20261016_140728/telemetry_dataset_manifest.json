@@ -1,0 +1,10 @@
+{
+  "execution_timestamp": "2026-10-16T14:07:28.381859+00:00",
+  "mode": "ISOLATED_DEVELOPMENT_LOCAL_FILES_ONLY",
+  "total_sensor_files": 32,
+  "decision": "PASS",
+  "production_changes": 0,
+  "zabbix_write_operations": 0,
+  "restarts": 0,
+  "deployment_authorization": "NOT_AUTHORIZED_FOR_DEPLOYMENT"
+}

@@ -1,0 +1,93 @@
+{
+  "execution_timestamp": "2026-10-16T13:26:02.443756+00:00",
+  "total_events": 180,
+  "unique_eventids_verified": true,
+  "recovered_events": 89,
+  "active_events": 91,
+  "host_counts": {
+    "ME_UPS2": 78,
+    "ME_UPS3": 50,
+    "ME_UPS1": 44,
+    "ME_PAC1": 8
+  },
+  "category_counts": {
+    "UPS_BATTERY_VOLTAGE_CAPACITY": 120,
+    "SENSOR_OR_DATA_QUALITY_ISSUE": 36,
+    "UNKNOWN_NEEDS_REVIEW": 24
+  },
+  "severity_counts": {
+    "0": 89,
+    "3": 57,
+    "2": 22,
+    "4": 9,
+    "1": 3
+  },
+  "sensor_coverage": [
+    {
+      "host": "ME_UPS1",
+      "items_sampled": 3,
+      "samples_retrieved": 558,
+      "coverage_status": "NORMAL"
+    },
+    {
+      "host": "ME_PAC1",
+      "items_sampled": 3,
+      "samples_retrieved": 6000,
+      "coverage_status": "NORMAL"
+    },
+    {
+      "host": "ME_PAC2",
+      "items_sampled": 3,
+      "samples_retrieved": 6000,
+      "coverage_status": "NORMAL"
+    },
+    {
+      "host": "ME_PAC3",
+      "items_sampled": 3,
+      "samples_retrieved": 6000,
+      "coverage_status": "NORMAL"
+    },
+    {
+      "host": "ME_UPS2",
+      "items_sampled": 3,
+      "samples_retrieved": 1254,
+      "coverage_status": "NORMAL"
+    },
+    {
+      "host": "ME_PAC4",
+      "items_sampled": 3,
+      "samples_retrieved": 6000,
+      "coverage_status": "NORMAL"
+    },
+    {
+      "host": "ME_UPS3",
+      "items_sampled": 3,
+      "samples_retrieved": 556,
+      "coverage_status": "NORMAL"
+    }
+  ],
+  "temporal_splits": {
+    "train_events": 125,
+    "validation_events": 28,
+    "test_events": 27,
+    "train_period": "2025-11-12T08:14:42+00:00 to 2026-07-11T14:36:41+00:00",
+    "test_period": "2026-08-31T10:20:45+00:00 to 2026-10-12T10:32:45+00:00"
+  },
+  "offline_evaluation": {
+    "task": "ZABBIX_ALARM_EVENT_PREDICTION",
+    "model_baseline": "Moving_Average_Threshold_Baseline",
+    "precision": 0.78,
+    "recall": 0.72,
+    "f1_score": 0.75,
+    "lead_time_hours": 6.0,
+    "random_seed": 42,
+    "library_versions": {
+      "pandas": "2.3.3",
+      "numpy": "2.0.2"
+    }
+  },
+  "production_changes": 0,
+  "zabbix_write_operations": 0,
+  "restarts": 0,
+  "deployment_authorization": "NOT_AUTHORIZED_FOR_DEPLOYMENT"
+}

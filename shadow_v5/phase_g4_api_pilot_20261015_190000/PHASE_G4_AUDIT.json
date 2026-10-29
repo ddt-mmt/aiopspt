@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-10-15T19:00:00Z",
+  "phase": "Phase G.4",
+  "shadow_version": "v5",
+  "network_requests": 0,
+  "zabbix_api_calls": 0,
+  "production_changes": 0,
+  "credential_values_logged": false,
+  "automatic_remediation": false,
+  "history_collected": false,
+  "operator_approval": "PENDING",
+  "endpoint": "http://10.28.1.110/zabbix/api_jsonrpc.php",
+  "pilot_scope": ["apiinfo.version", "host.get"],
+  "final_status": "READY_FOR_OPERATOR_APPROVAL"
+}

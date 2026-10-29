@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-10-14T04:40:01.071966+00:00",
+  "max_cycles": 2,
+  "total_duration_seconds": 36.223684787750244,
+  "pre_hash": "58f8065f171a34c612f2f0d4434b3235e1a525f916e6e648af6460bb12b2d291",
+  "post_hash": "58f8065f171a34c612f2f0d4434b3235e1a525f916e6e648af6460bb12b2d291",
+  "hash_unchanged": true,
+  "container_status": "running",
+  "read_only_verified": true,
+  "cycles_data": [
+    {
+      "cycle": 1,
+      "duration_seconds": 17.148062705993652,
+      "result": {
+        "status": "SUCCESS",
+        "results_count": 7
+      }
+    },
+    {
+      "cycle": 2,
+      "duration_seconds": 17.073285818099976,
+      "result": {
+        "status": "SUCCESS",
+        "results_count": 7
+      }
+    }
+  ]
+}

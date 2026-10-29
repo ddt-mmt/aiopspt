@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-10-15T04:19:59.241536",
+  "phase": "Phase G.11",
+  "shadow_version": "v5",
+  "battery_voltage_analysis": {
+    "itemid": "59604",
+    "name": "Battery voltage",
+    "unit": "V",
+    "valid_points_count": 1,
+    "limitations": "Only a single data point collected. Trends, volatility, and anomaly detection cannot be computed from one point.",
+    "single_value": 216.0,
+    "clock": "1792034604"
+  },
+  "input_voltage_analysis": {
+    "itemid": "59607",
+    "name": "Input voltage",
+    "unit": "V",
+    "valid_points_count": 47,
+    "min_value": 231.0,
+    "max_value": 232.6,
+    "mean_value": 231.6426,
+    "median_value": 231.6,
+    "earliest_clock": 1792033827,
+    "latest_clock": 1792037367,
+    "time_range_seconds": 3540,
+    "avg_interval_seconds": 76.96
+  }
+}

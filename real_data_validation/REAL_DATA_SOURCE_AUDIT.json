@@ -1,0 +1,210 @@
+{
+  "timestamp": "2026-10-12T10:09:23.262032+00:00",
+  "acquisition_window_days": 7,
+  "total_samples_acquired": 224799,
+  "decision_status": "READY_FOR_OFFLINE_REPLAY",
+  "hosts": {
+    "ME_PAC1": {
+      "hostid": "10689",
+      "items_audited": {
+        "return.temp.c": {
+          "itemid": "60386",
+          "samples": 10000,
+          "median_interval_sec": 60.0
+        },
+        "supply.temp.c": {
+          "itemid": "60387",
+          "samples": 10000,
+          "median_interval_sec": 60.0
+        },
+        "return.humidity.rh": {
+          "itemid": "60385",
+          "samples": 10000,
+          "median_interval_sec": 60.0
+        },
+        "evaporator.fan.speed": {
+          "itemid": "60384",
+          "samples": 10000,
+          "median_interval_sec": 60.0
+        },
+        "compressor.1.status": {
+          "itemid": "60383",
+          "samples": 10000,
+          "median_interval_sec": 60.0
+        }
+      },
+      "total_samples": 50000
+    },
+    "ME_PAC2": {
+      "hostid": "10690",
+      "items_audited": {
+        "return.temp.c": {
+          "itemid": "60392",
+          "samples": 10000,
+          "median_interval_sec": 60.0
+        },
+        "supply.temp.c": {
+          "itemid": "60393",
+          "samples": 10000,
+          "median_interval_sec": 60.0
+        },
+        "return.humidity.rh": {
+          "itemid": "60391",
+          "samples": 10000,
+          "median_interval_sec": 60.0
+        },
+        "evaporator.fan.speed": {
+          "itemid": "60390",
+          "samples": 10000,
+          "median_interval_sec": 60.0
+        },
+        "compressor.1.status": {
+          "itemid": "60389",
+          "samples": 10000,
+          "median_interval_sec": 60.0
+        }
+      },
+      "total_samples": 50000
+    },
+    "ME_PAC3": {
+      "hostid": "10696",
+      "items_audited": {
+        "return.temp.c": {
+          "itemid": "60722",
+          "samples": 10000,
+          "median_interval_sec": 60.0
+        },
+        "supply.temp.c": {
+          "itemid": "60724",
+          "samples": 10000,
+          "median_interval_sec": 60.0
+        },
+        "return.humidity.rh": {
+          "itemid": "60726",
+          "samples": 10000,
+          "median_interval_sec": 60.0
+        },
+        "evaporator.fan.speed": {
+          "itemid": "90716",
+          "samples": 3008,
+          "median_interval_sec": 80.0
+        },
+        "compressor.status": {
+          "itemid": "60733",
+          "samples": 10000,
+          "median_interval_sec": 60.0
+        }
+      },
+      "total_samples": 43008
+    },
+    "ME_PAC4": {
+      "hostid": "10698",
+      "items_audited": {
+        "return.temp.c": {
+          "itemid": "60723",
+          "samples": 10000,
+          "median_interval_sec": 60.0
+        },
+        "supply.temp.c": {
+          "itemid": "60725",
+          "samples": 10000,
+          "median_interval_sec": 60.0
+        },
+        "return.humidity.rh": {
+          "itemid": "60727",
+          "samples": 10000,
+          "median_interval_sec": 60.0
+        },
+        "evaporator.fan.speed": {
+          "itemid": "90717",
+          "samples": 3009,
+          "median_interval_sec": 80.0
+        },
+        "compressor.status": {
+          "itemid": "60734",
+          "samples": 10000,
+          "median_interval_sec": 60.0
+        }
+      },
+      "total_samples": 43009
+    },
+    "ME_UPS1": {
+      "hostid": "10688",
+      "items_audited": {
+        "output.load[upsHighPrecOutputLoad]": {
+          "itemid": "59609",
+          "samples": 8979,
+          "median_interval_sec": 60.0
+        },
+        "battery.voltage[upsHighPrecBatteryActualVoltage]": {
+          "itemid": "59604",
+          "samples": 850,
+          "median_interval_sec": 120.0
+        },
+        "battery.capacity[upsHighPrecBatteryCapacity]": {
+          "itemid": "59597",
+          "samples": 28,
+          "median_interval_sec": 21600.0
+        },
+        "battery.runtime_remaining[upsAdvBatteryRunTimeRemaining]": {
+          "itemid": "59601",
+          "samples": 1070,
+          "median_interval_sec": 120.0
+        }
+      },
+      "total_samples": 10927
+    },
+    "ME_UPS2": {
+      "hostid": "10697",
+      "items_audited": {
+        "output.load[upsHighPrecOutputLoad]": {
+          "itemid": "60464",
+          "samples": 8456,
+          "median_interval_sec": 60.0
+        },
+        "battery.voltage[upsHighPrecBatteryActualVoltage]": {
+          "itemid": "60459",
+          "samples": 184,
+          "median_interval_sec": 120.0
+        },
+        "battery.capacity[upsHighPrecBatteryCapacity]": {
+          "itemid": "60452",
+          "samples": 427,
+          "median_interval_sec": 120.0
+        },
+        "battery.runtime_remaining[upsAdvBatteryRunTimeRemaining]": {
+          "itemid": "60456",
+          "samples": 2145,
+          "median_interval_sec": 60.0
+        }
+      },
+      "total_samples": 11212
+    },
+    "ME_UPS3": {
+      "hostid": "10701",
+      "items_audited": {
+        "output.load[upsHighPrecOutputLoad]": {
+          "itemid": "60859",
+          "samples": 8102,
+          "median_interval_sec": 60.0
+        },
+        "battery.voltage[upsHighPrecBatteryActualVoltage]": {
+          "itemid": "60854",
+          "samples": 2398,
+          "median_interval_sec": 120.0
+        },
+        "battery.capacity[upsHighPrecBatteryCapacity]": {
+          "itemid": "60847",
+          "samples": 28,
+          "median_interval_sec": 21600.0
+        },
+        "battery.runtime_remaining[upsAdvBatteryRunTimeRemaining]": {
+          "itemid": "60851",
+          "samples": 6115,
+          "median_interval_sec": 60.0
+        }
+      },
+      "total_samples": 16643
+    }
+  }
+}

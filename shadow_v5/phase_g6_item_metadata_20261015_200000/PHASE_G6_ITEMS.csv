@@ -1,0 +1,241 @@
+itemid,hostid,name,key_,units,value_type,status,delay
+59597,10688,Battery capacity,battery.capacity[upsHighPrecBatteryCapacity],%,0,0,1m
+60430,10688,0: External battery packs bad,battery.external_packs_bad[upsAdvBatteryNumOfBadBattPacks.0],,3,0,15m
+59598,10688,External battery packs count,battery.external_packs_count[upsAdvBatteryNumOfBattPacks],,3,0,1h
+59599,10688,Battery last replace date,battery.last_replace_date[upsBasicBatteryLastReplaceDate],,1,0,1h
+59600,10688,Battery replace indicator,battery.replace_indicator[upsAdvBatteryReplaceIndicator],,3,0,1m
+59601,10688,Battery runtime remaining,battery.runtime_remaining[upsAdvBatteryRunTimeRemaining],s,0,0,1m
+59602,10688,Battery status,battery.status[upsBasicBatteryStatus],,3,0,1m
+59603,10688,Battery temperature,battery.temperature[upsHighPrecBatteryTemperature],℃,0,1,1m
+59604,10688,Battery voltage,battery.voltage[upsHighPrecBatteryActualVoltage],V,0,0,1m
+59605,10688,Input fail cause,input.fail[upsAdvInputLineFailCause],,3,0,1m
+59606,10688,Input frequency,input.frequency[upsHighPrecInputFrequency],Hz,0,0,1m
+59607,10688,Input voltage,input.voltage[upsHighPrecInputLineVoltage],V,0,0,1m
+59608,10688,Output current,output.current[upsHighPrecOutputCurrent],A,0,0,1m
+59609,10688,Output load,output.load[upsHighPrecOutputLoad],%,0,0,1m
+59610,10688,Output status,output.status[upsBasicOutputStatus],,3,0,1m
+59611,10688,Output voltage,output.voltage[upsHighPrecOutputVoltage],V,0,0,1m
+60424,10688,1: Phase input current,phase.input.current[upsPhaseInputCurrent.1.1.1],A,0,0,1m
+60425,10688,2: Phase input current,phase.input.current[upsPhaseInputCurrent.1.1.2],A,0,0,1m
+60426,10688,3: Phase input current,phase.input.current[upsPhaseInputCurrent.1.1.3],A,0,0,1m
+60427,10688,1: Phase input voltage,phase.input.voltage[upsPhaseInputVoltage.1.1.1],V,0,0,1m
+60428,10688,2: Phase input voltage,phase.input.voltage[upsPhaseInputVoltage.1.1.2],V,0,0,1m
+60429,10688,3: Phase input voltage,phase.input.voltage[upsPhaseInputVoltage.1.1.3],V,0,0,1m
+60431,10688,1: Phase output current,phase.output.current[upsPhaseOutputCurrent.1.1.1],A,0,0,1m
+60432,10688,2: Phase output current,phase.output.current[upsPhaseOutputCurrent.1.1.2],A,0,0,1m
+60433,10688,3: Phase output current,phase.output.current[upsPhaseOutputCurrent.1.1.3],A,0,0,1m
+60434,10688,1: Phase output load, %,phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.1],%,0,0,1m
+60435,10688,2: Phase output load, %,phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.2],%,0,0,1m
+60436,10688,3: Phase output load, %,phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.3],%,0,0,1m
+60437,10688,1: Phase output voltage,phase.output.voltage[upsPhaseOutputVoltage.1.1.1],V,0,0,1m
+60438,10688,2: Phase output voltage,phase.output.voltage[upsPhaseOutputVoltage.1.1.2],V,0,0,1m
+60439,10688,3: Phase output voltage,phase.output.voltage[upsPhaseOutputVoltage.1.1.3],V,0,0,1m
+59612,10688,SNMP traps (fallback),snmptrap.fallback,,2,0,0
+59613,10688,System contact details,system.contact[sysContact.0],,1,0,15m
+59614,10688,System description,system.descr[sysDescr.0],,1,0,15m
+59615,10688,Uptime (hardware),system.hw.uptime[hrSystemUptime.0],uptime,3,0,30s
+59616,10688,System location,system.location[sysLocation.0],,1,0,15m
+59617,10688,Model,system.model[upsBasicIdentModel],,1,0,15m
+59618,10688,System name,system.name[sysName.0],,1,0,15m
+59619,10688,Uptime (network),system.net.uptime[sysUpTime.0],uptime,3,0,30s
+59620,10688,System object ID,system.objectid[sysObjectID.0],,1,0,15m
+59621,10688,Serial number,system.sn[upsAdvIdentSerialNumber],,1,0,15m
+90688,10688,UPS Policy Action Status,ups.action.status,,3,0,0
+90706,10688,UPS Battery Temperature (C),ups.battery.temp,,0,0,0
+90707,10688,UPS Battery Voltage (V),ups.battery.voltage,,0,0,0
+90685,10688,UPS Health Score AIOps,ups.health.score,,0,0,0
+90705,10688,UPS Output Load (%),ups.output.load,,0,0,0
+90686,10688,UPS Time-to-Failure (Hours),ups.ttf.hours,,0,0,0
+59622,10688,SNMP agent availability,zabbix[host,snmp,available],,3,0,1m
+90722,10689,AIOps Compressor Status,aiops.compressor.status,,0,0,0
+90721,10689,AIOps Evaporator Fan Speed (%),aiops.evaporator.fan.speed,,0,0,0
+90720,10689,AIOps Return Humidity (%RH),aiops.return.humidity.rh,,0,0,0
+90718,10689,AIOps Return Temperature (C),aiops.return.temp.c,,0,0,0
+90719,10689,AIOps Supply Temperature (C),aiops.supply.temp.c,,0,0,0
+59986,10689,Battery capacity,battery.capacity[upsHighPrecBatteryCapacity],%,0,1,1m
+59987,10689,External battery packs count,battery.external_packs_count[upsAdvBatteryNumOfBattPacks],,3,1,1h
+59988,10689,Battery last replace date,battery.last_replace_date[upsBasicBatteryLastReplaceDate],,1,1,1h
+59989,10689,Battery replace indicator,battery.replace_indicator[upsAdvBatteryReplaceIndicator],,3,1,1m
+59990,10689,Battery runtime remaining,battery.runtime_remaining[upsAdvBatteryRunTimeRemaining],s,0,1,1m
+59991,10689,Battery status,battery.status[upsBasicBatteryStatus],,3,1,1m
+59992,10689,Battery temperature,battery.temperature[upsHighPrecBatteryTemperature],℃,0,1,1m
+59993,10689,Battery voltage,battery.voltage[upsHighPrecBatteryActualVoltage],V,0,1,1m
+60383,10689,Compressor 1 Status,compressor.1.status,,3,0,1m
+90714,10689,Compressor Status,compressor.status,,3,0,1m
+60384,10689,Evaporator Fan Speed (%),evaporator.fan.speed,%%,0,0,1m
+90738,10689,Fan Status,fan.status,,3,0,1m
+90739,10689,ICMP Ping,icmpping,,3,0,1m
+59994,10689,Input fail cause,input.fail[upsAdvInputLineFailCause],,3,1,1m
+59995,10689,Input frequency,input.frequency[upsHighPrecInputFrequency],Hz,0,1,1m
+59996,10689,Input voltage,input.voltage[upsHighPrecInputLineVoltage],V,0,1,1m
+59997,10689,Output current,output.current[upsHighPrecOutputCurrent],A,0,1,1m
+59998,10689,Output load,output.load[upsHighPrecOutputLoad],%,0,1,1m
+59999,10689,Output status,output.status[upsBasicOutputStatus],,3,1,1m
+60000,10689,Output voltage,output.voltage[upsHighPrecOutputVoltage],V,0,1,1m
+90689,10689,PAC Policy Action Status,pac.action.status,,3,0,0
+90684,10689,PAC Health Score AIOps,pac.health.score,,0,0,0
+90687,10689,PAC Time-to-Failure (Hours),pac.ttf.hours,,0,0,0
+60385,10689,Return Humidity (%RH),return.humidity.rh,%RH,0,0,1m
+60386,10689,Return Temperature (C),return.temp.c,C,0,0,1m
+60001,10689,SNMP traps (fallback),snmptrap.fallback,,2,0,0
+60387,10689,Supply Temperature (C),supply.temp.c,C,0,0,1m
+60002,10689,System contact details,system.contact[sysContact.0],,1,0,15m
+60003,10689,System description,system.descr[sysDescr.0],,1,0,15m
+60004,10689,Uptime (hardware),system.hw.uptime[hrSystemUptime.0],uptime,3,0,30s
+60005,10689,System location,system.location[sysLocation.0],,1,0,15m
+60006,10689,Model,system.model[upsBasicIdentModel],,1,1,15m
+60007,10689,System name,system.name[sysName.0],,1,0,15m
+60008,10689,Uptime (network),system.net.uptime[sysUpTime.0],uptime,3,0,30s
+60009,10689,System object ID,system.objectid[sysObjectID.0],,1,0,15m
+60010,10689,Serial number,system.sn[upsAdvIdentSerialNumber],,1,1,15m
+60388,10689,Unit State,unit.state,,3,0,1m
+60011,10689,SNMP agent availability,zabbix[host,snmp,available],,3,0,1m
+90727,10690,AIOps Compressor Status,aiops.compressor.status,,0,0,0
+90726,10690,AIOps Evaporator Fan Speed (%),aiops.evaporator.fan.speed,,0,0,0
+90725,10690,AIOps Return Humidity (%RH),aiops.return.humidity.rh,,0,0,0
+90723,10690,AIOps Return Temperature (C),aiops.return.temp.c,,0,0,0
+90724,10690,AIOps Supply Temperature (C),aiops.supply.temp.c,,0,0,0
+60389,10690,Compressor 1 Status,compressor.1.status,,3,0,1m
+90715,10690,Compressor Status,compressor.status,,3,0,1m
+60390,10690,Evaporator Fan Speed (%),evaporator.fan.speed,%%,0,0,1m
+90740,10690,Fan Status,fan.status,,3,0,1m
+90741,10690,ICMP Ping,icmpping,,3,0,1m
+90698,10690,PAC Policy Action Status,pac.action.status,,3,0,0
+90696,10690,PAC Health Score AIOps,pac.health.score,,0,0,0
+90697,10690,PAC Time-to-Failure (Hours),pac.ttf.hours,,0,0,0
+60391,10690,Return Humidity (%RH),return.humidity.rh,%RH,0,0,1m
+60392,10690,Return Temperature (C),return.temp.c,C,0,0,1m
+60393,10690,Supply Temperature (C),supply.temp.c,C,0,0,1m
+60394,10690,Unit State,unit.state,,3,0,1m
+90732,10696,AIOps Compressor Status,aiops.compressor.status,,0,0,0
+90731,10696,AIOps Evaporator Fan Speed (%),aiops.evaporator.fan.speed,,0,0,0
+90730,10696,AIOps Return Humidity (%RH),aiops.return.humidity.rh,,0,0,0
+90728,10696,AIOps Return Temperature (C),aiops.return.temp.c,,0,0,0
+90729,10696,AIOps Supply Temperature (C),aiops.supply.temp.c,,0,0,0
+60733,10696,Compressor Status,compressor.status,,3,0,1m
+90716,10696,Evaporator Fan Speed (%),evaporator.fan.speed,,0,0,0
+60735,10696,Fan Status,fan.status,,3,0,1m
+60729,10696,ICMP Ping,icmpping,,3,0,1m
+90701,10696,PAC Policy Action Status,pac.action.status,,3,0,0
+90699,10696,PAC Health Score AIOps,pac.health.score,,0,0,0
+90700,10696,PAC Time-to-Failure (Hours),pac.ttf.hours,,0,0,0
+60726,10696,Return Humidity (%RH),return.humidity.rh,%,0,0,1m
+60722,10696,Return Temperature (C),return.temp.c,C,0,0,1m
+60724,10696,Supply Temperature (C),supply.temp.c,C,0,0,1m
+60452,10697,Battery capacity,battery.capacity[upsHighPrecBatteryCapacity],%,0,0,1m
+60507,10697,0: External battery packs bad,battery.external_packs_bad[upsAdvBatteryNumOfBadBattPacks.0],,3,0,15m
+60453,10697,External battery packs count,battery.external_packs_count[upsAdvBatteryNumOfBattPacks],,3,0,1h
+60454,10697,Battery last replace date,battery.last_replace_date[upsBasicBatteryLastReplaceDate],,1,0,1h
+60455,10697,Battery replace indicator,battery.replace_indicator[upsAdvBatteryReplaceIndicator],,3,0,1m
+60456,10697,Battery runtime remaining,battery.runtime_remaining[upsAdvBatteryRunTimeRemaining],s,0,0,1m
+60457,10697,Battery status,battery.status[upsBasicBatteryStatus],,3,0,1m
+60458,10697,Battery temperature,battery.temperature[upsHighPrecBatteryTemperature],℃,0,1,1m
+60459,10697,Battery voltage,battery.voltage[upsHighPrecBatteryActualVoltage],V,0,0,1m
+60501,10697,: Humidity sensor,external.sensor.humidity[uioSensorStatusHumidity.1.1.1],%,0,0,1m
+60502,10697,: Humidity sensor,external.sensor.humidity[uioSensorStatusHumidity.1.2.1],%,0,0,1m
+60503,10697,: Sensor alarm status,external.sensor.status[uioSensorStatusAlarmStatus.1.1.1],,3,0,1m
+60504,10697,: Sensor alarm status,external.sensor.status[uioSensorStatusAlarmStatus.1.2.1],,3,0,1m
+60505,10697,: Temperature sensor,external.sensor.temperature[uioSensorStatusTemperatureDegC.1.1.1],℃,0,0,1m
+60506,10697,: Temperature sensor,external.sensor.temperature[uioSensorStatusTemperatureDegC.1.2.1],℃,0,0,1m
+60460,10697,Input fail cause,input.fail[upsAdvInputLineFailCause],,3,0,1m
+60461,10697,Input frequency,input.frequency[upsHighPrecInputFrequency],Hz,0,0,1m
+60462,10697,Input voltage,input.voltage[upsHighPrecInputLineVoltage],V,0,0,1m
+60463,10697,Output current,output.current[upsHighPrecOutputCurrent],A,0,0,1m
+60464,10697,Output load,output.load[upsHighPrecOutputLoad],%,0,0,1m
+60465,10697,Output status,output.status[upsBasicOutputStatus],,3,0,1m
+60466,10697,Output voltage,output.voltage[upsHighPrecOutputVoltage],V,0,0,1m
+60508,10697,1: Phase input current,phase.input.current[upsPhaseInputCurrent.1.1.1],A,0,0,1m
+60509,10697,2: Phase input current,phase.input.current[upsPhaseInputCurrent.1.1.2],A,0,0,1m
+60510,10697,3: Phase input current,phase.input.current[upsPhaseInputCurrent.1.1.3],A,0,0,1m
+60511,10697,1: Phase input voltage,phase.input.voltage[upsPhaseInputVoltage.1.1.1],V,0,0,1m
+60512,10697,2: Phase input voltage,phase.input.voltage[upsPhaseInputVoltage.1.1.2],V,0,0,1m
+60513,10697,3: Phase input voltage,phase.input.voltage[upsPhaseInputVoltage.1.1.3],V,0,0,1m
+60514,10697,1: Phase output current,phase.output.current[upsPhaseOutputCurrent.1.1.1],A,0,0,1m
+60515,10697,2: Phase output current,phase.output.current[upsPhaseOutputCurrent.1.1.2],A,0,0,1m
+60516,10697,3: Phase output current,phase.output.current[upsPhaseOutputCurrent.1.1.3],A,0,0,1m
+60517,10697,1: Phase output load, %,phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.1],%,0,0,1m
+60518,10697,2: Phase output load, %,phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.2],%,0,0,1m
+60519,10697,3: Phase output load, %,phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.3],%,0,0,1m
+60520,10697,1: Phase output voltage,phase.output.voltage[upsPhaseOutputVoltage.1.1.1],V,0,0,1m
+60521,10697,2: Phase output voltage,phase.output.voltage[upsPhaseOutputVoltage.1.1.2],V,0,0,1m
+60522,10697,3: Phase output voltage,phase.output.voltage[upsPhaseOutputVoltage.1.1.3],V,0,0,1m
+60467,10697,SNMP traps (fallback),snmptrap.fallback,,2,0,0
+60468,10697,System contact details,system.contact[sysContact.0],,1,0,15m
+60469,10697,System description,system.descr[sysDescr.0],,1,0,15m
+60470,10697,Uptime (hardware),system.hw.uptime[hrSystemUptime.0],uptime,3,0,30s
+60471,10697,System location,system.location[sysLocation.0],,1,0,15m
+60472,10697,Model,system.model[upsBasicIdentModel],,1,0,15m
+60473,10697,System name,system.name[sysName.0],,1,0,15m
+60474,10697,Uptime (network),system.net.uptime[sysUpTime.0],uptime,3,0,30s
+60475,10697,System object ID,system.objectid[sysObjectID.0],,1,0,15m
+60476,10697,Serial number,system.sn[upsAdvIdentSerialNumber],,1,0,15m
+90692,10697,UPS Policy Action Status,ups.action.status,,3,0,0
+90709,10697,UPS Battery Temperature (C),ups.battery.temp,,0,0,0
+90710,10697,UPS Battery Voltage (V),ups.battery.voltage,,0,0,0
+90690,10697,UPS Health Score AIOps,ups.health.score,,0,0,0
+90708,10697,UPS Output Load (%),ups.output.load,,0,0,0
+90691,10697,UPS Time-to-Failure (Hours),ups.ttf.hours,,0,0,0
+60477,10697,SNMP agent availability,zabbix[host,snmp,available],,3,0,1m
+90737,10698,AIOps Compressor Status,aiops.compressor.status,,0,0,0
+90736,10698,AIOps Evaporator Fan Speed (%),aiops.evaporator.fan.speed,,0,0,0
+90735,10698,AIOps Return Humidity (%RH),aiops.return.humidity.rh,,0,0,0
+90733,10698,AIOps Return Temperature (C),aiops.return.temp.c,,0,0,0
+90734,10698,AIOps Supply Temperature (C),aiops.supply.temp.c,,0,0,0
+60734,10698,Compressor Status,compressor.status,,3,0,1m
+90717,10698,Evaporator Fan Speed (%),evaporator.fan.speed,,0,0,0
+60736,10698,Fan Status,fan.status,,3,0,1m
+60730,10698,ICMP Ping,icmpping,,3,0,1m
+90704,10698,PAC Policy Action Status,pac.action.status,,3,0,0
+90702,10698,PAC Health Score AIOps,pac.health.score,,0,0,0
+90703,10698,PAC Time-to-Failure (Hours),pac.ttf.hours,,0,0,0
+60727,10698,Return Humidity (%RH),return.humidity.rh,%,0,0,1m
+60723,10698,Return Temperature (C),return.temp.c,C,0,0,1m
+60725,10698,Supply Temperature (C),supply.temp.c,C,0,0,1m
+60847,10701,Battery capacity,battery.capacity[upsHighPrecBatteryCapacity],%,0,0,1m
+60896,10701,0: External battery packs bad,battery.external_packs_bad[upsAdvBatteryNumOfBadBattPacks.0],,3,0,15m
+60848,10701,External battery packs count,battery.external_packs_count[upsAdvBatteryNumOfBattPacks],,3,0,1h
+60849,10701,Battery last replace date,battery.last_replace_date[upsBasicBatteryLastReplaceDate],,1,0,1h
+60850,10701,Battery replace indicator,battery.replace_indicator[upsAdvBatteryReplaceIndicator],,3,0,1m
+60851,10701,Battery runtime remaining,battery.runtime_remaining[upsAdvBatteryRunTimeRemaining],s,0,0,1m
+60852,10701,Battery status,battery.status[upsBasicBatteryStatus],,3,0,1m
+60853,10701,Battery temperature,battery.temperature[upsHighPrecBatteryTemperature],℃,0,0,1m
+60854,10701,Battery voltage,battery.voltage[upsHighPrecBatteryActualVoltage],V,0,0,1m
+60855,10701,Input fail cause,input.fail[upsAdvInputLineFailCause],,3,0,1m
+60856,10701,Input frequency,input.frequency[upsHighPrecInputFrequency],Hz,0,0,1m
+60857,10701,Input voltage,input.voltage[upsHighPrecInputLineVoltage],V,0,0,1m
+60858,10701,Output current,output.current[upsHighPrecOutputCurrent],A,0,0,1m
+60859,10701,Output load,output.load[upsHighPrecOutputLoad],%,0,0,1m
+60860,10701,Output status,output.status[upsBasicOutputStatus],,3,0,1m
+60861,10701,Output voltage,output.voltage[upsHighPrecOutputVoltage],V,0,0,1m
+60906,10701,1: Phase input current,phase.input.current[upsPhaseInputCurrent.1.1.1],A,0,0,1m
+60907,10701,2: Phase input current,phase.input.current[upsPhaseInputCurrent.1.1.2],A,0,0,1m
+60908,10701,3: Phase input current,phase.input.current[upsPhaseInputCurrent.1.1.3],A,0,0,1m
+60909,10701,1: Phase input voltage,phase.input.voltage[upsPhaseInputVoltage.1.1.1],V,0,0,1m
+60910,10701,2: Phase input voltage,phase.input.voltage[upsPhaseInputVoltage.1.1.2],V,0,0,1m
+60911,10701,3: Phase input voltage,phase.input.voltage[upsPhaseInputVoltage.1.1.3],V,0,0,1m
+60897,10701,1: Phase output current,phase.output.current[upsPhaseOutputCurrent.1.1.1],A,0,0,1m
+60898,10701,2: Phase output current,phase.output.current[upsPhaseOutputCurrent.1.1.2],A,0,0,1m
+60899,10701,3: Phase output current,phase.output.current[upsPhaseOutputCurrent.1.1.3],A,0,0,1m
+60900,10701,1: Phase output load, %,phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.1],%,0,0,1m
+60901,10701,2: Phase output load, %,phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.2],%,0,0,1m
+60902,10701,3: Phase output load, %,phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.3],%,0,0,1m
+60903,10701,1: Phase output voltage,phase.output.voltage[upsPhaseOutputVoltage.1.1.1],V,0,0,1m
+60904,10701,2: Phase output voltage,phase.output.voltage[upsPhaseOutputVoltage.1.1.2],V,0,0,1m
+60905,10701,3: Phase output voltage,phase.output.voltage[upsPhaseOutputVoltage.1.1.3],V,0,0,1m
+60862,10701,SNMP traps (fallback),snmptrap.fallback,,2,0,0
+60863,10701,System contact details,system.contact[sysContact.0],,1,0,15m
+60864,10701,System description,system.descr[sysDescr.0],,1,0,15m
+60865,10701,Uptime (hardware),system.hw.uptime[hrSystemUptime.0],uptime,3,0,30s
+60866,10701,System location,system.location[sysLocation.0],,1,0,15m
+60867,10701,Model,system.model[upsBasicIdentModel],,1,0,15m
+60868,10701,System name,system.name[sysName.0],,1,0,15m
+60869,10701,Uptime (network),system.net.uptime[sysUpTime.0],uptime,3,0,30s
+60870,10701,System object ID,system.objectid[sysObjectID.0],,1,0,15m
+60871,10701,Serial number,system.sn[upsAdvIdentSerialNumber],,1,0,15m
+90695,10701,UPS Policy Action Status,ups.action.status,,3,0,0
+90712,10701,UPS Battery Temperature (C),ups.battery.temp,,0,0,0
+90713,10701,UPS Battery Voltage (V),ups.battery.voltage,,0,0,0
+90693,10701,UPS Health Score AIOps,ups.health.score,,0,0,0
+90711,10701,UPS Output Load (%),ups.output.load,,0,0,0
+90694,10701,UPS Time-to-Failure (Hours),ups.ttf.hours,,0,0,0
+60872,10701,SNMP agent availability,zabbix[host,snmp,available],,3,0,1m

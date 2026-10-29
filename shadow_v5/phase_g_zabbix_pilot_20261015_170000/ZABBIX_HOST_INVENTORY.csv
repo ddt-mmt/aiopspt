@@ -1,0 +1,8 @@
+host_id,host_name,asset_class,status,notes
+PENDING_DISCOVERY,ME_UPS1,UPS,ACCESS_BLOCKED,Awaiting authorized Zabbix API connection
+PENDING_DISCOVERY,ME_UPS2,UPS,ACCESS_BLOCKED,Awaiting authorized Zabbix API connection
+PENDING_DISCOVERY,ME_UPS3,UPS,ACCESS_BLOCKED,Awaiting authorized Zabbix API connection
+PENDING_DISCOVERY,ME_PAC1,PAC,ACCESS_BLOCKED,Awaiting authorized Zabbix API connection
+PENDING_DISCOVERY,ME_PAC2,PAC,ACCESS_BLOCKED,Awaiting authorized Zabbix API connection
+PENDING_DISCOVERY,ME_PAC3,PAC,ACCESS_BLOCKED,Awaiting authorized Zabbix API connection
+PENDING_DISCOVERY,ME_PAC4,PAC,ACCESS_BLOCKED,Awaiting authorized Zabbix API connection

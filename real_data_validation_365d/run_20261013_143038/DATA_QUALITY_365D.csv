@@ -1,0 +1,5 @@
+host,itemid,key,sample_count,observed_span_days,median_interval_seconds,large_gap_count,invalid_numeric_count,constant_numeric_series,truncated_possible,api_errors,quality_notes
+ME_PAC1,59986,battery.capacity[upsHighPrecBatteryCapacity],0,0,,,,UNKNOWN,False,0,NO_DATA
+ME_PAC1,59990,battery.runtime_remaining[upsAdvBatteryRunTimeRemaining],0,0,,,,UNKNOWN,False,0,NO_DATA
+ME_PAC1,59993,battery.voltage[upsHighPrecBatteryActualVoltage],0,0,,,,UNKNOWN,False,0,NO_DATA
+ME_PAC1,59998,output.load[upsHighPrecOutputLoad],0,0,,,,UNKNOWN,False,0,NO_DATA

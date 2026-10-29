@@ -1,0 +1,22 @@
+{
+  "dataset_id": "lbnl_fdd",
+  "source_url": "https://faultdetection.lbl.gov/data/sample_hvac.csv",
+  "acquisition_timestamp": "2026-10-15T02:39:04.789265",
+  "records_count": 1000,
+  "sample_rows": [
+    {
+      "timestamp": "2026-10-15T00:00:00Z",
+      "zone_temp_c": 22.5,
+      "supply_temp_c": 13.0,
+      "damper_pos": 45.0,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:00Z",
+      "zone_temp_c": 26.8,
+      "supply_temp_c": 18.2,
+      "damper_pos": 10.0,
+      "fault_label": 1
+    }
+  ]
+}

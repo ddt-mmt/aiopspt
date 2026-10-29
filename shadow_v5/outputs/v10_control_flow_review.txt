@@ -1,0 +1,73 @@
+V10 CONTROL-FLOW REVIEW
+Candidate execution: NOT RUN
+Network/API calls by this review: NONE
+Token access: NONE
+SHA-256: 1b3e0a046c6736d397bc2c01667ff913bae5ffb097836937f24946af4aa16bff
+File size: 5810 bytes
+
+=== TOP-LEVEL CONTROL FLOW ===
+Executable top-level statement: Import, lines 1-1
+Executable top-level statement: Import, lines 2-2
+Executable top-level statement: Import, lines 3-3
+Executable top-level statement: Import, lines 4-4
+Executable top-level statement: Import, lines 5-5
+Executable top-level statement: ImportFrom, lines 6-6
+Executable top-level statement: ImportFrom, lines 7-7
+Executable top-level statement: Expr, lines 9-9
+Executable top-level statement: Assign, lines 10-10
+Executable top-level statement: Assign, lines 12-16
+Executable top-level statement: Assign, lines 17-21
+Executable top-level statement: Assign, lines 23-27
+Executable top-level statement: Assign, lines 28-31
+Definition: FunctionDef validate_schema_and_quality, line 33
+Definition: FunctionDef process_sensor_history_hardened, line 59
+Definition: FunctionDef calculate_multisensor_rul_v8, line 91
+Definition: FunctionDef determine_action_status_hardened, line 148
+
+=== FUNCTION SIGNATURES AND LINE RANGES ===
+validate_schema_and_quality(series_by_name, latest_by_name, sample_counts, mandatory_features, now_utc, max_age_seconds=300, min_samples=10) — lines 33-57
+process_sensor_history_hardened(series_by_name, latest_by_name, sample_counts, mandatory_features, now_utc, max_age_seconds=300, min_samples=10) — lines 59-89
+calculate_multisensor_rul_v8(df_multisensor, crit_val) — lines 91-146
+determine_action_status_hardened(health, ttf) — lines 148-156
+
+=== REVIEW CALLS: rename / replace / FILE / NETWORK / PROCESS / DB ===
+Line 88: merged.rename()
+  source: merged = merged.rename(columns={merged.columns[0]: "clock"})
+Line 119: model.fit(X)
+  source: model.fit(X)
+Line 122: model.predict(latest_val)
+  source: prediction = int(model.predict(latest_val)[0])
+Line 105: df.replace([np.inf, -np.inf], np.nan)
+  source: df.replace([np.inf, -np.inf], np.nan)
+
+=== CONTEXT AROUND FLAGGED LINES 88 AND 105 ===
+-- Lines around 88 --
+  83:         final_status = "NORMAL"
+  84:     else:
+  85:         final_status = "LOW_CONFIDENCE"
+  86: 
+  87:     merged = merged.reset_index()
+  88:     merged = merged.rename(columns={merged.columns[0]: "clock"})
+  89:     return merged, final_status, "Data diproses dan divalidasi dengan sukses"
+  90: 
+  91: def calculate_multisensor_rul_v8(df_multisensor, crit_val):
+  92:     if df_multisensor is None or df_multisensor.empty:
+  93:         raise ValueError("DataFrame multisenor kosong atau None")
+-- Lines around 105 --
+ 100:     df["clock"] = pd.to_datetime(df["clock"], utc=True, errors="coerce")
+ 101:     for col in feature_cols:
+ 102:         df[col] = pd.to_numeric(df[col], errors="coerce")
+ 103: 
+ 104:     df = (
+ 105:         df.replace([np.inf, -np.inf], np.nan)
+ 106:           .dropna(subset=["clock"] + feature_cols)
+ 107:           .sort_values("clock")
+ 108:           .drop_duplicates(subset=["clock"], keep="last")
+ 109:     )
+ 110: 
+
+=== REVIEW LIMITATIONS ===
+- Static inspection only; no runtime behavior established.
+- A clean call inventory does not prove absence of indirect side effects.
+- Model compatibility and detection accuracy remain unverified.
+- Do not execute the candidate until side effects and dependencies are reviewed.

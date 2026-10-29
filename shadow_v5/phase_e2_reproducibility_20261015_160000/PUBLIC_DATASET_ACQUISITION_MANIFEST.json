@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-10-15T02:45:04.755391",
+  "shadow_version": "v5",
+  "phase": "Phase E.2",
+  "zabbix_access": false,
+  "datasets": [
+    {
+      "dataset_id": "lbnl_fdd",
+      "source_url": "https://faultdetection.lbl.gov/data/",
+      "acquisition_status": "ACCESS_REQUIRED",
+      "raw_file_acquired": false,
+      "note": "Awaiting manual form/portal download per official guidelines."
+    },
+    {
+      "dataset_id": "nasa_pcoe_battery",
+      "source_url": "https://www.nasa.gov/.../pcoe/pcoe-data-set-repository/",
+      "acquisition_status": "ACCESS_REQUIRED",
+      "raw_file_acquired": false,
+      "note": "Awaiting manual portal download per official guidelines."
+    }
+  ],
+  "synthetic_fixtures": [
+    {
+      "fixture_id": "lbnl_fdd_synthetic",
+      "provenance": "SYNTHETIC_TEST_DATA",
+      "status": "LOADED_AND_VERIFIED"
+    },
+    {
+      "fixture_id": "nasa_pcoe_battery_synthetic",
+      "provenance": "SYNTHETIC_TEST_DATA",
+      "status": "LOADED_AND_VERIFIED"
+    }
+  ]
+}

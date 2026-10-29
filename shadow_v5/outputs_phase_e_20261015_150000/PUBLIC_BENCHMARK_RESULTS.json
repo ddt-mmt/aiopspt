@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-10-15T02:39:04.790280",
+  "hvac_benchmark": {
+    "dataset_id": "lbnl_fdd",
+    "model": "Threshold-based HVAC Fault Baseline",
+    "train_samples": 700,
+    "test_samples": 300,
+    "precision": 0.912,
+    "recall": 0.885,
+    "f1_score": 0.898,
+    "false_alarm_rate": 0.045,
+    "status": "VERIFIED"
+  },
+  "battery_benchmark": {
+    "dataset_id": "nasa_pcoe_battery",
+    "model": "Polynomial Degradation RUL Baseline",
+    "train_cycles": 350,
+    "test_cycles": 150,
+    "mae": 0.034,
+    "rmse": 0.048,
+    "status": "VERIFIED"
+  }
+}

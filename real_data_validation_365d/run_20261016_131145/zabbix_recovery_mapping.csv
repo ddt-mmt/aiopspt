@@ -1,0 +1,3 @@
+eventid,host,trigger_name,event_timestamp,r_eventid,recovery_timestamp,duration_seconds,recovery_status
+43982577,ME_UPS2,APC UPS: : Sensor has status Not Applicable,2026-02-03T09:01:24+00:00,0,ACTIVE,22047021,ACTIVE_EVENT
+43982576,ME_UPS2,APC UPS: : Sensor has status Not Applicable,2026-02-03T09:01:23+00:00,0,ACTIVE,22047022,ACTIVE_EVENT

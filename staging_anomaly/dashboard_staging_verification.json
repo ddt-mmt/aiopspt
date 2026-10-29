@@ -1,0 +1,37 @@
+{
+  "verification_timestamp": "2026-10-19T10:00:00Z",
+  "dashboard_file": "staging_facility_dashboard.json",
+  "status": "VERIFIED_VALID_SYNTAX",
+  "datasource_requirements": {
+    "datasource_type": "grafana-postgresql-datasource",
+    "datasource_uid": "staging_ds_placeholder",
+    "notes": "Staging Grafana datasource must be connected to a staging database containing staging_anomalies_detected and staging_sensor_health tables. Production datasource remains untouched."
+  },
+  "panels_verified": [
+    {
+      "id": 1,
+      "title": "Phase G.37 Staging Operational Summary & Disclaimer",
+      "type": "text",
+      "status": "PASS"
+    },
+    {
+      "id": 2,
+      "title": "UPS Output Load & Battery Voltage Trends (Staging)",
+      "type": "timeseries",
+      "status": "PASS"
+    },
+    {
+      "id": 3,
+      "title": "PAC Return/Supply Temp & Compressor Status (Staging)",
+      "type": "timeseries",
+      "status": "PASS"
+    },
+    {
+      "id": 4,
+      "title": "Staging Sensor Health & Data Quality Status",
+      "type": "table",
+      "status": "PASS"
+    }
+  ],
+  "production_impact": "ZERO_IMPACT"
+}

@@ -1,0 +1,29 @@
+{
+  "features": [
+    {
+      "name": "host_encoded",
+      "type": "integer",
+      "description": "Encoded host ID"
+    },
+    {
+      "name": "category_encoded",
+      "type": "integer",
+      "description": "Encoded event category"
+    },
+    {
+      "name": "severity",
+      "type": "integer",
+      "description": "Zabbix event severity/priority"
+    },
+    {
+      "name": "hour_of_day",
+      "type": "integer",
+      "description": "Hour of event timestamp UTC"
+    }
+  ],
+  "target": {
+    "name": "target",
+    "type": "binary",
+    "description": "Binary alarm event indicator"
+  }
+}

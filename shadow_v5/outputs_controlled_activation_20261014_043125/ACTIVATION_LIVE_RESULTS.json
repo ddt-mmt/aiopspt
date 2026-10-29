@@ -1,0 +1,126 @@
+{
+  "timestamp": "2026-10-14T04:32:05.241071+00:00",
+  "cycles_run": 2,
+  "records": [
+    {
+      "cycle": 1,
+      "timestamp": "2026-10-14T04:31:27.141268+00:00",
+      "host": "ME_UPS1",
+      "status": "ABSTAIN",
+      "quality": "DEGRADED_DATA",
+      "message": "Sensor stale: {'battery.capacity': 3130, 'battery.runtime_remaining': 1903}"
+    },
+    {
+      "cycle": 1,
+      "timestamp": "2026-10-14T04:31:27.141268+00:00",
+      "host": "ME_UPS2",
+      "status": "ABSTAIN",
+      "quality": "DEGRADED_DATA",
+      "message": "Sensor stale: {'battery.voltage': 1189, 'battery.capacity': 21536, 'battery.runtime_remaining': 1252}"
+    },
+    {
+      "cycle": 1,
+      "timestamp": "2026-10-14T04:31:27.141268+00:00",
+      "host": "ME_UPS3",
+      "status": "ABSTAIN",
+      "quality": "DEGRADED_DATA",
+      "message": "Sensor stale: {'battery.capacity': 13582}"
+    },
+    {
+      "cycle": 1,
+      "timestamp": "2026-10-14T04:31:27.141268+00:00",
+      "host": "ME_PAC1",
+      "status": "SUCCESS",
+      "quality": "NORMAL",
+      "health_score": 44.85,
+      "ttf_hours": null,
+      "action_status": 1
+    },
+    {
+      "cycle": 1,
+      "timestamp": "2026-10-14T04:31:27.141268+00:00",
+      "host": "ME_PAC2",
+      "status": "SUCCESS",
+      "quality": "NORMAL",
+      "health_score": 49.17,
+      "ttf_hours": null,
+      "action_status": 1
+    },
+    {
+      "cycle": 1,
+      "timestamp": "2026-10-14T04:31:27.141268+00:00",
+      "host": "ME_PAC3",
+      "status": "ABSTAIN",
+      "quality": "DEGRADED_DATA",
+      "message": "Sensor stale: {'evaporator.fan.speed': 179690}"
+    },
+    {
+      "cycle": 1,
+      "timestamp": "2026-10-14T04:31:27.141268+00:00",
+      "host": "ME_PAC4",
+      "status": "ABSTAIN",
+      "quality": "DEGRADED_DATA",
+      "message": "Sensor stale: {'evaporator.fan.speed': 179689}"
+    },
+    {
+      "cycle": 2,
+      "timestamp": "2026-10-14T04:31:47.939605+00:00",
+      "host": "ME_UPS1",
+      "status": "ABSTAIN",
+      "quality": "DEGRADED_DATA",
+      "message": "Sensor stale: {'battery.capacity': 3150, 'battery.runtime_remaining': 1923}"
+    },
+    {
+      "cycle": 2,
+      "timestamp": "2026-10-14T04:31:47.939605+00:00",
+      "host": "ME_UPS2",
+      "status": "ABSTAIN",
+      "quality": "DEGRADED_DATA",
+      "message": "Sensor stale: {'battery.voltage': 1209, 'battery.capacity': 21556, 'battery.runtime_remaining': 1272}"
+    },
+    {
+      "cycle": 2,
+      "timestamp": "2026-10-14T04:31:47.939605+00:00",
+      "host": "ME_UPS3",
+      "status": "ABSTAIN",
+      "quality": "DEGRADED_DATA",
+      "message": "Sensor stale: {'battery.capacity': 13602}"
+    },
+    {
+      "cycle": 2,
+      "timestamp": "2026-10-14T04:31:47.939605+00:00",
+      "host": "ME_PAC1",
+      "status": "SUCCESS",
+      "quality": "NORMAL",
+      "health_score": 45.94,
+      "ttf_hours": null,
+      "action_status": 1
+    },
+    {
+      "cycle": 2,
+      "timestamp": "2026-10-14T04:31:47.939605+00:00",
+      "host": "ME_PAC2",
+      "status": "SUCCESS",
+      "quality": "NORMAL",
+      "health_score": 49.25,
+      "ttf_hours": null,
+      "action_status": 1
+    },
+    {
+      "cycle": 2,
+      "timestamp": "2026-10-14T04:31:47.939605+00:00",
+      "host": "ME_PAC3",
+      "status": "ABSTAIN",
+      "quality": "DEGRADED_DATA",
+      "message": "Sensor stale: {'evaporator.fan.speed': 179710}"
+    },
+    {
+      "cycle": 2,
+      "timestamp": "2026-10-14T04:31:47.939605+00:00",
+      "host": "ME_PAC4",
+      "status": "ABSTAIN",
+      "quality": "DEGRADED_DATA",
+      "message": "Sensor stale: {'evaporator.fan.speed': 179709}"
+    }
+  ]
+}

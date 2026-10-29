@@ -1,0 +1,8 @@
+{
+  "split_strategy": "Chronological Split by Timestamp",
+  "training_period": "First 70% of observed historical span",
+  "validation_period": "Next 15% of observed historical span",
+  "holdout_period": "Final 15% of observed historical span",
+  "data_leakage_prevention": "Strictly enforced chronological ordering; no future information used in training or feature scaling.",
+  "note": "Applied per host/item based on actual sample timestamps."
+}

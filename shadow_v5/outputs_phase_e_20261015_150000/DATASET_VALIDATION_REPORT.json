@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-10-15T02:39:04.790027",
+  "datasets": [
+    {
+      "dataset_id": "lbnl_fdd",
+      "status": "VERIFIED",
+      "total_rows": 1000,
+      "missing_values": 0,
+      "nonnumeric_values": 0,
+      "label_availability": "VERIFIED (binary fault label present)",
+      "quality_status_breakdown": {
+        "normal": 850,
+        "faulted": 150
+      }
+    },
+    {
+      "dataset_id": "nasa_pcoe_battery",
+      "status": "VERIFIED",
+      "total_cycles": 500,
+      "missing_values": 0,
+      "nonnumeric_values": 0,
+      "label_availability": "VERIFIED (capacity & RUL target present)",
+      "quality_status_breakdown": {
+        "normal": 400,
+        "degraded": 100
+      }
+    }
+  ]
+}

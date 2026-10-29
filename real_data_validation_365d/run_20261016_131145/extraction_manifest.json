@@ -1,0 +1,30 @@
+{
+  "task": "PHASE G.27 \u2014 ZABBIX HISTORICAL GROUND TRUTH EXTRACTION & ML DATASET VALIDATION",
+  "mode": "READ_ONLY",
+  "zabbix_url": "http://10.28.1.110/zabbix",
+  "api_version": "7.0.23",
+  "extraction_time": "2026-10-16T13:11:45.421979+00:00",
+  "timezone": "UTC",
+  "target_hosts": [
+    "ME_UPS1",
+    "ME_UPS2",
+    "ME_UPS3",
+    "ME_PAC1",
+    "ME_PAC2",
+    "ME_PAC3",
+    "ME_PAC4"
+  ],
+  "artifacts_created": [
+    "zabbix_events_365d.csv",
+    "zabbix_recovery_mapping.csv",
+    "zabbix_sensor_event_windows.csv",
+    "ground_truth_labeling_rules.md",
+    "ground_truth_dataset_summary.json",
+    "data_quality_report.md",
+    "extraction_manifest.json"
+  ],
+  "production_changes": 0,
+  "zabbix_write_operations": 0,
+  "restarts": 0,
+  "deployment_authorization": "NOT_AUTHORIZED_FOR_DEPLOYMENT"
+}

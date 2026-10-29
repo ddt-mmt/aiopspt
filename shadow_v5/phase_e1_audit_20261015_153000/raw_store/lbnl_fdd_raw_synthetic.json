@@ -1,0 +1,7008 @@
+{
+  "dataset_id": "lbnl_fdd",
+  "provenance": "SYNTHETIC_TEST_DATA",
+  "note": "Live public download BLOCKED due to unauthenticated landing page portal requirements; using verified synthetic fixture for pipeline validation.",
+  "records_count": 1000,
+  "records": [
+    {
+      "timestamp": "2026-10-15T00:00:00Z",
+      "zone_temp_c": 21.64,
+      "supply_temp_c": 12.74,
+      "damper_pos": 27.5,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:01Z",
+      "zone_temp_c": 22.68,
+      "supply_temp_c": 15.42,
+      "damper_pos": 67.67,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:02Z",
+      "zone_temp_c": 22.83,
+      "supply_temp_c": 12.6,
+      "damper_pos": 42.19,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:03Z",
+      "zone_temp_c": 23.73,
+      "supply_temp_c": 13.2,
+      "damper_pos": 50.54,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:04Z",
+      "zone_temp_c": 23.64,
+      "supply_temp_c": 13.17,
+      "damper_pos": 64.99,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:05Z",
+      "zone_temp_c": 20.31,
+      "supply_temp_c": 12.71,
+      "damper_pos": 58.93,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:06Z",
+      "zone_temp_c": 22.1,
+      "supply_temp_c": 12.84,
+      "damper_pos": 80.58,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:07Z",
+      "zone_temp_c": 21.27,
+      "supply_temp_c": 11.7,
+      "damper_pos": 15.55,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:08Z",
+      "zone_temp_c": 24.18,
+      "supply_temp_c": 12.64,
+      "damper_pos": 9.27,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:09Z",
+      "zone_temp_c": 25.98,
+      "supply_temp_c": 14.66,
+      "damper_pos": 60.37,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:10Z",
+      "zone_temp_c": 23.42,
+      "supply_temp_c": 10.73,
+      "damper_pos": 53.62,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:11Z",
+      "zone_temp_c": 24.4,
+      "supply_temp_c": 12.75,
+      "damper_pos": 55.2,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:12Z",
+      "zone_temp_c": 23.66,
+      "supply_temp_c": 11.17,
+      "damper_pos": 86.17,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:13Z",
+      "zone_temp_c": 18.55,
+      "supply_temp_c": 11.91,
+      "damper_pos": 4.58,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:14Z",
+      "zone_temp_c": 22.29,
+      "supply_temp_c": 14.23,
+      "damper_pos": 7.98,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:15Z",
+      "zone_temp_c": 22.12,
+      "supply_temp_c": 13.69,
+      "damper_pos": 27.8,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:16Z",
+      "zone_temp_c": 20.43,
+      "supply_temp_c": 11.92,
+      "damper_pos": 37.02,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:17Z",
+      "zone_temp_c": 22.5,
+      "supply_temp_c": 14.14,
+      "damper_pos": 93.67,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:18Z",
+      "zone_temp_c": 19.95,
+      "supply_temp_c": 11.35,
+      "damper_pos": 17.11,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:19Z",
+      "zone_temp_c": 21.8,
+      "supply_temp_c": 12.11,
+      "damper_pos": 37.95,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:20Z",
+      "zone_temp_c": 25.57,
+      "supply_temp_c": 12.86,
+      "damper_pos": 55.69,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:21Z",
+      "zone_temp_c": 20.08,
+      "supply_temp_c": 10.35,
+      "damper_pos": 77.6,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:22Z",
+      "zone_temp_c": 22.08,
+      "supply_temp_c": 13.38,
+      "damper_pos": 31.55,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:23Z",
+      "zone_temp_c": 21.81,
+      "supply_temp_c": 14.03,
+      "damper_pos": 94.29,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:24Z",
+      "zone_temp_c": 23.55,
+      "supply_temp_c": 12.09,
+      "damper_pos": 65.54,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:25Z",
+      "zone_temp_c": 17.61,
+      "supply_temp_c": 15.03,
+      "damper_pos": 45.89,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:26Z",
+      "zone_temp_c": 21.82,
+      "supply_temp_c": 14.12,
+      "damper_pos": 56.14,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:27Z",
+      "zone_temp_c": 21.73,
+      "supply_temp_c": 14.98,
+      "damper_pos": 89.78,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:28Z",
+      "zone_temp_c": 20.58,
+      "supply_temp_c": 13.62,
+      "damper_pos": 99.75,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:29Z",
+      "zone_temp_c": 20.91,
+      "supply_temp_c": 12.96,
+      "damper_pos": 4.71,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:30Z",
+      "zone_temp_c": 24.71,
+      "supply_temp_c": 14.34,
+      "damper_pos": 79.21,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:31Z",
+      "zone_temp_c": 21.2,
+      "supply_temp_c": 13.26,
+      "damper_pos": 38.16,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:32Z",
+      "zone_temp_c": 25.07,
+      "supply_temp_c": 12.96,
+      "damper_pos": 97.11,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:33Z",
+      "zone_temp_c": 22.24,
+      "supply_temp_c": 12.83,
+      "damper_pos": 72.07,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:34Z",
+      "zone_temp_c": 20.71,
+      "supply_temp_c": 11.31,
+      "damper_pos": 26.68,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:35Z",
+      "zone_temp_c": 21.23,
+      "supply_temp_c": 12.44,
+      "damper_pos": 43.48,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:36Z",
+      "zone_temp_c": 16.06,
+      "supply_temp_c": 14.07,
+      "damper_pos": 87.59,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:37Z",
+      "zone_temp_c": 21.75,
+      "supply_temp_c": 14.76,
+      "damper_pos": 17.87,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:38Z",
+      "zone_temp_c": 26.31,
+      "supply_temp_c": 11.42,
+      "damper_pos": 29.84,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:39Z",
+      "zone_temp_c": 19.8,
+      "supply_temp_c": 11.42,
+      "damper_pos": 15.28,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:40Z",
+      "zone_temp_c": 22.24,
+      "supply_temp_c": 11.14,
+      "damper_pos": 77.86,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:41Z",
+      "zone_temp_c": 21.92,
+      "supply_temp_c": 12.99,
+      "damper_pos": 32.42,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:42Z",
+      "zone_temp_c": 27.71,
+      "supply_temp_c": 13.42,
+      "damper_pos": 87.87,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:43Z",
+      "zone_temp_c": 23.05,
+      "supply_temp_c": 11.88,
+      "damper_pos": 5.79,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:44Z",
+      "zone_temp_c": 26.36,
+      "supply_temp_c": 10.48,
+      "damper_pos": 8.57,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:00:45Z",
+      "zone_temp_c": 21.06,
+      "supply_temp_c": 13.05,
+      "damper_pos": 76.06,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:46Z",
+      "zone_temp_c": 22.13,
+      "supply_temp_c": 12.22,
+      "damper_pos": 47.53,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:47Z",
+      "zone_temp_c": 20.13,
+      "supply_temp_c": 12.64,
+      "damper_pos": 87.24,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:48Z",
+      "zone_temp_c": 20.47,
+      "supply_temp_c": 13.48,
+      "damper_pos": 53.93,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:49Z",
+      "zone_temp_c": 21.79,
+      "supply_temp_c": 12.0,
+      "damper_pos": 31.17,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:50Z",
+      "zone_temp_c": 25.62,
+      "supply_temp_c": 12.93,
+      "damper_pos": 43.81,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:51Z",
+      "zone_temp_c": 20.74,
+      "supply_temp_c": 12.92,
+      "damper_pos": 22.47,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:52Z",
+      "zone_temp_c": 20.25,
+      "supply_temp_c": 14.7,
+      "damper_pos": 23.01,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:53Z",
+      "zone_temp_c": 22.18,
+      "supply_temp_c": 13.57,
+      "damper_pos": 63.11,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:54Z",
+      "zone_temp_c": 22.72,
+      "supply_temp_c": 16.23,
+      "damper_pos": 85.96,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:55Z",
+      "zone_temp_c": 23.66,
+      "supply_temp_c": 13.48,
+      "damper_pos": 66.9,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:56Z",
+      "zone_temp_c": 22.3,
+      "supply_temp_c": 13.78,
+      "damper_pos": 93.55,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:57Z",
+      "zone_temp_c": 19.45,
+      "supply_temp_c": 12.27,
+      "damper_pos": 78.46,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:58Z",
+      "zone_temp_c": 22.57,
+      "supply_temp_c": 12.09,
+      "damper_pos": 9.69,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:00:59Z",
+      "zone_temp_c": 19.62,
+      "supply_temp_c": 13.66,
+      "damper_pos": 46.7,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:00Z",
+      "zone_temp_c": 21.51,
+      "supply_temp_c": 10.78,
+      "damper_pos": 98.42,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:01Z",
+      "zone_temp_c": 24.07,
+      "supply_temp_c": 13.88,
+      "damper_pos": 33.93,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:02Z",
+      "zone_temp_c": 23.22,
+      "supply_temp_c": 12.13,
+      "damper_pos": 19.02,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:03Z",
+      "zone_temp_c": 19.52,
+      "supply_temp_c": 13.5,
+      "damper_pos": 27.85,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:04Z",
+      "zone_temp_c": 22.01,
+      "supply_temp_c": 16.4,
+      "damper_pos": 44.31,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:05Z",
+      "zone_temp_c": 24.04,
+      "supply_temp_c": 11.55,
+      "damper_pos": 5.06,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:06Z",
+      "zone_temp_c": 26.75,
+      "supply_temp_c": 12.99,
+      "damper_pos": 96.9,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:07Z",
+      "zone_temp_c": 26.35,
+      "supply_temp_c": 11.7,
+      "damper_pos": 16.63,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:01:08Z",
+      "zone_temp_c": 20.27,
+      "supply_temp_c": 13.09,
+      "damper_pos": 40.1,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:09Z",
+      "zone_temp_c": 24.28,
+      "supply_temp_c": 13.53,
+      "damper_pos": 98.53,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:10Z",
+      "zone_temp_c": 21.58,
+      "supply_temp_c": 15.61,
+      "damper_pos": 45.5,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:11Z",
+      "zone_temp_c": 16.44,
+      "supply_temp_c": 14.75,
+      "damper_pos": 99.54,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:12Z",
+      "zone_temp_c": 18.26,
+      "supply_temp_c": 12.18,
+      "damper_pos": 15.48,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:13Z",
+      "zone_temp_c": 20.1,
+      "supply_temp_c": 16.78,
+      "damper_pos": 57.92,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:14Z",
+      "zone_temp_c": 17.99,
+      "supply_temp_c": 12.35,
+      "damper_pos": 5.72,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:15Z",
+      "zone_temp_c": 19.45,
+      "supply_temp_c": 12.11,
+      "damper_pos": 85.27,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:16Z",
+      "zone_temp_c": 25.5,
+      "supply_temp_c": 16.19,
+      "damper_pos": 8.01,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:17Z",
+      "zone_temp_c": 23.32,
+      "supply_temp_c": 14.86,
+      "damper_pos": 67.52,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:18Z",
+      "zone_temp_c": 22.12,
+      "supply_temp_c": 13.75,
+      "damper_pos": 89.03,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:19Z",
+      "zone_temp_c": 22.08,
+      "supply_temp_c": 15.01,
+      "damper_pos": 61.94,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:20Z",
+      "zone_temp_c": 19.11,
+      "supply_temp_c": 13.97,
+      "damper_pos": 52.28,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:21Z",
+      "zone_temp_c": 23.55,
+      "supply_temp_c": 12.6,
+      "damper_pos": 71.62,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:22Z",
+      "zone_temp_c": 22.18,
+      "supply_temp_c": 14.5,
+      "damper_pos": 67.17,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:23Z",
+      "zone_temp_c": 21.33,
+      "supply_temp_c": 14.24,
+      "damper_pos": 75.19,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:24Z",
+      "zone_temp_c": 24.49,
+      "supply_temp_c": 13.73,
+      "damper_pos": 99.85,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:25Z",
+      "zone_temp_c": 22.97,
+      "supply_temp_c": 12.99,
+      "damper_pos": 21.32,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:26Z",
+      "zone_temp_c": 21.45,
+      "supply_temp_c": 16.47,
+      "damper_pos": 88.09,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:27Z",
+      "zone_temp_c": 23.74,
+      "supply_temp_c": 12.01,
+      "damper_pos": 15.77,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:28Z",
+      "zone_temp_c": 23.96,
+      "supply_temp_c": 10.98,
+      "damper_pos": 61.17,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:29Z",
+      "zone_temp_c": 25.63,
+      "supply_temp_c": 12.82,
+      "damper_pos": 0.78,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:01:30Z",
+      "zone_temp_c": 22.86,
+      "supply_temp_c": 11.85,
+      "damper_pos": 66.34,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:31Z",
+      "zone_temp_c": 23.24,
+      "supply_temp_c": 12.7,
+      "damper_pos": 11.54,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:32Z",
+      "zone_temp_c": 24.48,
+      "supply_temp_c": 14.19,
+      "damper_pos": 27.23,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:33Z",
+      "zone_temp_c": 18.86,
+      "supply_temp_c": 11.54,
+      "damper_pos": 20.36,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:34Z",
+      "zone_temp_c": 20.7,
+      "supply_temp_c": 12.12,
+      "damper_pos": 48.85,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:35Z",
+      "zone_temp_c": 26.01,
+      "supply_temp_c": 11.37,
+      "damper_pos": 9.23,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:01:36Z",
+      "zone_temp_c": 20.22,
+      "supply_temp_c": 13.56,
+      "damper_pos": 0.35,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:37Z",
+      "zone_temp_c": 22.47,
+      "supply_temp_c": 10.88,
+      "damper_pos": 26.2,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:38Z",
+      "zone_temp_c": 21.83,
+      "supply_temp_c": 11.1,
+      "damper_pos": 42.77,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:39Z",
+      "zone_temp_c": 22.99,
+      "supply_temp_c": 13.04,
+      "damper_pos": 88.31,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:40Z",
+      "zone_temp_c": 24.59,
+      "supply_temp_c": 11.93,
+      "damper_pos": 83.46,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:41Z",
+      "zone_temp_c": 20.77,
+      "supply_temp_c": 12.58,
+      "damper_pos": 12.74,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:42Z",
+      "zone_temp_c": 20.08,
+      "supply_temp_c": 16.0,
+      "damper_pos": 79.61,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:43Z",
+      "zone_temp_c": 25.43,
+      "supply_temp_c": 10.53,
+      "damper_pos": 21.01,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:44Z",
+      "zone_temp_c": 22.0,
+      "supply_temp_c": 13.7,
+      "damper_pos": 78.01,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:45Z",
+      "zone_temp_c": 23.91,
+      "supply_temp_c": 11.98,
+      "damper_pos": 62.07,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:46Z",
+      "zone_temp_c": 25.25,
+      "supply_temp_c": 15.85,
+      "damper_pos": 86.46,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:47Z",
+      "zone_temp_c": 26.51,
+      "supply_temp_c": 12.59,
+      "damper_pos": 88.14,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:48Z",
+      "zone_temp_c": 26.03,
+      "supply_temp_c": 13.38,
+      "damper_pos": 33.22,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:49Z",
+      "zone_temp_c": 26.08,
+      "supply_temp_c": 11.86,
+      "damper_pos": 86.41,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:50Z",
+      "zone_temp_c": 22.73,
+      "supply_temp_c": 11.9,
+      "damper_pos": 78.74,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:51Z",
+      "zone_temp_c": 25.95,
+      "supply_temp_c": 14.91,
+      "damper_pos": 85.86,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:52Z",
+      "zone_temp_c": 22.79,
+      "supply_temp_c": 15.72,
+      "damper_pos": 46.03,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:53Z",
+      "zone_temp_c": 20.49,
+      "supply_temp_c": 15.51,
+      "damper_pos": 22.76,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:54Z",
+      "zone_temp_c": 23.62,
+      "supply_temp_c": 13.15,
+      "damper_pos": 32.83,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:55Z",
+      "zone_temp_c": 26.3,
+      "supply_temp_c": 10.05,
+      "damper_pos": 27.91,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:56Z",
+      "zone_temp_c": 20.41,
+      "supply_temp_c": 11.82,
+      "damper_pos": 98.11,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:57Z",
+      "zone_temp_c": 16.24,
+      "supply_temp_c": 12.2,
+      "damper_pos": 11.53,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:58Z",
+      "zone_temp_c": 23.54,
+      "supply_temp_c": 12.83,
+      "damper_pos": 96.25,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:01:59Z",
+      "zone_temp_c": 21.88,
+      "supply_temp_c": 13.72,
+      "damper_pos": 43.46,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:00Z",
+      "zone_temp_c": 21.71,
+      "supply_temp_c": 11.71,
+      "damper_pos": 60.62,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:01Z",
+      "zone_temp_c": 19.54,
+      "supply_temp_c": 12.89,
+      "damper_pos": 57.66,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:02Z",
+      "zone_temp_c": 21.88,
+      "supply_temp_c": 15.36,
+      "damper_pos": 0.17,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:03Z",
+      "zone_temp_c": 24.78,
+      "supply_temp_c": 12.16,
+      "damper_pos": 71.94,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:04Z",
+      "zone_temp_c": 21.81,
+      "supply_temp_c": 10.77,
+      "damper_pos": 36.42,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:05Z",
+      "zone_temp_c": 25.34,
+      "supply_temp_c": 13.94,
+      "damper_pos": 33.02,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:06Z",
+      "zone_temp_c": 20.1,
+      "supply_temp_c": 15.68,
+      "damper_pos": 71.98,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:07Z",
+      "zone_temp_c": 21.33,
+      "supply_temp_c": 14.23,
+      "damper_pos": 40.84,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:08Z",
+      "zone_temp_c": 20.29,
+      "supply_temp_c": 13.72,
+      "damper_pos": 12.73,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:09Z",
+      "zone_temp_c": 16.79,
+      "supply_temp_c": 14.71,
+      "damper_pos": 67.73,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:10Z",
+      "zone_temp_c": 24.83,
+      "supply_temp_c": 11.81,
+      "damper_pos": 30.09,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:11Z",
+      "zone_temp_c": 21.93,
+      "supply_temp_c": 12.99,
+      "damper_pos": 28.69,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:12Z",
+      "zone_temp_c": 19.02,
+      "supply_temp_c": 13.84,
+      "damper_pos": 65.47,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:13Z",
+      "zone_temp_c": 19.36,
+      "supply_temp_c": 13.35,
+      "damper_pos": 21.37,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:14Z",
+      "zone_temp_c": 16.7,
+      "supply_temp_c": 13.54,
+      "damper_pos": 79.6,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:15Z",
+      "zone_temp_c": 22.51,
+      "supply_temp_c": 13.55,
+      "damper_pos": 51.55,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:16Z",
+      "zone_temp_c": 20.48,
+      "supply_temp_c": 11.99,
+      "damper_pos": 81.84,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:17Z",
+      "zone_temp_c": 22.03,
+      "supply_temp_c": 10.76,
+      "damper_pos": 22.46,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:18Z",
+      "zone_temp_c": 22.17,
+      "supply_temp_c": 13.32,
+      "damper_pos": 24.48,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:19Z",
+      "zone_temp_c": 17.19,
+      "supply_temp_c": 13.45,
+      "damper_pos": 7.28,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:20Z",
+      "zone_temp_c": 18.97,
+      "supply_temp_c": 14.08,
+      "damper_pos": 19.44,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:21Z",
+      "zone_temp_c": 21.03,
+      "supply_temp_c": 11.35,
+      "damper_pos": 24.4,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:22Z",
+      "zone_temp_c": 21.85,
+      "supply_temp_c": 12.87,
+      "damper_pos": 75.1,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:23Z",
+      "zone_temp_c": 22.15,
+      "supply_temp_c": 12.29,
+      "damper_pos": 42.51,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:24Z",
+      "zone_temp_c": 24.83,
+      "supply_temp_c": 16.37,
+      "damper_pos": 51.8,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:25Z",
+      "zone_temp_c": 23.8,
+      "supply_temp_c": 13.35,
+      "damper_pos": 84.83,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:26Z",
+      "zone_temp_c": 17.67,
+      "supply_temp_c": 13.73,
+      "damper_pos": 66.76,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:27Z",
+      "zone_temp_c": 25.35,
+      "supply_temp_c": 12.85,
+      "damper_pos": 95.0,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:28Z",
+      "zone_temp_c": 24.67,
+      "supply_temp_c": 11.7,
+      "damper_pos": 71.93,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:29Z",
+      "zone_temp_c": 17.29,
+      "supply_temp_c": 12.92,
+      "damper_pos": 54.79,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:30Z",
+      "zone_temp_c": 25.29,
+      "supply_temp_c": 11.51,
+      "damper_pos": 47.47,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:31Z",
+      "zone_temp_c": 21.89,
+      "supply_temp_c": 14.13,
+      "damper_pos": 63.77,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:32Z",
+      "zone_temp_c": 22.3,
+      "supply_temp_c": 11.19,
+      "damper_pos": 62.67,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:33Z",
+      "zone_temp_c": 21.85,
+      "supply_temp_c": 13.6,
+      "damper_pos": 28.57,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:34Z",
+      "zone_temp_c": 21.7,
+      "supply_temp_c": 14.3,
+      "damper_pos": 54.02,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:35Z",
+      "zone_temp_c": 23.17,
+      "supply_temp_c": 13.83,
+      "damper_pos": 69.39,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:36Z",
+      "zone_temp_c": 21.75,
+      "supply_temp_c": 12.47,
+      "damper_pos": 40.76,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:37Z",
+      "zone_temp_c": 19.5,
+      "supply_temp_c": 12.59,
+      "damper_pos": 20.68,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:38Z",
+      "zone_temp_c": 17.25,
+      "supply_temp_c": 14.56,
+      "damper_pos": 58.41,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:39Z",
+      "zone_temp_c": 20.35,
+      "supply_temp_c": 10.21,
+      "damper_pos": 76.56,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:40Z",
+      "zone_temp_c": 21.8,
+      "supply_temp_c": 13.11,
+      "damper_pos": 35.18,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:41Z",
+      "zone_temp_c": 22.11,
+      "supply_temp_c": 10.06,
+      "damper_pos": 95.34,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:42Z",
+      "zone_temp_c": 18.38,
+      "supply_temp_c": 14.21,
+      "damper_pos": 54.61,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:43Z",
+      "zone_temp_c": 20.59,
+      "supply_temp_c": 12.36,
+      "damper_pos": 21.94,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:44Z",
+      "zone_temp_c": 21.44,
+      "supply_temp_c": 13.14,
+      "damper_pos": 33.61,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:45Z",
+      "zone_temp_c": 20.9,
+      "supply_temp_c": 11.62,
+      "damper_pos": 16.5,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:46Z",
+      "zone_temp_c": 20.72,
+      "supply_temp_c": 13.16,
+      "damper_pos": 62.23,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:47Z",
+      "zone_temp_c": 24.47,
+      "supply_temp_c": 13.25,
+      "damper_pos": 56.44,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:48Z",
+      "zone_temp_c": 25.54,
+      "supply_temp_c": 13.36,
+      "damper_pos": 13.57,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:02:49Z",
+      "zone_temp_c": 21.22,
+      "supply_temp_c": 13.11,
+      "damper_pos": 37.91,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:50Z",
+      "zone_temp_c": 22.53,
+      "supply_temp_c": 14.3,
+      "damper_pos": 76.12,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:51Z",
+      "zone_temp_c": 18.97,
+      "supply_temp_c": 14.72,
+      "damper_pos": 83.19,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:52Z",
+      "zone_temp_c": 21.99,
+      "supply_temp_c": 13.62,
+      "damper_pos": 1.94,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:53Z",
+      "zone_temp_c": 11.55,
+      "supply_temp_c": 11.41,
+      "damper_pos": 35.0,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:54Z",
+      "zone_temp_c": 19.44,
+      "supply_temp_c": 10.88,
+      "damper_pos": 65.18,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:55Z",
+      "zone_temp_c": 22.16,
+      "supply_temp_c": 9.33,
+      "damper_pos": 19.94,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:56Z",
+      "zone_temp_c": 23.43,
+      "supply_temp_c": 13.11,
+      "damper_pos": 12.62,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:57Z",
+      "zone_temp_c": 20.44,
+      "supply_temp_c": 11.31,
+      "damper_pos": 21.8,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:58Z",
+      "zone_temp_c": 20.67,
+      "supply_temp_c": 10.57,
+      "damper_pos": 16.78,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:02:59Z",
+      "zone_temp_c": 18.76,
+      "supply_temp_c": 11.45,
+      "damper_pos": 11.45,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:00Z",
+      "zone_temp_c": 24.73,
+      "supply_temp_c": 9.48,
+      "damper_pos": 10.81,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:01Z",
+      "zone_temp_c": 24.13,
+      "supply_temp_c": 13.21,
+      "damper_pos": 67.73,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:02Z",
+      "zone_temp_c": 24.43,
+      "supply_temp_c": 12.61,
+      "damper_pos": 71.5,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:03Z",
+      "zone_temp_c": 25.4,
+      "supply_temp_c": 14.06,
+      "damper_pos": 62.72,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:04Z",
+      "zone_temp_c": 25.45,
+      "supply_temp_c": 14.54,
+      "damper_pos": 85.03,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:05Z",
+      "zone_temp_c": 20.97,
+      "supply_temp_c": 12.55,
+      "damper_pos": 98.38,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:06Z",
+      "zone_temp_c": 22.47,
+      "supply_temp_c": 11.64,
+      "damper_pos": 42.84,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:07Z",
+      "zone_temp_c": 19.96,
+      "supply_temp_c": 14.29,
+      "damper_pos": 34.12,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:08Z",
+      "zone_temp_c": 24.72,
+      "supply_temp_c": 10.74,
+      "damper_pos": 10.55,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:09Z",
+      "zone_temp_c": 25.44,
+      "supply_temp_c": 12.48,
+      "damper_pos": 82.87,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:10Z",
+      "zone_temp_c": 21.29,
+      "supply_temp_c": 11.45,
+      "damper_pos": 73.38,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:11Z",
+      "zone_temp_c": 23.94,
+      "supply_temp_c": 12.74,
+      "damper_pos": 80.82,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:12Z",
+      "zone_temp_c": 19.21,
+      "supply_temp_c": 12.59,
+      "damper_pos": 43.56,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:13Z",
+      "zone_temp_c": 21.76,
+      "supply_temp_c": 11.82,
+      "damper_pos": 85.17,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:14Z",
+      "zone_temp_c": 22.52,
+      "supply_temp_c": 12.44,
+      "damper_pos": 88.16,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:15Z",
+      "zone_temp_c": 22.11,
+      "supply_temp_c": 14.68,
+      "damper_pos": 61.03,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:16Z",
+      "zone_temp_c": 21.56,
+      "supply_temp_c": 13.25,
+      "damper_pos": 85.1,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:17Z",
+      "zone_temp_c": 22.72,
+      "supply_temp_c": 13.94,
+      "damper_pos": 79.78,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:18Z",
+      "zone_temp_c": 19.23,
+      "supply_temp_c": 15.61,
+      "damper_pos": 70.12,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:19Z",
+      "zone_temp_c": 21.94,
+      "supply_temp_c": 13.21,
+      "damper_pos": 94.81,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:20Z",
+      "zone_temp_c": 25.43,
+      "supply_temp_c": 14.23,
+      "damper_pos": 48.86,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:21Z",
+      "zone_temp_c": 22.2,
+      "supply_temp_c": 10.71,
+      "damper_pos": 64.59,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:22Z",
+      "zone_temp_c": 17.57,
+      "supply_temp_c": 13.15,
+      "damper_pos": 9.31,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:23Z",
+      "zone_temp_c": 22.68,
+      "supply_temp_c": 15.26,
+      "damper_pos": 30.62,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:24Z",
+      "zone_temp_c": 19.53,
+      "supply_temp_c": 12.17,
+      "damper_pos": 53.09,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:25Z",
+      "zone_temp_c": 18.31,
+      "supply_temp_c": 14.12,
+      "damper_pos": 33.08,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:26Z",
+      "zone_temp_c": 21.42,
+      "supply_temp_c": 11.86,
+      "damper_pos": 25.14,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:27Z",
+      "zone_temp_c": 23.19,
+      "supply_temp_c": 13.67,
+      "damper_pos": 11.96,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:28Z",
+      "zone_temp_c": 17.87,
+      "supply_temp_c": 12.43,
+      "damper_pos": 18.51,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:29Z",
+      "zone_temp_c": 22.6,
+      "supply_temp_c": 14.69,
+      "damper_pos": 72.46,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:30Z",
+      "zone_temp_c": 25.02,
+      "supply_temp_c": 12.73,
+      "damper_pos": 28.3,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:31Z",
+      "zone_temp_c": 23.33,
+      "supply_temp_c": 13.58,
+      "damper_pos": 22.75,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:32Z",
+      "zone_temp_c": 22.18,
+      "supply_temp_c": 13.23,
+      "damper_pos": 53.41,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:33Z",
+      "zone_temp_c": 20.97,
+      "supply_temp_c": 17.01,
+      "damper_pos": 55.34,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:03:34Z",
+      "zone_temp_c": 21.58,
+      "supply_temp_c": 12.26,
+      "damper_pos": 86.85,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:35Z",
+      "zone_temp_c": 16.93,
+      "supply_temp_c": 13.17,
+      "damper_pos": 57.41,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:36Z",
+      "zone_temp_c": 19.36,
+      "supply_temp_c": 13.31,
+      "damper_pos": 18.44,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:37Z",
+      "zone_temp_c": 27.64,
+      "supply_temp_c": 14.13,
+      "damper_pos": 47.77,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:38Z",
+      "zone_temp_c": 23.11,
+      "supply_temp_c": 11.64,
+      "damper_pos": 7.41,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:39Z",
+      "zone_temp_c": 21.43,
+      "supply_temp_c": 12.64,
+      "damper_pos": 14.92,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:40Z",
+      "zone_temp_c": 20.04,
+      "supply_temp_c": 12.51,
+      "damper_pos": 99.39,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:41Z",
+      "zone_temp_c": 25.13,
+      "supply_temp_c": 14.73,
+      "damper_pos": 60.63,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:42Z",
+      "zone_temp_c": 22.45,
+      "supply_temp_c": 11.96,
+      "damper_pos": 52.26,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:43Z",
+      "zone_temp_c": 19.43,
+      "supply_temp_c": 13.5,
+      "damper_pos": 86.02,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:44Z",
+      "zone_temp_c": 24.13,
+      "supply_temp_c": 12.92,
+      "damper_pos": 62.1,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:45Z",
+      "zone_temp_c": 18.83,
+      "supply_temp_c": 11.43,
+      "damper_pos": 94.76,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:46Z",
+      "zone_temp_c": 22.45,
+      "supply_temp_c": 14.0,
+      "damper_pos": 66.04,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:47Z",
+      "zone_temp_c": 22.85,
+      "supply_temp_c": 13.77,
+      "damper_pos": 7.51,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:48Z",
+      "zone_temp_c": 24.74,
+      "supply_temp_c": 13.03,
+      "damper_pos": 59.38,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:49Z",
+      "zone_temp_c": 21.53,
+      "supply_temp_c": 14.05,
+      "damper_pos": 70.7,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:50Z",
+      "zone_temp_c": 21.2,
+      "supply_temp_c": 11.42,
+      "damper_pos": 68.74,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:51Z",
+      "zone_temp_c": 25.91,
+      "supply_temp_c": 11.78,
+      "damper_pos": 62.51,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:52Z",
+      "zone_temp_c": 18.92,
+      "supply_temp_c": 10.04,
+      "damper_pos": 42.51,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:53Z",
+      "zone_temp_c": 18.53,
+      "supply_temp_c": 12.4,
+      "damper_pos": 90.84,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:54Z",
+      "zone_temp_c": 22.45,
+      "supply_temp_c": 12.49,
+      "damper_pos": 16.59,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:55Z",
+      "zone_temp_c": 20.53,
+      "supply_temp_c": 15.33,
+      "damper_pos": 56.92,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:56Z",
+      "zone_temp_c": 21.69,
+      "supply_temp_c": 13.75,
+      "damper_pos": 68.87,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:57Z",
+      "zone_temp_c": 20.14,
+      "supply_temp_c": 9.59,
+      "damper_pos": 50.05,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:58Z",
+      "zone_temp_c": 20.98,
+      "supply_temp_c": 13.02,
+      "damper_pos": 3.99,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:03:59Z",
+      "zone_temp_c": 19.99,
+      "supply_temp_c": 13.55,
+      "damper_pos": 25.04,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:00Z",
+      "zone_temp_c": 27.37,
+      "supply_temp_c": 15.08,
+      "damper_pos": 83.6,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:01Z",
+      "zone_temp_c": 16.54,
+      "supply_temp_c": 11.32,
+      "damper_pos": 99.96,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:02Z",
+      "zone_temp_c": 21.07,
+      "supply_temp_c": 11.95,
+      "damper_pos": 4.02,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:03Z",
+      "zone_temp_c": 22.11,
+      "supply_temp_c": 11.31,
+      "damper_pos": 65.15,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:04Z",
+      "zone_temp_c": 23.37,
+      "supply_temp_c": 12.52,
+      "damper_pos": 58.53,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:05Z",
+      "zone_temp_c": 20.07,
+      "supply_temp_c": 11.69,
+      "damper_pos": 9.12,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:06Z",
+      "zone_temp_c": 20.7,
+      "supply_temp_c": 14.1,
+      "damper_pos": 67.01,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:07Z",
+      "zone_temp_c": 23.4,
+      "supply_temp_c": 11.95,
+      "damper_pos": 69.37,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:08Z",
+      "zone_temp_c": 20.57,
+      "supply_temp_c": 16.51,
+      "damper_pos": 81.36,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:09Z",
+      "zone_temp_c": 19.38,
+      "supply_temp_c": 12.49,
+      "damper_pos": 31.45,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:10Z",
+      "zone_temp_c": 19.06,
+      "supply_temp_c": 16.56,
+      "damper_pos": 40.42,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:11Z",
+      "zone_temp_c": 14.59,
+      "supply_temp_c": 12.59,
+      "damper_pos": 65.77,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:12Z",
+      "zone_temp_c": 19.51,
+      "supply_temp_c": 12.59,
+      "damper_pos": 18.76,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:13Z",
+      "zone_temp_c": 19.29,
+      "supply_temp_c": 14.92,
+      "damper_pos": 62.54,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:14Z",
+      "zone_temp_c": 22.11,
+      "supply_temp_c": 11.99,
+      "damper_pos": 54.92,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:15Z",
+      "zone_temp_c": 24.41,
+      "supply_temp_c": 12.29,
+      "damper_pos": 69.83,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:16Z",
+      "zone_temp_c": 26.86,
+      "supply_temp_c": 15.79,
+      "damper_pos": 60.89,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:17Z",
+      "zone_temp_c": 22.1,
+      "supply_temp_c": 13.88,
+      "damper_pos": 55.08,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:18Z",
+      "zone_temp_c": 20.95,
+      "supply_temp_c": 12.79,
+      "damper_pos": 99.23,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:19Z",
+      "zone_temp_c": 24.38,
+      "supply_temp_c": 12.13,
+      "damper_pos": 11.75,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:20Z",
+      "zone_temp_c": 23.45,
+      "supply_temp_c": 11.47,
+      "damper_pos": 71.66,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:21Z",
+      "zone_temp_c": 20.0,
+      "supply_temp_c": 12.93,
+      "damper_pos": 83.47,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:22Z",
+      "zone_temp_c": 23.85,
+      "supply_temp_c": 12.86,
+      "damper_pos": 55.13,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:23Z",
+      "zone_temp_c": 17.8,
+      "supply_temp_c": 15.26,
+      "damper_pos": 50.82,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:24Z",
+      "zone_temp_c": 25.63,
+      "supply_temp_c": 10.94,
+      "damper_pos": 27.62,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:25Z",
+      "zone_temp_c": 22.64,
+      "supply_temp_c": 11.5,
+      "damper_pos": 93.42,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:26Z",
+      "zone_temp_c": 17.37,
+      "supply_temp_c": 12.86,
+      "damper_pos": 28.28,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:27Z",
+      "zone_temp_c": 21.0,
+      "supply_temp_c": 14.9,
+      "damper_pos": 99.89,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:28Z",
+      "zone_temp_c": 20.58,
+      "supply_temp_c": 13.06,
+      "damper_pos": 53.86,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:29Z",
+      "zone_temp_c": 20.22,
+      "supply_temp_c": 14.57,
+      "damper_pos": 54.34,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:30Z",
+      "zone_temp_c": 19.88,
+      "supply_temp_c": 13.37,
+      "damper_pos": 18.87,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:31Z",
+      "zone_temp_c": 20.95,
+      "supply_temp_c": 11.15,
+      "damper_pos": 23.36,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:32Z",
+      "zone_temp_c": 22.12,
+      "supply_temp_c": 12.56,
+      "damper_pos": 74.47,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:33Z",
+      "zone_temp_c": 20.73,
+      "supply_temp_c": 10.37,
+      "damper_pos": 38.61,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:34Z",
+      "zone_temp_c": 19.61,
+      "supply_temp_c": 10.62,
+      "damper_pos": 98.08,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:35Z",
+      "zone_temp_c": 21.31,
+      "supply_temp_c": 13.01,
+      "damper_pos": 50.23,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:36Z",
+      "zone_temp_c": 17.74,
+      "supply_temp_c": 11.37,
+      "damper_pos": 87.42,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:37Z",
+      "zone_temp_c": 19.16,
+      "supply_temp_c": 13.67,
+      "damper_pos": 45.69,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:38Z",
+      "zone_temp_c": 21.56,
+      "supply_temp_c": 11.48,
+      "damper_pos": 65.48,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:39Z",
+      "zone_temp_c": 23.59,
+      "supply_temp_c": 14.39,
+      "damper_pos": 96.92,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:40Z",
+      "zone_temp_c": 19.97,
+      "supply_temp_c": 14.96,
+      "damper_pos": 64.98,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:41Z",
+      "zone_temp_c": 24.92,
+      "supply_temp_c": 10.65,
+      "damper_pos": 85.93,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:42Z",
+      "zone_temp_c": 20.41,
+      "supply_temp_c": 13.9,
+      "damper_pos": 71.87,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:43Z",
+      "zone_temp_c": 22.3,
+      "supply_temp_c": 9.96,
+      "damper_pos": 3.59,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:44Z",
+      "zone_temp_c": 25.21,
+      "supply_temp_c": 13.88,
+      "damper_pos": 92.09,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:45Z",
+      "zone_temp_c": 26.14,
+      "supply_temp_c": 12.96,
+      "damper_pos": 43.4,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:46Z",
+      "zone_temp_c": 24.89,
+      "supply_temp_c": 14.23,
+      "damper_pos": 87.26,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:47Z",
+      "zone_temp_c": 18.39,
+      "supply_temp_c": 13.8,
+      "damper_pos": 90.34,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:48Z",
+      "zone_temp_c": 26.27,
+      "supply_temp_c": 13.76,
+      "damper_pos": 29.34,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:49Z",
+      "zone_temp_c": 21.01,
+      "supply_temp_c": 13.6,
+      "damper_pos": 53.12,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:50Z",
+      "zone_temp_c": 17.94,
+      "supply_temp_c": 11.93,
+      "damper_pos": 17.0,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:51Z",
+      "zone_temp_c": 26.45,
+      "supply_temp_c": 14.44,
+      "damper_pos": 61.97,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:52Z",
+      "zone_temp_c": 22.32,
+      "supply_temp_c": 16.31,
+      "damper_pos": 14.31,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:53Z",
+      "zone_temp_c": 20.14,
+      "supply_temp_c": 13.28,
+      "damper_pos": 25.53,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:54Z",
+      "zone_temp_c": 26.51,
+      "supply_temp_c": 13.16,
+      "damper_pos": 90.12,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:55Z",
+      "zone_temp_c": 21.36,
+      "supply_temp_c": 12.21,
+      "damper_pos": 44.17,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:56Z",
+      "zone_temp_c": 20.12,
+      "supply_temp_c": 14.65,
+      "damper_pos": 63.89,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:57Z",
+      "zone_temp_c": 20.31,
+      "supply_temp_c": 13.52,
+      "damper_pos": 84.53,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:58Z",
+      "zone_temp_c": 22.77,
+      "supply_temp_c": 14.4,
+      "damper_pos": 48.32,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:04:59Z",
+      "zone_temp_c": 22.26,
+      "supply_temp_c": 14.95,
+      "damper_pos": 57.48,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:00Z",
+      "zone_temp_c": 24.09,
+      "supply_temp_c": 12.94,
+      "damper_pos": 97.79,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:01Z",
+      "zone_temp_c": 20.91,
+      "supply_temp_c": 11.99,
+      "damper_pos": 56.59,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:02Z",
+      "zone_temp_c": 20.38,
+      "supply_temp_c": 10.72,
+      "damper_pos": 4.9,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:03Z",
+      "zone_temp_c": 19.7,
+      "supply_temp_c": 11.91,
+      "damper_pos": 90.42,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:04Z",
+      "zone_temp_c": 20.99,
+      "supply_temp_c": 15.62,
+      "damper_pos": 60.71,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:05Z",
+      "zone_temp_c": 19.87,
+      "supply_temp_c": 14.71,
+      "damper_pos": 62.09,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:06Z",
+      "zone_temp_c": 20.25,
+      "supply_temp_c": 10.85,
+      "damper_pos": 65.92,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:07Z",
+      "zone_temp_c": 23.85,
+      "supply_temp_c": 11.21,
+      "damper_pos": 90.34,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:08Z",
+      "zone_temp_c": 20.7,
+      "supply_temp_c": 11.97,
+      "damper_pos": 44.08,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:09Z",
+      "zone_temp_c": 18.44,
+      "supply_temp_c": 11.83,
+      "damper_pos": 9.01,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:10Z",
+      "zone_temp_c": 20.84,
+      "supply_temp_c": 15.39,
+      "damper_pos": 17.56,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:11Z",
+      "zone_temp_c": 24.1,
+      "supply_temp_c": 14.38,
+      "damper_pos": 97.15,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:12Z",
+      "zone_temp_c": 16.57,
+      "supply_temp_c": 12.36,
+      "damper_pos": 83.05,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:13Z",
+      "zone_temp_c": 21.8,
+      "supply_temp_c": 15.8,
+      "damper_pos": 48.18,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:14Z",
+      "zone_temp_c": 23.44,
+      "supply_temp_c": 10.67,
+      "damper_pos": 33.87,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:15Z",
+      "zone_temp_c": 26.81,
+      "supply_temp_c": 15.55,
+      "damper_pos": 14.08,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:05:16Z",
+      "zone_temp_c": 26.85,
+      "supply_temp_c": 12.38,
+      "damper_pos": 72.42,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:17Z",
+      "zone_temp_c": 28.49,
+      "supply_temp_c": 12.51,
+      "damper_pos": 80.46,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:18Z",
+      "zone_temp_c": 19.06,
+      "supply_temp_c": 14.98,
+      "damper_pos": 1.39,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:19Z",
+      "zone_temp_c": 19.32,
+      "supply_temp_c": 12.62,
+      "damper_pos": 67.28,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:20Z",
+      "zone_temp_c": 20.45,
+      "supply_temp_c": 11.24,
+      "damper_pos": 82.24,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:21Z",
+      "zone_temp_c": 23.11,
+      "supply_temp_c": 12.74,
+      "damper_pos": 23.38,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:22Z",
+      "zone_temp_c": 27.13,
+      "supply_temp_c": 13.49,
+      "damper_pos": 56.14,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:23Z",
+      "zone_temp_c": 23.52,
+      "supply_temp_c": 12.46,
+      "damper_pos": 6.32,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:24Z",
+      "zone_temp_c": 24.45,
+      "supply_temp_c": 10.06,
+      "damper_pos": 30.22,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:25Z",
+      "zone_temp_c": 20.85,
+      "supply_temp_c": 13.45,
+      "damper_pos": 94.63,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:26Z",
+      "zone_temp_c": 21.02,
+      "supply_temp_c": 14.65,
+      "damper_pos": 9.72,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:27Z",
+      "zone_temp_c": 23.03,
+      "supply_temp_c": 12.47,
+      "damper_pos": 45.36,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:28Z",
+      "zone_temp_c": 20.03,
+      "supply_temp_c": 10.83,
+      "damper_pos": 94.6,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:29Z",
+      "zone_temp_c": 18.4,
+      "supply_temp_c": 14.2,
+      "damper_pos": 15.45,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:30Z",
+      "zone_temp_c": 21.02,
+      "supply_temp_c": 13.35,
+      "damper_pos": 48.93,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:31Z",
+      "zone_temp_c": 16.85,
+      "supply_temp_c": 15.01,
+      "damper_pos": 3.27,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:32Z",
+      "zone_temp_c": 20.14,
+      "supply_temp_c": 14.18,
+      "damper_pos": 95.06,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:33Z",
+      "zone_temp_c": 22.7,
+      "supply_temp_c": 12.46,
+      "damper_pos": 68.57,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:34Z",
+      "zone_temp_c": 15.37,
+      "supply_temp_c": 11.86,
+      "damper_pos": 35.87,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:35Z",
+      "zone_temp_c": 20.7,
+      "supply_temp_c": 13.58,
+      "damper_pos": 12.22,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:36Z",
+      "zone_temp_c": 23.59,
+      "supply_temp_c": 11.65,
+      "damper_pos": 66.28,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:37Z",
+      "zone_temp_c": 19.88,
+      "supply_temp_c": 11.43,
+      "damper_pos": 2.14,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:38Z",
+      "zone_temp_c": 22.43,
+      "supply_temp_c": 11.91,
+      "damper_pos": 12.59,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:39Z",
+      "zone_temp_c": 21.13,
+      "supply_temp_c": 12.78,
+      "damper_pos": 76.52,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:40Z",
+      "zone_temp_c": 22.46,
+      "supply_temp_c": 14.01,
+      "damper_pos": 86.97,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:41Z",
+      "zone_temp_c": 21.33,
+      "supply_temp_c": 13.75,
+      "damper_pos": 90.05,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:42Z",
+      "zone_temp_c": 26.94,
+      "supply_temp_c": 13.05,
+      "damper_pos": 14.47,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:05:43Z",
+      "zone_temp_c": 23.3,
+      "supply_temp_c": 13.83,
+      "damper_pos": 17.45,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:44Z",
+      "zone_temp_c": 21.7,
+      "supply_temp_c": 12.71,
+      "damper_pos": 1.49,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:45Z",
+      "zone_temp_c": 22.46,
+      "supply_temp_c": 11.93,
+      "damper_pos": 32.38,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:46Z",
+      "zone_temp_c": 22.38,
+      "supply_temp_c": 13.44,
+      "damper_pos": 74.17,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:47Z",
+      "zone_temp_c": 17.92,
+      "supply_temp_c": 12.59,
+      "damper_pos": 47.62,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:48Z",
+      "zone_temp_c": 22.53,
+      "supply_temp_c": 11.23,
+      "damper_pos": 10.91,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:49Z",
+      "zone_temp_c": 15.97,
+      "supply_temp_c": 12.91,
+      "damper_pos": 4.34,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:50Z",
+      "zone_temp_c": 23.04,
+      "supply_temp_c": 10.05,
+      "damper_pos": 52.15,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:51Z",
+      "zone_temp_c": 15.78,
+      "supply_temp_c": 14.01,
+      "damper_pos": 6.08,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:52Z",
+      "zone_temp_c": 19.49,
+      "supply_temp_c": 13.2,
+      "damper_pos": 68.61,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:53Z",
+      "zone_temp_c": 16.53,
+      "supply_temp_c": 13.2,
+      "damper_pos": 7.35,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:54Z",
+      "zone_temp_c": 24.99,
+      "supply_temp_c": 14.0,
+      "damper_pos": 6.57,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:55Z",
+      "zone_temp_c": 21.45,
+      "supply_temp_c": 15.1,
+      "damper_pos": 54.84,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:56Z",
+      "zone_temp_c": 18.32,
+      "supply_temp_c": 17.32,
+      "damper_pos": 53.06,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:05:57Z",
+      "zone_temp_c": 18.73,
+      "supply_temp_c": 13.59,
+      "damper_pos": 9.92,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:58Z",
+      "zone_temp_c": 20.54,
+      "supply_temp_c": 10.2,
+      "damper_pos": 65.09,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:05:59Z",
+      "zone_temp_c": 22.47,
+      "supply_temp_c": 10.62,
+      "damper_pos": 21.5,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:00Z",
+      "zone_temp_c": 20.28,
+      "supply_temp_c": 13.32,
+      "damper_pos": 33.89,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:01Z",
+      "zone_temp_c": 19.52,
+      "supply_temp_c": 13.45,
+      "damper_pos": 9.51,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:02Z",
+      "zone_temp_c": 18.69,
+      "supply_temp_c": 13.99,
+      "damper_pos": 37.43,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:03Z",
+      "zone_temp_c": 25.25,
+      "supply_temp_c": 15.78,
+      "damper_pos": 6.71,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:04Z",
+      "zone_temp_c": 22.54,
+      "supply_temp_c": 12.42,
+      "damper_pos": 9.66,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:05Z",
+      "zone_temp_c": 21.68,
+      "supply_temp_c": 10.27,
+      "damper_pos": 55.64,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:06Z",
+      "zone_temp_c": 19.25,
+      "supply_temp_c": 12.0,
+      "damper_pos": 32.96,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:07Z",
+      "zone_temp_c": 23.68,
+      "supply_temp_c": 13.97,
+      "damper_pos": 66.53,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:08Z",
+      "zone_temp_c": 22.01,
+      "supply_temp_c": 9.98,
+      "damper_pos": 72.11,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:09Z",
+      "zone_temp_c": 25.32,
+      "supply_temp_c": 12.6,
+      "damper_pos": 35.16,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:10Z",
+      "zone_temp_c": 20.47,
+      "supply_temp_c": 12.51,
+      "damper_pos": 65.67,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:11Z",
+      "zone_temp_c": 22.19,
+      "supply_temp_c": 13.71,
+      "damper_pos": 84.54,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:12Z",
+      "zone_temp_c": 19.15,
+      "supply_temp_c": 14.88,
+      "damper_pos": 57.41,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:13Z",
+      "zone_temp_c": 23.7,
+      "supply_temp_c": 10.29,
+      "damper_pos": 97.45,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:14Z",
+      "zone_temp_c": 23.44,
+      "supply_temp_c": 11.12,
+      "damper_pos": 64.27,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:15Z",
+      "zone_temp_c": 27.67,
+      "supply_temp_c": 13.57,
+      "damper_pos": 82.95,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:16Z",
+      "zone_temp_c": 21.83,
+      "supply_temp_c": 13.94,
+      "damper_pos": 70.27,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:17Z",
+      "zone_temp_c": 21.17,
+      "supply_temp_c": 14.27,
+      "damper_pos": 0.61,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:18Z",
+      "zone_temp_c": 24.21,
+      "supply_temp_c": 11.59,
+      "damper_pos": 40.08,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:19Z",
+      "zone_temp_c": 24.22,
+      "supply_temp_c": 14.65,
+      "damper_pos": 3.07,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:20Z",
+      "zone_temp_c": 21.96,
+      "supply_temp_c": 11.96,
+      "damper_pos": 41.98,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:21Z",
+      "zone_temp_c": 20.7,
+      "supply_temp_c": 14.21,
+      "damper_pos": 72.16,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:22Z",
+      "zone_temp_c": 22.54,
+      "supply_temp_c": 11.09,
+      "damper_pos": 8.5,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:23Z",
+      "zone_temp_c": 23.38,
+      "supply_temp_c": 13.28,
+      "damper_pos": 61.78,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:24Z",
+      "zone_temp_c": 21.08,
+      "supply_temp_c": 11.94,
+      "damper_pos": 66.19,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:25Z",
+      "zone_temp_c": 19.31,
+      "supply_temp_c": 13.15,
+      "damper_pos": 27.32,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:26Z",
+      "zone_temp_c": 22.04,
+      "supply_temp_c": 12.26,
+      "damper_pos": 42.99,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:27Z",
+      "zone_temp_c": 21.22,
+      "supply_temp_c": 15.21,
+      "damper_pos": 48.66,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:28Z",
+      "zone_temp_c": 21.62,
+      "supply_temp_c": 12.6,
+      "damper_pos": 39.53,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:29Z",
+      "zone_temp_c": 21.75,
+      "supply_temp_c": 12.89,
+      "damper_pos": 30.14,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:30Z",
+      "zone_temp_c": 22.33,
+      "supply_temp_c": 13.79,
+      "damper_pos": 25.55,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:31Z",
+      "zone_temp_c": 21.85,
+      "supply_temp_c": 13.16,
+      "damper_pos": 74.7,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:32Z",
+      "zone_temp_c": 23.1,
+      "supply_temp_c": 14.31,
+      "damper_pos": 70.37,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:33Z",
+      "zone_temp_c": 17.27,
+      "supply_temp_c": 13.0,
+      "damper_pos": 80.62,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:34Z",
+      "zone_temp_c": 26.47,
+      "supply_temp_c": 14.31,
+      "damper_pos": 4.23,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:06:35Z",
+      "zone_temp_c": 27.6,
+      "supply_temp_c": 13.4,
+      "damper_pos": 86.21,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:36Z",
+      "zone_temp_c": 19.1,
+      "supply_temp_c": 12.1,
+      "damper_pos": 70.95,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:37Z",
+      "zone_temp_c": 20.92,
+      "supply_temp_c": 13.37,
+      "damper_pos": 2.09,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:38Z",
+      "zone_temp_c": 19.97,
+      "supply_temp_c": 15.4,
+      "damper_pos": 61.81,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:39Z",
+      "zone_temp_c": 24.77,
+      "supply_temp_c": 10.07,
+      "damper_pos": 8.81,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:40Z",
+      "zone_temp_c": 23.04,
+      "supply_temp_c": 12.07,
+      "damper_pos": 58.89,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:41Z",
+      "zone_temp_c": 19.52,
+      "supply_temp_c": 12.77,
+      "damper_pos": 31.03,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:42Z",
+      "zone_temp_c": 20.8,
+      "supply_temp_c": 14.14,
+      "damper_pos": 16.81,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:43Z",
+      "zone_temp_c": 20.77,
+      "supply_temp_c": 12.95,
+      "damper_pos": 51.0,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:44Z",
+      "zone_temp_c": 23.92,
+      "supply_temp_c": 12.22,
+      "damper_pos": 72.74,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:45Z",
+      "zone_temp_c": 23.93,
+      "supply_temp_c": 10.5,
+      "damper_pos": 23.63,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:46Z",
+      "zone_temp_c": 23.0,
+      "supply_temp_c": 13.79,
+      "damper_pos": 60.24,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:47Z",
+      "zone_temp_c": 22.23,
+      "supply_temp_c": 10.81,
+      "damper_pos": 17.71,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:48Z",
+      "zone_temp_c": 22.42,
+      "supply_temp_c": 11.27,
+      "damper_pos": 75.44,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:49Z",
+      "zone_temp_c": 22.17,
+      "supply_temp_c": 11.37,
+      "damper_pos": 92.42,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:50Z",
+      "zone_temp_c": 18.74,
+      "supply_temp_c": 12.16,
+      "damper_pos": 62.45,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:51Z",
+      "zone_temp_c": 24.31,
+      "supply_temp_c": 11.41,
+      "damper_pos": 15.1,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:52Z",
+      "zone_temp_c": 24.46,
+      "supply_temp_c": 13.67,
+      "damper_pos": 30.28,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:53Z",
+      "zone_temp_c": 21.87,
+      "supply_temp_c": 13.5,
+      "damper_pos": 50.73,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:54Z",
+      "zone_temp_c": 20.98,
+      "supply_temp_c": 14.53,
+      "damper_pos": 5.69,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:55Z",
+      "zone_temp_c": 22.49,
+      "supply_temp_c": 12.48,
+      "damper_pos": 86.43,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:56Z",
+      "zone_temp_c": 24.12,
+      "supply_temp_c": 11.36,
+      "damper_pos": 50.71,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:57Z",
+      "zone_temp_c": 18.91,
+      "supply_temp_c": 13.44,
+      "damper_pos": 79.18,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:58Z",
+      "zone_temp_c": 24.17,
+      "supply_temp_c": 12.0,
+      "damper_pos": 80.98,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:06:59Z",
+      "zone_temp_c": 20.73,
+      "supply_temp_c": 11.92,
+      "damper_pos": 47.56,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:00Z",
+      "zone_temp_c": 22.52,
+      "supply_temp_c": 13.44,
+      "damper_pos": 10.35,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:01Z",
+      "zone_temp_c": 23.85,
+      "supply_temp_c": 12.19,
+      "damper_pos": 71.43,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:02Z",
+      "zone_temp_c": 20.46,
+      "supply_temp_c": 12.97,
+      "damper_pos": 24.77,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:03Z",
+      "zone_temp_c": 19.51,
+      "supply_temp_c": 13.62,
+      "damper_pos": 52.27,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:04Z",
+      "zone_temp_c": 23.31,
+      "supply_temp_c": 14.22,
+      "damper_pos": 28.29,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:05Z",
+      "zone_temp_c": 20.09,
+      "supply_temp_c": 13.74,
+      "damper_pos": 59.79,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:06Z",
+      "zone_temp_c": 22.88,
+      "supply_temp_c": 10.9,
+      "damper_pos": 6.59,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:07Z",
+      "zone_temp_c": 25.12,
+      "supply_temp_c": 14.26,
+      "damper_pos": 28.41,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:08Z",
+      "zone_temp_c": 21.4,
+      "supply_temp_c": 10.84,
+      "damper_pos": 90.63,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:09Z",
+      "zone_temp_c": 23.57,
+      "supply_temp_c": 12.03,
+      "damper_pos": 58.27,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:10Z",
+      "zone_temp_c": 23.46,
+      "supply_temp_c": 14.08,
+      "damper_pos": 96.77,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:11Z",
+      "zone_temp_c": 21.21,
+      "supply_temp_c": 11.58,
+      "damper_pos": 59.5,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:12Z",
+      "zone_temp_c": 23.99,
+      "supply_temp_c": 12.51,
+      "damper_pos": 37.67,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:13Z",
+      "zone_temp_c": 23.19,
+      "supply_temp_c": 10.35,
+      "damper_pos": 67.01,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:14Z",
+      "zone_temp_c": 23.95,
+      "supply_temp_c": 10.84,
+      "damper_pos": 68.54,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:15Z",
+      "zone_temp_c": 18.45,
+      "supply_temp_c": 12.64,
+      "damper_pos": 42.34,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:16Z",
+      "zone_temp_c": 20.47,
+      "supply_temp_c": 14.09,
+      "damper_pos": 18.03,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:17Z",
+      "zone_temp_c": 23.35,
+      "supply_temp_c": 16.55,
+      "damper_pos": 48.63,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:18Z",
+      "zone_temp_c": 22.2,
+      "supply_temp_c": 13.81,
+      "damper_pos": 7.72,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:19Z",
+      "zone_temp_c": 22.65,
+      "supply_temp_c": 12.43,
+      "damper_pos": 77.09,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:20Z",
+      "zone_temp_c": 24.64,
+      "supply_temp_c": 10.32,
+      "damper_pos": 3.77,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:21Z",
+      "zone_temp_c": 19.79,
+      "supply_temp_c": 15.19,
+      "damper_pos": 13.1,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:22Z",
+      "zone_temp_c": 20.94,
+      "supply_temp_c": 13.62,
+      "damper_pos": 83.13,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:23Z",
+      "zone_temp_c": 22.6,
+      "supply_temp_c": 10.29,
+      "damper_pos": 16.55,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:24Z",
+      "zone_temp_c": 19.62,
+      "supply_temp_c": 13.59,
+      "damper_pos": 67.64,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:25Z",
+      "zone_temp_c": 22.21,
+      "supply_temp_c": 14.62,
+      "damper_pos": 28.49,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:26Z",
+      "zone_temp_c": 21.97,
+      "supply_temp_c": 11.36,
+      "damper_pos": 53.4,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:27Z",
+      "zone_temp_c": 20.34,
+      "supply_temp_c": 15.54,
+      "damper_pos": 46.9,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:28Z",
+      "zone_temp_c": 23.22,
+      "supply_temp_c": 11.76,
+      "damper_pos": 94.71,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:29Z",
+      "zone_temp_c": 24.77,
+      "supply_temp_c": 12.84,
+      "damper_pos": 28.18,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:30Z",
+      "zone_temp_c": 19.74,
+      "supply_temp_c": 14.24,
+      "damper_pos": 96.63,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:31Z",
+      "zone_temp_c": 23.83,
+      "supply_temp_c": 10.54,
+      "damper_pos": 13.84,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:32Z",
+      "zone_temp_c": 22.0,
+      "supply_temp_c": 15.15,
+      "damper_pos": 87.41,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:33Z",
+      "zone_temp_c": 20.9,
+      "supply_temp_c": 12.77,
+      "damper_pos": 84.59,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:34Z",
+      "zone_temp_c": 23.22,
+      "supply_temp_c": 12.01,
+      "damper_pos": 76.31,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:35Z",
+      "zone_temp_c": 21.23,
+      "supply_temp_c": 16.22,
+      "damper_pos": 14.73,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:36Z",
+      "zone_temp_c": 16.41,
+      "supply_temp_c": 14.39,
+      "damper_pos": 22.2,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:37Z",
+      "zone_temp_c": 19.79,
+      "supply_temp_c": 13.42,
+      "damper_pos": 2.67,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:38Z",
+      "zone_temp_c": 24.79,
+      "supply_temp_c": 13.58,
+      "damper_pos": 23.58,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:39Z",
+      "zone_temp_c": 24.42,
+      "supply_temp_c": 12.95,
+      "damper_pos": 2.82,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:40Z",
+      "zone_temp_c": 26.34,
+      "supply_temp_c": 11.79,
+      "damper_pos": 65.0,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:41Z",
+      "zone_temp_c": 22.35,
+      "supply_temp_c": 12.21,
+      "damper_pos": 28.69,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:42Z",
+      "zone_temp_c": 23.85,
+      "supply_temp_c": 10.97,
+      "damper_pos": 13.88,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:43Z",
+      "zone_temp_c": 21.25,
+      "supply_temp_c": 11.43,
+      "damper_pos": 0.53,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:44Z",
+      "zone_temp_c": 23.69,
+      "supply_temp_c": 13.55,
+      "damper_pos": 83.5,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:45Z",
+      "zone_temp_c": 18.16,
+      "supply_temp_c": 12.27,
+      "damper_pos": 52.78,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:46Z",
+      "zone_temp_c": 23.58,
+      "supply_temp_c": 13.8,
+      "damper_pos": 30.12,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:47Z",
+      "zone_temp_c": 24.49,
+      "supply_temp_c": 13.46,
+      "damper_pos": 79.39,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:48Z",
+      "zone_temp_c": 20.83,
+      "supply_temp_c": 13.19,
+      "damper_pos": 90.51,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:49Z",
+      "zone_temp_c": 21.63,
+      "supply_temp_c": 12.84,
+      "damper_pos": 51.54,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:50Z",
+      "zone_temp_c": 22.07,
+      "supply_temp_c": 13.83,
+      "damper_pos": 42.92,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:51Z",
+      "zone_temp_c": 20.61,
+      "supply_temp_c": 12.27,
+      "damper_pos": 41.66,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:52Z",
+      "zone_temp_c": 21.46,
+      "supply_temp_c": 12.46,
+      "damper_pos": 97.47,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:53Z",
+      "zone_temp_c": 24.78,
+      "supply_temp_c": 13.76,
+      "damper_pos": 50.73,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:54Z",
+      "zone_temp_c": 25.17,
+      "supply_temp_c": 12.86,
+      "damper_pos": 39.05,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:55Z",
+      "zone_temp_c": 18.51,
+      "supply_temp_c": 13.4,
+      "damper_pos": 98.1,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:56Z",
+      "zone_temp_c": 21.99,
+      "supply_temp_c": 13.27,
+      "damper_pos": 78.85,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:57Z",
+      "zone_temp_c": 19.72,
+      "supply_temp_c": 15.02,
+      "damper_pos": 62.83,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:58Z",
+      "zone_temp_c": 22.55,
+      "supply_temp_c": 10.58,
+      "damper_pos": 33.25,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:07:59Z",
+      "zone_temp_c": 25.02,
+      "supply_temp_c": 13.52,
+      "damper_pos": 81.35,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:00Z",
+      "zone_temp_c": 23.97,
+      "supply_temp_c": 15.32,
+      "damper_pos": 46.46,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:01Z",
+      "zone_temp_c": 20.81,
+      "supply_temp_c": 11.0,
+      "damper_pos": 81.15,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:02Z",
+      "zone_temp_c": 25.99,
+      "supply_temp_c": 14.0,
+      "damper_pos": 45.77,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:03Z",
+      "zone_temp_c": 21.8,
+      "supply_temp_c": 13.43,
+      "damper_pos": 19.95,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:04Z",
+      "zone_temp_c": 27.62,
+      "supply_temp_c": 13.91,
+      "damper_pos": 51.54,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:05Z",
+      "zone_temp_c": 25.12,
+      "supply_temp_c": 12.87,
+      "damper_pos": 25.33,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:06Z",
+      "zone_temp_c": 22.03,
+      "supply_temp_c": 12.02,
+      "damper_pos": 35.7,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:07Z",
+      "zone_temp_c": 22.96,
+      "supply_temp_c": 10.05,
+      "damper_pos": 33.19,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:08Z",
+      "zone_temp_c": 23.7,
+      "supply_temp_c": 14.01,
+      "damper_pos": 88.95,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:09Z",
+      "zone_temp_c": 21.78,
+      "supply_temp_c": 9.82,
+      "damper_pos": 38.66,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:10Z",
+      "zone_temp_c": 24.89,
+      "supply_temp_c": 12.71,
+      "damper_pos": 49.75,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:11Z",
+      "zone_temp_c": 24.69,
+      "supply_temp_c": 12.17,
+      "damper_pos": 80.11,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:12Z",
+      "zone_temp_c": 21.85,
+      "supply_temp_c": 12.4,
+      "damper_pos": 60.25,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:13Z",
+      "zone_temp_c": 23.38,
+      "supply_temp_c": 11.31,
+      "damper_pos": 32.12,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:14Z",
+      "zone_temp_c": 25.22,
+      "supply_temp_c": 14.06,
+      "damper_pos": 30.65,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:15Z",
+      "zone_temp_c": 19.89,
+      "supply_temp_c": 12.05,
+      "damper_pos": 68.98,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:16Z",
+      "zone_temp_c": 21.56,
+      "supply_temp_c": 13.35,
+      "damper_pos": 87.0,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:17Z",
+      "zone_temp_c": 16.67,
+      "supply_temp_c": 17.25,
+      "damper_pos": 27.46,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:08:18Z",
+      "zone_temp_c": 28.03,
+      "supply_temp_c": 12.54,
+      "damper_pos": 7.5,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:08:19Z",
+      "zone_temp_c": 20.46,
+      "supply_temp_c": 11.92,
+      "damper_pos": 80.11,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:20Z",
+      "zone_temp_c": 19.35,
+      "supply_temp_c": 9.65,
+      "damper_pos": 14.28,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:21Z",
+      "zone_temp_c": 18.6,
+      "supply_temp_c": 11.36,
+      "damper_pos": 3.48,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:22Z",
+      "zone_temp_c": 25.96,
+      "supply_temp_c": 14.07,
+      "damper_pos": 36.63,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:23Z",
+      "zone_temp_c": 19.6,
+      "supply_temp_c": 14.3,
+      "damper_pos": 60.51,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:24Z",
+      "zone_temp_c": 19.37,
+      "supply_temp_c": 9.7,
+      "damper_pos": 37.2,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:25Z",
+      "zone_temp_c": 22.27,
+      "supply_temp_c": 11.05,
+      "damper_pos": 52.95,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:26Z",
+      "zone_temp_c": 19.1,
+      "supply_temp_c": 14.3,
+      "damper_pos": 24.96,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:27Z",
+      "zone_temp_c": 25.09,
+      "supply_temp_c": 14.6,
+      "damper_pos": 49.9,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:28Z",
+      "zone_temp_c": 19.57,
+      "supply_temp_c": 14.26,
+      "damper_pos": 26.18,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:29Z",
+      "zone_temp_c": 21.82,
+      "supply_temp_c": 14.63,
+      "damper_pos": 99.64,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:30Z",
+      "zone_temp_c": 20.77,
+      "supply_temp_c": 16.26,
+      "damper_pos": 49.12,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:31Z",
+      "zone_temp_c": 25.51,
+      "supply_temp_c": 15.05,
+      "damper_pos": 45.2,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:32Z",
+      "zone_temp_c": 24.18,
+      "supply_temp_c": 12.03,
+      "damper_pos": 8.78,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:33Z",
+      "zone_temp_c": 20.0,
+      "supply_temp_c": 10.36,
+      "damper_pos": 31.96,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:34Z",
+      "zone_temp_c": 21.47,
+      "supply_temp_c": 13.45,
+      "damper_pos": 54.22,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:35Z",
+      "zone_temp_c": 25.79,
+      "supply_temp_c": 11.15,
+      "damper_pos": 71.18,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:36Z",
+      "zone_temp_c": 25.2,
+      "supply_temp_c": 12.06,
+      "damper_pos": 79.37,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:37Z",
+      "zone_temp_c": 20.73,
+      "supply_temp_c": 12.96,
+      "damper_pos": 20.1,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:38Z",
+      "zone_temp_c": 24.84,
+      "supply_temp_c": 15.03,
+      "damper_pos": 2.63,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:39Z",
+      "zone_temp_c": 19.74,
+      "supply_temp_c": 12.52,
+      "damper_pos": 80.37,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:40Z",
+      "zone_temp_c": 18.74,
+      "supply_temp_c": 12.34,
+      "damper_pos": 8.62,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:41Z",
+      "zone_temp_c": 18.4,
+      "supply_temp_c": 18.52,
+      "damper_pos": 71.89,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:08:42Z",
+      "zone_temp_c": 17.77,
+      "supply_temp_c": 12.59,
+      "damper_pos": 82.33,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:43Z",
+      "zone_temp_c": 27.99,
+      "supply_temp_c": 14.8,
+      "damper_pos": 64.23,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:44Z",
+      "zone_temp_c": 18.41,
+      "supply_temp_c": 13.7,
+      "damper_pos": 34.45,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:45Z",
+      "zone_temp_c": 25.13,
+      "supply_temp_c": 11.19,
+      "damper_pos": 63.98,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:46Z",
+      "zone_temp_c": 24.7,
+      "supply_temp_c": 16.55,
+      "damper_pos": 43.26,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:47Z",
+      "zone_temp_c": 22.71,
+      "supply_temp_c": 12.73,
+      "damper_pos": 12.42,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:48Z",
+      "zone_temp_c": 22.86,
+      "supply_temp_c": 13.74,
+      "damper_pos": 32.27,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:49Z",
+      "zone_temp_c": 21.42,
+      "supply_temp_c": 11.66,
+      "damper_pos": 94.09,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:50Z",
+      "zone_temp_c": 25.82,
+      "supply_temp_c": 11.22,
+      "damper_pos": 25.06,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:51Z",
+      "zone_temp_c": 19.91,
+      "supply_temp_c": 11.58,
+      "damper_pos": 12.52,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:52Z",
+      "zone_temp_c": 20.99,
+      "supply_temp_c": 14.75,
+      "damper_pos": 50.26,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:53Z",
+      "zone_temp_c": 24.92,
+      "supply_temp_c": 16.12,
+      "damper_pos": 15.42,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:54Z",
+      "zone_temp_c": 19.83,
+      "supply_temp_c": 10.99,
+      "damper_pos": 60.51,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:55Z",
+      "zone_temp_c": 23.77,
+      "supply_temp_c": 11.39,
+      "damper_pos": 82.52,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:56Z",
+      "zone_temp_c": 22.75,
+      "supply_temp_c": 13.08,
+      "damper_pos": 64.15,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:57Z",
+      "zone_temp_c": 18.79,
+      "supply_temp_c": 11.99,
+      "damper_pos": 76.7,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:58Z",
+      "zone_temp_c": 18.91,
+      "supply_temp_c": 14.07,
+      "damper_pos": 49.8,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:08:59Z",
+      "zone_temp_c": 20.56,
+      "supply_temp_c": 12.11,
+      "damper_pos": 95.67,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:00Z",
+      "zone_temp_c": 17.51,
+      "supply_temp_c": 13.29,
+      "damper_pos": 68.5,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:01Z",
+      "zone_temp_c": 21.71,
+      "supply_temp_c": 13.56,
+      "damper_pos": 5.99,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:02Z",
+      "zone_temp_c": 19.33,
+      "supply_temp_c": 13.64,
+      "damper_pos": 20.4,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:03Z",
+      "zone_temp_c": 20.3,
+      "supply_temp_c": 12.19,
+      "damper_pos": 71.84,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:04Z",
+      "zone_temp_c": 21.51,
+      "supply_temp_c": 10.04,
+      "damper_pos": 97.54,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:05Z",
+      "zone_temp_c": 23.64,
+      "supply_temp_c": 14.06,
+      "damper_pos": 56.17,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:06Z",
+      "zone_temp_c": 20.82,
+      "supply_temp_c": 14.53,
+      "damper_pos": 26.75,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:07Z",
+      "zone_temp_c": 22.01,
+      "supply_temp_c": 13.68,
+      "damper_pos": 29.02,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:08Z",
+      "zone_temp_c": 19.42,
+      "supply_temp_c": 14.38,
+      "damper_pos": 24.83,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:09Z",
+      "zone_temp_c": 22.98,
+      "supply_temp_c": 12.34,
+      "damper_pos": 32.74,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:10Z",
+      "zone_temp_c": 20.09,
+      "supply_temp_c": 12.39,
+      "damper_pos": 76.31,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:11Z",
+      "zone_temp_c": 18.99,
+      "supply_temp_c": 13.02,
+      "damper_pos": 49.88,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:12Z",
+      "zone_temp_c": 21.81,
+      "supply_temp_c": 13.3,
+      "damper_pos": 94.52,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:13Z",
+      "zone_temp_c": 15.48,
+      "supply_temp_c": 12.87,
+      "damper_pos": 21.51,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:14Z",
+      "zone_temp_c": 21.51,
+      "supply_temp_c": 13.39,
+      "damper_pos": 49.49,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:15Z",
+      "zone_temp_c": 24.69,
+      "supply_temp_c": 11.53,
+      "damper_pos": 47.06,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:16Z",
+      "zone_temp_c": 17.28,
+      "supply_temp_c": 12.34,
+      "damper_pos": 43.09,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:17Z",
+      "zone_temp_c": 24.98,
+      "supply_temp_c": 11.37,
+      "damper_pos": 76.39,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:18Z",
+      "zone_temp_c": 20.32,
+      "supply_temp_c": 14.13,
+      "damper_pos": 57.03,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:19Z",
+      "zone_temp_c": 23.08,
+      "supply_temp_c": 14.79,
+      "damper_pos": 7.35,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:20Z",
+      "zone_temp_c": 17.75,
+      "supply_temp_c": 12.93,
+      "damper_pos": 27.97,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:21Z",
+      "zone_temp_c": 25.77,
+      "supply_temp_c": 12.84,
+      "damper_pos": 11.88,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:09:22Z",
+      "zone_temp_c": 24.47,
+      "supply_temp_c": 12.77,
+      "damper_pos": 79.49,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:23Z",
+      "zone_temp_c": 18.86,
+      "supply_temp_c": 16.01,
+      "damper_pos": 75.5,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:24Z",
+      "zone_temp_c": 22.94,
+      "supply_temp_c": 14.7,
+      "damper_pos": 50.01,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:25Z",
+      "zone_temp_c": 23.3,
+      "supply_temp_c": 13.23,
+      "damper_pos": 33.3,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:26Z",
+      "zone_temp_c": 19.27,
+      "supply_temp_c": 13.27,
+      "damper_pos": 60.63,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:27Z",
+      "zone_temp_c": 19.78,
+      "supply_temp_c": 12.87,
+      "damper_pos": 61.31,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:28Z",
+      "zone_temp_c": 25.99,
+      "supply_temp_c": 16.91,
+      "damper_pos": 73.93,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:29Z",
+      "zone_temp_c": 21.31,
+      "supply_temp_c": 14.29,
+      "damper_pos": 82.83,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:30Z",
+      "zone_temp_c": 18.15,
+      "supply_temp_c": 12.52,
+      "damper_pos": 29.98,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:31Z",
+      "zone_temp_c": 22.96,
+      "supply_temp_c": 11.68,
+      "damper_pos": 67.38,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:32Z",
+      "zone_temp_c": 25.28,
+      "supply_temp_c": 12.75,
+      "damper_pos": 79.68,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:33Z",
+      "zone_temp_c": 21.41,
+      "supply_temp_c": 10.74,
+      "damper_pos": 2.66,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:34Z",
+      "zone_temp_c": 15.55,
+      "supply_temp_c": 13.62,
+      "damper_pos": 78.29,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:35Z",
+      "zone_temp_c": 22.54,
+      "supply_temp_c": 11.06,
+      "damper_pos": 72.14,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:36Z",
+      "zone_temp_c": 20.68,
+      "supply_temp_c": 12.54,
+      "damper_pos": 62.9,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:37Z",
+      "zone_temp_c": 18.5,
+      "supply_temp_c": 11.03,
+      "damper_pos": 14.78,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:38Z",
+      "zone_temp_c": 21.73,
+      "supply_temp_c": 12.66,
+      "damper_pos": 94.82,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:39Z",
+      "zone_temp_c": 22.38,
+      "supply_temp_c": 13.19,
+      "damper_pos": 31.37,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:40Z",
+      "zone_temp_c": 24.22,
+      "supply_temp_c": 14.87,
+      "damper_pos": 41.04,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:41Z",
+      "zone_temp_c": 22.88,
+      "supply_temp_c": 9.67,
+      "damper_pos": 87.28,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:42Z",
+      "zone_temp_c": 21.92,
+      "supply_temp_c": 12.46,
+      "damper_pos": 13.81,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:43Z",
+      "zone_temp_c": 22.59,
+      "supply_temp_c": 14.28,
+      "damper_pos": 66.22,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:44Z",
+      "zone_temp_c": 19.86,
+      "supply_temp_c": 12.79,
+      "damper_pos": 17.32,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:45Z",
+      "zone_temp_c": 23.95,
+      "supply_temp_c": 12.28,
+      "damper_pos": 35.43,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:46Z",
+      "zone_temp_c": 22.55,
+      "supply_temp_c": 10.63,
+      "damper_pos": 64.33,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:47Z",
+      "zone_temp_c": 20.8,
+      "supply_temp_c": 11.07,
+      "damper_pos": 19.23,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:48Z",
+      "zone_temp_c": 22.07,
+      "supply_temp_c": 14.92,
+      "damper_pos": 22.49,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:49Z",
+      "zone_temp_c": 24.07,
+      "supply_temp_c": 12.79,
+      "damper_pos": 28.9,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:50Z",
+      "zone_temp_c": 23.04,
+      "supply_temp_c": 15.26,
+      "damper_pos": 31.7,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:51Z",
+      "zone_temp_c": 18.61,
+      "supply_temp_c": 15.84,
+      "damper_pos": 79.54,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:52Z",
+      "zone_temp_c": 21.81,
+      "supply_temp_c": 13.76,
+      "damper_pos": 67.66,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:53Z",
+      "zone_temp_c": 16.91,
+      "supply_temp_c": 15.88,
+      "damper_pos": 81.84,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:54Z",
+      "zone_temp_c": 26.34,
+      "supply_temp_c": 12.24,
+      "damper_pos": 29.05,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:55Z",
+      "zone_temp_c": 21.07,
+      "supply_temp_c": 15.31,
+      "damper_pos": 34.64,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:56Z",
+      "zone_temp_c": 20.2,
+      "supply_temp_c": 13.41,
+      "damper_pos": 47.91,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:57Z",
+      "zone_temp_c": 22.92,
+      "supply_temp_c": 14.78,
+      "damper_pos": 93.3,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:58Z",
+      "zone_temp_c": 21.55,
+      "supply_temp_c": 12.23,
+      "damper_pos": 61.57,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:09:59Z",
+      "zone_temp_c": 20.41,
+      "supply_temp_c": 12.42,
+      "damper_pos": 66.98,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:00Z",
+      "zone_temp_c": 18.5,
+      "supply_temp_c": 12.59,
+      "damper_pos": 5.25,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:01Z",
+      "zone_temp_c": 18.6,
+      "supply_temp_c": 14.24,
+      "damper_pos": 10.05,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:02Z",
+      "zone_temp_c": 22.03,
+      "supply_temp_c": 12.85,
+      "damper_pos": 55.04,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:03Z",
+      "zone_temp_c": 24.31,
+      "supply_temp_c": 12.34,
+      "damper_pos": 93.5,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:04Z",
+      "zone_temp_c": 24.06,
+      "supply_temp_c": 11.82,
+      "damper_pos": 19.95,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:05Z",
+      "zone_temp_c": 24.14,
+      "supply_temp_c": 12.7,
+      "damper_pos": 64.59,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:06Z",
+      "zone_temp_c": 22.91,
+      "supply_temp_c": 12.64,
+      "damper_pos": 57.41,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:07Z",
+      "zone_temp_c": 18.09,
+      "supply_temp_c": 12.47,
+      "damper_pos": 93.67,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:08Z",
+      "zone_temp_c": 23.33,
+      "supply_temp_c": 12.52,
+      "damper_pos": 88.22,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:09Z",
+      "zone_temp_c": 24.52,
+      "supply_temp_c": 16.01,
+      "damper_pos": 99.72,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:10Z",
+      "zone_temp_c": 19.67,
+      "supply_temp_c": 14.06,
+      "damper_pos": 93.66,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:11Z",
+      "zone_temp_c": 27.54,
+      "supply_temp_c": 12.19,
+      "damper_pos": 87.67,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:12Z",
+      "zone_temp_c": 25.23,
+      "supply_temp_c": 13.11,
+      "damper_pos": 10.73,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:13Z",
+      "zone_temp_c": 24.03,
+      "supply_temp_c": 12.87,
+      "damper_pos": 98.91,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:14Z",
+      "zone_temp_c": 19.19,
+      "supply_temp_c": 12.53,
+      "damper_pos": 93.86,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:15Z",
+      "zone_temp_c": 23.67,
+      "supply_temp_c": 11.64,
+      "damper_pos": 19.28,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:16Z",
+      "zone_temp_c": 23.13,
+      "supply_temp_c": 13.58,
+      "damper_pos": 45.89,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:17Z",
+      "zone_temp_c": 21.93,
+      "supply_temp_c": 13.96,
+      "damper_pos": 73.66,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:18Z",
+      "zone_temp_c": 22.82,
+      "supply_temp_c": 11.12,
+      "damper_pos": 75.73,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:19Z",
+      "zone_temp_c": 24.22,
+      "supply_temp_c": 15.64,
+      "damper_pos": 89.7,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:20Z",
+      "zone_temp_c": 23.4,
+      "supply_temp_c": 11.4,
+      "damper_pos": 8.67,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:21Z",
+      "zone_temp_c": 21.22,
+      "supply_temp_c": 12.16,
+      "damper_pos": 14.06,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:22Z",
+      "zone_temp_c": 21.16,
+      "supply_temp_c": 14.01,
+      "damper_pos": 26.08,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:23Z",
+      "zone_temp_c": 22.38,
+      "supply_temp_c": 15.5,
+      "damper_pos": 95.4,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:24Z",
+      "zone_temp_c": 20.72,
+      "supply_temp_c": 15.28,
+      "damper_pos": 1.14,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:25Z",
+      "zone_temp_c": 19.81,
+      "supply_temp_c": 11.1,
+      "damper_pos": 6.21,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:26Z",
+      "zone_temp_c": 23.58,
+      "supply_temp_c": 13.87,
+      "damper_pos": 40.54,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:27Z",
+      "zone_temp_c": 16.69,
+      "supply_temp_c": 12.95,
+      "damper_pos": 70.36,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:28Z",
+      "zone_temp_c": 21.53,
+      "supply_temp_c": 13.7,
+      "damper_pos": 91.61,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:29Z",
+      "zone_temp_c": 21.04,
+      "supply_temp_c": 14.99,
+      "damper_pos": 21.91,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:30Z",
+      "zone_temp_c": 22.96,
+      "supply_temp_c": 13.64,
+      "damper_pos": 74.77,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:31Z",
+      "zone_temp_c": 19.96,
+      "supply_temp_c": 12.04,
+      "damper_pos": 54.92,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:32Z",
+      "zone_temp_c": 18.95,
+      "supply_temp_c": 13.34,
+      "damper_pos": 66.41,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:33Z",
+      "zone_temp_c": 22.37,
+      "supply_temp_c": 14.11,
+      "damper_pos": 75.47,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:34Z",
+      "zone_temp_c": 22.72,
+      "supply_temp_c": 12.56,
+      "damper_pos": 44.67,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:35Z",
+      "zone_temp_c": 21.71,
+      "supply_temp_c": 12.42,
+      "damper_pos": 56.42,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:36Z",
+      "zone_temp_c": 24.91,
+      "supply_temp_c": 13.71,
+      "damper_pos": 50.55,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:37Z",
+      "zone_temp_c": 20.72,
+      "supply_temp_c": 12.62,
+      "damper_pos": 32.81,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:38Z",
+      "zone_temp_c": 20.77,
+      "supply_temp_c": 12.9,
+      "damper_pos": 20.54,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:39Z",
+      "zone_temp_c": 21.05,
+      "supply_temp_c": 12.67,
+      "damper_pos": 51.04,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:40Z",
+      "zone_temp_c": 22.99,
+      "supply_temp_c": 11.46,
+      "damper_pos": 51.32,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:41Z",
+      "zone_temp_c": 21.17,
+      "supply_temp_c": 13.14,
+      "damper_pos": 46.24,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:42Z",
+      "zone_temp_c": 23.4,
+      "supply_temp_c": 10.75,
+      "damper_pos": 39.59,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:43Z",
+      "zone_temp_c": 23.68,
+      "supply_temp_c": 10.73,
+      "damper_pos": 57.83,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:44Z",
+      "zone_temp_c": 24.21,
+      "supply_temp_c": 13.39,
+      "damper_pos": 6.38,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:45Z",
+      "zone_temp_c": 27.83,
+      "supply_temp_c": 12.87,
+      "damper_pos": 6.9,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:10:46Z",
+      "zone_temp_c": 22.58,
+      "supply_temp_c": 12.85,
+      "damper_pos": 40.89,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:47Z",
+      "zone_temp_c": 22.51,
+      "supply_temp_c": 10.46,
+      "damper_pos": 97.83,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:48Z",
+      "zone_temp_c": 20.41,
+      "supply_temp_c": 11.76,
+      "damper_pos": 99.29,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:49Z",
+      "zone_temp_c": 18.27,
+      "supply_temp_c": 15.04,
+      "damper_pos": 90.68,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:50Z",
+      "zone_temp_c": 19.31,
+      "supply_temp_c": 14.6,
+      "damper_pos": 66.18,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:51Z",
+      "zone_temp_c": 18.47,
+      "supply_temp_c": 12.47,
+      "damper_pos": 34.78,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:52Z",
+      "zone_temp_c": 23.35,
+      "supply_temp_c": 14.68,
+      "damper_pos": 52.88,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:53Z",
+      "zone_temp_c": 21.75,
+      "supply_temp_c": 11.95,
+      "damper_pos": 0.35,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:54Z",
+      "zone_temp_c": 24.08,
+      "supply_temp_c": 13.18,
+      "damper_pos": 67.35,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:55Z",
+      "zone_temp_c": 19.04,
+      "supply_temp_c": 12.49,
+      "damper_pos": 82.34,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:56Z",
+      "zone_temp_c": 22.04,
+      "supply_temp_c": 14.38,
+      "damper_pos": 27.56,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:57Z",
+      "zone_temp_c": 25.71,
+      "supply_temp_c": 12.08,
+      "damper_pos": 11.28,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:10:58Z",
+      "zone_temp_c": 22.95,
+      "supply_temp_c": 11.54,
+      "damper_pos": 76.61,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:10:59Z",
+      "zone_temp_c": 22.33,
+      "supply_temp_c": 12.82,
+      "damper_pos": 20.61,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:00Z",
+      "zone_temp_c": 22.53,
+      "supply_temp_c": 13.23,
+      "damper_pos": 59.78,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:01Z",
+      "zone_temp_c": 21.77,
+      "supply_temp_c": 12.55,
+      "damper_pos": 74.05,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:02Z",
+      "zone_temp_c": 20.51,
+      "supply_temp_c": 13.63,
+      "damper_pos": 21.73,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:03Z",
+      "zone_temp_c": 22.56,
+      "supply_temp_c": 12.61,
+      "damper_pos": 50.39,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:04Z",
+      "zone_temp_c": 20.88,
+      "supply_temp_c": 15.68,
+      "damper_pos": 73.15,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:05Z",
+      "zone_temp_c": 20.58,
+      "supply_temp_c": 14.84,
+      "damper_pos": 67.25,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:06Z",
+      "zone_temp_c": 21.09,
+      "supply_temp_c": 14.15,
+      "damper_pos": 14.33,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:07Z",
+      "zone_temp_c": 21.06,
+      "supply_temp_c": 12.1,
+      "damper_pos": 30.05,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:08Z",
+      "zone_temp_c": 27.65,
+      "supply_temp_c": 14.37,
+      "damper_pos": 87.97,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:09Z",
+      "zone_temp_c": 24.98,
+      "supply_temp_c": 11.89,
+      "damper_pos": 42.72,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:10Z",
+      "zone_temp_c": 15.31,
+      "supply_temp_c": 13.11,
+      "damper_pos": 94.16,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:11Z",
+      "zone_temp_c": 19.92,
+      "supply_temp_c": 10.68,
+      "damper_pos": 31.87,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:12Z",
+      "zone_temp_c": 20.77,
+      "supply_temp_c": 13.43,
+      "damper_pos": 37.65,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:13Z",
+      "zone_temp_c": 22.08,
+      "supply_temp_c": 11.3,
+      "damper_pos": 84.93,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:14Z",
+      "zone_temp_c": 20.77,
+      "supply_temp_c": 15.23,
+      "damper_pos": 80.58,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:15Z",
+      "zone_temp_c": 24.76,
+      "supply_temp_c": 12.02,
+      "damper_pos": 96.78,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:16Z",
+      "zone_temp_c": 20.74,
+      "supply_temp_c": 12.72,
+      "damper_pos": 24.29,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:17Z",
+      "zone_temp_c": 23.04,
+      "supply_temp_c": 15.07,
+      "damper_pos": 92.22,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:18Z",
+      "zone_temp_c": 22.63,
+      "supply_temp_c": 12.46,
+      "damper_pos": 72.46,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:19Z",
+      "zone_temp_c": 22.72,
+      "supply_temp_c": 14.1,
+      "damper_pos": 67.37,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:20Z",
+      "zone_temp_c": 17.94,
+      "supply_temp_c": 11.16,
+      "damper_pos": 18.82,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:21Z",
+      "zone_temp_c": 22.29,
+      "supply_temp_c": 10.6,
+      "damper_pos": 55.89,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:22Z",
+      "zone_temp_c": 17.0,
+      "supply_temp_c": 13.39,
+      "damper_pos": 33.3,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:23Z",
+      "zone_temp_c": 22.42,
+      "supply_temp_c": 12.93,
+      "damper_pos": 93.72,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:24Z",
+      "zone_temp_c": 23.21,
+      "supply_temp_c": 12.82,
+      "damper_pos": 99.96,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:25Z",
+      "zone_temp_c": 20.15,
+      "supply_temp_c": 13.15,
+      "damper_pos": 60.44,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:26Z",
+      "zone_temp_c": 23.57,
+      "supply_temp_c": 16.2,
+      "damper_pos": 55.21,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:27Z",
+      "zone_temp_c": 22.39,
+      "supply_temp_c": 11.55,
+      "damper_pos": 53.37,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:28Z",
+      "zone_temp_c": 20.77,
+      "supply_temp_c": 13.9,
+      "damper_pos": 51.28,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:29Z",
+      "zone_temp_c": 20.86,
+      "supply_temp_c": 13.01,
+      "damper_pos": 98.13,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:30Z",
+      "zone_temp_c": 17.3,
+      "supply_temp_c": 13.55,
+      "damper_pos": 91.43,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:31Z",
+      "zone_temp_c": 20.22,
+      "supply_temp_c": 14.13,
+      "damper_pos": 56.25,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:32Z",
+      "zone_temp_c": 22.25,
+      "supply_temp_c": 13.83,
+      "damper_pos": 26.08,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:33Z",
+      "zone_temp_c": 25.02,
+      "supply_temp_c": 12.21,
+      "damper_pos": 41.76,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:34Z",
+      "zone_temp_c": 23.29,
+      "supply_temp_c": 14.1,
+      "damper_pos": 37.98,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:35Z",
+      "zone_temp_c": 23.47,
+      "supply_temp_c": 11.47,
+      "damper_pos": 65.46,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:36Z",
+      "zone_temp_c": 21.23,
+      "supply_temp_c": 11.94,
+      "damper_pos": 82.16,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:37Z",
+      "zone_temp_c": 25.5,
+      "supply_temp_c": 12.55,
+      "damper_pos": 49.06,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:38Z",
+      "zone_temp_c": 24.19,
+      "supply_temp_c": 15.33,
+      "damper_pos": 16.93,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:39Z",
+      "zone_temp_c": 21.46,
+      "supply_temp_c": 11.29,
+      "damper_pos": 91.69,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:40Z",
+      "zone_temp_c": 18.54,
+      "supply_temp_c": 12.44,
+      "damper_pos": 5.87,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:41Z",
+      "zone_temp_c": 26.73,
+      "supply_temp_c": 13.61,
+      "damper_pos": 94.52,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:42Z",
+      "zone_temp_c": 19.91,
+      "supply_temp_c": 10.78,
+      "damper_pos": 41.24,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:43Z",
+      "zone_temp_c": 23.0,
+      "supply_temp_c": 12.09,
+      "damper_pos": 70.72,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:44Z",
+      "zone_temp_c": 24.96,
+      "supply_temp_c": 13.1,
+      "damper_pos": 37.32,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:45Z",
+      "zone_temp_c": 19.26,
+      "supply_temp_c": 11.5,
+      "damper_pos": 61.65,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:46Z",
+      "zone_temp_c": 19.12,
+      "supply_temp_c": 13.18,
+      "damper_pos": 0.66,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:47Z",
+      "zone_temp_c": 21.63,
+      "supply_temp_c": 12.93,
+      "damper_pos": 52.94,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:48Z",
+      "zone_temp_c": 20.93,
+      "supply_temp_c": 17.08,
+      "damper_pos": 1.71,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:11:49Z",
+      "zone_temp_c": 23.45,
+      "supply_temp_c": 10.93,
+      "damper_pos": 80.62,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:50Z",
+      "zone_temp_c": 23.0,
+      "supply_temp_c": 12.62,
+      "damper_pos": 9.63,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:51Z",
+      "zone_temp_c": 22.97,
+      "supply_temp_c": 13.79,
+      "damper_pos": 52.65,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:52Z",
+      "zone_temp_c": 22.79,
+      "supply_temp_c": 11.91,
+      "damper_pos": 39.69,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:53Z",
+      "zone_temp_c": 20.22,
+      "supply_temp_c": 14.1,
+      "damper_pos": 56.5,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:54Z",
+      "zone_temp_c": 23.79,
+      "supply_temp_c": 12.93,
+      "damper_pos": 68.4,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:55Z",
+      "zone_temp_c": 24.1,
+      "supply_temp_c": 11.22,
+      "damper_pos": 85.82,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:56Z",
+      "zone_temp_c": 22.07,
+      "supply_temp_c": 12.34,
+      "damper_pos": 37.93,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:57Z",
+      "zone_temp_c": 21.2,
+      "supply_temp_c": 12.83,
+      "damper_pos": 0.95,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:58Z",
+      "zone_temp_c": 23.4,
+      "supply_temp_c": 14.55,
+      "damper_pos": 43.39,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:11:59Z",
+      "zone_temp_c": 22.69,
+      "supply_temp_c": 11.11,
+      "damper_pos": 85.8,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:00Z",
+      "zone_temp_c": 24.53,
+      "supply_temp_c": 14.04,
+      "damper_pos": 4.26,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:01Z",
+      "zone_temp_c": 23.21,
+      "supply_temp_c": 15.93,
+      "damper_pos": 88.76,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:02Z",
+      "zone_temp_c": 21.24,
+      "supply_temp_c": 13.07,
+      "damper_pos": 7.43,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:03Z",
+      "zone_temp_c": 26.78,
+      "supply_temp_c": 11.55,
+      "damper_pos": 56.35,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:04Z",
+      "zone_temp_c": 27.62,
+      "supply_temp_c": 13.71,
+      "damper_pos": 31.45,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:05Z",
+      "zone_temp_c": 25.23,
+      "supply_temp_c": 12.52,
+      "damper_pos": 75.23,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:06Z",
+      "zone_temp_c": 21.41,
+      "supply_temp_c": 11.53,
+      "damper_pos": 7.69,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:07Z",
+      "zone_temp_c": 22.97,
+      "supply_temp_c": 13.95,
+      "damper_pos": 83.47,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:08Z",
+      "zone_temp_c": 17.92,
+      "supply_temp_c": 15.05,
+      "damper_pos": 33.17,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:09Z",
+      "zone_temp_c": 22.05,
+      "supply_temp_c": 12.18,
+      "damper_pos": 98.85,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:10Z",
+      "zone_temp_c": 21.52,
+      "supply_temp_c": 11.26,
+      "damper_pos": 97.43,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:11Z",
+      "zone_temp_c": 24.53,
+      "supply_temp_c": 13.53,
+      "damper_pos": 83.87,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:12Z",
+      "zone_temp_c": 19.69,
+      "supply_temp_c": 15.16,
+      "damper_pos": 95.49,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:13Z",
+      "zone_temp_c": 18.57,
+      "supply_temp_c": 14.56,
+      "damper_pos": 2.96,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:14Z",
+      "zone_temp_c": 20.86,
+      "supply_temp_c": 17.65,
+      "damper_pos": 49.06,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:12:15Z",
+      "zone_temp_c": 18.33,
+      "supply_temp_c": 15.81,
+      "damper_pos": 43.18,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:16Z",
+      "zone_temp_c": 20.43,
+      "supply_temp_c": 11.01,
+      "damper_pos": 8.57,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:17Z",
+      "zone_temp_c": 18.71,
+      "supply_temp_c": 11.18,
+      "damper_pos": 71.31,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:18Z",
+      "zone_temp_c": 23.26,
+      "supply_temp_c": 13.43,
+      "damper_pos": 71.17,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:19Z",
+      "zone_temp_c": 19.27,
+      "supply_temp_c": 11.17,
+      "damper_pos": 31.67,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:20Z",
+      "zone_temp_c": 22.2,
+      "supply_temp_c": 13.1,
+      "damper_pos": 30.83,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:21Z",
+      "zone_temp_c": 20.74,
+      "supply_temp_c": 13.92,
+      "damper_pos": 13.25,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:22Z",
+      "zone_temp_c": 23.05,
+      "supply_temp_c": 14.51,
+      "damper_pos": 55.47,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:23Z",
+      "zone_temp_c": 21.52,
+      "supply_temp_c": 13.19,
+      "damper_pos": 35.39,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:24Z",
+      "zone_temp_c": 24.81,
+      "supply_temp_c": 14.12,
+      "damper_pos": 32.44,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:25Z",
+      "zone_temp_c": 20.44,
+      "supply_temp_c": 13.82,
+      "damper_pos": 38.78,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:26Z",
+      "zone_temp_c": 26.63,
+      "supply_temp_c": 14.64,
+      "damper_pos": 90.52,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:27Z",
+      "zone_temp_c": 25.23,
+      "supply_temp_c": 12.73,
+      "damper_pos": 16.96,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:28Z",
+      "zone_temp_c": 21.0,
+      "supply_temp_c": 13.56,
+      "damper_pos": 30.11,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:29Z",
+      "zone_temp_c": 21.1,
+      "supply_temp_c": 13.02,
+      "damper_pos": 43.47,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:30Z",
+      "zone_temp_c": 19.47,
+      "supply_temp_c": 13.82,
+      "damper_pos": 7.69,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:31Z",
+      "zone_temp_c": 21.98,
+      "supply_temp_c": 14.13,
+      "damper_pos": 62.5,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:32Z",
+      "zone_temp_c": 20.63,
+      "supply_temp_c": 12.45,
+      "damper_pos": 10.7,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:33Z",
+      "zone_temp_c": 19.95,
+      "supply_temp_c": 16.44,
+      "damper_pos": 33.22,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:34Z",
+      "zone_temp_c": 18.71,
+      "supply_temp_c": 11.14,
+      "damper_pos": 32.95,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:35Z",
+      "zone_temp_c": 19.67,
+      "supply_temp_c": 15.38,
+      "damper_pos": 85.95,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:36Z",
+      "zone_temp_c": 23.33,
+      "supply_temp_c": 12.87,
+      "damper_pos": 32.07,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:37Z",
+      "zone_temp_c": 23.58,
+      "supply_temp_c": 12.67,
+      "damper_pos": 31.42,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:38Z",
+      "zone_temp_c": 28.42,
+      "supply_temp_c": 12.13,
+      "damper_pos": 29.14,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:39Z",
+      "zone_temp_c": 21.02,
+      "supply_temp_c": 11.36,
+      "damper_pos": 57.59,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:40Z",
+      "zone_temp_c": 22.12,
+      "supply_temp_c": 14.46,
+      "damper_pos": 81.65,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:41Z",
+      "zone_temp_c": 21.04,
+      "supply_temp_c": 13.46,
+      "damper_pos": 56.39,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:42Z",
+      "zone_temp_c": 19.37,
+      "supply_temp_c": 11.97,
+      "damper_pos": 68.17,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:43Z",
+      "zone_temp_c": 16.12,
+      "supply_temp_c": 11.85,
+      "damper_pos": 46.16,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:44Z",
+      "zone_temp_c": 21.31,
+      "supply_temp_c": 11.44,
+      "damper_pos": 29.13,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:45Z",
+      "zone_temp_c": 20.38,
+      "supply_temp_c": 10.4,
+      "damper_pos": 79.57,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:46Z",
+      "zone_temp_c": 19.53,
+      "supply_temp_c": 13.95,
+      "damper_pos": 63.33,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:47Z",
+      "zone_temp_c": 22.18,
+      "supply_temp_c": 15.2,
+      "damper_pos": 71.52,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:48Z",
+      "zone_temp_c": 22.24,
+      "supply_temp_c": 12.43,
+      "damper_pos": 99.07,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:49Z",
+      "zone_temp_c": 19.49,
+      "supply_temp_c": 13.2,
+      "damper_pos": 50.66,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:50Z",
+      "zone_temp_c": 25.37,
+      "supply_temp_c": 11.9,
+      "damper_pos": 54.36,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:51Z",
+      "zone_temp_c": 22.6,
+      "supply_temp_c": 11.63,
+      "damper_pos": 89.55,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:52Z",
+      "zone_temp_c": 18.53,
+      "supply_temp_c": 12.51,
+      "damper_pos": 8.5,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:53Z",
+      "zone_temp_c": 22.43,
+      "supply_temp_c": 10.82,
+      "damper_pos": 35.5,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:54Z",
+      "zone_temp_c": 21.55,
+      "supply_temp_c": 12.64,
+      "damper_pos": 98.36,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:55Z",
+      "zone_temp_c": 20.89,
+      "supply_temp_c": 11.64,
+      "damper_pos": 75.27,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:56Z",
+      "zone_temp_c": 24.59,
+      "supply_temp_c": 12.66,
+      "damper_pos": 1.05,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:57Z",
+      "zone_temp_c": 21.84,
+      "supply_temp_c": 14.79,
+      "damper_pos": 51.88,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:58Z",
+      "zone_temp_c": 19.14,
+      "supply_temp_c": 12.05,
+      "damper_pos": 44.58,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:12:59Z",
+      "zone_temp_c": 18.67,
+      "supply_temp_c": 14.63,
+      "damper_pos": 58.86,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:00Z",
+      "zone_temp_c": 19.7,
+      "supply_temp_c": 13.0,
+      "damper_pos": 2.46,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:01Z",
+      "zone_temp_c": 24.05,
+      "supply_temp_c": 13.95,
+      "damper_pos": 96.17,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:02Z",
+      "zone_temp_c": 26.43,
+      "supply_temp_c": 15.38,
+      "damper_pos": 14.17,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:13:03Z",
+      "zone_temp_c": 20.96,
+      "supply_temp_c": 14.53,
+      "damper_pos": 20.69,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:04Z",
+      "zone_temp_c": 19.17,
+      "supply_temp_c": 13.18,
+      "damper_pos": 43.82,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:05Z",
+      "zone_temp_c": 21.28,
+      "supply_temp_c": 11.76,
+      "damper_pos": 30.03,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:06Z",
+      "zone_temp_c": 22.46,
+      "supply_temp_c": 12.31,
+      "damper_pos": 84.92,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:07Z",
+      "zone_temp_c": 19.75,
+      "supply_temp_c": 11.19,
+      "damper_pos": 16.44,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:08Z",
+      "zone_temp_c": 23.86,
+      "supply_temp_c": 12.89,
+      "damper_pos": 17.45,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:09Z",
+      "zone_temp_c": 23.71,
+      "supply_temp_c": 14.62,
+      "damper_pos": 95.85,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:10Z",
+      "zone_temp_c": 22.29,
+      "supply_temp_c": 14.52,
+      "damper_pos": 18.45,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:11Z",
+      "zone_temp_c": 20.31,
+      "supply_temp_c": 11.77,
+      "damper_pos": 2.92,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:12Z",
+      "zone_temp_c": 20.75,
+      "supply_temp_c": 12.35,
+      "damper_pos": 59.22,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:13Z",
+      "zone_temp_c": 19.01,
+      "supply_temp_c": 14.51,
+      "damper_pos": 20.58,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:14Z",
+      "zone_temp_c": 22.07,
+      "supply_temp_c": 10.27,
+      "damper_pos": 6.26,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:15Z",
+      "zone_temp_c": 26.07,
+      "supply_temp_c": 14.81,
+      "damper_pos": 18.7,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:13:16Z",
+      "zone_temp_c": 20.73,
+      "supply_temp_c": 14.47,
+      "damper_pos": 26.24,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:17Z",
+      "zone_temp_c": 23.99,
+      "supply_temp_c": 11.6,
+      "damper_pos": 63.91,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:18Z",
+      "zone_temp_c": 19.18,
+      "supply_temp_c": 11.82,
+      "damper_pos": 58.7,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:19Z",
+      "zone_temp_c": 19.21,
+      "supply_temp_c": 15.37,
+      "damper_pos": 61.74,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:20Z",
+      "zone_temp_c": 23.53,
+      "supply_temp_c": 10.84,
+      "damper_pos": 29.74,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:21Z",
+      "zone_temp_c": 21.21,
+      "supply_temp_c": 12.58,
+      "damper_pos": 13.39,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:22Z",
+      "zone_temp_c": 23.58,
+      "supply_temp_c": 13.86,
+      "damper_pos": 18.3,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:23Z",
+      "zone_temp_c": 20.96,
+      "supply_temp_c": 11.32,
+      "damper_pos": 41.82,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:24Z",
+      "zone_temp_c": 23.59,
+      "supply_temp_c": 14.12,
+      "damper_pos": 18.58,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:25Z",
+      "zone_temp_c": 19.47,
+      "supply_temp_c": 11.26,
+      "damper_pos": 64.53,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:26Z",
+      "zone_temp_c": 25.18,
+      "supply_temp_c": 13.0,
+      "damper_pos": 48.96,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:27Z",
+      "zone_temp_c": 23.38,
+      "supply_temp_c": 14.01,
+      "damper_pos": 45.1,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:28Z",
+      "zone_temp_c": 24.23,
+      "supply_temp_c": 13.47,
+      "damper_pos": 0.96,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:29Z",
+      "zone_temp_c": 25.0,
+      "supply_temp_c": 15.09,
+      "damper_pos": 96.38,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:30Z",
+      "zone_temp_c": 19.08,
+      "supply_temp_c": 12.94,
+      "damper_pos": 68.47,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:31Z",
+      "zone_temp_c": 17.87,
+      "supply_temp_c": 14.45,
+      "damper_pos": 48.87,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:32Z",
+      "zone_temp_c": 22.54,
+      "supply_temp_c": 13.19,
+      "damper_pos": 76.11,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:33Z",
+      "zone_temp_c": 21.48,
+      "supply_temp_c": 14.16,
+      "damper_pos": 53.76,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:34Z",
+      "zone_temp_c": 23.36,
+      "supply_temp_c": 14.44,
+      "damper_pos": 74.25,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:35Z",
+      "zone_temp_c": 22.32,
+      "supply_temp_c": 11.11,
+      "damper_pos": 11.32,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:36Z",
+      "zone_temp_c": 25.25,
+      "supply_temp_c": 14.7,
+      "damper_pos": 82.33,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:37Z",
+      "zone_temp_c": 18.88,
+      "supply_temp_c": 15.07,
+      "damper_pos": 4.16,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:38Z",
+      "zone_temp_c": 21.39,
+      "supply_temp_c": 11.15,
+      "damper_pos": 98.98,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:39Z",
+      "zone_temp_c": 25.77,
+      "supply_temp_c": 14.69,
+      "damper_pos": 75.13,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:40Z",
+      "zone_temp_c": 19.18,
+      "supply_temp_c": 18.47,
+      "damper_pos": 44.97,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:13:41Z",
+      "zone_temp_c": 19.33,
+      "supply_temp_c": 15.25,
+      "damper_pos": 43.91,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:42Z",
+      "zone_temp_c": 26.32,
+      "supply_temp_c": 12.9,
+      "damper_pos": 23.69,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:43Z",
+      "zone_temp_c": 23.24,
+      "supply_temp_c": 11.15,
+      "damper_pos": 35.06,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:44Z",
+      "zone_temp_c": 21.14,
+      "supply_temp_c": 10.94,
+      "damper_pos": 16.6,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:45Z",
+      "zone_temp_c": 23.09,
+      "supply_temp_c": 13.78,
+      "damper_pos": 20.69,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:46Z",
+      "zone_temp_c": 24.16,
+      "supply_temp_c": 13.51,
+      "damper_pos": 28.11,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:47Z",
+      "zone_temp_c": 19.85,
+      "supply_temp_c": 12.68,
+      "damper_pos": 70.41,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:48Z",
+      "zone_temp_c": 21.52,
+      "supply_temp_c": 14.15,
+      "damper_pos": 85.8,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:49Z",
+      "zone_temp_c": 25.75,
+      "supply_temp_c": 12.79,
+      "damper_pos": 9.52,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:13:50Z",
+      "zone_temp_c": 26.27,
+      "supply_temp_c": 12.39,
+      "damper_pos": 91.88,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:51Z",
+      "zone_temp_c": 27.02,
+      "supply_temp_c": 12.86,
+      "damper_pos": 12.69,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:13:52Z",
+      "zone_temp_c": 23.26,
+      "supply_temp_c": 12.15,
+      "damper_pos": 71.14,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:53Z",
+      "zone_temp_c": 24.0,
+      "supply_temp_c": 10.76,
+      "damper_pos": 67.62,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:54Z",
+      "zone_temp_c": 18.73,
+      "supply_temp_c": 13.13,
+      "damper_pos": 26.87,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:55Z",
+      "zone_temp_c": 19.65,
+      "supply_temp_c": 13.84,
+      "damper_pos": 63.36,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:56Z",
+      "zone_temp_c": 22.81,
+      "supply_temp_c": 12.55,
+      "damper_pos": 51.56,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:57Z",
+      "zone_temp_c": 20.96,
+      "supply_temp_c": 16.47,
+      "damper_pos": 36.91,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:58Z",
+      "zone_temp_c": 24.12,
+      "supply_temp_c": 12.59,
+      "damper_pos": 0.25,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:13:59Z",
+      "zone_temp_c": 22.61,
+      "supply_temp_c": 10.59,
+      "damper_pos": 73.09,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:00Z",
+      "zone_temp_c": 18.43,
+      "supply_temp_c": 13.57,
+      "damper_pos": 35.82,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:01Z",
+      "zone_temp_c": 24.85,
+      "supply_temp_c": 13.72,
+      "damper_pos": 21.78,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:02Z",
+      "zone_temp_c": 20.44,
+      "supply_temp_c": 13.44,
+      "damper_pos": 26.85,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:03Z",
+      "zone_temp_c": 23.07,
+      "supply_temp_c": 11.8,
+      "damper_pos": 57.79,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:04Z",
+      "zone_temp_c": 19.36,
+      "supply_temp_c": 12.3,
+      "damper_pos": 34.37,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:05Z",
+      "zone_temp_c": 21.68,
+      "supply_temp_c": 12.57,
+      "damper_pos": 9.96,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:06Z",
+      "zone_temp_c": 22.59,
+      "supply_temp_c": 11.37,
+      "damper_pos": 12.42,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:07Z",
+      "zone_temp_c": 23.69,
+      "supply_temp_c": 11.74,
+      "damper_pos": 0.07,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:08Z",
+      "zone_temp_c": 23.62,
+      "supply_temp_c": 12.74,
+      "damper_pos": 68.86,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:09Z",
+      "zone_temp_c": 24.45,
+      "supply_temp_c": 14.6,
+      "damper_pos": 15.9,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:10Z",
+      "zone_temp_c": 23.82,
+      "supply_temp_c": 12.51,
+      "damper_pos": 65.46,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:11Z",
+      "zone_temp_c": 21.99,
+      "supply_temp_c": 14.45,
+      "damper_pos": 90.38,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:12Z",
+      "zone_temp_c": 23.27,
+      "supply_temp_c": 14.3,
+      "damper_pos": 30.55,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:13Z",
+      "zone_temp_c": 21.43,
+      "supply_temp_c": 11.96,
+      "damper_pos": 65.55,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:14Z",
+      "zone_temp_c": 21.97,
+      "supply_temp_c": 12.93,
+      "damper_pos": 47.68,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:15Z",
+      "zone_temp_c": 23.2,
+      "supply_temp_c": 13.8,
+      "damper_pos": 68.0,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:16Z",
+      "zone_temp_c": 25.85,
+      "supply_temp_c": 13.13,
+      "damper_pos": 81.71,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:17Z",
+      "zone_temp_c": 24.61,
+      "supply_temp_c": 12.88,
+      "damper_pos": 13.22,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:18Z",
+      "zone_temp_c": 24.22,
+      "supply_temp_c": 13.63,
+      "damper_pos": 73.08,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:19Z",
+      "zone_temp_c": 23.73,
+      "supply_temp_c": 13.78,
+      "damper_pos": 88.1,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:20Z",
+      "zone_temp_c": 24.81,
+      "supply_temp_c": 14.96,
+      "damper_pos": 75.32,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:21Z",
+      "zone_temp_c": 27.27,
+      "supply_temp_c": 16.5,
+      "damper_pos": 14.29,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:14:22Z",
+      "zone_temp_c": 21.68,
+      "supply_temp_c": 12.96,
+      "damper_pos": 65.0,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:23Z",
+      "zone_temp_c": 18.28,
+      "supply_temp_c": 13.88,
+      "damper_pos": 62.81,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:24Z",
+      "zone_temp_c": 23.5,
+      "supply_temp_c": 14.26,
+      "damper_pos": 68.66,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:25Z",
+      "zone_temp_c": 22.68,
+      "supply_temp_c": 12.51,
+      "damper_pos": 10.05,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:26Z",
+      "zone_temp_c": 22.05,
+      "supply_temp_c": 11.0,
+      "damper_pos": 38.4,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:27Z",
+      "zone_temp_c": 24.11,
+      "supply_temp_c": 12.7,
+      "damper_pos": 13.98,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:28Z",
+      "zone_temp_c": 21.82,
+      "supply_temp_c": 13.62,
+      "damper_pos": 55.34,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:29Z",
+      "zone_temp_c": 19.23,
+      "supply_temp_c": 11.79,
+      "damper_pos": 77.9,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:30Z",
+      "zone_temp_c": 20.23,
+      "supply_temp_c": 10.29,
+      "damper_pos": 65.84,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:31Z",
+      "zone_temp_c": 21.04,
+      "supply_temp_c": 14.72,
+      "damper_pos": 50.95,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:32Z",
+      "zone_temp_c": 21.97,
+      "supply_temp_c": 11.74,
+      "damper_pos": 5.46,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:33Z",
+      "zone_temp_c": 26.98,
+      "supply_temp_c": 10.77,
+      "damper_pos": 49.49,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:34Z",
+      "zone_temp_c": 24.23,
+      "supply_temp_c": 14.15,
+      "damper_pos": 59.39,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:35Z",
+      "zone_temp_c": 15.21,
+      "supply_temp_c": 12.27,
+      "damper_pos": 98.69,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:36Z",
+      "zone_temp_c": 23.22,
+      "supply_temp_c": 12.68,
+      "damper_pos": 86.08,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:37Z",
+      "zone_temp_c": 19.83,
+      "supply_temp_c": 12.4,
+      "damper_pos": 68.29,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:38Z",
+      "zone_temp_c": 22.5,
+      "supply_temp_c": 9.28,
+      "damper_pos": 77.04,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:39Z",
+      "zone_temp_c": 22.93,
+      "supply_temp_c": 13.06,
+      "damper_pos": 26.22,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:40Z",
+      "zone_temp_c": 22.86,
+      "supply_temp_c": 13.13,
+      "damper_pos": 78.93,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:41Z",
+      "zone_temp_c": 18.48,
+      "supply_temp_c": 12.91,
+      "damper_pos": 50.1,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:42Z",
+      "zone_temp_c": 18.65,
+      "supply_temp_c": 14.18,
+      "damper_pos": 8.24,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:43Z",
+      "zone_temp_c": 18.63,
+      "supply_temp_c": 12.53,
+      "damper_pos": 27.75,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:44Z",
+      "zone_temp_c": 20.9,
+      "supply_temp_c": 14.67,
+      "damper_pos": 20.32,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:45Z",
+      "zone_temp_c": 23.11,
+      "supply_temp_c": 11.26,
+      "damper_pos": 39.07,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:46Z",
+      "zone_temp_c": 18.85,
+      "supply_temp_c": 10.87,
+      "damper_pos": 68.11,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:47Z",
+      "zone_temp_c": 25.54,
+      "supply_temp_c": 13.94,
+      "damper_pos": 73.0,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:48Z",
+      "zone_temp_c": 22.49,
+      "supply_temp_c": 12.57,
+      "damper_pos": 8.62,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:49Z",
+      "zone_temp_c": 19.48,
+      "supply_temp_c": 13.66,
+      "damper_pos": 60.88,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:50Z",
+      "zone_temp_c": 20.5,
+      "supply_temp_c": 15.3,
+      "damper_pos": 74.07,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:51Z",
+      "zone_temp_c": 24.87,
+      "supply_temp_c": 14.6,
+      "damper_pos": 70.15,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:52Z",
+      "zone_temp_c": 25.19,
+      "supply_temp_c": 16.18,
+      "damper_pos": 52.3,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:53Z",
+      "zone_temp_c": 22.82,
+      "supply_temp_c": 10.66,
+      "damper_pos": 16.7,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:54Z",
+      "zone_temp_c": 25.04,
+      "supply_temp_c": 14.87,
+      "damper_pos": 26.88,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:55Z",
+      "zone_temp_c": 25.25,
+      "supply_temp_c": 11.31,
+      "damper_pos": 2.94,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:56Z",
+      "zone_temp_c": 22.7,
+      "supply_temp_c": 11.88,
+      "damper_pos": 6.39,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:57Z",
+      "zone_temp_c": 21.23,
+      "supply_temp_c": 11.09,
+      "damper_pos": 7.71,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:58Z",
+      "zone_temp_c": 19.73,
+      "supply_temp_c": 13.39,
+      "damper_pos": 49.96,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:14:59Z",
+      "zone_temp_c": 19.81,
+      "supply_temp_c": 12.41,
+      "damper_pos": 25.51,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:00Z",
+      "zone_temp_c": 24.61,
+      "supply_temp_c": 14.18,
+      "damper_pos": 72.28,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:01Z",
+      "zone_temp_c": 22.4,
+      "supply_temp_c": 14.77,
+      "damper_pos": 4.4,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:02Z",
+      "zone_temp_c": 23.22,
+      "supply_temp_c": 12.15,
+      "damper_pos": 47.18,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:03Z",
+      "zone_temp_c": 20.94,
+      "supply_temp_c": 13.57,
+      "damper_pos": 93.12,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:04Z",
+      "zone_temp_c": 23.98,
+      "supply_temp_c": 11.51,
+      "damper_pos": 91.39,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:05Z",
+      "zone_temp_c": 21.85,
+      "supply_temp_c": 11.44,
+      "damper_pos": 32.18,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:06Z",
+      "zone_temp_c": 18.55,
+      "supply_temp_c": 14.2,
+      "damper_pos": 27.13,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:07Z",
+      "zone_temp_c": 24.13,
+      "supply_temp_c": 13.68,
+      "damper_pos": 50.2,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:08Z",
+      "zone_temp_c": 23.28,
+      "supply_temp_c": 12.46,
+      "damper_pos": 80.43,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:09Z",
+      "zone_temp_c": 28.16,
+      "supply_temp_c": 12.57,
+      "damper_pos": 6.89,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:15:10Z",
+      "zone_temp_c": 20.01,
+      "supply_temp_c": 13.27,
+      "damper_pos": 84.48,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:11Z",
+      "zone_temp_c": 20.52,
+      "supply_temp_c": 14.68,
+      "damper_pos": 0.8,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:12Z",
+      "zone_temp_c": 22.98,
+      "supply_temp_c": 14.84,
+      "damper_pos": 30.39,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:13Z",
+      "zone_temp_c": 20.0,
+      "supply_temp_c": 11.83,
+      "damper_pos": 59.17,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:14Z",
+      "zone_temp_c": 17.7,
+      "supply_temp_c": 13.11,
+      "damper_pos": 19.54,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:15Z",
+      "zone_temp_c": 25.43,
+      "supply_temp_c": 11.52,
+      "damper_pos": 24.51,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:16Z",
+      "zone_temp_c": 24.57,
+      "supply_temp_c": 13.06,
+      "damper_pos": 23.3,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:17Z",
+      "zone_temp_c": 19.28,
+      "supply_temp_c": 15.36,
+      "damper_pos": 87.72,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:18Z",
+      "zone_temp_c": 22.13,
+      "supply_temp_c": 12.98,
+      "damper_pos": 65.73,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:19Z",
+      "zone_temp_c": 24.35,
+      "supply_temp_c": 11.04,
+      "damper_pos": 10.39,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:20Z",
+      "zone_temp_c": 20.19,
+      "supply_temp_c": 12.79,
+      "damper_pos": 49.2,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:21Z",
+      "zone_temp_c": 29.92,
+      "supply_temp_c": 14.88,
+      "damper_pos": 71.17,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:22Z",
+      "zone_temp_c": 26.7,
+      "supply_temp_c": 14.87,
+      "damper_pos": 89.73,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:23Z",
+      "zone_temp_c": 18.15,
+      "supply_temp_c": 12.71,
+      "damper_pos": 37.25,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:24Z",
+      "zone_temp_c": 23.04,
+      "supply_temp_c": 12.9,
+      "damper_pos": 9.56,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:25Z",
+      "zone_temp_c": 25.09,
+      "supply_temp_c": 15.07,
+      "damper_pos": 7.48,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:26Z",
+      "zone_temp_c": 19.57,
+      "supply_temp_c": 12.34,
+      "damper_pos": 96.42,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:27Z",
+      "zone_temp_c": 22.16,
+      "supply_temp_c": 14.16,
+      "damper_pos": 31.5,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:28Z",
+      "zone_temp_c": 23.22,
+      "supply_temp_c": 10.79,
+      "damper_pos": 73.54,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:29Z",
+      "zone_temp_c": 21.17,
+      "supply_temp_c": 14.09,
+      "damper_pos": 7.47,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:30Z",
+      "zone_temp_c": 23.27,
+      "supply_temp_c": 15.5,
+      "damper_pos": 58.47,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:31Z",
+      "zone_temp_c": 22.84,
+      "supply_temp_c": 13.74,
+      "damper_pos": 46.61,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:32Z",
+      "zone_temp_c": 19.42,
+      "supply_temp_c": 14.03,
+      "damper_pos": 96.46,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:33Z",
+      "zone_temp_c": 22.56,
+      "supply_temp_c": 14.24,
+      "damper_pos": 26.5,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:34Z",
+      "zone_temp_c": 23.07,
+      "supply_temp_c": 13.6,
+      "damper_pos": 68.61,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:35Z",
+      "zone_temp_c": 23.78,
+      "supply_temp_c": 10.94,
+      "damper_pos": 4.03,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:36Z",
+      "zone_temp_c": 23.15,
+      "supply_temp_c": 11.85,
+      "damper_pos": 9.12,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:37Z",
+      "zone_temp_c": 22.03,
+      "supply_temp_c": 14.41,
+      "damper_pos": 51.35,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:38Z",
+      "zone_temp_c": 21.14,
+      "supply_temp_c": 11.96,
+      "damper_pos": 99.07,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:39Z",
+      "zone_temp_c": 24.5,
+      "supply_temp_c": 13.3,
+      "damper_pos": 45.22,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:40Z",
+      "zone_temp_c": 21.98,
+      "supply_temp_c": 11.86,
+      "damper_pos": 46.2,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:41Z",
+      "zone_temp_c": 22.46,
+      "supply_temp_c": 12.22,
+      "damper_pos": 1.2,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:42Z",
+      "zone_temp_c": 25.44,
+      "supply_temp_c": 9.26,
+      "damper_pos": 13.07,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:43Z",
+      "zone_temp_c": 23.08,
+      "supply_temp_c": 11.7,
+      "damper_pos": 63.03,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:44Z",
+      "zone_temp_c": 19.97,
+      "supply_temp_c": 11.44,
+      "damper_pos": 25.88,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:45Z",
+      "zone_temp_c": 22.2,
+      "supply_temp_c": 12.71,
+      "damper_pos": 6.45,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:46Z",
+      "zone_temp_c": 24.21,
+      "supply_temp_c": 12.07,
+      "damper_pos": 12.88,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:47Z",
+      "zone_temp_c": 25.89,
+      "supply_temp_c": 11.42,
+      "damper_pos": 33.15,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:48Z",
+      "zone_temp_c": 24.68,
+      "supply_temp_c": 13.44,
+      "damper_pos": 16.8,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:49Z",
+      "zone_temp_c": 17.85,
+      "supply_temp_c": 11.75,
+      "damper_pos": 39.5,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:50Z",
+      "zone_temp_c": 25.73,
+      "supply_temp_c": 13.42,
+      "damper_pos": 17.28,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:15:51Z",
+      "zone_temp_c": 22.35,
+      "supply_temp_c": 13.94,
+      "damper_pos": 27.99,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:52Z",
+      "zone_temp_c": 22.49,
+      "supply_temp_c": 12.73,
+      "damper_pos": 61.92,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:53Z",
+      "zone_temp_c": 22.06,
+      "supply_temp_c": 14.25,
+      "damper_pos": 41.2,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:54Z",
+      "zone_temp_c": 21.16,
+      "supply_temp_c": 12.83,
+      "damper_pos": 27.98,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:55Z",
+      "zone_temp_c": 23.09,
+      "supply_temp_c": 13.76,
+      "damper_pos": 88.47,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:56Z",
+      "zone_temp_c": 18.52,
+      "supply_temp_c": 12.66,
+      "damper_pos": 80.22,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:57Z",
+      "zone_temp_c": 24.1,
+      "supply_temp_c": 8.65,
+      "damper_pos": 78.19,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:58Z",
+      "zone_temp_c": 20.02,
+      "supply_temp_c": 14.46,
+      "damper_pos": 48.47,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:15:59Z",
+      "zone_temp_c": 24.52,
+      "supply_temp_c": 12.08,
+      "damper_pos": 38.84,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:00Z",
+      "zone_temp_c": 22.94,
+      "supply_temp_c": 14.19,
+      "damper_pos": 21.9,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:01Z",
+      "zone_temp_c": 25.44,
+      "supply_temp_c": 11.41,
+      "damper_pos": 5.86,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:02Z",
+      "zone_temp_c": 25.07,
+      "supply_temp_c": 12.9,
+      "damper_pos": 76.68,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:03Z",
+      "zone_temp_c": 28.75,
+      "supply_temp_c": 12.99,
+      "damper_pos": 10.01,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:16:04Z",
+      "zone_temp_c": 20.91,
+      "supply_temp_c": 12.02,
+      "damper_pos": 81.63,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:05Z",
+      "zone_temp_c": 22.74,
+      "supply_temp_c": 12.75,
+      "damper_pos": 99.64,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:06Z",
+      "zone_temp_c": 22.92,
+      "supply_temp_c": 15.85,
+      "damper_pos": 79.74,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:07Z",
+      "zone_temp_c": 19.08,
+      "supply_temp_c": 15.27,
+      "damper_pos": 84.52,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:08Z",
+      "zone_temp_c": 23.5,
+      "supply_temp_c": 14.8,
+      "damper_pos": 80.62,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:09Z",
+      "zone_temp_c": 20.21,
+      "supply_temp_c": 9.86,
+      "damper_pos": 2.82,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:10Z",
+      "zone_temp_c": 20.14,
+      "supply_temp_c": 9.53,
+      "damper_pos": 56.36,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:11Z",
+      "zone_temp_c": 20.51,
+      "supply_temp_c": 12.63,
+      "damper_pos": 98.8,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:12Z",
+      "zone_temp_c": 24.14,
+      "supply_temp_c": 11.82,
+      "damper_pos": 30.91,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:13Z",
+      "zone_temp_c": 20.91,
+      "supply_temp_c": 13.04,
+      "damper_pos": 23.26,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:14Z",
+      "zone_temp_c": 22.6,
+      "supply_temp_c": 14.8,
+      "damper_pos": 0.07,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:15Z",
+      "zone_temp_c": 23.46,
+      "supply_temp_c": 12.5,
+      "damper_pos": 13.05,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:16Z",
+      "zone_temp_c": 20.84,
+      "supply_temp_c": 9.71,
+      "damper_pos": 84.43,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:17Z",
+      "zone_temp_c": 21.77,
+      "supply_temp_c": 13.28,
+      "damper_pos": 58.66,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:18Z",
+      "zone_temp_c": 25.74,
+      "supply_temp_c": 11.71,
+      "damper_pos": 84.65,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:19Z",
+      "zone_temp_c": 26.07,
+      "supply_temp_c": 10.07,
+      "damper_pos": 37.36,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:20Z",
+      "zone_temp_c": 24.34,
+      "supply_temp_c": 12.46,
+      "damper_pos": 10.1,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:21Z",
+      "zone_temp_c": 21.57,
+      "supply_temp_c": 13.77,
+      "damper_pos": 15.75,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:22Z",
+      "zone_temp_c": 26.2,
+      "supply_temp_c": 12.16,
+      "damper_pos": 96.07,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:23Z",
+      "zone_temp_c": 21.08,
+      "supply_temp_c": 12.25,
+      "damper_pos": 96.87,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:24Z",
+      "zone_temp_c": 20.0,
+      "supply_temp_c": 9.77,
+      "damper_pos": 78.7,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:25Z",
+      "zone_temp_c": 22.56,
+      "supply_temp_c": 14.97,
+      "damper_pos": 17.54,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:26Z",
+      "zone_temp_c": 20.67,
+      "supply_temp_c": 15.15,
+      "damper_pos": 12.73,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:27Z",
+      "zone_temp_c": 21.19,
+      "supply_temp_c": 9.38,
+      "damper_pos": 94.87,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:28Z",
+      "zone_temp_c": 15.76,
+      "supply_temp_c": 16.04,
+      "damper_pos": 96.52,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:29Z",
+      "zone_temp_c": 25.33,
+      "supply_temp_c": 13.41,
+      "damper_pos": 92.1,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:30Z",
+      "zone_temp_c": 23.73,
+      "supply_temp_c": 12.79,
+      "damper_pos": 56.56,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:31Z",
+      "zone_temp_c": 23.27,
+      "supply_temp_c": 12.68,
+      "damper_pos": 74.53,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:32Z",
+      "zone_temp_c": 22.54,
+      "supply_temp_c": 17.25,
+      "damper_pos": 16.79,
+      "fault_label": 1
+    },
+    {
+      "timestamp": "2026-10-15T00:16:33Z",
+      "zone_temp_c": 22.81,
+      "supply_temp_c": 12.57,
+      "damper_pos": 70.9,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:34Z",
+      "zone_temp_c": 18.65,
+      "supply_temp_c": 10.6,
+      "damper_pos": 44.66,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:35Z",
+      "zone_temp_c": 21.82,
+      "supply_temp_c": 14.13,
+      "damper_pos": 6.78,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:36Z",
+      "zone_temp_c": 21.95,
+      "supply_temp_c": 13.72,
+      "damper_pos": 0.13,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:37Z",
+      "zone_temp_c": 18.94,
+      "supply_temp_c": 14.6,
+      "damper_pos": 96.91,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:38Z",
+      "zone_temp_c": 24.18,
+      "supply_temp_c": 11.84,
+      "damper_pos": 37.87,
+      "fault_label": 0
+    },
+    {
+      "timestamp": "2026-10-15T00:16:39Z",
+      "zone_temp_c": 20.89,
+      "supply_temp_c": 12.8,
+      "damper_pos": 47.95,
+      "fault_label": 0
+    }
+  ]
+}

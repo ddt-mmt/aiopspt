@@ -1,0 +1,9 @@
+{
+  "timestamp": "2026-10-14T05:30:00+00:00",
+  "audit_target": "AIOps Shadow v5 Post-Soak Evaluation",
+  "staging_dir": "/root/grafan_aiops/shadow_v5/outputs_post_soak_audit_20261014_053000",
+  "files": {
+    "POST_SOAK_AUDIT_REPORT.md": "Generated post-soak audit findings, gap analysis, and final decision READY WITH WARNINGS."
+  },
+  "conclusion": "READY WITH WARNINGS"
+}

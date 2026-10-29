@@ -1,0 +1,1 @@
+host,itemid,key,sample_count,observed_span_days,median_interval_seconds,large_gap_count,invalid_numeric_count,constant_numeric_series,truncated_possible,api_errors,quality_notes

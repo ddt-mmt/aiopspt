@@ -1,0 +1,5 @@
+host,hostid,itemid,item_name,key,value_type,units,item_status,history_retention_config,trends_retention_config,sample_count,first_sample_utc,last_sample_utc,observed_span_days,median_interval_seconds,large_gap_count,invalid_numeric_count,numeric_unique_values,numeric_min,numeric_max,numeric_mean,raw_csv,status,errors
+ME_PAC1,10689,59986,Battery capacity,battery.capacity[upsHighPrecBatteryCapacity],0,%,1,31d,365d,0,,,0,,,,,,,,,NO_DATA,
+ME_PAC1,10689,59990,Battery runtime remaining,battery.runtime_remaining[upsAdvBatteryRunTimeRemaining],0,s,1,31d,365d,0,,,0,,,,,,,,,NO_DATA,
+ME_PAC1,10689,59993,Battery voltage,battery.voltage[upsHighPrecBatteryActualVoltage],0,V,1,31d,365d,0,,,0,,,,,,,,,NO_DATA,
+ME_PAC1,10689,59998,Output load,output.load[upsHighPrecOutputLoad],0,%,1,31d,365d,0,,,0,,,,,,,,,NO_DATA,

@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-10-15T05:31:08.686772",
+  "phase": "Phase G.14C",
+  "shadow_version": "v5",
+  "evidence_source": "/root/nginx.conf.proxy",
+  "tls_configured": false,
+  "listen_ports_detected": [
+    "listen 80;",
+    "listen 10051;",
+    "listen 162 udp;"
+  ],
+  "verification_limitations": "No valid TLS certificate or HTTPS server binding exists for Zabbix API web frontend proxy.",
+  "transport_feasibility_status": "BLOCKED_TRANSPORT_REVIEW",
+  "api_requests": 0,
+  "history_collected": false,
+  "production_changes": 0,
+  "secrets_exposed": false,
+  "final_status": "BLOCKED_TRANSPORT_REVIEW"
+}

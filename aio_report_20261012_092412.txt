@@ -1,0 +1,17 @@
+AIOps Audit Report
+Tanggal: 2026-10-12T09:24:14+07:00
+Host: prox-prod
+Project: /root/grafan_aiops
+Backup: /root/grafan_aiops/backup_aio_20261012_092412
+Log: /root/grafan_aiops/aio_audit_20261012_092412.log
+
+Prioritas pemeriksaan:
+1. Hentikan penggunaan fallback acak sebagai data produksi.
+2. Tandai data sensor yang hilang; hindari imputasi diam-diam.
+3. Selaraskan timestamp antar sensor secara eksplisit.
+4. Hitung TTF per sensor yang relevan dan validasi satuannya.
+5. Pindahkan credential dari source code ke environment/secret.
+6. Uji model anomaly detection dengan data historis berlabel.
+7. Validasi dashboard dan provisioning sebelum deployment.
+
+Script ini tidak mengubah konfigurasi atau merestart service.

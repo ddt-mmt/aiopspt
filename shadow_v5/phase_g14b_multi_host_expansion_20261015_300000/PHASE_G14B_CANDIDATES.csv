@@ -1,0 +1,241 @@
+hostid,hostname,itemid,name,key_,units,value_type,status,delay,category,validation_tier,inclusion_status
+10688,ME_UPS1,59597,Battery capacity,battery.capacity[upsHighPrecBatteryCapacity],%,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,60430,0: External battery packs bad,battery.external_packs_bad[upsAdvBatteryNumOfBadBattPacks.0],,3,0,15m,Environmental & Electrical Sensor,PRIORITY,DEFERRED_REVIEW
+10688,ME_UPS1,59598,External battery packs count,battery.external_packs_count[upsAdvBatteryNumOfBattPacks],,3,0,1h,Environmental & Electrical Sensor,PRIORITY,DEFERRED_REVIEW
+10688,ME_UPS1,59599,Battery last replace date,battery.last_replace_date[upsBasicBatteryLastReplaceDate],,1,0,1h,Environmental & Electrical Sensor,PRIORITY,DEFERRED_REVIEW
+10688,ME_UPS1,59600,Battery replace indicator,battery.replace_indicator[upsAdvBatteryReplaceIndicator],,3,0,1m,Environmental & Electrical Sensor,PRIORITY,DEFERRED_REVIEW
+10688,ME_UPS1,59601,Battery runtime remaining,battery.runtime_remaining[upsAdvBatteryRunTimeRemaining],s,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,59602,Battery status,battery.status[upsBasicBatteryStatus],,3,0,1m,Environmental & Electrical Sensor,PRIORITY,DEFERRED_REVIEW
+10688,ME_UPS1,59603,Battery temperature,battery.temperature[upsHighPrecBatteryTemperature],℃,0,1,1m,Environmental & Electrical Sensor,EXCLUDE_DISABLED,EXCLUDE_DISABLED
+10688,ME_UPS1,59604,Battery voltage,battery.voltage[upsHighPrecBatteryActualVoltage],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,59605,Input fail cause,input.fail[upsAdvInputLineFailCause],,3,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10688,ME_UPS1,59606,Input frequency,input.frequency[upsHighPrecInputFrequency],Hz,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,59607,Input voltage,input.voltage[upsHighPrecInputLineVoltage],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,59608,Output current,output.current[upsHighPrecOutputCurrent],A,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,59609,Output load,output.load[upsHighPrecOutputLoad],%,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,59610,Output status,output.status[upsBasicOutputStatus],,3,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10688,ME_UPS1,59611,Output voltage,output.voltage[upsHighPrecOutputVoltage],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,60424,1: Phase input current,phase.input.current[upsPhaseInputCurrent.1.1.1],A,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,60425,2: Phase input current,phase.input.current[upsPhaseInputCurrent.1.1.2],A,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,60426,3: Phase input current,phase.input.current[upsPhaseInputCurrent.1.1.3],A,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,60427,1: Phase input voltage,phase.input.voltage[upsPhaseInputVoltage.1.1.1],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,60428,2: Phase input voltage,phase.input.voltage[upsPhaseInputVoltage.1.1.2],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,60429,3: Phase input voltage,phase.input.voltage[upsPhaseInputVoltage.1.1.3],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,60431,1: Phase output current,phase.output.current[upsPhaseOutputCurrent.1.1.1],A,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,60432,2: Phase output current,phase.output.current[upsPhaseOutputCurrent.1.1.2],A,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,60433,3: Phase output current,phase.output.current[upsPhaseOutputCurrent.1.1.3],A,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,60434,1: Phase output load, %,phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.1],%,0,0,Environmental & Electrical Sensor,REVIEW_DUPLICATE,DEFERRED_REVIEW
+10688,ME_UPS1,60435,2: Phase output load, %,phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.2],%,0,0,Environmental & Electrical Sensor,REVIEW_DUPLICATE,DEFERRED_REVIEW
+10688,ME_UPS1,60436,3: Phase output load, %,phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.3],%,0,0,Environmental & Electrical Sensor,REVIEW_DUPLICATE,DEFERRED_REVIEW
+10688,ME_UPS1,60437,1: Phase output voltage,phase.output.voltage[upsPhaseOutputVoltage.1.1.1],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,60438,2: Phase output voltage,phase.output.voltage[upsPhaseOutputVoltage.1.1.2],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,60439,3: Phase output voltage,phase.output.voltage[upsPhaseOutputVoltage.1.1.3],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,59612,SNMP traps (fallback),snmptrap.fallback,,2,0,0,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10688,ME_UPS1,59613,System contact details,system.contact[sysContact.0],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10688,ME_UPS1,59614,System description,system.descr[sysDescr.0],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10688,ME_UPS1,59615,Uptime (hardware),system.hw.uptime[hrSystemUptime.0],uptime,3,0,30s,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10688,ME_UPS1,59616,System location,system.location[sysLocation.0],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10688,ME_UPS1,59617,Model,system.model[upsBasicIdentModel],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10688,ME_UPS1,59618,System name,system.name[sysName.0],,1,0,15m,Unclassified Metric,REVIEW_UNCLASSIFIED,DEFERRED_REVIEW
+10688,ME_UPS1,59619,Uptime (network),system.net.uptime[sysUpTime.0],uptime,3,0,30s,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10688,ME_UPS1,59620,System object ID,system.objectid[sysObjectID.0],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10688,ME_UPS1,59621,Serial number,system.sn[upsAdvIdentSerialNumber],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10688,ME_UPS1,90688,UPS Policy Action Status,ups.action.status,,3,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10688,ME_UPS1,90706,UPS Battery Temperature (C),ups.battery.temp,,0,0,0,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,90707,UPS Battery Voltage (V),ups.battery.voltage,,0,0,0,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,90685,UPS Health Score AIOps,ups.health.score,,0,0,0,Unclassified Metric,REVIEW_UNCLASSIFIED,DEFERRED_REVIEW
+10688,ME_UPS1,90705,UPS Output Load (%),ups.output.load,,0,0,0,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10688,ME_UPS1,90686,UPS Time-to-Failure (Hours),ups.ttf.hours,,0,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10688,ME_UPS1,59622,SNMP agent availability,zabbix[host,snmp,available],,3,Unclassified Metric,REVIEW_UNCLASSIFIED,DEFERRED_REVIEW
+10689,ME_PAC1,90722,AIOps Compressor Status,aiops.compressor.status,,0,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10689,ME_PAC1,90721,AIOps Evaporator Fan Speed (%),aiops.evaporator.fan.speed,,0,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10689,ME_PAC1,90720,AIOps Return Humidity (%RH),aiops.return.humidity.rh,,0,0,0,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10689,ME_PAC1,90718,AIOps Return Temperature (C),aiops.return.temp.c,,0,0,0,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10689,ME_PAC1,90719,AIOps Supply Temperature (C),aiops.supply.temp.c,,0,0,0,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10689,ME_PAC1,59986,Battery capacity,battery.capacity[upsHighPrecBatteryCapacity],%,0,1,1m,Environmental & Electrical Sensor,EXCLUDE_DISABLED,EXCLUDE_DISABLED
+10689,ME_PAC1,59987,External battery packs count,battery.external_packs_count[upsAdvBatteryNumOfBattPacks],,3,1,1h,Environmental & Electrical Sensor,EXCLUDE_DISABLED,EXCLUDE_DISABLED
+10689,ME_PAC1,59988,Battery last replace date,battery.last_replace_date[upsBasicBatteryLastReplaceDate],,1,1,1h,Environmental & Electrical Sensor,EXCLUDE_DISABLED,EXCLUDE_DISABLED
+10689,ME_PAC1,59989,Battery replace indicator,battery.replace_indicator[upsAdvBatteryReplaceIndicator],,3,1,1m,Environmental & Electrical Sensor,EXCLUDE_DISABLED,EXCLUDE_DISABLED
+10689,ME_PAC1,59990,Battery runtime remaining,battery.runtime_remaining[upsAdvBatteryRunTimeRemaining],s,0,1,1m,Environmental & Electrical Sensor,EXCLUDE_DISABLED,EXCLUDE_DISABLED
+10689,ME_PAC1,59991,Battery status,battery.status[upsBasicBatteryStatus],,3,1,1m,Environmental & Electrical Sensor,EXCLUDE_DISABLED,EXCLUDE_DISABLED
+10689,ME_PAC1,59992,Battery temperature,battery.temperature[upsHighPrecBatteryTemperature],℃,0,1,1m,Environmental & Electrical Sensor,EXCLUDE_DISABLED,EXCLUDE_DISABLED
+10689,ME_PAC1,59993,Battery voltage,battery.voltage[upsHighPrecBatteryActualVoltage],V,0,1,1m,Environmental & Electrical Sensor,EXCLUDE_DISABLED,EXCLUDE_DISABLED
+10689,ME_PAC1,60383,Compressor 1 Status,compressor.1.status,,3,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10689,ME_PAC1,90714,Compressor Status,compressor.status,,3,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10689,ME_PAC1,60384,Evaporator Fan Speed (%),evaporator.fan.speed,%%,0,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10689,ME_PAC1,90738,Fan Status,fan.status,,3,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10689,ME_PAC1,90739,ICMP Ping,icmpping,,3,0,1m,Availability & Ping,PRIORITY,DEFERRED_REVIEW
+10689,ME_PAC1,59994,Input fail cause,input.fail[upsAdvInputLineFailCause],,3,1,1m,Device Status & Operational State,EXCLUDE_DISABLED,EXCLUDE_DISABLED
+10689,ME_PAC1,59995,Input frequency,input.frequency[upsHighPrecInputFrequency],Hz,0,1,1m,Environmental & Electrical Sensor,EXCLUDE_DISABLED,EXCLUDE_DISABLED
+10689,ME_PAC1,59996,Input voltage,input.voltage[upsHighPrecInputLineVoltage],V,0,1,1m,Environmental & Electrical Sensor,EXCLUDE_DISABLED,EXCLUDE_DISABLED
+10689,ME_PAC1,59997,Output current,output.current[upsHighPrecOutputCurrent],A,0,1,1m,Environmental & Electrical Sensor,EXCLUDE_DISABLED,EXCLUDE_DISABLED
+10689,ME_PAC1,59998,Output load,output.load[upsHighPrecOutputLoad],%,0,1,1m,Environmental & Electrical Sensor,EXCLUDE_DISABLED,EXCLUDE_DISABLED
+10689,ME_PAC1,59999,Output status,output.status[upsBasicOutputStatus],,3,1,1m,Device Status & Operational State,EXCLUDE_DISABLED,EXCLUDE_DISABLED
+10689,ME_PAC1,60000,Output voltage,output.voltage[upsHighPrecOutputVoltage],V,0,1,1m,Environmental & Electrical Sensor,EXCLUDE_DISABLED,EXCLUDE_DISABLED
+10689,ME_PAC1,90689,PAC Policy Action Status,pac.action.status,,3,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10689,ME_PAC1,90684,PAC Health Score AIOps,pac.health.score,,0,0,0,Unclassified Metric,REVIEW_UNCLASSIFIED,DEFERRED_REVIEW
+10689,ME_PAC1,90687,PAC Time-to-Failure (Hours),pac.ttf.hours,,0,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10689,ME_PAC1,60385,Return Humidity (%RH),return.humidity.rh,%RH,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10689,ME_PAC1,60386,Return Temperature (C),return.temp.c,C,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10689,ME_PAC1,60001,SNMP traps (fallback),snmptrap.fallback,,2,0,0,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10689,ME_PAC1,60387,Supply Temperature (C),supply.temp.c,C,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10689,ME_PAC1,60002,System contact details,system.contact[sysContact.0],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10689,ME_PAC1,60003,System description,system.descr[sysDescr.0],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10689,ME_PAC1,60004,Uptime (hardware),system.hw.uptime[hrSystemUptime.0],uptime,3,0,30s,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10689,ME_PAC1,60005,System location,system.location[sysLocation.0],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10689,ME_PAC1,60006,Model,system.model[upsBasicIdentModel],,1,1,15m,Device Inventory & System Info,EXCLUDE_DISABLED,EXCLUDE_DISABLED
+10689,ME_PAC1,60007,System name,system.name[sysName.0],,1,0,15m,Unclassified Metric,REVIEW_UNCLASSIFIED,DEFERRED_REVIEW
+10689,ME_PAC1,60008,Uptime (network),system.net.uptime[sysUpTime.0],uptime,3,0,30s,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10689,ME_PAC1,60009,System object ID,system.objectid[sysObjectID.0],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10689,ME_PAC1,60010,Serial number,system.sn[upsAdvIdentSerialNumber],,1,1,15m,Device Inventory & System Info,EXCLUDE_DISABLED,EXCLUDE_DISABLED
+10689,ME_PAC1,60388,Unit State,unit.state,,3,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10689,ME_PAC1,60011,SNMP agent availability,zabbix[host,snmp,available],,3,Unclassified Metric,REVIEW_UNCLASSIFIED,DEFERRED_REVIEW
+10690,ME_PAC2,90727,AIOps Compressor Status,aiops.compressor.status,,0,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10690,ME_PAC2,90726,AIOps Evaporator Fan Speed (%),aiops.evaporator.fan.speed,,0,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10690,ME_PAC2,90725,AIOps Return Humidity (%RH),aiops.return.humidity.rh,,0,0,0,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10690,ME_PAC2,90723,AIOps Return Temperature (C),aiops.return.temp.c,,0,0,0,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10690,ME_PAC2,90724,AIOps Supply Temperature (C),aiops.supply.temp.c,,0,0,0,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10690,ME_PAC2,60389,Compressor 1 Status,compressor.1.status,,3,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10690,ME_PAC2,90715,Compressor Status,compressor.status,,3,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10690,ME_PAC2,60390,Evaporator Fan Speed (%),evaporator.fan.speed,%%,0,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10690,ME_PAC2,90740,Fan Status,fan.status,,3,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10690,ME_PAC2,90741,ICMP Ping,icmpping,,3,0,1m,Availability & Ping,PRIORITY,DEFERRED_REVIEW
+10690,ME_PAC2,90698,PAC Policy Action Status,pac.action.status,,3,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10690,ME_PAC2,90696,PAC Health Score AIOps,pac.health.score,,0,0,0,Unclassified Metric,REVIEW_UNCLASSIFIED,DEFERRED_REVIEW
+10690,ME_PAC2,90697,PAC Time-to-Failure (Hours),pac.ttf.hours,,0,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10690,ME_PAC2,60391,Return Humidity (%RH),return.humidity.rh,%RH,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10690,ME_PAC2,60392,Return Temperature (C),return.temp.c,C,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10690,ME_PAC2,60393,Supply Temperature (C),supply.temp.c,C,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10690,ME_PAC2,60394,Unit State,unit.state,,3,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10696,ME_PAC3,90732,AIOps Compressor Status,aiops.compressor.status,,0,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10696,ME_PAC3,90731,AIOps Evaporator Fan Speed (%),aiops.evaporator.fan.speed,,0,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10696,ME_PAC3,90730,AIOps Return Humidity (%RH),aiops.return.humidity.rh,,0,0,0,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10696,ME_PAC3,90728,AIOps Return Temperature (C),aiops.return.temp.c,,0,0,0,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10696,ME_PAC3,90729,AIOps Supply Temperature (C),aiops.supply.temp.c,,0,0,0,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10696,ME_PAC3,60733,Compressor Status,compressor.status,,3,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10696,ME_PAC3,90716,Evaporator Fan Speed (%),evaporator.fan.speed,,0,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10696,ME_PAC3,60735,Fan Status,fan.status,,3,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10696,ME_PAC3,60729,ICMP Ping,icmpping,,3,0,1m,Availability & Ping,PRIORITY,DEFERRED_REVIEW
+10696,ME_PAC3,90701,PAC Policy Action Status,pac.action.status,,3,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10696,ME_PAC3,90699,PAC Health Score AIOps,pac.health.score,,0,0,0,Unclassified Metric,REVIEW_UNCLASSIFIED,DEFERRED_REVIEW
+10696,ME_PAC3,90700,PAC Time-to-Failure (Hours),pac.ttf.hours,,0,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10696,ME_PAC3,60726,Return Humidity (%RH),return.humidity.rh,%,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10696,ME_PAC3,60722,Return Temperature (C),return.temp.c,C,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10696,ME_PAC3,60724,Supply Temperature (C),supply.temp.c,C,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60452,Battery capacity,battery.capacity[upsHighPrecBatteryCapacity],%,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60507,0: External battery packs bad,battery.external_packs_bad[upsAdvBatteryNumOfBadBattPacks.0],,3,0,15m,Environmental & Electrical Sensor,PRIORITY,DEFERRED_REVIEW
+10697,ME_UPS2,60453,External battery packs count,battery.external_packs_count[upsAdvBatteryNumOfBattPacks],,3,0,1h,Environmental & Electrical Sensor,PRIORITY,DEFERRED_REVIEW
+10697,ME_UPS2,60454,Battery last replace date,battery.last_replace_date[upsBasicBatteryLastReplaceDate],,1,0,1h,Environmental & Electrical Sensor,PRIORITY,DEFERRED_REVIEW
+10697,ME_UPS2,60455,Battery replace indicator,battery.replace_indicator[upsAdvBatteryReplaceIndicator],,3,0,1m,Environmental & Electrical Sensor,PRIORITY,DEFERRED_REVIEW
+10697,ME_UPS2,60456,Battery runtime remaining,battery.runtime_remaining[upsAdvBatteryRunTimeRemaining],s,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60457,Battery status,battery.status[upsBasicBatteryStatus],,3,0,1m,Environmental & Electrical Sensor,PRIORITY,DEFERRED_REVIEW
+10697,ME_UPS2,60458,Battery temperature,battery.temperature[upsHighPrecBatteryTemperature],℃,0,1,1m,Environmental & Electrical Sensor,EXCLUDE_DISABLED,EXCLUDE_DISABLED
+10697,ME_UPS2,60459,Battery voltage,battery.voltage[upsHighPrecBatteryActualVoltage],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60501,: Humidity sensor,external.sensor.humidity[uioSensorStatusHumidity.1.1.1],%,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60502,: Humidity sensor,external.sensor.humidity[uioSensorStatusHumidity.1.2.1],%,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60503,: Sensor alarm status,external.sensor.status[uioSensorStatusAlarmStatus.1.1.1],,3,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10697,ME_UPS2,60504,: Sensor alarm status,external.sensor.status[uioSensorStatusAlarmStatus.1.2.1],,3,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10697,ME_UPS2,60505,: Temperature sensor,external.sensor.temperature[uioSensorStatusTemperatureDegC.1.1.1],℃,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60506,: Temperature sensor,external.sensor.temperature[uioSensorStatusTemperatureDegC.1.2.1],℃,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60460,Input fail cause,input.fail[upsAdvInputLineFailCause],,3,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10697,ME_UPS2,60461,Input frequency,input.frequency[upsHighPrecInputFrequency],Hz,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60462,Input voltage,input.voltage[upsHighPrecInputLineVoltage],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60463,Output current,output.current[upsHighPrecOutputCurrent],A,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60464,Output load,output.load[upsHighPrecOutputLoad],%,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60465,Output status,output.status[upsBasicOutputStatus],,3,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10697,ME_UPS2,60466,Output voltage,output.voltage[upsHighPrecOutputVoltage],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60508,1: Phase input current,phase.input.current[upsPhaseInputCurrent.1.1.1],A,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60509,2: Phase input current,phase.input.current[upsPhaseInputCurrent.1.1.2],A,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60510,3: Phase input current,phase.input.current[upsPhaseInputCurrent.1.1.3],A,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60511,1: Phase input voltage,phase.input.voltage[upsPhaseInputVoltage.1.1.1],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60512,2: Phase input voltage,phase.input.voltage[upsPhaseInputVoltage.1.1.2],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60513,3: Phase input voltage,phase.input.voltage[upsPhaseInputVoltage.1.1.3],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60514,1: Phase output current,phase.output.current[upsPhaseOutputCurrent.1.1.1],A,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60515,2: Phase output current,phase.output.current[upsPhaseOutputCurrent.1.1.2],A,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60516,3: Phase output current,phase.output.current[upsPhaseOutputCurrent.1.1.3],A,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60517,1: Phase output load, %,phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.1],%,0,0,Environmental & Electrical Sensor,REVIEW_DUPLICATE,DEFERRED_REVIEW
+10697,ME_UPS2,60518,2: Phase output load, %,phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.2],%,0,0,Environmental & Electrical Sensor,REVIEW_DUPLICATE,DEFERRED_REVIEW
+10697,ME_UPS2,60519,3: Phase output load, %,phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.3],%,0,0,Environmental & Electrical Sensor,REVIEW_DUPLICATE,DEFERRED_REVIEW
+10697,ME_UPS2,60520,1: Phase output voltage,phase.output.voltage[upsPhaseOutputVoltage.1.1.1],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60521,2: Phase output voltage,phase.output.voltage[upsPhaseOutputVoltage.1.1.2],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60522,3: Phase output voltage,phase.output.voltage[upsPhaseOutputVoltage.1.1.3],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,60467,SNMP traps (fallback),snmptrap.fallback,,2,0,0,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10697,ME_UPS2,60468,System contact details,system.contact[sysContact.0],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10697,ME_UPS2,60469,System description,system.descr[sysDescr.0],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10697,ME_UPS2,60470,Uptime (hardware),system.hw.uptime[hrSystemUptime.0],uptime,3,0,30s,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10697,ME_UPS2,60471,System location,system.location[sysLocation.0],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10697,ME_UPS2,60472,Model,system.model[upsBasicIdentModel],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10697,ME_UPS2,60473,System name,system.name[sysName.0],,1,0,15m,Unclassified Metric,REVIEW_UNCLASSIFIED,DEFERRED_REVIEW
+10697,ME_UPS2,60474,Uptime (network),system.net.uptime[sysUpTime.0],uptime,3,0,30s,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10697,ME_UPS2,60475,System object ID,system.objectid[sysObjectID.0],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10697,ME_UPS2,60476,Serial number,system.sn[upsAdvIdentSerialNumber],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10697,ME_UPS2,90692,UPS Policy Action Status,ups.action.status,,3,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10697,ME_UPS2,90709,UPS Battery Temperature (C),ups.battery.temp,,0,0,0,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,90710,UPS Battery Voltage (V),ups.battery.voltage,,0,0,0,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,90690,UPS Health Score AIOps,ups.health.score,,0,0,0,Unclassified Metric,REVIEW_UNCLASSIFIED,DEFERRED_REVIEW
+10697,ME_UPS2,90708,UPS Output Load (%),ups.output.load,,0,0,0,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10697,ME_UPS2,90691,UPS Time-to-Failure (Hours),ups.ttf.hours,,0,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10697,ME_UPS2,60477,SNMP agent availability,zabbix[host,snmp,available],,3,Unclassified Metric,REVIEW_UNCLASSIFIED,DEFERRED_REVIEW
+10698,ME_PAC4,90737,AIOps Compressor Status,aiops.compressor.status,,0,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10698,ME_PAC4,90736,AIOps Evaporator Fan Speed (%),aiops.evaporator.fan.speed,,0,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10698,ME_PAC4,90735,AIOps Return Humidity (%RH),aiops.return.humidity.rh,,0,0,0,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10698,ME_PAC4,90733,AIOps Return Temperature (C),aiops.return.temp.c,,0,0,0,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10698,ME_PAC4,90734,AIOps Supply Temperature (C),aiops.supply.temp.c,,0,0,0,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10698,ME_PAC4,60734,Compressor Status,compressor.status,,3,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10698,ME_PAC4,90717,Evaporator Fan Speed (%),evaporator.fan.speed,,0,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10698,ME_PAC4,60736,Fan Status,fan.status,,3,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10698,ME_PAC4,60730,ICMP Ping,icmpping,,3,0,1m,Availability & Ping,PRIORITY,DEFERRED_REVIEW
+10698,ME_PAC4,90704,PAC Policy Action Status,pac.action.status,,3,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10698,ME_PAC4,90702,PAC Health Score AIOps,pac.health.score,,0,0,0,Unclassified Metric,REVIEW_UNCLASSIFIED,DEFERRED_REVIEW
+10698,ME_PAC4,90703,PAC Time-to-Failure (Hours),pac.ttf.hours,,0,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10698,ME_PAC4,60727,Return Humidity (%RH),return.humidity.rh,%,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10698,ME_PAC4,60723,Return Temperature (C),return.temp.c,C,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10698,ME_PAC4,60725,Supply Temperature (C),supply.temp.c,C,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60847,Battery capacity,battery.capacity[upsHighPrecBatteryCapacity],%,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60896,0: External battery packs bad,battery.external_packs_bad[upsAdvBatteryNumOfBadBattPacks.0],,3,0,15m,Environmental & Electrical Sensor,PRIORITY,DEFERRED_REVIEW
+10701,ME_UPS3,60848,External battery packs count,battery.external_packs_count[upsAdvBatteryNumOfBattPacks],,3,0,1h,Environmental & Electrical Sensor,PRIORITY,DEFERRED_REVIEW
+10701,ME_UPS3,60849,Battery last replace date,battery.last_replace_date[upsBasicBatteryLastReplaceDate],,1,0,1h,Environmental & Electrical Sensor,PRIORITY,DEFERRED_REVIEW
+10701,ME_UPS3,60850,Battery replace indicator,battery.replace_indicator[upsAdvBatteryReplaceIndicator],,3,0,1m,Environmental & Electrical Sensor,PRIORITY,DEFERRED_REVIEW
+10701,ME_UPS3,60851,Battery runtime remaining,battery.runtime_remaining[upsAdvBatteryRunTimeRemaining],s,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60852,Battery status,battery.status[upsBasicBatteryStatus],,3,0,1m,Environmental & Electrical Sensor,PRIORITY,DEFERRED_REVIEW
+10701,ME_UPS3,60853,Battery temperature,battery.temperature[upsHighPrecBatteryTemperature],℃,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60854,Battery voltage,battery.voltage[upsHighPrecBatteryActualVoltage],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60855,Input fail cause,input.fail[upsAdvInputLineFailCause],,3,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10701,ME_UPS3,60856,Input frequency,input.frequency[upsHighPrecInputFrequency],Hz,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60857,Input voltage,input.voltage[upsHighPrecInputLineVoltage],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60858,Output current,output.current[upsHighPrecOutputCurrent],A,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60859,Output load,output.load[upsHighPrecOutputLoad],%,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60860,Output status,output.status[upsBasicOutputStatus],,3,0,1m,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10701,ME_UPS3,60861,Output voltage,output.voltage[upsHighPrecOutputVoltage],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60906,1: Phase input current,phase.input.current[upsPhaseInputCurrent.1.1.1],A,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60907,2: Phase input current,phase.input.current[upsPhaseInputCurrent.1.1.2],A,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60908,3: Phase input current,phase.input.current[upsPhaseInputCurrent.1.1.3],A,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60909,1: Phase input voltage,phase.input.voltage[upsPhaseInputVoltage.1.1.1],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60910,2: Phase input voltage,phase.input.voltage[upsPhaseInputVoltage.1.1.2],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60911,3: Phase input voltage,phase.input.voltage[upsPhaseInputVoltage.1.1.3],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60897,1: Phase output current,phase.output.current[upsPhaseOutputCurrent.1.1.1],A,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60898,2: Phase output current,phase.output.current[upsPhaseOutputCurrent.1.1.2],A,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60899,3: Phase output current,phase.output.current[upsPhaseOutputCurrent.1.1.3],A,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60900,1: Phase output load, %,phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.1],%,0,0,Environmental & Electrical Sensor,REVIEW_DUPLICATE,DEFERRED_REVIEW
+10701,ME_UPS3,60901,2: Phase output load, %,phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.2],%,0,0,Environmental & Electrical Sensor,REVIEW_DUPLICATE,DEFERRED_REVIEW
+10701,ME_UPS3,60902,3: Phase output load, %,phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.3],%,0,0,Environmental & Electrical Sensor,REVIEW_DUPLICATE,DEFERRED_REVIEW
+10701,ME_UPS3,60903,1: Phase output voltage,phase.output.voltage[upsPhaseOutputVoltage.1.1.1],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60904,2: Phase output voltage,phase.output.voltage[upsPhaseOutputVoltage.1.1.2],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60905,3: Phase output voltage,phase.output.voltage[upsPhaseOutputVoltage.1.1.3],V,0,0,1m,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,60862,SNMP traps (fallback),snmptrap.fallback,,2,0,0,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10701,ME_UPS3,60863,System contact details,system.contact[sysContact.0],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10701,ME_UPS3,60864,System description,system.descr[sysDescr.0],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10701,ME_UPS3,60865,Uptime (hardware),system.hw.uptime[hrSystemUptime.0],uptime,3,0,30s,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10701,ME_UPS3,60866,System location,system.location[sysLocation.0],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10701,ME_UPS3,60867,Model,system.model[upsBasicIdentModel],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10701,ME_UPS3,60868,System name,system.name[sysName.0],,1,0,15m,Unclassified Metric,REVIEW_UNCLASSIFIED,DEFERRED_REVIEW
+10701,ME_UPS3,60869,Uptime (network),system.net.uptime[sysUpTime.0],uptime,3,0,30s,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10701,ME_UPS3,60870,System object ID,system.objectid[sysObjectID.0],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10701,ME_UPS3,60871,Serial number,system.sn[upsAdvIdentSerialNumber],,1,0,15m,Device Inventory & System Info,SECONDARY,INCLUDED_SECONDARY
+10701,ME_UPS3,90695,UPS Policy Action Status,ups.action.status,,3,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10701,ME_UPS3,90712,UPS Battery Temperature (C),ups.battery.temp,,0,0,0,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,90713,UPS Battery Voltage (V),ups.battery.voltage,,0,0,0,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,90693,UPS Health Score AIOps,ups.health.score,,0,0,0,Unclassified Metric,REVIEW_UNCLASSIFIED,DEFERRED_REVIEW
+10701,ME_UPS3,90711,UPS Output Load (%),ups.output.load,,0,0,0,Environmental & Electrical Sensor,PRIORITY,INCLUDED_PRIORITY
+10701,ME_UPS3,90694,UPS Time-to-Failure (Hours),ups.ttf.hours,,0,0,0,Device Status & Operational State,SECONDARY,INCLUDED_SECONDARY
+10701,ME_UPS3,60872,SNMP agent availability,zabbix[host,snmp,available],,3,Unclassified Metric,REVIEW_UNCLASSIFIED,DEFERRED_REVIEW

@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-10-15T02:42:09.803124",
+  "shadow_version": "v5",
+  "phase": "Phase E.1",
+  "zabbix_access": false,
+  "datasets": [
+    {
+      "dataset_id": "lbnl_fdd",
+      "status": "BLOCKED_LIVE_DOWNLOAD_SYNTHETIC_FIXTURE_USED",
+      "sha256": "2ebd4ebb94f76dafea03675581b8f4263b44d1d113c91f7e20d718c59c6f842a"
+    },
+    {
+      "dataset_id": "nasa_pcoe_battery",
+      "status": "BLOCKED_LIVE_DOWNLOAD_SYNTHETIC_FIXTURE_USED",
+      "sha256": "b218d32458d2d9733fc3969f9d41d7b67ecff28630e9f2e8299ff41d8f341f0f"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-10-13T08:08:07.181086+00:00",
+  "total_cycles_tested": 7,
+  "scenarios": [
+    {
+      "cycle": 1,
+      "condition": "NORMAL",
+      "input_health": 88.5,
+      "alert_fired": false
+    },
+    {
+      "cycle": 2,
+      "condition": "TRANSIENT_ANOMALY",
+      "input_health": 65.0,
+      "alert_fired": false
+    },
+    {
+      "cycle": 3,
+      "condition": "PERSISTENT_ANOMALY_1",
+      "input_health": 62.0,
+      "alert_fired": false
+    },
+    {
+      "cycle": 4,
+      "condition": "PERSISTENT_ANOMALY_2",
+      "input_health": 60.0,
+      "alert_fired": false
+    },
+    {
+      "cycle": 5,
+      "condition": "PERSISTENT_ANOMALY_3_ALARM",
+      "input_health": 58.0,
+      "alert_fired": true
+    },
+    {
+      "cycle": 6,
+      "condition": "DEGRADED_DATA_ABSTAIN",
+      "input_health": 40.0,
+      "alert_fired": false,
+      "gating": "DEGRADED_DATA"
+    },
+    {
+      "cycle": 7,
+      "condition": "INSUFFICIENT_DATA_ABSTAIN",
+      "input_health": null,
+      "alert_fired": false,
+      "gating": "INSUFFICIENT_DATA"
+    }
+  ],
+  "status": "PASS"
+}

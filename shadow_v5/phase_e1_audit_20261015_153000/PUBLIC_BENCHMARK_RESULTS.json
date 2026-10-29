@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-10-15T02:42:09.802812",
+  "hvac_benchmark": {
+    "dataset_id": "lbnl_fdd",
+    "model": "Rule-based HVAC Baseline",
+    "train_samples": 700,
+    "test_samples": 300,
+    "metrics": {
+      "precision": 0.6316,
+      "recall": 1.0,
+      "f1_score": 0.7742,
+      "false_alarm_rate": 0.0243,
+      "confusion_matrix": {
+        "tp": 12,
+        "fp": 7,
+        "fn": 0,
+        "tn": 281
+      }
+    },
+    "status": "VERIFIED_PROGRAMMATIC"
+  },
+  "battery_benchmark": {
+    "dataset_id": "nasa_pcoe_battery",
+    "model": "Linear Degradation Baseline",
+    "train_cycles": 350,
+    "test_cycles": 150,
+    "metrics": {
+      "mae": 0.0141,
+      "rmse": 0.0171
+    },
+    "status": "VERIFIED_PROGRAMMATIC"
+  }
+}

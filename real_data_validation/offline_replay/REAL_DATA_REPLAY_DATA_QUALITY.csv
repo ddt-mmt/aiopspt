@@ -1,0 +1,8 @@
+host,total_raw_samples,aligned_samples,null_values,invalid_non_finite,features_used
+ME_PAC1,50000,9936,0,0,"['return.temp.c', 'supply.temp.c', 'return.humidity.rh', 'evaporator.fan.speed', 'compressor.status']"
+ME_PAC2,50000,9936,0,0,"['return.temp.c', 'supply.temp.c', 'return.humidity.rh', 'evaporator.fan.speed', 'compressor.status']"
+ME_PAC3,43008,4002,0,0,"['return.temp.c', 'supply.temp.c', 'return.humidity.rh', 'evaporator.fan.speed', 'compressor.status']"
+ME_PAC4,43009,4003,0,0,"['return.temp.c', 'supply.temp.c', 'return.humidity.rh', 'evaporator.fan.speed', 'compressor.status']"
+ME_UPS1,10927,5,0,0,"['output.load', 'battery.voltage', 'battery.capacity', 'battery.runtime_remaining']"
+ME_UPS2,11212,92,0,0,"['output.load', 'battery.voltage', 'battery.capacity', 'battery.runtime_remaining']"
+ME_UPS3,16643,26,0,0,"['output.load', 'battery.voltage', 'battery.capacity', 'battery.runtime_remaining']"

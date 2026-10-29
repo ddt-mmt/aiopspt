@@ -1,0 +1,48 @@
+{
+  "execution_timestamp": "2026-10-16T13:59:07.946840+00:00",
+  "target_hosts": [
+    "ME_UPS1",
+    "ME_UPS2",
+    "ME_UPS3",
+    "ME_PAC1",
+    "ME_PAC2",
+    "ME_PAC3",
+    "ME_PAC4"
+  ],
+  "host_sensor_summary": {
+    "ME_UPS1": {
+      "files_found": 4,
+      "total_samples": 10927
+    },
+    "ME_UPS2": {
+      "files_found": 4,
+      "total_samples": 11212
+    },
+    "ME_UPS3": {
+      "files_found": 4,
+      "total_samples": 16643
+    },
+    "ME_PAC1": {
+      "files_found": 5,
+      "total_samples": 50000
+    },
+    "ME_PAC2": {
+      "files_found": 5,
+      "total_samples": 50000
+    },
+    "ME_PAC3": {
+      "files_found": 5,
+      "total_samples": 43008
+    },
+    "ME_PAC4": {
+      "files_found": 5,
+      "total_samples": 43009
+    }
+  },
+  "critical_finding": "Equipment is newly installed and lacks historical physical failure/breakdown ground truth logs (both manual and machine logs). Therefore, ML scope is strictly constrained to Zabbix alarm event and operational telemetry anomaly detection, NOT physical equipment failure prediction.",
+  "decision": "PARTIAL",
+  "production_changes": 0,
+  "zabbix_write_operations": 0,
+  "restarts": 0,
+  "deployment_authorization": "NOT_AUTHORIZED_FOR_DEPLOYMENT"
+}

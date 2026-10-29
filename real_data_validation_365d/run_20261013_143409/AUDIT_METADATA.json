@@ -1,0 +1,36 @@
+{
+  "zabbix_version": "7.0.23",
+  "run_started_local": "20261013_143409",
+  "range_start_utc": "2026-10-12T07:34:09+00:00",
+  "range_end_utc": "2026-10-13T07:34:09+00:00",
+  "requested_days": 1,
+  "chunk_days": 30,
+  "history_limit_per_request": 200000,
+  "hosts_requested": [
+    "ME_UPS1",
+    "ME_UPS2",
+    "ME_UPS3",
+    "ME_PAC1",
+    "ME_PAC2",
+    "ME_PAC3",
+    "ME_PAC4"
+  ],
+  "hosts_found": [
+    "ME_PAC1",
+    "ME_PAC2",
+    "ME_PAC3",
+    "ME_PAC4",
+    "ME_UPS1",
+    "ME_UPS2",
+    "ME_UPS3"
+  ],
+  "items_audited": 0,
+  "items_with_data": 0,
+  "total_exported_records": 0,
+  "api_discovery_errors": 0,
+  "api_auth_mode": "bearer",
+  "read_only": true,
+  "zabbix_writes_performed": 0,
+  "production_script_modified": false,
+  "note": "Observed span is first/last returned raw sample, not proof of continuous coverage."
+}

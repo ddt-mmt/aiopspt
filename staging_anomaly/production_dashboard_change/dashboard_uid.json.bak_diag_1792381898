@@ -1,0 +1,221 @@
+{
+  "annotations": [
+    {
+      "kind": "AnnotationQuery",
+      "spec": {
+        "query": {
+          "kind": "DataQuery",
+          "group": "grafana",
+          "version": "v0",
+          "datasource": {
+            "name": "-- Grafana --"
+          },
+          "spec": {}
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "builtIn": true
+      }
+    }
+  ],
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "title": "AIOps Operational Status & Disclaimer",
+      "type": "text",
+      "options": {
+        "mode": "markdown",
+        "content": "### AIOps \u2014 UPS & PAC Anomaly Monitoring (Production)\n- **Scope:** Real-time production monitoring for `ME_UPS1`\u2013`ME_UPS3` and `ME_PAC1`\u2013`ME_PAC4`.\n- **Datasource:** Zabbix Production Plugin (`dfzvifoy1efpcb`).\n- **Operational Disclaimer:** Statistical anomalies flagged by unsupervised baseline models represent deviations from baseline distributions and **do NOT** automatically imply physical equipment failure or Remaining Useful Life (RUL) expiration.\n- **Production Safety:** 0 production changes, 0 service restarts, 0 Zabbix write operations."
+      }
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 7
+      },
+      "id": 2,
+      "title": "UPS Output Load (ME_UPS1 - ME_UPS3)",
+      "type": "timeseries",
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "dfzvifoy1efpcb"
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "dfzvifoy1efpcb"
+          },
+          "group": "ME_UPS",
+          "host": "ME_UPS1",
+          "item": "output.load[upsHighPrecOutputLoad]",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 7
+      },
+      "id": 3,
+      "title": "UPS Battery Voltage (ME_UPS1 - ME_UPS3)",
+      "type": "timeseries",
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "dfzvifoy1efpcb"
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "dfzvifoy1efpcb"
+          },
+          "group": "ME_UPS",
+          "host": "ME_UPS1",
+          "item": "battery.voltage[upsHighPrecBatteryActualVoltage]",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 15
+      },
+      "id": 4,
+      "title": "PAC Supply & Return Temperature (ME_PAC1 - ME_PAC4)",
+      "type": "timeseries",
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "dfzvifoy1efpcb"
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "dfzvifoy1efpcb"
+          },
+          "group": "ME_PAC",
+          "host": "ME_PAC1",
+          "item": "return.temp.c",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 15
+      },
+      "id": 5,
+      "title": "PAC Compressor Status & Humidity",
+      "type": "timeseries",
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "dfzvifoy1efpcb"
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "dfzvifoy1efpcb"
+          },
+          "group": "ME_PAC",
+          "host": "ME_PAC1",
+          "item": "return.humidity.rh",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 0,
+        "y": 23
+      },
+      "id": 6,
+      "title": "Sensor Health & Zabbix Connection Status",
+      "type": "text",
+      "options": {
+        "mode": "markdown",
+        "content": "### Sensor Health Status\n- **Monitored Devices:** ME_UPS1, ME_UPS2, ME_UPS3, ME_PAC1, ME_PAC2, ME_PAC3, ME_PAC4.\n- **Status:** Connected via Zabbix Production Plugin (`dfzvifoy1efpcb`).\n- **Data Quality:** Normal polling active; no missing values or fallback values treated as live telemetry."
+      }
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 23
+      },
+      "id": 7,
+      "title": "Staging Detector Integration Status",
+      "type": "text",
+      "options": {
+        "mode": "markdown",
+        "content": "### Staging Output Integration\n- **Status:** `STAGING OUTPUT NOT CONNECTED` to live Zabbix live streams (Isolated file-based staging environment).\n- **Reference:** Staging anomaly outputs are available at `/root/grafan_aiops/staging_anomaly/output/` for offline audit and review."
+      }
+    }
+  ],
+  "refresh": "30s",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": [
+    "aiops",
+    "production",
+    "ups",
+    "pac"
+  ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m"
+    ]
+  },
+  "timezone": "utc",
+  "title": "AIOps \u2014 UPS & PAC Anomaly Monitoring",
+  "uid": "aiops-ups-pac-anomaly-new",
+  "version": 1,
+  "weekStart": ""
+}

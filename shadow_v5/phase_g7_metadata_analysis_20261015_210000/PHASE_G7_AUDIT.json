@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-10-15T03:42:48.597706",
+  "phase": "Phase G.7",
+  "shadow_version": "v5",
+  "input_items_count": 240,
+  "output_candidates_count": 240,
+  "analysis_method": "Local static metadata classification and grouping",
+  "api_requests": 0,
+  "history_collected": false,
+  "production_changes": 0,
+  "host_distribution": {
+    "10688": 48,
+    "10689": 43,
+    "10690": 17,
+    "10696": 15,
+    "10697": 54,
+    "10698": 15,
+    "10701": 48
+  },
+  "category_distribution": {
+    "Environmental & Electrical Sensor": 137,
+    "Device Status & Operational State": 48,
+    "Device Inventory & System Info": 36,
+    "Unclassified Metric": 15,
+    "Availability & Ping": 4
+  },
+  "quality_flags": {
+    "disabled_items": 19,
+    "unitless_items": 129,
+    "duplicate_keys": 6
+  },
+  "final_status": "METADATA_ANALYSIS_COMPLETED"
+}

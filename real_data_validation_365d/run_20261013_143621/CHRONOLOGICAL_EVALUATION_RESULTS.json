@@ -1,0 +1,18 @@
+{
+  "evaluation_status": "COMPLETED",
+  "hosts_evaluated": [
+    "ME_UPS1",
+    "ME_UPS2",
+    "ME_UPS3",
+    "ME_PAC1",
+    "ME_PAC2",
+    "ME_PAC3",
+    "ME_PAC4"
+  ],
+  "model_type": "IsolationForest + Linear Slope TTF Heuristic",
+  "validation_metrics": {
+    "data_completeness": "High for PAC, moderate/sparse for UPS battery capacity",
+    "false_alarm_rate": "Low (abstains on insufficient/stable data)",
+    "leakage_detected": false
+  }
+}

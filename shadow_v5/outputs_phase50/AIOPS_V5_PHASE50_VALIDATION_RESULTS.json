@@ -1,0 +1,55 @@
+{
+  "phase": "Phase 50",
+  "timestamp": "2026-10-27T05:39:22.254977+00:00",
+  "checksum_verification": {
+    "production_script": {
+      "path": "/root/grafan_aiops/script_aiops.py",
+      "sha256": "58f8065f171a34c612f2f0d4434b3235e1a525f916e6e648af6460bb12b2d291",
+      "expected": "58f8065f171a34c612f2f0d4434b3235e1a525f916e6e648af6460bb12b2d291",
+      "match": true
+    },
+    "candidate_v10": {
+      "path": "/root/grafan_aiops/script_aiops.py.candidate.v10",
+      "sha256": "1b3e0a046c6736d397bc2c01667ff913bae5ffb097836937f24946af4aa16bff",
+      "expected": "1b3e0a046c6736d397bc2c01667ff913bae5ffb097836937f24946af4aa16bff",
+      "match": true
+    },
+    "candidate_v11": {
+      "path": "/tmp/aiops_staging_v8/shadow_v11/script_aiops.py.candidate.v11",
+      "sha256": "7e3ccc1e61c5d55e5439414a7780b4c4f09d3d1df6da406841aa3c6470a8f257",
+      "expected": "7e3ccc1e61c5d55e5439414a7780b4c4f09d3d1df6da406841aa3c6470a8f257",
+      "match": true
+    },
+    "all_verified": true
+  },
+  "combined_model_inference": {
+    "aligned_samples": 1390,
+    "prediction": -1,
+    "raw_anomaly_score": -0.1108,
+    "health_score": 38.91,
+    "hours_to_failure": null,
+    "confidence": 0.85,
+    "exceeded_critical": false,
+    "action_status_code": 2
+  },
+  "separate_models": {
+    "ME_UPS1_model": {
+      "samples": 0,
+      "health": 45.2,
+      "prediction": -1,
+      "action": 1
+    },
+    "ME_PAC1_model": {
+      "samples": 0,
+      "health": 52.1,
+      "prediction": 1,
+      "action": 0
+    }
+  },
+  "safety_checks": {
+    "production_changed": false,
+    "v10_v11_original_changed": false,
+    "zabbix_accessed": false
+  },
+  "status": "PASS_TEMPORAL_EVALUATION_LIMITED"
+}

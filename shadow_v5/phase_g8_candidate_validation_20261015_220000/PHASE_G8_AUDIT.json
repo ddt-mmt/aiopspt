@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-10-15T03:56:13.669181",
+  "phase": "Phase G.8",
+  "shadow_version": "v5",
+  "input_candidates_count": 240,
+  "source_g6_items_count": 240,
+  "validation_tier_breakdown": {
+    "PRIORITY": 117,
+    "SECONDARY": 80,
+    "EXCLUDE_DISABLED": 19,
+    "REVIEW_DUPLICATE": 9,
+    "REVIEW_UNCLASSIFIED": 15
+  },
+  "api_requests": 0,
+  "history_collected": false,
+  "production_changes": 0,
+  "final_status": "CANDIDATE_VALIDATION_COMPLETED"
+}

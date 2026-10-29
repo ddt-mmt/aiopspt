@@ -1,0 +1,33 @@
+{
+  "record": {
+    "schema_version": "v43.0",
+    "timestamp": "2026-10-21T06:22:32.129512+00:00",
+    "operator_identity": "didit",
+    "operator_title": "sysadmin",
+    "organization": "Personal",
+    "decision": "APPROVE",
+    "agreements": {
+      "authority_approval": "yes",
+      "scope_understood": "yes",
+      "staging_retention_approved": "yes"
+    },
+    "test_scope": [
+      "59609: ME_UPS1 output load (%)",
+      "59604: ME_UPS1 battery voltage (V)",
+      "90706: ME_UPS1 battery temperature (°C) - only after formal mapping confirmation",
+      "60386: ME_PAC1 return temperature (°C)",
+      "60387: ME_PAC1 supply temperature (°C)",
+      "60385: ME_PAC1 return humidity (%RH)",
+      "Maximum 100 samples per item from the last 24 hours.",
+      "No problem-event or trigger queries.",
+      "No writes to Zabbix, InfluxDB, Grafana, or alerting systems.",
+      "Staging output and 7-day retention require separate storage approval.",
+      "Item 59603 remains excluded."
+    ],
+    "ticket_reference": "TICKET #1",
+    "additional_notes": "Approve All",
+    "live_access_status": "BLOCKED",
+    "hash_disclaimer": "SHA-256 hash helps detect data modification/tampering. It is NOT a digital signature and does NOT prove operator identity."
+  },
+  "sha256": "fb9e31ecf204e01c59b79071af6c5c4757e2594f0260594da147ae315a9f0ddf"
+}

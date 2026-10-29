@@ -1,0 +1,32 @@
+{
+  "phase_id": "G.17",
+  "phase_name": "Production-Safe TLS Deployment Plan",
+  "execution_timestamp": "2026-10-16T14:00:00Z",
+  "mode": "PLAN_ONLY",
+  "compliance_audit": {
+    "api_requests": 0,
+    "history_collection": false,
+    "model_training": false,
+    "production_changes": 0,
+    "service_container_restarts": 0,
+    "tls_deployment": "not performed"
+  },
+  "target_hosts": [
+    "ME_UPS1",
+    "ME_UPS2",
+    "ME_UPS3",
+    "ME_PAC1",
+    "ME_PAC2",
+    "ME_PAC3",
+    "ME_PAC4"
+  ],
+  "status": "BLOCKED",
+  "reason": "TLS deployment plan formulated successfully, but execution remains blocked pending operator approval, certificate provisioning, and port 443 availability.",
+  "artifacts_created": [
+    "PHASE_G17_REPORT.md",
+    "PHASE_G17_SERVICE_INVENTORY.md",
+    "PHASE_G17_TLS_DEPLOYMENT_PLAN.md",
+    "PHASE_G17_ROLLBACK_AND_TEST_PLAN.md",
+    "PHASE_G17_AUDIT.json"
+  ]
+}

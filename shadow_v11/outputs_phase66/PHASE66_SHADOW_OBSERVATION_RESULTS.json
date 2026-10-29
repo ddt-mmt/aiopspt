@@ -1,0 +1,88 @@
+{
+  "phase": "Phase 66",
+  "timestamp": "2026-10-28T06:28:18.326971+00:00",
+  "candidate_script": "/root/grafan_aiops/script_aiops_v11_repaired.py",
+  "candidate_sha256": "009090d5f7cc6a2f8c68e783cbc79879af4e115ff06fd4fa5ce5052f25c06cef",
+  "baseline_sha256": "58f8065f171a34c612f2f0d4434b3235e1a525f916e6e648af6460bb12b2d291",
+  "total_cycles_tested": 10,
+  "success_cycles": 3,
+  "replay_results": [
+    {
+      "cycle": 1,
+      "status": "FUTURE_DATA",
+      "msg": "Timestamp di masa depan terdeteksi (hard gate aktif): {'output.load': 420, 'battery.voltage': 420, 'battery.temp': 420}",
+      "passed": false
+    },
+    {
+      "cycle": 2,
+      "status": "FUTURE_DATA",
+      "msg": "Timestamp di masa depan terdeteksi (hard gate aktif): {'output.load': 360, 'battery.voltage': 360, 'battery.temp': 360}",
+      "passed": false
+    },
+    {
+      "cycle": 3,
+      "status": "FUTURE_DATA",
+      "msg": "Timestamp di masa depan terdeteksi (hard gate aktif): {'output.load': 300, 'battery.voltage': 300, 'battery.temp': 300}",
+      "passed": false
+    },
+    {
+      "cycle": 4,
+      "status": "FUTURE_DATA",
+      "msg": "Timestamp di masa depan terdeteksi (hard gate aktif): {'output.load': 240, 'battery.voltage': 240, 'battery.temp': 240}",
+      "passed": false
+    },
+    {
+      "cycle": 5,
+      "status": "FUTURE_DATA",
+      "msg": "Timestamp di masa depan terdeteksi (hard gate aktif): {'output.load': 180, 'battery.voltage': 180, 'battery.temp': 180}",
+      "passed": false
+    },
+    {
+      "cycle": 6,
+      "status": "FUTURE_DATA",
+      "msg": "Timestamp di masa depan terdeteksi (hard gate aktif): {'output.load': 120, 'battery.voltage': 120, 'battery.temp': 120}",
+      "passed": false
+    },
+    {
+      "cycle": 7,
+      "status": "FUTURE_DATA",
+      "msg": "Timestamp di masa depan terdeteksi (hard gate aktif): {'output.load': 60, 'battery.voltage': 60, 'battery.temp': 60}",
+      "passed": false
+    },
+    {
+      "cycle": 8,
+      "status": "NORMAL",
+      "health": 44.69,
+      "ttf": 7.610754691206269,
+      "prediction": -1,
+      "action": 2,
+      "passed": true
+    },
+    {
+      "cycle": 9,
+      "status": "NORMAL",
+      "health": 44.69,
+      "ttf": 7.6732035744889435,
+      "prediction": -1,
+      "action": 2,
+      "passed": true
+    },
+    {
+      "cycle": 10,
+      "status": "NORMAL",
+      "health": 44.69,
+      "ttf": 7.737040210733458,
+      "prediction": -1,
+      "action": 2,
+      "passed": true
+    }
+  ],
+  "side_effect_audit": {
+    "production_zabbix_writes": 0,
+    "production_influxdb_writes": 0,
+    "production_container_mutations": 0,
+    "isolated_to_staging": true,
+    "audit_result": "PASS"
+  },
+  "status": "PASS_EXTENDED_SHADOW_OBSERVATION"
+}

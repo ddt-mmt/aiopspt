@@ -1,0 +1,156 @@
+import os
+import time
+import logging
+import numpy as np
+import pandas as pd
+from sklearn.ensemble import IsolationForest
+from datetime import datetime, timedelta
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+logger = logging.getLogger("aiops_hardened_v9")
+
+UPS_MANDATORY = [
+    'output.load',
+    'battery.voltage',
+    'battery.temp'
+]
+UPS_OPTIONAL = [
+    'battery.capacity',
+    'battery.runtime_remaining',
+    'ups.status'
+]
+
+PAC_MANDATORY = [
+    'return.temp.c',
+    'supply.temp.c',
+    'return.humidity.rh'
+]
+PAC_OPTIONAL = [
+    'evaporator.fan.speed',
+    'compressor.status'
+]
+
+def validate_schema_and_quality(series_by_name, latest_by_name, sample_counts, mandatory_features, now_utc, max_age_seconds=300, min_samples=10):
+    missing_mandatory = [f for f in mandatory_features if f not in series_by_name]
+    if missing_mandatory:
+        return "INSUFFICIENT_DATA", f"Fitur wajib hilang: {missing_mandatory}"
+
+    stale = {
+        name: int((now_utc - stamp).total_seconds())
+        for name, stamp in latest_by_name.items()
+        if (now_utc - stamp).total_seconds() > max_age_seconds
+    }
+    if stale:
+        return "STALE_DATA", f"Sensor stale terdeteksi (hard gate aktif): {stale}"
+
+    sparse_sensors = [name for name, count in sample_counts.items() if count < min_samples]
+    for s in sparse_sensors:
+        if s in mandatory_features:
+            return "INSUFFICIENT_DATA", f"Fitur wajib terlalu sparse: {s}"
+        elif s in series_by_name:
+            logger.info(f"Dropping sparse optional sensor: {s}")
+            del series_by_name[s]
+
+    if not series_by_name:
+        return "INSUFFICIENT_DATA", "Tidak ada sensor tersisa yang memenuhi syarat"
+
+    return "NORMAL", "Quality gate passed"
+
+def process_sensor_history_hardened(series_by_name, latest_by_name, sample_counts, mandatory_features, now_utc, max_age_seconds=300, min_samples=10):
+    q_status, q_msg = validate_schema_and_quality(
+        series_by_name, latest_by_name, sample_counts, mandatory_features, now_utc, max_age_seconds, min_samples
+    )
+    if q_status in ("INSUFFICIENT_DATA", "STALE_DATA"):
+        return None, q_status, q_msg
+
+    merged = pd.concat(series_by_name.values(), axis=1).sort_index()
+    
+    null_counts_before = merged.isnull().sum().to_dict()
+    merged = merged.ffill(limit=2)
+    null_counts_after = merged.isnull().sum().to_dict()
+    
+    imputed_counts = {k: null_counts_before[k] - null_counts_after[k] for k in null_counts_before}
+    if sum(imputed_counts.values()) > 0:
+        logger.info(f"Forward-fill audit log (limit=2 applied): {imputed_counts}")
+
+    merged = merged.dropna()
+    if len(merged) < min_samples:
+        return None, "INSUFFICIENT_DATA", f"Sampel selaras tidak cukup setelah alignment: {len(merged)}; minimal {min_samples}"
+
+    if sum(imputed_counts.values()) > 0:
+        final_status = "DEGRADED_DATA"
+    elif q_status == "NORMAL":
+        final_status = "NORMAL"
+    else:
+        final_status = "LOW_CONFIDENCE"
+
+    merged = merged.reset_index()
+    merged = merged.rename(columns={merged.columns[0]: "clock"})
+    return merged, final_status, "Data diproses dan divalidasi dengan sukses"
+
+def calculate_multisensor_rul_v8(df_multisensor, crit_val):
+    if df_multisensor is None or df_multisensor.empty:
+        raise ValueError("DataFrame multisenor kosong atau None")
+
+    feature_cols = [c for c in df_multisensor.columns if c != "clock"]
+    if not feature_cols:
+        raise ValueError("Kolom sensor tidak tersedia")
+
+    df = df_multisensor.copy()
+    df["clock"] = pd.to_datetime(df["clock"], utc=True, errors="coerce")
+    for col in feature_cols:
+        df[col] = pd.to_numeric(df[col], errors="coerce")
+
+    df = (
+        df.replace([np.inf, -np.inf], np.nan)
+          .dropna(subset=["clock"] + feature_cols)
+          .sort_values("clock")
+          .drop_duplicates(subset=["clock"], keep="last")
+    )
+
+    if len(df) < 10:
+        raise ValueError(f"Sampel valid tidak cukup untuk inferensi: {len(df)}")
+
+    X = df[feature_cols].to_numpy(dtype=float)
+    if not np.isfinite(X).all():
+        raise ValueError("Data sensor mengandung nilai non-finite (NaN/Inf)")
+
+    model = IsolationForest(contamination=0.05, random_state=42)
+    model.fit(X)
+
+    latest_val = X[-1].reshape(1, -1)
+    prediction = int(model.predict(latest_val)[0])
+    raw_anomaly_score = float(model.decision_function(latest_val)[0])
+    
+    health_score = round(max(0.0, min(100.0, (raw_anomaly_score + 0.5) * 100)), 2)
+
+    continuous_candidates = [c for c in feature_cols if not ('status' in str(c).lower() or 'state' in str(c).lower())]
+    primary_col = continuous_candidates[0] if continuous_candidates else feature_cols[0]
+
+    primary = df[primary_col].rolling(window=60, min_periods=1).mean()
+    times = (df["clock"] - df["clock"].iloc[0]).dt.total_seconds().to_numpy() / 3600.0
+
+    if len(np.unique(times)) < 2:
+        raise ValueError("Timestamp unik tidak cukup untuk menghitung tren slope")
+
+    slope = float(np.polyfit(times, primary.to_numpy(), 1)[0])
+    current_val = float(primary.iloc[-1])
+
+    if slope > 1e-5 and current_val < crit_val:
+        raw_ttf = (crit_val - current_val) / slope
+        hours_to_failure = max(1.0, min(8760.0, float(raw_ttf)))
+    else:
+        hours_to_failure = None
+
+    confidence = "HIGH" if len(df) >= 60 else "MEDIUM"
+    return prediction, raw_anomaly_score, health_score, hours_to_failure, confidence
+
+def determine_action_status_hardened(health, ttf):
+    if health is None:
+        return 0
+    if health < 40 or (ttf is not None and ttf <= 24):
+        return 2
+    elif health < 70 or (ttf is not None and ttf <= 720):
+        return 1
+    else:
+        return 0

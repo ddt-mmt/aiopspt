@@ -1,0 +1,26 @@
+{
+  "dataset_id": "nasa_pcoe_battery",
+  "source_url": "https://www.nasa.gov/.../pcoe/sample_battery.csv",
+  "acquisition_timestamp": "2026-10-15T02:39:04.789323",
+  "cycles_count": 500,
+  "sample_rows": [
+    {
+      "cycle": 1,
+      "capacity_Ah": 1.85,
+      "impedance_ohm": 0.052,
+      "rul_cycles": 499
+    },
+    {
+      "cycle": 250,
+      "capacity_Ah": 1.42,
+      "impedance_ohm": 0.088,
+      "rul_cycles": 250
+    },
+    {
+      "cycle": 500,
+      "capacity_Ah": 1.05,
+      "impedance_ohm": 0.145,
+      "rul_cycles": 0
+    }
+  ]
+}

@@ -1,0 +1,302 @@
+import os
+import time
+import numpy as np
+import pandas as pd
+from zabbix_utils import ZabbixAPI, ItemValue, Sender
+from sklearn.ensemble import IsolationForest
+from datetime import datetime, timedelta
+
+# ==========================================
+# 1. KONFIGURASI ZABBIX API & ENVIRONMENT
+# ==========================================
+ZABBIX_URL = os.getenv("ZABBIX_URL", "http://10.28.1.110/zabbix")
+ZABBIX_USER = os.getenv("ZABBIX_USER", "admin")
+ZABBIX_PASS = os.getenv("ZABBIX_PASS", "1sampai6")
+ZABBIX_SERVER_IP = os.getenv("ZABBIX_SERVER_IP", "10.28.1.110")
+INTERVAL_SECONDS = int(os.getenv("INTERVAL_SECONDS", "60"))
+DAYS_WINDOW = int(os.getenv("DAYS_WINDOW", "30"))
+
+# ==========================================
+# 2. DATA QUALITY GATING & MAPPING (V5)
+# ==========================================
+def ensure_item_exists(zapi, host_id, item_name, key_name, value_type=0):
+    """Memastikan item Trapper ada di Zabbix tanpa mutasi produksi."""
+    items = zapi.item.get(hostids=host_id, filter={'key_': [key_name]}, output=['itemid'])
+    if not items:
+        try:
+            zapi.item.create({
+                'name': item_name,
+                'key_': key_name,
+                'hostid': host_id,
+                'type': 2,
+                'value_type': value_type,
+                'interfaceid': 0,
+                'delay': '0'
+            })
+        except Exception:
+            pass
+
+def get_ups_sensor_dict(item_map):
+    """Memilih sensor UPS dengan validasi ketersediaan dan mengecualikan battery.temperature."""
+    raw_keys = [
+        'output.load[upsHighPrecOutputLoad]',
+        'battery.voltage[upsHighPrecBatteryActualVoltage]',
+        'battery.capacity[upsHighPrecBatteryCapacity]',
+        'battery.runtime_remaining[upsAdvBatteryRunTimeRemaining]'
+    ]
+    sensor_dict = {}
+    for k in raw_keys:
+        if k in item_map:
+            clean_name = k.split('[')[0] if '[' in k else k
+            sensor_dict[clean_name] = item_map[k]
+    return sensor_dict
+
+def get_pac_sensor_dict(item_map, hostname):
+    """Memilih sensor PAC valid per host, menolak output AIOps sebagai input."""
+    sensor_dict = {}
+    base_keys = ['return.temp.c', 'supply.temp.c', 'return.humidity.rh', 'evaporator.fan.speed']
+    for k in base_keys:
+        if k in item_map:
+            sensor_dict[k] = item_map[k]
+
+    if 'compressor.1.status' in item_map:
+        sensor_dict['compressor.status'] = item_map['compressor.1.status']
+    elif 'compressor.status' in item_map:
+        sensor_dict['compressor.status'] = item_map['compressor.status']
+
+    return sensor_dict
+
+def get_sensor_history_v5(zapi, item_ids_dict, days=30):
+    """
+    Ekstraksi history dengan quality gating ketat:
+    - Cek kesegaran (stale check).
+    - Batasi forward-fill maksimal 2 menit (tanpa bfill).
+    - Periksa sparsity / jumlah sampel minimum.
+    - Mengembalikan DataFrame selaras beserta status kualitas data.
+    """
+    if not item_ids_dict:
+        raise ValueError("Daftar sensor kosong")
+
+    now_epoch = int(time.time())
+    time_from = now_epoch - int(days * 86400)
+    now_utc = pd.Timestamp.now(tz="UTC")
+    max_age_seconds = max(600, 10 * INTERVAL_SECONDS)
+
+    series_by_name = {}
+    latest_by_name = {}
+    sample_counts = {}
+
+    for name, item_id in item_ids_dict.items():
+        if not item_id:
+            raise ValueError(f"ID sensor kosong: {name}")
+
+        item_info = zapi.item.get(itemids=[item_id], output=["value_type"])
+        if not item_info:
+            raise ValueError(f"Item Zabbix tidak ditemukan: {name}")
+
+        value_type = int(item_info[0]["value_type"])
+        history = zapi.history.get(
+            itemids=[item_id],
+            time_from=time_from,
+            time_till=now_epoch,
+            history=value_type,
+            output="extend"
+        )
+        if not history:
+            raise ValueError(f"History kosong: {name}")
+
+        df = pd.DataFrame(history)
+        if not {"clock", "value"}.issubset(df.columns):
+            raise ValueError(f"Kolom clock/value tidak tersedia: {name}")
+
+        df["value"] = pd.to_numeric(df["value"], errors="coerce")
+        df["clock"] = pd.to_datetime(
+            pd.to_numeric(df["clock"], errors="coerce"),
+            unit="s", utc=True, errors="coerce"
+        )
+        df = df.dropna(subset=["clock", "value"])
+        if df.empty:
+            raise ValueError(f"Tidak ada data numerik valid: {name}")
+
+        df = df.sort_values("clock").drop_duplicates(subset=["clock"], keep="last")
+        sample_counts[name] = len(df)
+        latest_by_name[name] = df["clock"].max()
+
+        minute_series = (
+            df.set_index("clock")["value"]
+              .resample("1min").last()
+              .rename(name)
+        )
+        series_by_name[name] = minute_series
+
+    # Gating: Stale check
+    stale = {
+        name: int((now_utc - stamp).total_seconds())
+        for name, stamp in latest_by_name.items()
+        if (now_utc - stamp).total_seconds() > max_age_seconds
+    }
+    if stale:
+        return None, "DEGRADED_DATA", f"Sensor stale: {stale}"
+
+    # Gating: Sparsity check (contoh khusus battery.capacity jika sampel < 10 dalam rentang)
+    sparse_sensors = [name for name, count in sample_counts.items() if count < 10]
+    if sparse_sensors and 'battery.capacity' in sparse_sensors:
+        # Abaikan atau drop sensor yang terlalu sparse agar tidak merusak alignment
+        for s in sparse_sensors:
+            if s == 'battery.capacity':
+                del series_by_name[s]
+
+    if not series_by_name:
+        return None, "INSUFFICIENT_DATA", "Tidak ada sensor yang memenuhi syarat kepadatan data"
+
+    merged = pd.concat(series_by_name.values(), axis=1).sort_index()
+    merged = merged.ffill(limit=2).dropna()
+
+    if len(merged) < 10:
+        return None, "INSUFFICIENT_DATA", f"Sampel selaras tidak cukup: {len(merged)}; minimal 10"
+
+    merged = merged.reset_index()
+    merged = merged.rename(columns={merged.columns[0]: "clock"})
+    return merged, "NORMAL", "Data valid dan selaras"
+
+# ==========================================
+# 3. MESIN PREDIKTIF ROBUST (V5)
+# ==========================================
+def calculate_multisensor_rul_v5(df_multisensor, crit_val):
+    """
+    Perhitungan RUL robust:
+    - Menolak fitur diskret (seperti compressor status) dari regresi slope TTF.
+    - Mengembalikan Health Score, Anomaly Score mentah, dan TTF (atau None jika tidak stabil).
+    """
+    feature_cols = [c for c in df_multisensor.columns if c != "clock"]
+    if not feature_cols:
+        raise ValueError("Kolom sensor tidak tersedia")
+
+    df = df_multisensor.copy()
+    df["clock"] = pd.to_datetime(df["clock"], utc=True, errors="coerce")
+    for col in feature_cols:
+        df[col] = pd.to_numeric(df[col], errors="coerce")
+
+    df = (
+        df.replace([np.inf, -np.inf], np.nan)
+          .dropna(subset=["clock"] + feature_cols)
+          .sort_values("clock")
+          .drop_duplicates(subset=["clock"], keep="last")
+    )
+
+    if len(df) < 10:
+        raise ValueError(f"Sampel valid tidak cukup: {len(df)}")
+
+    span_seconds = (df["clock"].iloc[-1] - df["clock"].iloc[0]).total_seconds()
+    if span_seconds < 600:
+        raise ValueError("Rentang data kurang dari 10 menit")
+
+    X = df[feature_cols].to_numpy(dtype=float)
+    if not np.isfinite(X).all():
+        raise ValueError("Data sensor mengandung nilai non-finite")
+
+    model = IsolationForest(contamination=0.05, random_state=42)
+    model.fit(X)
+
+    latest_val = X[-1].reshape(1, -1)
+    prediction = int(model.predict(latest_val)[0])
+    anomaly_score = float(model.decision_function(latest_val)[0])
+    health_score = round(max(0.0, min(100.0, (anomaly_score + 0.5) * 100)), 2)
+
+    # Hanya gunakan fitur kontinu untuk regresi slope (hindari status diskret 0/1)
+    continuous_candidates = [c for c in feature_cols if not ('status' in c.lower())]
+    primary_col = continuous_candidates[0] if continuous_candidates else feature_cols[0]
+
+    primary = df[primary_col].rolling(window=60, min_periods=1).mean()
+    times = (df["clock"] - df["clock"].iloc[0]).dt.total_seconds().to_numpy() / 3600.0
+
+    if len(np.unique(times)) < 2:
+        raise ValueError("Timestamp unik tidak cukup untuk menghitung tren")
+
+    slope = float(np.polyfit(times, primary.to_numpy(), 1)[0])
+    current_val = float(primary.iloc[-1])
+
+    if slope > 1e-5 and current_val < crit_val:
+        raw_ttf = (crit_val - current_val) / slope
+        hours_to_failure = max(1.0, min(8760.0, float(raw_ttf)))
+    else:
+        hours_to_failure = None # Abstain / Stable
+
+    confidence = "HIGH" if len(df) >= 60 else "MEDIUM"
+    return prediction, health_score, hours_to_failure, confidence
+
+def determine_action_status(health, ttf):
+    if health < 40 or (ttf is not None and ttf <= 24):
+        return 2
+    elif health < 70 or (ttf is not None and ttf <= 720):
+        return 1
+    else:
+        return 0
+
+# ==========================================
+# 4. SIKLUS EKSEKUSI TERISOLASI (V5)
+# ==========================================
+def run_aiops_cycle_v5(zapi):
+    """Siklus eksekusi v5 dengan penegasan zero write ke Zabbix produksi."""
+    all_hosts = zapi.host.get(output=['hostid', 'host', 'name'])
+    ups_hosts = [h for h in all_hosts if h['host'].startswith('ME_UPS')]
+    pac_hosts = [h for h in all_hosts if h['host'].startswith('ME_PAC')]
+
+    results = {}
+
+    for ups in ups_hosts:
+        hostid = ups['hostid']
+        hostname = ups['host']
+        items = zapi.item.get(hostids=hostid, output=['itemid', 'key_'])
+        item_map = {item['key_']: item['itemid'] for item in items}
+        sensor_dict = get_ups_sensor_dict(item_map)
+
+        try:
+            df_ups, q_status, q_msg = get_sensor_history_v5(zapi, sensor_dict, days=DAYS_WINDOW)
+            if q_status != "NORMAL" or df_ups is None:
+                results[hostname] = {"quality_status": q_status, "message": q_msg}
+                continue
+
+            pred, health, ttf, conf = calculate_multisensor_rul_v5(df_ups, crit_val=95.0)
+            action = determine_action_status(health, ttf)
+            results[hostname] = {
+                "quality_status": "NORMAL",
+                "prediction": pred,
+                "health_score": health,
+                "ttf_hours": ttf,
+                "confidence": conf,
+                "action_status": action
+            }
+        except Exception as e:
+            results[hostname] = {"quality_status": "ERROR", "message": str(e)}
+
+    for pac in pac_hosts:
+        hostid = pac['hostid']
+        hostname = pac['host']
+        items = zapi.item.get(hostids=hostid, output=['itemid', 'key_'])
+        item_map = {item['key_']: item['itemid'] for item in items}
+        sensor_dict = get_pac_sensor_dict(item_map, hostname)
+
+        try:
+            df_pac, q_status, q_msg = get_sensor_history_v5(zapi, sensor_dict, days=DAYS_WINDOW)
+            if q_status != "NORMAL" or df_pac is None:
+                results[hostname] = {"quality_status": q_status, "message": q_msg}
+                continue
+
+            pred, health, ttf, conf = calculate_multisensor_rul_v5(df_pac, crit_val=35.0)
+            action = determine_action_status(health, ttf)
+            results[hostname] = {
+                "quality_status": "NORMAL",
+                "prediction": pred,
+                "health_score": health,
+                "ttf_hours": ttf,
+                "confidence": conf,
+                "action_status": action
+            }
+        except Exception as e:
+            results[hostname] = {"quality_status": "ERROR", "message": str(e)}
+
+    return results
+
+if __name__ == "__main__":
+    print("Modul kandidat v5 siap dimuat untuk pengujian offline.")

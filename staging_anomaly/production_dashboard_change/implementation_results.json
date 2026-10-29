@@ -1,0 +1,16 @@
+{
+  "implementation_timestamp": "2026-10-19T10:30:00Z",
+  "status": "PASS_PRODUCTION_DASHBOARD_CREATED",
+  "dashboard_title": "AIOps \u2014 UPS & PAC Anomaly Monitoring",
+  "dashboard_uid": "aiops-ups-pac-anomaly-new",
+  "datasource_uid": "dfzvifoy1efpcb",
+  "datasource_type": "alexanderzobnin-zabbix-datasource",
+  "production_safety": {
+    "production_changes": 0,
+    "production_restarts": 0,
+    "zabbix_writes": 0,
+    "existing_dashboards_modified": 0,
+    "existing_datasources_modified": 0
+  },
+  "panels_configured": 7
+}

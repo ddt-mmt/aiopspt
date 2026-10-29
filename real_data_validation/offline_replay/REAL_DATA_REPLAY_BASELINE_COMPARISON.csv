@@ -1,0 +1,7 @@
+host,v5_action_status,simple_baseline_status,agreement
+ME_PAC1,2,1,False
+ME_PAC2,2,1,False
+ME_PAC3,1,1,True
+ME_PAC4,1,1,True
+ME_UPS2,1,1,True
+ME_UPS3,1,1,True

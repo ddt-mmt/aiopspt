@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-10-15T17:00:00Z",
+  "phase": "Phase G",
+  "shadow_version": "v5",
+  "zabbix_access_status": "ACCESS_BLOCKED",
+  "preflight_status": "PREFLIGHT_PASSED",
+  "mutation_api_allowed": false,
+  "targets": [
+    "ME_UPS1", "ME_UPS2", "ME_UPS3",
+    "ME_PAC1", "ME_PAC2", "ME_PAC3", "ME_PAC4"
+  ],
+  "safety_controls": {
+    "max_history_window_hours": 24,
+    "max_items_per_batch": 1000,
+    "redaction_active": true
+  }
+}

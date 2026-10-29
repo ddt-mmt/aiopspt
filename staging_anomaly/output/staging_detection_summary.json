@@ -1,0 +1,21 @@
+{
+  "execution_timestamp": "2026-10-19T03:11:01.043557+00:00",
+  "detector_version": "v3.7-staging",
+  "thresholds": {
+    "robust_z_threshold": 3.5,
+    "isolation_forest_contamination": 0.05
+  },
+  "hosts_processed": [
+    "ME_UPS1",
+    "ME_UPS2",
+    "ME_UPS3",
+    "ME_PAC1",
+    "ME_PAC2",
+    "ME_PAC3",
+    "ME_PAC4"
+  ],
+  "total_files_processed": 32,
+  "total_samples_analyzed": 224799,
+  "total_anomalies_flagged": 13654,
+  "status": "PASS_STAGING_TESTED"
+}

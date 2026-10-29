@@ -1,0 +1,2 @@
+d82555b7231b2fe54cd8e5447dde5d406d389143d633260a33ce943d8b840126  shadow_readiness_checklist.json
+89375925a9505cbbe0aae008e05008ec9c4a3232015bbae81dcdb387499cd238  shadow_readiness_review.md

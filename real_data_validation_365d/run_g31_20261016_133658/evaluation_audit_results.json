@@ -1,0 +1,41 @@
+{
+  "execution_timestamp": "2026-10-16T13:36:58.979247+00:00",
+  "test_sample_count": 27,
+  "test_positive_count": 13,
+  "test_negative_count": 14,
+  "test_all_positive": false,
+  "class_distribution": {
+    "train": {
+      "positive": 64,
+      "negative": 61
+    },
+    "validation": {
+      "positive": 14,
+      "negative": 14
+    },
+    "test": {
+      "positive": 13,
+      "negative": 14
+    }
+  },
+  "recomputed_confusion_matrix": {
+    "TP": 13,
+    "FP": 0,
+    "TN": 14,
+    "FN": 0
+  },
+  "recomputed_metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "threshold_selection_method": "Tuned on validation set probability threshold (0.1), evaluated once on test set.",
+  "leakage_findings": "No feature leakage detected. Features are derived strictly from metadata and event timestamp prior to or at event occurrence; no future information or post-event data used.",
+  "baseline_comparison_validity": "Valid. Both baseline and ML model evaluated on the exact same temporal test set containing both positive and negative samples.",
+  "reproducibility": "Fully reproducible read-only from dataset and G.30 code.",
+  "production_changes": 0,
+  "zabbix_write_operations": 0,
+  "restarts": 0,
+  "deployment_authorization": "NOT_AUTHORIZED_FOR_DEPLOYMENT"
+}

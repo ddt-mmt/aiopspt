@@ -1,0 +1,194 @@
+{
+  "ME_PAC1_return.temp.c.csv": {
+    "median": 79.0,
+    "mad": 1.0999999999999943,
+    "stat_anomaly_count": 342,
+    "iso_anomaly_count": 466
+  },
+  "ME_PAC1_supply.temp.c.csv": {
+    "median": 17.400000000000002,
+    "mad": 0.6999999999999993,
+    "stat_anomaly_count": 0,
+    "iso_anomaly_count": 432
+  },
+  "ME_PAC1_return.humidity.rh.csv": {
+    "median": 63.3,
+    "mad": 1.1999999999999957,
+    "stat_anomaly_count": 223,
+    "iso_anomaly_count": 486
+  },
+  "ME_PAC1_evaporator.fan.speed.csv": {
+    "median": 95.0,
+    "mad": 1e-05,
+    "stat_anomaly_count": 2833,
+    "iso_anomaly_count": 198
+  },
+  "ME_PAC1_compressor.status.csv": {
+    "median": 1.0,
+    "mad": 1e-05,
+    "stat_anomaly_count": 0,
+    "iso_anomaly_count": 0
+  },
+  "ME_PAC2_return.temp.c.csv": {
+    "median": 79.0,
+    "mad": 1.2999999999999972,
+    "stat_anomaly_count": 223,
+    "iso_anomaly_count": 445
+  },
+  "ME_PAC2_supply.temp.c.csv": {
+    "median": 16.7,
+    "mad": 0.6999999999999993,
+    "stat_anomaly_count": 0,
+    "iso_anomaly_count": 435
+  },
+  "ME_PAC2_return.humidity.rh.csv": {
+    "median": 62.0,
+    "mad": 1.2000000000000028,
+    "stat_anomaly_count": 223,
+    "iso_anomaly_count": 498
+  },
+  "ME_PAC2_evaporator.fan.speed.csv": {
+    "median": 95.0,
+    "mad": 1e-05,
+    "stat_anomaly_count": 2597,
+    "iso_anomaly_count": 73
+  },
+  "ME_PAC2_compressor.status.csv": {
+    "median": 1.0,
+    "mad": 1e-05,
+    "stat_anomaly_count": 0,
+    "iso_anomaly_count": 0
+  },
+  "ME_PAC3_return.temp.c.csv": {
+    "median": 21.4,
+    "mad": 0.10000000000000142,
+    "stat_anomaly_count": 64,
+    "iso_anomaly_count": 422
+  },
+  "ME_PAC3_supply.temp.c.csv": {
+    "median": 21.9,
+    "mad": 0.09999999999999787,
+    "stat_anomaly_count": 0,
+    "iso_anomaly_count": 309
+  },
+  "ME_PAC3_return.humidity.rh.csv": {
+    "median": 59.6,
+    "mad": 0.5,
+    "stat_anomaly_count": 422,
+    "iso_anomaly_count": 449
+  },
+  "ME_PAC3_evaporator.fan.speed.csv": {
+    "median": 70.0,
+    "mad": 1.0,
+    "stat_anomaly_count": 0,
+    "iso_anomaly_count": 144
+  },
+  "ME_PAC3_compressor.status.csv": {
+    "median": 1.0,
+    "mad": 1e-05,
+    "stat_anomaly_count": 0,
+    "iso_anomaly_count": 0
+  },
+  "ME_PAC4_return.temp.c.csv": {
+    "median": 23.0,
+    "mad": 0.10000000000000142,
+    "stat_anomaly_count": 0,
+    "iso_anomaly_count": 493
+  },
+  "ME_PAC4_supply.temp.c.csv": {
+    "median": 13.1,
+    "mad": 2.299999999999999,
+    "stat_anomaly_count": 0,
+    "iso_anomaly_count": 496
+  },
+  "ME_PAC4_return.humidity.rh.csv": {
+    "median": 53.1,
+    "mad": 0.5,
+    "stat_anomaly_count": 523,
+    "iso_anomaly_count": 459
+  },
+  "ME_PAC4_evaporator.fan.speed.csv": {
+    "median": 70.2,
+    "mad": 0.8999999999999915,
+    "stat_anomaly_count": 0,
+    "iso_anomaly_count": 148
+  },
+  "ME_PAC4_compressor.status.csv": {
+    "median": 1.0,
+    "mad": 1e-05,
+    "stat_anomaly_count": 0,
+    "iso_anomaly_count": 0
+  },
+  "ME_UPS1_output.load.csv": {
+    "median": 50.7,
+    "mad": 0.7000000000000028,
+    "stat_anomaly_count": 1,
+    "iso_anomaly_count": 443
+  },
+  "ME_UPS1_battery.voltage.csv": {
+    "median": 215.7,
+    "mad": 0.20000000000001705,
+    "stat_anomaly_count": 80,
+    "iso_anomaly_count": 26
+  },
+  "ME_UPS1_battery.capacity.csv": {
+    "median": 100.0,
+    "mad": 1e-05,
+    "stat_anomaly_count": 0,
+    "iso_anomaly_count": 0
+  },
+  "ME_UPS1_battery.runtime_remaining.csv": {
+    "median": 1620.0,
+    "mad": 60.0,
+    "stat_anomaly_count": 0,
+    "iso_anomaly_count": 53
+  },
+  "ME_UPS2_output.load.csv": {
+    "median": 14.8,
+    "mad": 0.1999999999999993,
+    "stat_anomaly_count": 148,
+    "iso_anomaly_count": 328
+  },
+  "ME_UPS2_battery.voltage.csv": {
+    "median": 215.9,
+    "mad": 0.09999999999999432,
+    "stat_anomaly_count": 43,
+    "iso_anomaly_count": 10
+  },
+  "ME_UPS2_battery.capacity.csv": {
+    "median": 86.80000000000001,
+    "mad": 3.9000000000000057,
+    "stat_anomaly_count": 0,
+    "iso_anomaly_count": 22
+  },
+  "ME_UPS2_battery.runtime_remaining.csv": {
+    "median": 3300.0,
+    "mad": 60.0,
+    "stat_anomaly_count": 65,
+    "iso_anomaly_count": 95
+  },
+  "ME_UPS3_output.load.csv": {
+    "median": 11.2,
+    "mad": 0.1999999999999993,
+    "stat_anomaly_count": 723,
+    "iso_anomaly_count": 398
+  },
+  "ME_UPS3_battery.voltage.csv": {
+    "median": 217.1,
+    "mad": 0.09999999999999432,
+    "stat_anomaly_count": 4,
+    "iso_anomaly_count": 92
+  },
+  "ME_UPS3_battery.capacity.csv": {
+    "median": 100.0,
+    "mad": 1e-05,
+    "stat_anomaly_count": 0,
+    "iso_anomaly_count": 0
+  },
+  "ME_UPS3_battery.runtime_remaining.csv": {
+    "median": 8220.0,
+    "mad": 1800.0,
+    "stat_anomaly_count": 0,
+    "iso_anomaly_count": 305
+  }
+}

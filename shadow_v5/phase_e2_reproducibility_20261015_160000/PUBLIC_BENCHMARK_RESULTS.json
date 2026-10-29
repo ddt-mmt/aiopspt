@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-10-15T02:45:04.755722",
+  "evaluation_type": "SYNTHETIC_FIXTURE_REPRODUCIBILITY_BENCHMARK",
+  "note": "Strictly separated from public-dataset benchmarks. Evaluates offline pipeline logic.",
+  "hvac_synthetic_benchmark": {
+    "dataset_id": "lbnl_fdd",
+    "provenance": "SYNTHETIC_TEST_DATA",
+    "model": "Rule-based HVAC Baseline",
+    "train_samples": 700,
+    "test_samples": 300,
+    "metrics": {
+      "precision": 0.9125,
+      "recall": 0.8875,
+      "f1_score": 0.8998,
+      "false_alarm_rate": 0.0421
+    },
+    "status": "VERIFIED_REPRODUCIBLE"
+  },
+  "battery_synthetic_benchmark": {
+    "dataset_id": "nasa_pcoe_battery",
+    "provenance": "SYNTHETIC_TEST_DATA",
+    "model": "Linear Degradation Baseline",
+    "train_cycles": 350,
+    "test_cycles": 150,
+    "metrics": {
+      "mae": 0.0342,
+      "rmse": 0.0481
+    },
+    "status": "VERIFIED_REPRODUCIBLE"
+  },
+  "public_dataset_benchmark": {
+    "status": "NOT_PUBLISHED",
+    "reason": "Original public raw datasets not acquired due to ACCESS_REQUIRED portal constraints."
+  }
+}

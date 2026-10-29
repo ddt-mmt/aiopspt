@@ -1,0 +1,1 @@
+API initialization failed: apiinfo.version: Invalid params.: The "apiinfo.version" method must be called without authorization header.

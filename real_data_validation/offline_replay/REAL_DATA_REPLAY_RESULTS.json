@@ -1,0 +1,69 @@
+{
+  "timestamp": "2026-10-12T10:14:51.332852+00:00",
+  "hosts": {
+    "ME_PAC1": {
+      "status": "SUCCESS",
+      "samples_evaluated": 9936,
+      "prediction": -1,
+      "health_score": 34.55,
+      "ttf_hours": null,
+      "confidence": "HIGH",
+      "action_status": 2,
+      "error": null
+    },
+    "ME_PAC2": {
+      "status": "SUCCESS",
+      "samples_evaluated": 9936,
+      "prediction": -1,
+      "health_score": 31.42,
+      "ttf_hours": null,
+      "confidence": "HIGH",
+      "action_status": 2,
+      "error": null
+    },
+    "ME_PAC3": {
+      "status": "SUCCESS",
+      "samples_evaluated": 4002,
+      "prediction": 1,
+      "health_score": 68.21,
+      "ttf_hours": null,
+      "confidence": "HIGH",
+      "action_status": 1,
+      "error": null
+    },
+    "ME_PAC4": {
+      "status": "SUCCESS",
+      "samples_evaluated": 4003,
+      "prediction": 1,
+      "health_score": 67.95,
+      "ttf_hours": 8760.0,
+      "confidence": "HIGH",
+      "action_status": 1,
+      "error": null
+    },
+    "ME_UPS1": {
+      "status": "INSUFFICIENT_SAMPLES",
+      "samples": 5
+    },
+    "ME_UPS2": {
+      "status": "SUCCESS",
+      "samples_evaluated": 92,
+      "prediction": 1,
+      "health_score": 68.96,
+      "ttf_hours": null,
+      "confidence": "HIGH",
+      "action_status": 1,
+      "error": null
+    },
+    "ME_UPS3": {
+      "status": "SUCCESS",
+      "samples_evaluated": 26,
+      "prediction": 1,
+      "health_score": 59.21,
+      "ttf_hours": null,
+      "confidence": "MEDIUM",
+      "action_status": 1,
+      "error": null
+    }
+  }
+}

@@ -1,0 +1,191 @@
+#!/usr/bin/env python3
+"""Read-only Zabbix 365-day history audit. Python standard library only."""
+import csv, datetime as dt, hashlib, json, math, os, re, ssl, sys, time, urllib.error, urllib.request
+from pathlib import Path
+from statistics import median
+
+DEFAULT_HOSTS = ["ME_UPS1","ME_UPS2","ME_UPS3","ME_PAC1","ME_PAC2","ME_PAC3","ME_PAC4"]
+KNOWN_KEYS = {
+ "output.load[upsHighPrecOutputLoad]", "battery.voltage[upsHighPrecBatteryActualVoltage]",
+ "battery.capacity[upsHighPrecBatteryCapacity]", "battery.runtime_remaining[upsAdvBatteryRunTimeRemaining]",
+ "return.temp.c", "supply.temp.c", "return.humidity.rh", "evaporator.fan.speed"
+}
+KEY_PATTERNS = [re.compile(r"compressor", re.I)]
+NUMERIC_TYPES = {"0","3"}
+
+def utc_iso(epoch):
+    return dt.datetime.fromtimestamp(int(epoch), dt.timezone.utc).isoformat()
+
+def sha256_file(path):
+    h=hashlib.sha256()
+    with open(path,"rb") as f:
+        for b in iter(lambda:f.read(1024*1024),b""): h.update(b)
+    return h.hexdigest()
+
+class ZabbixAPI:
+    def __init__(self,url,token,verify_tls=True,timeout=60):
+        self.url,self.token,self.timeout=url,token,timeout
+        self.token_mode="bearer"
+        self.context=ssl._create_unverified_context() if url.lower().startswith("https://") and not verify_tls else None
+    def call(self,method,params):
+        payload0={"jsonrpc":"2.0","method":method,"params":params,"id":1}
+        modes=[self.token_mode]+(["legacy"] if self.token_mode=="bearer" else [])
+        last=None
+        for mode in modes:
+            payload=dict(payload0); headers={"Content-Type":"application/json-rpc"}
+            if mode=="bearer": headers["Authorization"]="Bearer "+self.token
+            else: payload["auth"]=self.token
+            req=urllib.request.Request(self.url,data=json.dumps(payload).encode(),headers=headers,method="POST")
+            try:
+                with urllib.request.urlopen(req,timeout=self.timeout,context=self.context) as r: body=json.loads(r.read().decode())
+                if "error" in body:
+                    er=body["error"]; last=RuntimeError(f"{method}: {er.get('message','API error')}: {er.get('data','')}")
+                    msg=str(last).lower()
+                    if mode=="bearer" and any(x in msg for x in ("not authorized","authentication","session terminated","cannot authenticate")): continue
+                    raise last
+                self.token_mode=mode; return body.get("result",[])
+            except urllib.error.HTTPError as e:
+                txt=e.read(1024).decode("utf-8","replace"); last=RuntimeError(f"{method}: HTTP {e.code}: {txt[:200]}")
+                if mode=="bearer" and e.code in (400,401,403): continue
+                raise last
+            except urllib.error.URLError as e: raise RuntimeError(f"{method}: network/TLS error: {e.reason}") from e
+        raise last or RuntimeError(f"{method}: authentication failed")
+
+def relevant(item):
+    key=item.get("key_","")
+    return key in KNOWN_KEYS or any(p.search(key) for p in KEY_PATTERNS)
+
+def write_csv(path,rows,fields):
+    path.parent.mkdir(parents=True,exist_ok=True)
+    with open(path,"w",newline="",encoding="utf-8") as f:
+        w=csv.DictWriter(f,fieldnames=fields,extrasaction="ignore"); w.writeheader(); w.writerows(rows)
+
+def main():
+    url=os.getenv("ZABBIX_URL","").strip(); token=os.getenv("ZABBIX_TOKEN","").strip()
+    if not url or not token:
+        print("Set ZABBIX_URL and ZABBIX_TOKEN environment variables. Do not hard-code credentials.",file=sys.stderr)
+        print("Example: export ZABBIX_URL='https://YOUR-ZABBIX/api_jsonrpc.php'",file=sys.stderr)
+        print("         read -rsp 'Zabbix API token: ' ZABBIX_TOKEN; export ZABBIX_TOKEN; echo",file=sys.stderr)
+        return 2
+    hosts=[x.strip() for x in os.getenv("ZABBIX_HOSTS",",".join(DEFAULT_HOSTS)).split(",") if x.strip()]
+    days=max(1,int(os.getenv("DAYS","365"))); chunk_days=max(1,min(90,int(os.getenv("CHUNK_DAYS","30"))))
+    limit=max(1000,int(os.getenv("HISTORY_LIMIT","200000")))
+    out=Path(os.getenv("OUT_DIR","/root/grafan_aiops/real_data_validation_365d")).expanduser()
+    verify=os.getenv("VERIFY_TLS","1").lower() not in ("0","false","no")
+    stamp=dt.datetime.now().strftime("%Y%m%d_%H%M%S"); run=out/f"run_{stamp}"; run.mkdir(parents=True,exist_ok=False)
+    exp=run/"exports"; exp.mkdir()
+    end=int(time.time()); start=end-days*86400
+    print(f"Output: {run}\nRange UTC: {utc_iso(start)} -> {utc_iso(end)}\nMode: read-only")
+    api=ZabbixAPI(url,token,verify)
+    try:
+        version=api.call("apiinfo.version",{})
+        found=api.call("host.get",{"output":["hostid","host","name","status"],"filter":{"host":hosts}})
+    except Exception as e:
+        (run/"FATAL_ERROR.txt").write_text(f"API initialization failed: {e}\n",encoding="utf-8")
+        print(f"API initialization failed: {e}",file=sys.stderr); return 3
+    byname={h["host"]:h for h in found}
+    missing=[h for h in hosts if h not in byname]
+    (run/"HOSTS_NOT_FOUND.txt").write_text("\n".join(missing) if missing else "All requested hosts found.\n",encoding="utf-8")
+    avail=[]; coverage=[]; quality=[]; manifest=[]; errors=[]; total=0
+    for hn in hosts:
+        host=byname.get(hn)
+        if not host:
+            avail.append({"host":hn,"hostid":"","item_count":0,"items_with_data":0,"raw_history_days_max":0,"status":"HOST_NOT_FOUND"}); continue
+        print(f"\n[{hn}] discovering items")
+        try:
+            items=api.call("item.get",{"output":["itemid","hostid","name","key_","value_type","units","status","state","history","trends"],"hostids":[host["hostid"]],"monitored":False})
+        except Exception as e:
+            errors.append({"host":hn,"stage":"item.get","error":str(e)})
+            avail.append({"host":hn,"hostid":host["hostid"],"item_count":0,"items_with_data":0,"raw_history_days_max":0,"status":"ITEM_DISCOVERY_ERROR"}); continue
+        items=[i for i in items if relevant(i)]
+        print(f"  {len(items)} relevant items")
+        ndata=0; maxdays=0
+        for item in items:
+            iid=item["itemid"]; key=item.get("key_",""); vt=str(item.get("value_type",""))
+            safe=re.sub(r"[^A-Za-z0-9_.-]+","_",key)[:70] or "item"
+            outcsv=exp/f"{hn}__{iid}__{safe}.csv"; raw=[]; ierr=[]; truncated=False
+            a=start
+            while a<end:
+                b=min(end,a+chunk_days*86400)
+                try:
+                    result=api.call("history.get",{"output":"extend","history":int(vt),"itemids":[iid],"time_from":a,"time_till":b,"sortfield":"clock","sortorder":"ASC","limit":limit})
+                    if len(result)>=limit: truncated=True
+                    raw.extend(result)
+                except Exception as e: ierr.append(f"{utc_iso(a)}..{utc_iso(b)}: {e}")
+                a=b; time.sleep(.03)
+            seen=set(); unique=[]
+            for r in raw:
+                sig=(str(r.get("clock","")),str(r.get("ns","")),str(r.get("value","")))
+                if sig not in seen: seen.add(sig); unique.append(r)
+            unique.sort(key=lambda r:(int(r.get("clock",0)),int(r.get("ns",0))))
+            export=[]; clocks=[]; nums=[]; invalid=0
+            for r in unique:
+                clock=int(r.get("clock",0)); val=str(r.get("value","")); clocks.append(clock)
+                if vt in NUMERIC_TYPES:
+                    try:
+                        x=float(val)
+                        if math.isfinite(x): nums.append(x)
+                        else: invalid+=1
+                    except (ValueError,TypeError): invalid+=1
+                export.append({"clock":clock,"timestamp_utc":utc_iso(clock),"ns":r.get("ns",""),"value":val,"itemid":iid,"host":hn,"key":key,"units":item.get("units",""),"value_type":vt})
+            if unique: write_csv(outcsv,export,["clock","timestamp_utc","ns","value","itemid","host","key","units","value_type"])
+            total+=len(unique)
+            if clocks:
+                ndata+=1; first=min(clocks); last=max(clocks); span=(last-first)/86400; maxdays=max(maxdays,span)
+                sortedclocks=sorted(set(clocks)); intervals=[sortedclocks[j]-sortedclocks[j-1] for j in range(1,len(sortedclocks)) if sortedclocks[j]>sortedclocks[j-1]]
+                med=median(intervals) if intervals else None
+                gaps=sum(1 for x in intervals if med and x>max(3600,3*med))
+                status="TRUNCATION_POSSIBLE" if truncated else ("PARTIAL_ERRORS" if ierr else "DATA_FOUND")
+                if vt not in NUMERIC_TYPES: status+="_NON_NUMERIC"
+                coverage.append({"host":hn,"hostid":host["hostid"],"itemid":iid,"item_name":item.get("name",""),"key":key,"value_type":vt,"units":item.get("units",""),"item_status":item.get("status",""),"history_retention_config":item.get("history",""),"trends_retention_config":item.get("trends",""),"sample_count":len(unique),"first_sample_utc":utc_iso(first),"last_sample_utc":utc_iso(last),"observed_span_days":round(span,3),"median_interval_seconds":round(med,3) if med else "","large_gap_count":gaps,"invalid_numeric_count":invalid,"numeric_unique_values":len(set(nums)) if nums else "","numeric_min":min(nums) if nums else "","numeric_max":max(nums) if nums else "","numeric_mean":sum(nums)/len(nums) if nums else "","raw_csv":str(outcsv) if unique else "","status":status,"errors":" | ".join(ierr)})
+                quality.append({"host":hn,"itemid":iid,"key":key,"sample_count":len(unique),"observed_span_days":round(span,3),"median_interval_seconds":round(med,3) if med else "","large_gap_count":gaps,"invalid_numeric_count":invalid,"constant_numeric_series":"YES" if nums and len(set(nums))==1 else ("NO" if nums else "NOT_APPLICABLE"),"truncated_possible":truncated,"api_errors":len(ierr),"quality_notes":"; ".join((["possible result truncation"] if truncated else [])+(["API errors in chunks"] if ierr else [])+(["no numeric values"] if not nums else []))})
+                manifest.append({"host":hn,"itemid":iid,"key":key,"file":str(outcsv),"rows":len(unique),"sha256":sha256_file(outcsv),"source":"Zabbix history.get","raw_or_trends":"RAW_HISTORY"})
+            else:
+                status="NO_DATA" if not ierr else "API_ERROR"
+                coverage.append({"host":hn,"hostid":host["hostid"],"itemid":iid,"item_name":item.get("name",""),"key":key,"value_type":vt,"units":item.get("units",""),"item_status":item.get("status",""),"history_retention_config":item.get("history",""),"trends_retention_config":item.get("trends",""),"sample_count":0,"first_sample_utc":"","last_sample_utc":"","observed_span_days":0,"median_interval_seconds":"","large_gap_count":"","invalid_numeric_count":"","numeric_unique_values":"","numeric_min":"","numeric_max":"","numeric_mean":"","raw_csv":"","status":status,"errors":" | ".join(ierr)})
+                quality.append({"host":hn,"itemid":iid,"key":key,"sample_count":0,"observed_span_days":0,"median_interval_seconds":"","large_gap_count":"","invalid_numeric_count":"","constant_numeric_series":"UNKNOWN","truncated_possible":truncated,"api_errors":len(ierr),"quality_notes":status})
+            print(f"  {key}: {len(unique)} samples")
+        avail.append({"host":hn,"hostid":host["hostid"],"item_count":len(items),"items_with_data":ndata,"raw_history_days_max":round(maxdays,3),"status":"AUDITED"})
+    write_csv(run/"DATA_AVAILABILITY_365D.csv",avail,["host","hostid","item_count","items_with_data","raw_history_days_max","status"])
+    write_csv(run/"ITEM_COVERAGE_365D.csv",coverage,["host","hostid","itemid","item_name","key","value_type","units","item_status","history_retention_config","trends_retention_config","sample_count","first_sample_utc","last_sample_utc","observed_span_days","median_interval_seconds","large_gap_count","invalid_numeric_count","numeric_unique_values","numeric_min","numeric_max","numeric_mean","raw_csv","status","errors"])
+    write_csv(run/"DATA_QUALITY_365D.csv",quality,["host","itemid","key","sample_count","observed_span_days","median_interval_seconds","large_gap_count","invalid_numeric_count","constant_numeric_series","truncated_possible","api_errors","quality_notes"])
+    write_csv(run/"ZABBIX_EXPORT_MANIFEST.csv",manifest,["host","itemid","key","file","rows","sha256","source","raw_or_trends"])
+    write_csv(run/"API_ERRORS.csv",errors,["host","stage","error"])
+    meta={"zabbix_version":version,"run_started_local":stamp,"range_start_utc":utc_iso(start),"range_end_utc":utc_iso(end),"requested_days":days,"chunk_days":chunk_days,"history_limit_per_request":limit,"hosts_requested":hosts,"hosts_found":sorted(byname),"items_audited":len(coverage),"items_with_data":sum(1 for x in coverage if int(x.get("sample_count") or 0)>0),"total_exported_records":total,"api_discovery_errors":len(errors),"api_auth_mode":api.token_mode,"read_only":True,"zabbix_writes_performed":0,"production_script_modified":False,"note":"Observed span is first/last returned raw sample, not proof of continuous coverage."}
+    (run/"AUDIT_METADATA.json").write_text(json.dumps(meta,indent=2),encoding="utf-8")
+    report=f"""# Zabbix 365-Day Read-Only Audit
+
+- Zabbix version: {version}
+- Requested UTC range: {utc_iso(start)} to {utc_iso(end)}
+- Hosts found: {len(byname)}/{len(hosts)}
+- Relevant items audited: {len(coverage)}
+- Items with returned history: {meta['items_with_data']}
+- Unique records exported: {total}
+- API discovery errors: {len(errors)}
+- Zabbix writes: 0
+- Production AIOps script modified: no
+
+## Interpretation limits
+
+Observed span is based on first and last returned raw history samples. It does not prove continuous coverage. Review sampling intervals, gaps, possible truncation, and API errors. This script exports raw history only; it does not silently substitute hourly trends. A missing result may indicate unavailable history, API permissions, unsupported item types, or an item key not covered by discovery. Predictive accuracy, TTF accuracy, precision, recall, and lead time cannot be established without independent ground truth.
+
+## Files
+
+- `DATA_AVAILABILITY_365D.csv`
+- `ITEM_COVERAGE_365D.csv`
+- `DATA_QUALITY_365D.csv`
+- `ZABBIX_EXPORT_MANIFEST.csv`
+- `API_ERRORS.csv`
+- `AUDIT_METADATA.json`
+- `exports/`
+"""
+    (run/"DATA_QUALITY_REPORT.md").write_text(report,encoding="utf-8")
+    hashes=[]
+    for p in sorted(run.rglob("*")):
+        if p.is_file() and p.name!="SHA256SUMS.txt": hashes.append(f"{sha256_file(p)}  {p.relative_to(run)}")
+    (run/"SHA256SUMS.txt").write_text("\n".join(hashes)+"\n",encoding="utf-8")
+    print("\n=== SUMMARY ===")
+    print(f"Run directory: {run}\nHosts found: {len(byname)}/{len(hosts)}\nItems audited: {len(coverage)}\nItems with data: {meta['items_with_data']}\nRecords exported: {total}\nZabbix writes: 0\nProduction script modified: no")
+    return 0
+
+if __name__=="__main__": sys.exit(main())

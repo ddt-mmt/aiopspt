@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-10-15T02:34:11.461525",
+  "shadow_version": "v5",
+  "isolation_path": "/root/grafan_aiops/shadow_v5/",
+  "zabbix_access": false,
+  "datasets": [
+    {
+      "dataset_id": "lbnl_fdd",
+      "publisher": "Lawrence Berkeley National Laboratory",
+      "landing_url": "https://faultdetection.lbl.gov/data/",
+      "domain_allowed": true,
+      "status": "STAGED_OFFLINE_FIXTURE",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Awaiting controlled live download or verified local offline fixture."
+    },
+    {
+      "dataset_id": "nasa_pcoe_battery",
+      "publisher": "NASA PCoE",
+      "landing_url": "https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/",
+      "domain_allowed": true,
+      "status": "STAGED_OFFLINE_FIXTURE",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "note": "Awaiting controlled live download or verified local offline fixture."
+    }
+  ]
+}

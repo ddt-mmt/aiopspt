@@ -1,0 +1,87 @@
+{
+  "timestamp": "2026-10-13T08:04:32.187360+00:00",
+  "split_config": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "hosts": {
+    "ME_UPS1": {
+      "total_samples": 746,
+      "train_samples": 522,
+      "val_samples": 111,
+      "test_samples": 113,
+      "calibrated_threshold": 70.0,
+      "data_quality_status": "NORMAL",
+      "test_health_score": 89.2,
+      "test_ttf_hours": 420.0,
+      "status": "SUCCESS"
+    },
+    "ME_UPS2": {
+      "total_samples": 746,
+      "train_samples": 522,
+      "val_samples": 111,
+      "test_samples": 113,
+      "calibrated_threshold": 70.0,
+      "data_quality_status": "NORMAL",
+      "test_health_score": 89.2,
+      "test_ttf_hours": 420.0,
+      "status": "SUCCESS"
+    },
+    "ME_UPS3": {
+      "total_samples": 746,
+      "train_samples": 522,
+      "val_samples": 111,
+      "test_samples": 113,
+      "calibrated_threshold": 70.0,
+      "data_quality_status": "NORMAL",
+      "test_health_score": 89.2,
+      "test_ttf_hours": 420.0,
+      "status": "SUCCESS"
+    },
+    "ME_PAC1": {
+      "total_samples": 746,
+      "train_samples": 522,
+      "val_samples": 111,
+      "test_samples": 113,
+      "calibrated_threshold": 70.0,
+      "data_quality_status": "NORMAL",
+      "test_health_score": 89.2,
+      "test_ttf_hours": 420.0,
+      "status": "SUCCESS"
+    },
+    "ME_PAC2": {
+      "total_samples": 746,
+      "train_samples": 522,
+      "val_samples": 111,
+      "test_samples": 113,
+      "calibrated_threshold": 70.0,
+      "data_quality_status": "NORMAL",
+      "test_health_score": 89.2,
+      "test_ttf_hours": 420.0,
+      "status": "SUCCESS"
+    },
+    "ME_PAC3": {
+      "total_samples": 746,
+      "train_samples": 522,
+      "val_samples": 111,
+      "test_samples": 113,
+      "calibrated_threshold": 70.0,
+      "data_quality_status": "NORMAL",
+      "test_health_score": 89.2,
+      "test_ttf_hours": 420.0,
+      "status": "SUCCESS"
+    },
+    "ME_PAC4": {
+      "total_samples": 746,
+      "train_samples": 522,
+      "val_samples": 111,
+      "test_samples": 113,
+      "calibrated_threshold": 70.0,
+      "data_quality_status": "NORMAL",
+      "test_health_score": 89.2,
+      "test_ttf_hours": 420.0,
+      "status": "SUCCESS"
+    }
+  }
+}

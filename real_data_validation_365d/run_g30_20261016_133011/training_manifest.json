@@ -1,0 +1,19 @@
+{
+  "execution_timestamp": "2026-10-16T13:30:11.671572+00:00",
+  "input_dataset": "/root/grafan_aiops/real_data_validation_365d/run_g29_ml_gate/zabbix_events_ml_ready.csv",
+  "total_samples": 180,
+  "train_samples": 125,
+  "val_samples": 28,
+  "test_samples": 27,
+  "random_seed": 42,
+  "features_used": [
+    "host_encoded",
+    "category_encoded",
+    "severity",
+    "hour_of_day"
+  ],
+  "production_changes": 0,
+  "zabbix_write_operations": 0,
+  "restarts": 0,
+  "deployment_authorization": "NOT_AUTHORIZED_FOR_DEPLOYMENT"
+}

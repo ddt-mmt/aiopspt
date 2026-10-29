@@ -1,0 +1,76 @@
+{
+  "execution_timestamp": "2026-10-13T07:42:37.380504+00:00",
+  "mode": "SHADOW_DRY_RUN",
+  "hosts_processed": [
+    {
+      "host": "ME_UPS1",
+      "total_samples": 746,
+      "train_samples": 522,
+      "eval_samples": 224,
+      "status": "SUCCESS",
+      "shadow_health_score": 88.5,
+      "shadow_ttf_hours": 360.0,
+      "data_quality_status": "NORMAL"
+    },
+    {
+      "host": "ME_UPS2",
+      "total_samples": 746,
+      "train_samples": 522,
+      "eval_samples": 224,
+      "status": "SUCCESS",
+      "shadow_health_score": 88.5,
+      "shadow_ttf_hours": 360.0,
+      "data_quality_status": "NORMAL"
+    },
+    {
+      "host": "ME_UPS3",
+      "total_samples": 746,
+      "train_samples": 522,
+      "eval_samples": 224,
+      "status": "SUCCESS",
+      "shadow_health_score": 88.5,
+      "shadow_ttf_hours": 360.0,
+      "data_quality_status": "NORMAL"
+    },
+    {
+      "host": "ME_PAC1",
+      "total_samples": 746,
+      "train_samples": 522,
+      "eval_samples": 224,
+      "status": "SUCCESS",
+      "shadow_health_score": 88.5,
+      "shadow_ttf_hours": 360.0,
+      "data_quality_status": "NORMAL"
+    },
+    {
+      "host": "ME_PAC2",
+      "total_samples": 746,
+      "train_samples": 522,
+      "eval_samples": 224,
+      "status": "SUCCESS",
+      "shadow_health_score": 88.5,
+      "shadow_ttf_hours": 360.0,
+      "data_quality_status": "NORMAL"
+    },
+    {
+      "host": "ME_PAC3",
+      "total_samples": 746,
+      "train_samples": 522,
+      "eval_samples": 224,
+      "status": "SUCCESS",
+      "shadow_health_score": 88.5,
+      "shadow_ttf_hours": 360.0,
+      "data_quality_status": "NORMAL"
+    },
+    {
+      "host": "ME_PAC4",
+      "total_samples": 746,
+      "train_samples": 522,
+      "eval_samples": 224,
+      "status": "SUCCESS",
+      "shadow_health_score": 88.5,
+      "shadow_ttf_hours": 360.0,
+      "data_quality_status": "NORMAL"
+    }
+  ]
+}

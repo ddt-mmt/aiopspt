@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-10-14T05:24:17.053978+00:00",
+  "target_cycles": 3,
+  "completed_cycles": 3,
+  "total_duration_seconds": 54.058783292770386,
+  "pre_hash": "58f8065f171a34c612f2f0d4434b3235e1a525f916e6e648af6460bb12b2d291",
+  "post_hash": "58f8065f171a34c612f2f0d4434b3235e1a525f916e6e648af6460bb12b2d291",
+  "hash_unchanged": true,
+  "container_status": "running",
+  "zabbix_writes": 0,
+  "cycles_data": [
+    {
+      "cycle": 1,
+      "timestamp": "2026-10-14T05:23:40.029199+00:00",
+      "duration_seconds": 17.034077644348145,
+      "result": {
+        "status": "SUCCESS",
+        "results_count": 7
+      }
+    },
+    {
+      "cycle": 2,
+      "timestamp": "2026-10-14T05:23:58.829189+00:00",
+      "duration_seconds": 16.79773187637329,
+      "result": {
+        "status": "SUCCESS",
+        "results_count": 7
+      }
+    },
+    {
+      "cycle": 3,
+      "timestamp": "2026-10-14T05:24:17.053663+00:00",
+      "duration_seconds": 16.223190784454346,
+      "result": {
+        "status": "SUCCESS",
+        "results_count": 7
+      }
+    }
+  ]
+}

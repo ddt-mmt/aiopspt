@@ -1,0 +1,55 @@
+{
+  "dataset_name": "UPS_PAC_Operational_Telemetry_Anomaly_Dataset",
+  "objective": "Statistical anomaly detection and operational telemetry monitoring (NOT physical failure prediction or RUL).",
+  "ups_features": [
+    {
+      "feature": "output.load",
+      "unit": "% or kW",
+      "description": "UPS output load percentage/power"
+    },
+    {
+      "feature": "battery.voltage",
+      "unit": "V",
+      "description": "Battery DC voltage"
+    },
+    {
+      "feature": "battery.capacity",
+      "unit": "%",
+      "description": "Battery state of charge"
+    },
+    {
+      "feature": "battery.runtime_remaining",
+      "unit": "seconds",
+      "description": "Estimated battery runtime"
+    }
+  ],
+  "pac_features": [
+    {
+      "feature": "return.temp.c",
+      "unit": "\u00b0C",
+      "description": "PAC return air temperature"
+    },
+    {
+      "feature": "supply.temp.c",
+      "unit": "\u00b0C",
+      "description": "PAC supply air temperature"
+    },
+    {
+      "feature": "return.humidity.rh",
+      "unit": "%",
+      "description": "PAC return relative humidity"
+    },
+    {
+      "feature": "evaporator.fan.speed",
+      "unit": "% or RPM",
+      "description": "Evaporator fan speed"
+    },
+    {
+      "feature": "compressor.status",
+      "unit": "binary/status",
+      "description": "Compressor operational status"
+    }
+  ],
+  "missing_data_handling": "Explicitly marked as NaN; no synthetic imputation.",
+  "temporal_split_rule": "Strict chronological split to prevent future data leakage."
+}

@@ -1,0 +1,1 @@
+host,hostid,itemid,item_name,key,value_type,units,item_status,history_retention_config,trends_retention_config,sample_count,first_sample_utc,last_sample_utc,observed_span_days,median_interval_seconds,large_gap_count,invalid_numeric_count,numeric_unique_values,numeric_min,numeric_max,numeric_mean,raw_csv,status,errors

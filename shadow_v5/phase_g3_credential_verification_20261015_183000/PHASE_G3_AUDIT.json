@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-10-15T18:30:00Z",
+  "phase": "Phase G.3",
+  "shadow_version": "v5",
+  "credential_path": "/root/.zabbix_shadow_token",
+  "file_exists": true,
+  "permissions_secure": true,
+  "owner_valid": true,
+  "network_requests": 0,
+  "zabbix_api_calls": 0,
+  "production_changes": 0,
+  "credential_values_logged": false,
+  "final_status": "READY_FOR_OPERATOR_REVIEW"
+}

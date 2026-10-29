@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-10-15T05:24:38.669106",
+  "phase": "Phase G.14B",
+  "shadow_version": "v5",
+  "target_hosts": [
+    "ME_UPS1",
+    "ME_UPS2",
+    "ME_UPS3",
+    "ME_PAC1",
+    "ME_PAC2",
+    "ME_PAC3",
+    "ME_PAC4"
+  ],
+  "time_window_seconds": 86400,
+  "max_points_per_batch": 1000,
+  "max_batches_per_item": 3,
+  "api_method": "history.get",
+  "history_type": 0,
+  "transport_security": "BLOCKED_TRANSPORT_REVIEW (Unencrypted plain HTTP transport risk unmitigated)",
+  "host_summary": {
+    "ME_UPS1": {
+      "total": 48,
+      "priority": 23,
+      "secondary": 13,
+      "disabled": 1,
+      "deferred": 11,
+      "included": 36
+    },
+    "ME_UPS2": {
+      "total": 54,
+      "priority": 27,
+      "secondary": 15,
+      "disabled": 1,
+      "deferred": 11,
+      "included": 42
+    },
+    "ME_UPS3": {
+      "total": 48,
+      "priority": 24,
+      "secondary": 13,
+      "disabled": 0,
+      "deferred": 11,
+      "included": 37
+    },
+    "ME_PAC1": {
+      "total": 43,
+      "priority": 6,
+      "secondary": 16,
+      "disabled": 17,
+      "deferred": 4,
+      "included": 22
+    },
+    "ME_PAC2": {
+      "total": 17,
+      "priority": 6,
+      "secondary": 9,
+      "disabled": 0,
+      "deferred": 2,
+      "included": 15
+    },
+    "ME_PAC3": {
+      "total": 15,
+      "priority": 6,
+      "secondary": 7,
+      "disabled": 0,
+      "deferred": 2,
+      "included": 13
+    },
+    "ME_PAC4": {
+      "total": 15,
+      "priority": 6,
+      "secondary": 7,
+      "disabled": 0,
+      "deferred": 2,
+      "included": 13
+    }
+  },
+  "api_requests": 0,
+  "history_collected": false
+}

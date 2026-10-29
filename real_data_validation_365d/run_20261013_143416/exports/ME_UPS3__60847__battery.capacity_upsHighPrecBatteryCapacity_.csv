@@ -1,0 +1,5 @@
+clock,timestamp_utc,ns,value,itemid,host,key,units,value_type
+1791809107,2026-10-12T12:45:07+00:00,216033833,100,60847,ME_UPS3,battery.capacity[upsHighPrecBatteryCapacity],%,0
+1791830707,2026-10-12T18:45:07+00:00,218163022,100,60847,ME_UPS3,battery.capacity[upsHighPrecBatteryCapacity],%,0
+1791852307,2026-10-13T00:45:07+00:00,222110136,100,60847,ME_UPS3,battery.capacity[upsHighPrecBatteryCapacity],%,0
+1791873907,2026-10-13T06:45:07+00:00,216265575,100,60847,ME_UPS3,battery.capacity[upsHighPrecBatteryCapacity],%,0

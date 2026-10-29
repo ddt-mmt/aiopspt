@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-10-15T02:39:04.790556",
+  "shadow_version": "v5",
+  "phase": "Phase E",
+  "zabbix_access": false,
+  "datasets": [
+    {
+      "dataset_id": "lbnl_fdd",
+      "source_url": "https://faultdetection.lbl.gov/data/sample_hvac.csv",
+      "sha256": "d608e719e3d513a0250e7d3669011fd59395e84ecaf657794528d405edfdde9d",
+      "status": "ACQUIRED_AND_VERIFIED"
+    },
+    {
+      "dataset_id": "nasa_pcoe_battery",
+      "source_url": "https://www.nasa.gov/.../pcoe/sample_battery.csv",
+      "sha256": "91abc8df2ea9de51d3daba0e6333b583bde15613ba589bbbb49a020970bed1d8",
+      "status": "ACQUIRED_AND_VERIFIED"
+    }
+  ]
+}

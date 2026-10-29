@@ -1,0 +1,15 @@
+{
+  "model_type": "RandomForestClassifier",
+  "n_estimators": 50,
+  "max_depth": 5,
+  "classes": [
+    0,
+    1
+  ],
+  "feature_importances": {
+    "host_encoded": 0.006620346607467549,
+    "category_encoded": 0.005999168757617588,
+    "severity": 0.966562591188933,
+    "hour_of_day": 0.020817893445981908
+  }
+}

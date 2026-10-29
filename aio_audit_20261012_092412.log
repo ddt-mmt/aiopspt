@@ -1,0 +1,237 @@
+
+============================================================
+1. IDENTITAS SERVER
+============================================================
+2026-10-12T09:24:12+07:00
+prox-prod
+Linux prox-prod 5.14.0-611.26.1.el9_7.x86_64 #1 SMP PREEMPT_DYNAMIC Thu Jan 29 05:24:47 EST 2026 x86_64 x86_64 x86_64 GNU/Linux
+uid=0(root) gid=0(root) groups=0(root) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+
+============================================================
+2. BACKUP FILE PROYEK
+============================================================
+[OK] Ditemukan: script_aiops.py
+[OK] Ditemukan: docker-compose.yml
+[OK] Ditemukan: Dockerfile
+[OK] Ditemukan: aiops_dashboards.yaml
+[OK] Ditemukan: aiops_facility_dashboard.json
+[OK] Ditemukan: README.md
+[OK] Ditemukan: THESIS_METHODOLOGY.md
+[OK] Ditemukan: cari_id.py
+Backup tersimpan di: /root/grafan_aiops/backup_aio_20261012_092412
+
+============================================================
+3. STATUS DOCKER
+============================================================
+Docker server: 29.2.1
+--- Container terkait AIOps/Grafana/Zabbix ---
+NAMES                 IMAGE                                  STATUS         PORTS
+aiops_predictor_hpc   grafan_aiops-aiops_engine              Up 2 days      
+telegraf              telegraf:latest                        Up 11 days     8092/udp, 0.0.0.0:2055->2055/udp, [::]:2055->2055/udp, 8125/udp, 8094/tcp
+grafana               grafana/grafana:latest                 Up 2 days      0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
+influxdb              influxdb:1.8                           Up 11 days     0.0.0.0:8086->8086/tcp, [::]:8086->8086/tcp
+portainer_agent       portainer/agent:2.21.5                 Up 12 days     0.0.0.0:9001->9001/tcp, [::]:9001->9001/tcp
+netbox                netbox_migration-netbox                Up 12 days     0.0.0.0:8001->8080/tcp, [::]:8001->8080/tcp
+netbox_worker         netbox_migration-netbox-worker         Up 12 days     
+netbox_housekeeping   netbox_migration-netbox-housekeeping   Up 7 seconds   
+netbox_postgres       postgres:15-alpine                     Up 12 days     5432/tcp
+netbox_redis          redis:7-alpine                         Up 12 days     6379/tcp
+semaphore             semaphoreui/semaphore:latest           Up 12 days     0.0.0.0:3001->3000/tcp, [::]:3001->3000/tcp
+--- Compose services ---
+time="2026-10-12T09:24:13+07:00" level=warning msg="/root/grafan_aiops/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+aiops_engine
+--- Validasi Compose ---
+time="2026-10-12T09:24:13+07:00" level=warning msg="/root/grafan_aiops/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+[OK] Sintaks Compose valid
+
+============================================================
+4. VALIDASI PYTHON
+============================================================
+Python 3.9.25
+--- Compile check: script_aiops.py ---
+[OK] Sintaks Python valid: script_aiops.py
+--- Compile check: cari_id.py ---
+[OK] Sintaks Python valid: cari_id.py
+
+============================================================
+5. AUDIT POLA BERISIKO PADA SCRIPT
+============================================================
+
+[Fallback data acak/simulasi]
+  Baris 171: ups_health = round(float(np.random.uniform(65.0, 85.0)), 2)
+  Baris 221: pac_health = round(float(np.random.uniform(60.0, 80.0)), 2)
+  Tindakan: Pastikan data sintetis tidak masuk ke hasil monitoring produksi.
+
+[Forward/backward fill]
+  Baris 85: base_df = base_df.sort_values('clock').ffill().bfill().dropna()
+  Tindakan: Periksa apakah data kosong diisi dan menimbulkan nilai semu.
+
+[Merge timestamp]
+  Baris 82: base_df = pd.merge(base_df, df, on='clock', how='outer')
+  Tindakan: Periksa sinkronisasi waktu dan kemungkinan kehilangan sampel.
+
+[Isolation Forest]
+  Baris 6: from sklearn.ensemble import IsolationForest
+  Baris 97: model = IsolationForest(contamination=0.05, random_state=42)
+  Tindakan: Validasi data input, parameter model, dan false positive.
+
+[TTF / Remaining Useful Life]
+  Baris 121: def determine_action_status(health, ttf):
+  Baris 122: if health < 40 or ttf <= 24:
+  Baris 124: elif health < 70 or ttf <= 720:
+  Baris 152: ensure_item_exists(zapi, hostid, 'UPS Time-to-Failure (Hours)', 'ups.ttf.hours', 0)
+  Baris 179: print(f"⚡ [UPS {hostname}] Health: {ups_health}% | TTF: {ups_ttf}h | Load: {sim_load}% | Temp: {sim_temp}°C | Volt: {sim_volt}V | Aksi: {action_labels[ups_action]}")
+  Baris 183: ItemValue(hostname, 'ups.ttf.hours', ups_ttf),
+  Baris 199: ensure_item_exists(zapi, hostid, 'PAC Time-to-Failure (Hours)', 'pac.ttf.hours', 0)
+  Baris 231: print(f"❄️ [PAC {hostname}] Health: {pac_health}% | TTF: {pac_ttf}h | Return Temp: {sim_return_temp}°C | Supply Temp: {sim_supply_temp}°C | Humidity: {sim_humidity}% | Fan: {sim_fan_speed}% | Comp: {sim_compressor} | Aks
+  Baris 235: ItemValue(hostname, 'pac.ttf.hours', pac_ttf),
+  Tindakan: Periksa satuan, sensor yang digunakan, dan validasi hasil.
+
+[Interval polling]
+  Baris 16: INTERVAL_SECONDS = int(os.getenv("INTERVAL_SECONDS", "60"))
+  Baris 252: print(f"Memulai AIOps Multi-Device Predictive Engine Daemon (Interval: {INTERVAL_SECONDS} detik)...")
+  Baris 255: time.sleep(INTERVAL_SECONDS)
+  Tindakan: Pastikan polling tidak bertumpuk dan sesuai interval target.
+
+[Credential literal]
+  Tidak ditemukan pola yang cocok.
+
+[Verifikasi TLS dinonaktifkan]
+  Tidak ditemukan pola yang cocok.
+
+Catatan: hasil di atas adalah indikator audit, bukan bukti pasti bug.
+
+============================================================
+6. AUDIT HOST DAN SENSOR
+============================================================
+5:from zabbix_utils import ZabbixAPI, ItemValue, Sender
+10:# 1. KONFIGURASI ZABBIX API & ENVIRONMENT
+12:ZABBIX_URL = os.getenv("ZABBIX_URL", "http://10.28.1.110/zabbix")
+13:ZABBIX_USER = os.getenv("ZABBIX_USER", "admin")
+14:ZABBIX_PASS = os.getenv("ZABBIX_PASS", "1sampai6")
+15:ZABBIX_SERVER_IP = os.getenv("ZABBIX_SERVER_IP", "10.28.1.110")
+20:# 2. FUNGSI UTILITAS ZABBIX
+23:    """Memastikan item Trapper ada di Zabbix, jika belum buat secara otomatis."""
+24:    items = zapi.item.get(hostids=host_id, filter={'key_': [key_name]}, output=['itemid'])
+31:                'type': 2, # Zabbix trapper
+40:def get_sensor_history(zapi, item_ids_dict, days=30):
+42:    Mengekstrak dan menyelaraskan multi-sensor (multivariate time-series) berdasarkan timestamp (clock) selama X hari.
+45:    time_till = int(datetime.now().timestamp())
+46:    time_from = int((datetime.now() - timedelta(days=days)).timestamp())
+51:        item_info = zapi.item.get(itemids=[item_id], output=["value_type"])
+56:        history = zapi.history.get(
+69:                df['clock'] = pd.to_datetime(df['clock'].astype(int), unit='s')
+70:                dfs[name] = df[['clock', 'value']].rename(columns={'value': name})
+75:        raise ValueError("Tidak ada data sensor numerik yang berhasil ditarik.")
+82:            base_df = pd.merge(base_df, df, on='clock', how='outer')
+85:        base_df = base_df.sort_values('clock').ffill().bfill().dropna()
+91:def calculate_multisensor_rul(df_multisensor, crit_val):
+92:    feature_cols = [c for c in df_multisensor.columns if c != 'clock']
+95:    X = df_multisensor[feature_cols].values
+105:    df_smooth = df_multisensor.copy()
+107:    times = (df_smooth['clock'] - df_smooth['clock'].iloc[0]).dt.total_seconds() / 3600.0
+134:        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Menghubungkan ke Zabbix API (Multi-Device Thermal & Mechanical Fusion)...")
+135:        zapi = ZabbixAPI(url=ZABBIX_URL, user=ZABBIX_USER, password=ZABBIX_PASS)
+138:        ups_hosts = [h for h in all_hosts if h['host'].startswith('ME_UPS')]
+139:        pac_hosts = [h for h in all_hosts if h['host'].startswith('ME_PAC')]
+143:        sender = Sender(server=ZABBIX_SERVER_IP, port=10051)
+158:            items = zapi.item.get(hostids=hostid, output=['itemid', 'key_'])
+161:            sensor_keys = ['ups.output.load', 'ups.battery.temp', 'ups.battery.voltage']
+162:            sensor_dict = {k: item_map[k] for k in sensor_keys if k in item_map}
+165:                if sensor_dict:
+166:                    df_ups = get_sensor_history(zapi, sensor_dict, days=DAYS_WINDOW)
+168:                    raise ValueError("Sensor tidak ditemukan")
+169:                ups_pred, ups_health, ups_ttf = calculate_multisensor_rul(df_ups, crit_val=95.0)
+192:        # Proses Analisis Setiap PAC (Multi-Sensor Thermal & Mechanical Fusion)
+207:            items = zapi.item.get(hostids=hostid, output=['itemid', 'key_'])
+210:            # Menggabungkan sensor termal (Return/Supply Temp, Humidity) dan mekanis (Fan Speed, Compressor Status)
+211:            sensor_keys = ['return.temp.c', 'supply.temp.c', 'return.humidity.rh', 'evaporator.fan.speed', 'compressor.status']
+212:            sensor_dict = {k: item_map[k] for k in sensor_keys if k in item_map}
+215:                if sensor_dict:
+216:                    df_pac = get_sensor_history(zapi, sensor_dict, days=DAYS_WINDOW)
+218:                    raise ValueError("Sensor tidak ditemukan")
+219:                pac_pred, pac_health, pac_ttf = calculate_multisensor_rul(df_pac, crit_val=35.0)
+
+============================================================
+7. AUDIT KONFIGURASI DAN RAHASIA
+============================================================
+--- docker-compose.yml ---
+7:    restart: unless-stopped
+8:    environment:
+10:      - ZABBIX_URL=http://10.28.1.110/zabbix
+11:      - ZABBIX_USER=admin
+12:      - ZABBIX_PASS=1sampai6
+15:      - ZABBIX_SERVER_IP=10.28.1.110
+--- Dockerfile ---
+5:RUN pip install --no-cache-dir zabbix-utils pandas scikit-learn
+--- aiops_dashboards.yaml ---
+11:      path: /etc/grafana/provisioning/dashboards
+
+============================================================
+8. VALIDASI DASHBOARD JSON
+============================================================
+[OK] JSON valid: aiops_facility_dashboard.json
+
+============================================================
+9. PEMERIKSAAN LOG TERAKHIR
+============================================================
+--- aiops_predictor_hpc ---
+Status Pengiriman PAC ME_PAC2: {"processed": 4, "failed": 4, "total": 8, "time": "0.000284", "chunk": 1}
+Status Pengiriman PAC ME_PAC3: {"processed": 4, "failed": 4, "total": 8, "time": "0.000284", "chunk": 1}
+Status Pengiriman PAC ME_PAC4: {"processed": 4, "failed": 4, "total": 8, "time": "0.000315", "chunk": 1}
+Status Pengiriman UPS ME_UPS1: {"processed": 6, "failed": 0, "total": 6, "time": "0.000154", "chunk": 1}
+Status Pengiriman UPS ME_UPS2: {"processed": 6, "failed": 0, "total": 6, "time": "0.000152", "chunk": 1}
+Status Pengiriman UPS ME_UPS3: {"processed": 6, "failed": 0, "total": 6, "time": "0.000133", "chunk": 1}
+Status Pengiriman PAC ME_PAC1: {"processed": 4, "failed": 4, "total": 8, "time": "0.000279", "chunk": 1}
+Status Pengiriman PAC ME_PAC2: {"processed": 4, "failed": 4, "total": 8, "time": "0.000285", "chunk": 1}
+Status Pengiriman PAC ME_PAC3: {"processed": 4, "failed": 4, "total": 8, "time": "0.000279", "chunk": 1}
+Status Pengiriman PAC ME_PAC4: {"processed": 4, "failed": 4, "total": 8, "time": "0.000282", "chunk": 1}
+Status Pengiriman UPS ME_UPS1: {"processed": 6, "failed": 0, "total": 6, "time": "0.000140", "chunk": 1}
+Status Pengiriman UPS ME_UPS2: {"processed": 6, "failed": 0, "total": 6, "time": "0.000142", "chunk": 1}
+Status Pengiriman UPS ME_UPS3: {"processed": 6, "failed": 0, "total": 6, "time": "0.000143", "chunk": 1}
+Status Pengiriman PAC ME_PAC1: {"processed": 4, "failed": 4, "total": 8, "time": "0.000469", "chunk": 1}
+Status Pengiriman PAC ME_PAC2: {"processed": 4, "failed": 4, "total": 8, "time": "0.000284", "chunk": 1}
+Status Pengiriman PAC ME_PAC3: {"processed": 4, "failed": 4, "total": 8, "time": "0.000332", "chunk": 1}
+Status Pengiriman PAC ME_PAC4: {"processed": 4, "failed": 4, "total": 8, "time": "0.000300", "chunk": 1}
+--- grafana ---
+logger=context userId=1 orgId=1 uname=admin t=2026-10-12T01:57:41.721629469Z level=info msg="Request Completed" method=POST path=/api/ds/query status=499 remote_addr=10.28.1.155 time_ms=32 duration=32.151444ms size=91 referer="http://10.28.1.110:3000/d/_60EMioWz/netflow-exporter-overview?dtab=NetFlow-Exporter%3A-&from=now-15m&refresh=1m&timezone=browser&to=now&var-FilterIP=.%2A&var-Interval=1m&var-ProtoName=%24__all&var-TopVal=5&var-nfExporter=" handler=/api/ds/query status_source=server errorReason="Client closed request" errorMessageID=plugin.requestCanceled error="client: query data request canceled: Failed to query data: rpc error: code = Canceled desc = context canceled"
+logger=plugin.alexanderzobnin-zabbix-datasource t=2026-10-12T01:57:41.736758076Z level=error msg="Partial data response error" error="context canceled" pluginId=alexanderzobnin-zabbix-datasource pluginVersion=6.9.1 status=500 statusSource=downstream dsUid=dfzvifoy1efpcb endpoint=queryData refID=B uname=admin dsName=alexanderzobnin-zabbix-datasource
+logger=plugins.update.checker t=2026-10-12T01:59:48.358860707Z level=info msg="flag evaluation succeeded" flag="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}" details="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}"
+logger=plugins.update.checker t=2026-10-12T01:59:48.358957503Z level=info msg="flag evaluation succeeded" flag="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}" details="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}"
+logger=plugins.update.checker t=2026-10-12T01:59:48.359022166Z level=info msg="flag evaluation succeeded" flag="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}" details="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}"
+logger=plugins.update.checker t=2026-10-12T02:09:48.384576139Z level=info msg="flag evaluation succeeded" flag="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}" details="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}"
+logger=plugins.update.checker t=2026-10-12T02:09:48.384677737Z level=info msg="flag evaluation succeeded" flag="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}" details="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}"
+logger=plugins.update.checker t=2026-10-12T02:09:48.384735136Z level=info msg="flag evaluation succeeded" flag="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}" details="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}"
+logger=plugins.update.checker t=2026-10-12T02:19:48.366454253Z level=info msg="flag evaluation succeeded" flag="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}" details="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}"
+logger=plugins.update.checker t=2026-10-12T02:19:48.366563705Z level=info msg="flag evaluation succeeded" flag="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}" details="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}"
+logger=plugins.update.checker t=2026-10-12T02:19:48.366650039Z level=info msg="flag evaluation succeeded" flag="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}" details="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}"
+
+============================================================
+10. BUAT LAPORAN
+============================================================
+AIOps Audit Report
+Tanggal: 2026-10-12T09:24:14+07:00
+Host: prox-prod
+Project: /root/grafan_aiops
+Backup: /root/grafan_aiops/backup_aio_20261012_092412
+Log: /root/grafan_aiops/aio_audit_20261012_092412.log
+
+Prioritas pemeriksaan:
+1. Hentikan penggunaan fallback acak sebagai data produksi.
+2. Tandai data sensor yang hilang; hindari imputasi diam-diam.
+3. Selaraskan timestamp antar sensor secara eksplisit.
+4. Hitung TTF per sensor yang relevan dan validasi satuannya.
+5. Pindahkan credential dari source code ke environment/secret.
+6. Uji model anomaly detection dengan data historis berlabel.
+7. Validasi dashboard dan provisioning sebelum deployment.
+
+Script ini tidak mengubah konfigurasi atau merestart service.
+
+============================================================
+SELESAI
+============================================================
+Backup : /root/grafan_aiops/backup_aio_20261012_092412
+Log    : /root/grafan_aiops/aio_audit_20261012_092412.log
+Laporan: /root/grafan_aiops/aio_report_20261012_092412.txt
+
+Tidak ada reboot, stop container, atau penghapusan data.

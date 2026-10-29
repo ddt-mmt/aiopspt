@@ -1,0 +1,11 @@
+{
+  "normal_data": {
+    "status": "PASS",
+    "health": 46.44,
+    "ttf": 32.25448586424457
+  },
+  "nan_handling": {
+    "status": "PASS",
+    "health": 48.14
+  }
+}

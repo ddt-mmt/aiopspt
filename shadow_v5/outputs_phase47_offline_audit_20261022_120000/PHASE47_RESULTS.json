@@ -1,0 +1,264 @@
+{
+  "phase": "Phase 47",
+  "candidate": "script_aiops.py.candidate.v10",
+  "expected_checksum": "1b3e0a046c6736d397bc2c01667ff913bae5ffb097836937f24946af4aa16bff",
+  "actual_checksum": "1b3e0a046c6736d397bc2c01667ff913bae5ffb097836937f24946af4aa16bff",
+  "production_script_changed": false,
+  "candidate_file_changed": false,
+  "zabbix_access_used": false,
+  "total_tests": 23,
+  "passed_tests": 17,
+  "failed_or_defect_tests": 6,
+  "decision": "PASS_OFFLINE_TESTS_ONLY",
+  "test_results": [
+    {
+      "test_id": "TEST-01",
+      "category": "Quality Gate",
+      "description": "Data valid dengan sampel mencukupi",
+      "expected": "True",
+      "actual": "True",
+      "passed": true,
+      "details": {
+        "status": "NORMAL",
+        "rows": 65
+      }
+    },
+    {
+      "test_id": "TEST-01B",
+      "category": "Pipeline Valid",
+      "description": "Inferensi RUL dan status pada data valid",
+      "expected": "Action in [0, 1, 2]",
+      "actual": "Action=1, Health=49.88, TTF=None, Conf=HIGH",
+      "passed": true,
+      "details": {
+        "pred": -1,
+        "health": 49.88,
+        "ttf": null,
+        "conf": "HIGH",
+        "action": 1
+      }
+    },
+    {
+      "test_id": "TEST-02",
+      "category": "Quality Gate",
+      "description": "Fitur wajib hilang harus fail-closed (INSUFFICIENT_DATA)",
+      "expected": "True",
+      "actual": "True",
+      "passed": true,
+      "details": {
+        "status": "INSUFFICIENT_DATA",
+        "msg": "Fitur wajib hilang: ['battery.temp']"
+      }
+    },
+    {
+      "test_id": "TEST-03",
+      "category": "Quality Gate",
+      "description": "Data stale (>300s) harus fail-closed (STALE_DATA)",
+      "expected": "True",
+      "actual": "True",
+      "passed": true,
+      "details": {
+        "status": "STALE_DATA",
+        "msg": "Sensor stale terdeteksi (hard gate aktif): {'output.load': 581, 'battery.voltage': 581, 'battery.temp': 581}"
+      }
+    },
+    {
+      "test_id": "TEST-04",
+      "category": "Quality Gate",
+      "description": "Sampel kurang dari minimum (<10) harus fail-closed",
+      "expected": "True",
+      "actual": "True",
+      "passed": true,
+      "details": {
+        "status": "INSUFFICIENT_DATA",
+        "msg": "Fitur wajib terlalu sparse: output.load"
+      }
+    },
+    {
+      "test_id": "TEST-05",
+      "category": "Data Cleaning",
+      "description": "Handling timestamp invalid dan non-unique",
+      "expected": "ValueError on insufficient unique timestamps",
+      "actual": "ValueError: Sampel valid tidak cukup untuk inferensi: 3",
+      "passed": true,
+      "details": {
+        "exception": "Sampel valid tidak cukup untuk inferensi: 3"
+      }
+    },
+    {
+      "test_id": "TEST-05B",
+      "category": "Security/Quality Gate",
+      "description": "Deteksi timestamp di masa depan (Future timestamp)",
+      "expected": "BLOCKED/REJECTED",
+      "actual": "Status=NORMAL, Msg=Quality gate passed",
+      "passed": false,
+      "details": {
+        "defect_note": "Kandidat V10 meloloskan future timestamp sebagai NORMAL"
+      }
+    },
+    {
+      "test_id": "TEST-06",
+      "category": "Data Cleaning",
+      "description": "Handling nilai NaN dan Infinity dalam calculate_multisensor_rul_v8",
+      "expected": "Success after cleaning or safe fail",
+      "actual": "Cleaned successfully: conf=MEDIUM, health=50.35",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "test_id": "TEST-07",
+      "category": "Data Cleaning",
+      "description": "Handling duplikasi timestamp (drop_duplicates)",
+      "expected": "Deduplicated safely",
+      "actual": "Health=50.09, TTF=None",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "test_id": "TEST-08A",
+      "category": "RUL Calculation",
+      "description": "Slope positif mendekati crit_val menghasilkan TTF valid",
+      "expected": "TTF > 0",
+      "actual": "TTF=1.0",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "test_id": "TEST-08B",
+      "category": "RUL Calculation",
+      "description": "Slope nol menghasilkan TTF None",
+      "expected": "TTF is None",
+      "actual": "TTF=None",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "test_id": "TEST-08C",
+      "category": "RUL Calculation Defect",
+      "description": "Degradasi sensor menurun (battery voltage drop ke crit_val 44V) didukung?",
+      "expected": "TTF calculated for lower threshold",
+      "actual": "TTF=None (None)",
+      "passed": false,
+      "details": {
+        "defect_note": "Kandidat V10 hardcode slope > 1e-5 and current_val < crit_val, tidak mendukung sensor degradasi menurun."
+      }
+    },
+    {
+      "test_id": "TEST-08D",
+      "category": "RUL Calculation Defect",
+      "description": "Perilaku jika sensor sudah melewati ambang kritis (current_val >= crit_val)",
+      "expected": "TTF = 0 or CRITICAL state",
+      "actual": "TTF=None (None)",
+      "passed": false,
+      "details": {
+        "defect_note": "Ketika nilai sudah melewati crit_val, TTF return None dan tidak membedakan kondisi sudah gagal vs stabil."
+      }
+    },
+    {
+      "test_id": "TEST-09A",
+      "category": "Action Status",
+      "description": "Status saat health=80 dan ttf=None",
+      "expected": "0",
+      "actual": "0",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "test_id": "TEST-09B",
+      "category": "Action Status",
+      "description": "Status saat health=30 dan ttf=None",
+      "expected": "2",
+      "actual": "2",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "test_id": "TEST-09C",
+      "category": "Action Status Edge Case",
+      "description": "Blind spot jika ttf=None akibat sensor sudah melebihi batas tetapi health > 70",
+      "expected": "Warning/Critical",
+      "actual": "Status=0",
+      "passed": false,
+      "details": {
+        "defect_note": "Karena TTF menjadi None ketika nilai melewati crit_val, jika model anomali menghasilkan health >= 70 maka status menjadi 0 (NORMAL)."
+      }
+    },
+    {
+      "test_id": "TEST-10",
+      "category": "Action Status",
+      "description": "Health is None menghasilkan status tidak tersedia (-1)",
+      "expected": "-1",
+      "actual": "-1",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "test_id": "TEST-11A",
+      "category": "Anomaly Detection",
+      "description": "Deteksi anomali pada outlier ekstrem",
+      "expected": "-1",
+      "actual": "-1",
+      "passed": true,
+      "details": {
+        "raw_score": -0.3695267937489858,
+        "health": 13.05
+      }
+    },
+    {
+      "test_id": "TEST-11B",
+      "category": "Action Status Defect",
+      "description": "determine_action_status_hardened mengonsumsi parameter prediction biner?",
+      "expected": "Consumes prediction",
+      "actual": "Signature is (health, ttf) only; prediction is ignored",
+      "passed": false,
+      "details": {
+        "defect_note": "determine_action_status_hardened mengabaikan output biner prediction (-1) secara langsung."
+      }
+    },
+    {
+      "test_id": "TEST-12",
+      "category": "Alignment",
+      "description": "Penyelarasan sensor dengan timestamp tidak persis sama (interleaved)",
+      "expected": "Valid merged df or graceful degrade",
+      "actual": "Status=DEGRADED_DATA, Rows=58",
+      "passed": true,
+      "details": {
+        "status": "DEGRADED_DATA",
+        "rows": 58,
+        "msg": "Data diproses dan divalidasi dengan sukses"
+      }
+    },
+    {
+      "test_id": "TEST-13A",
+      "category": "Robustness",
+      "description": "Input DataFrame None memicu ValueError",
+      "expected": "ValueError",
+      "actual": "DataFrame multisenor kosong atau None",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "test_id": "TEST-13B",
+      "category": "Robustness",
+      "description": "Input DataFrame kosong memicu ValueError",
+      "expected": "ValueError",
+      "actual": "DataFrame multisenor kosong atau None",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "test_id": "TEST-14",
+      "category": "Architecture/Side-Effect Defect",
+      "description": "Fungsi validate_schema_and_quality tidak memutasi dictionary caller",
+      "expected": "False",
+      "actual": "True",
+      "passed": false,
+      "details": {
+        "mutated_keys": [
+          "battery.capacity"
+        ],
+        "defect_note": "validate_schema_and_quality memutasi series_by_name pemanggil dengan del series_by_name[s]."
+      }
+    }
+  ]
+}

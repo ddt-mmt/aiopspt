@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-10-14T05:24:00.946634+00:00",
+  "results": [
+    {
+      "timestamp": "2026-10-14T05:24:00.946634+00:00",
+      "host": "ME_UPS1",
+      "status": "ABSTAIN",
+      "quality_status": "DEGRADED_DATA",
+      "quality_message": "Sensor stale: {'battery.capacity': 6283, 'battery.runtime_remaining': 1756}",
+      "health_score": 50.0,
+      "ttf_hours": null
+    },
+    {
+      "timestamp": "2026-10-14T05:24:00.946634+00:00",
+      "host": "ME_UPS2",
+      "status": "ABSTAIN",
+      "quality_status": "DEGRADED_DATA",
+      "quality_message": "Sensor stale: {'battery.voltage': 4342, 'battery.capacity': 3089}",
+      "health_score": 50.0,
+      "ttf_hours": null
+    },
+    {
+      "timestamp": "2026-10-14T05:24:00.946634+00:00",
+      "host": "ME_UPS3",
+      "status": "ABSTAIN",
+      "quality_status": "DEGRADED_DATA",
+      "quality_message": "Sensor stale: {'battery.voltage': 1128, 'battery.capacity': 16735}",
+      "health_score": 50.0,
+      "ttf_hours": null
+    },
+    {
+      "timestamp": "2026-10-14T05:24:00.946634+00:00",
+      "host": "ME_PAC1",
+      "status": "ERROR",
+      "error": "could not convert string to float: 'HIGH'"
+    },
+    {
+      "timestamp": "2026-10-14T05:24:00.946634+00:00",
+      "host": "ME_PAC2",
+      "status": "ERROR",
+      "error": "could not convert string to float: 'HIGH'"
+    },
+    {
+      "timestamp": "2026-10-14T05:24:00.946634+00:00",
+      "host": "ME_PAC3",
+      "status": "ABSTAIN",
+      "quality_status": "DEGRADED_DATA",
+      "quality_message": "Sensor stale: {'evaporator.fan.speed': 182843}",
+      "health_score": 50.0,
+      "ttf_hours": null
+    },
+    {
+      "timestamp": "2026-10-14T05:24:00.946634+00:00",
+      "host": "ME_PAC4",
+      "status": "ABSTAIN",
+      "quality_status": "DEGRADED_DATA",
+      "quality_message": "Sensor stale: {'evaporator.fan.speed': 182841}",
+      "health_score": 50.0,
+      "ttf_hours": null
+    }
+  ]
+}

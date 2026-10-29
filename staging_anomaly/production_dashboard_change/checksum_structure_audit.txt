@@ -1,0 +1,73 @@
+=== GRAFANA DASHBOARD READ-ONLY CHECKSUM & STRUCTURE AUDIT ===
+
+[1] CALCULATED SHA-256 CHECKCUMS:
+  dashboard_uid.original.json: 45622084e48f1c20fcd816aa8dc5d9927738151db1247f484b61b78e0df41cc1
+  dashboard_uid.fixed.json:    4129358062558b0c7ef8ae0bda51d8f707ce572468b4f044d2254fb3895d5ed0
+
+[2] FILE COMPARISON:
+  Files are DIFFERENT (Correct: fix applied).
+
+[3 & 4] JSON STRUCTURE INSPECTION:
+
+--- dashboard_uid.original.json (before repair) ---
+  Has 'spec' at root: False
+  Has 'annotations' at root: True
+  root annotations type: <class 'dict'>
+  root annotations keys (dict): ['list']
+  root annotations value: {"list": [{"builtIn": 1, "datasource": "-- Grafana --", "enable": true, "hide": true, "iconColor": "rgba(0, 211, 255, 1)", "name": "Annotations & Alerts", "type": "dashboard"}]}
+  Panels count: 7
+  Dashboard UID: aiops-ups-pac-anomaly-new
+  Dashboard Title: AIOps — UPS & PAC Anomaly Monitoring
+
+--- dashboard_uid.fixed.json (after repair) ---
+  Has 'spec' at root: False
+  Has 'annotations' at root: True
+  root annotations type: <class 'list'>
+  root annotations length (list): 1
+  root annotations first item: {"kind": "AnnotationQuery", "spec": {"query": {"kind": "DataQuery", "group": "grafana", "version": "v0", "datasource": {"name": "-- Grafana --"}, "spec": {}}, "enable": true, "hide": true, "iconColor": "rgba(0, 211, 255, 1)", "name": "Annotations & Alerts", "builtIn": true}}
+  Panels count: 7
+  Dashboard UID: aiops-ups-pac-anomaly-new
+  Dashboard Title: AIOps — UPS & PAC Anomaly Monitoring
+
+[5] UNIFIED DIFF (dashboard_uid.original.json vs dashboard_uid.fixed.json):
+--- dashboard_uid.original.json
++++ dashboard_uid.fixed.json
+@@ -1,17 +1,25 @@
+ {
+-  "annotations": {
+-    "list": [
+-      {
+-        "builtIn": 1,
+-        "datasource": "-- Grafana --",
++  "annotations": [
++    {
++      "kind": "AnnotationQuery",
++      "spec": {
++        "query": {
++          "kind": "DataQuery",
++          "group": "grafana",
++          "version": "v0",
++          "datasource": {
++            "name": "-- Grafana --"
++          },
++          "spec": {}
++        },
+         "enable": true,
+         "hide": true,
+         "iconColor": "rgba(0, 211, 255, 1)",
+         "name": "Annotations & Alerts",
+-        "type": "dashboard"
+-      }
+-    ]
+-  },
++        "builtIn": true
++      }
++    }
++  ],
+   "editable": true,
+   "fiscalYearStartMonth": 0,
+   "graphTooltip": 1,
+
+[6] FINAL AUDIT STATUS DECISION:
+STATUS: CANDIDATE_VERIFIED_NOT_IMPORTED
+Verification passed: files differ, fixed candidate uses v2 array schema for annotations, checksums match actual file contents, and no production changes were made.

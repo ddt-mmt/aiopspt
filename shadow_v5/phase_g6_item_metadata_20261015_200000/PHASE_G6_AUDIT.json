@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-10-15T03:34:28.286032",
+  "phase": "Phase G.6",
+  "shadow_version": "v5",
+  "endpoint": "http://10.28.1.110/zabbix/api_jsonrpc.php",
+  "requests_sent": 1,
+  "total_items": 240,
+  "items_per_host": {
+    "10689": 43,
+    "10690": 17,
+    "10696": 15,
+    "10698": 15,
+    "10688": 48,
+    "10697": 54,
+    "10701": 48
+  },
+  "limit_reached": false,
+  "history_collected": false,
+  "production_changes": 0,
+  "credential_values_logged": false,
+  "final_status": "ITEM_METADATA_COLLECTED"
+}

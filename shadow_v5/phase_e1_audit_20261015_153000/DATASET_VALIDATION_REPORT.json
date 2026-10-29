@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-10-15T02:42:09.801435",
+  "datasets": [
+    {
+      "dataset_id": "lbnl_fdd",
+      "acquisition_status": "BLOCKED_LIVE_DOWNLOAD_USED_SYNTHETIC_FIXTURE",
+      "total_rows": 1000,
+      "missing_values": 0,
+      "nonnumeric_values": 0,
+      "label_availability": "VERIFIED (binary fault_label present)",
+      "sha256": "2ebd4ebb94f76dafea03675581b8f4263b44d1d113c91f7e20d718c59c6f842a"
+    },
+    {
+      "dataset_id": "nasa_pcoe_battery",
+      "acquisition_status": "BLOCKED_LIVE_DOWNLOAD_USED_SYNTHETIC_FIXTURE",
+      "total_cycles": 500,
+      "missing_values": 0,
+      "nonnumeric_values": 0,
+      "label_availability": "VERIFIED (rul_cycles present)",
+      "sha256": "b218d32458d2d9733fc3969f9d41d7b67ecff28630e9f2e8299ff41d8f341f0f"
+    }
+  ]
+}

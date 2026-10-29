@@ -1,0 +1,129 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "title": "Phase G.37 Staging Operational Summary & Disclaimer",
+      "type": "text",
+      "options": {
+        "mode": "markdown",
+        "content": "### AIOps Staging Operational Telemetry Monitoring (UPS & PAC)\n- **Scope:** Isolated staging dashboard for `ME_UPS1`–`ME_UPS3` and `ME_PAC1`–`ME_PAC4`.\n- **Objective:** Anomaly detection and sensor health monitoring using Robust Z-score (MAD threshold 3.5) and Isolation Forest.\n- **Important Operational Disclaimer:** Detected anomalies represent statistical deviations from baseline telemetry patterns and **do NOT** automatically imply physical equipment failure or Remaining Useful Life (RUL) expiration.\n- **Production Safety:** 0 production changes, 0 service restarts, 0 Zabbix write operations."
+      }
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      },
+      "id": 2,
+      "title": "UPS Output Load & Battery Voltage Trends (Staging)",
+      "type": "timeseries",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "staging_ds_placeholder"
+          },
+          "refId": "A",
+          "rawSql": "SELECT timestamp as time, host, observed_value as value FROM staging_anomalies_detected WHERE host LIKE 'ME_UPS%'"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "id": 3,
+      "title": "PAC Return/Supply Temp & Compressor Status (Staging)",
+      "type": "timeseries",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "staging_ds_placeholder"
+          },
+          "refId": "A",
+          "rawSql": "SELECT timestamp as time, host, observed_value as value FROM staging_anomalies_detected WHERE host LIKE 'ME_PAC%'"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 17
+      },
+      "id": 4,
+      "title": "Staging Sensor Health & Data Quality Status",
+      "type": "table",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "staging_ds_placeholder"
+          },
+          "refId": "A",
+          "rawSql": "SELECT filename, host, sample_count, missing_values, status, anomalies_detected, median, mad FROM staging_sensor_health"
+        }
+      ]
+    }
+  ],
+  "refresh": "30s",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": ["aiops", "staging", "ups", "pac"],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-30d",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m"
+    ]
+  },
+  "timezone": "utc",
+  "title": "AIOps Staging UPS & PAC Telemetry Anomaly Monitoring",
+  "version": 1,
+  "weekStart": ""
+}

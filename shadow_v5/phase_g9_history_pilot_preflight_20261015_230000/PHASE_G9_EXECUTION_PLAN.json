@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-10-15T04:03:55.295605",
+  "phase": "Phase G.9",
+  "shadow_version": "v5",
+  "api_method": "history.get",
+  "time_window_minutes": 60,
+  "max_points_per_item": 500,
+  "history_type_mapping": {
+    "0": "numeric float (history table type 0)"
+  },
+  "selected_candidates": [
+    {
+      "hostid": "10688",
+      "itemid": "59604",
+      "name": "Battery voltage",
+      "key_": "battery.voltage[upsHighPrecBatteryActualVoltage]",
+      "units": "V",
+      "value_type": "0"
+    },
+    {
+      "hostid": "10688",
+      "itemid": "59607",
+      "name": "Input voltage",
+      "key_": "input.voltage[upsHighPrecInputLineVoltage]",
+      "units": "V",
+      "value_type": "0"
+    }
+  ],
+  "api_requests_executed": 0,
+  "history_collected": false
+}

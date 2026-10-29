@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-10-15T03:28:37.913956",
+  "phase": "Phase G.5",
+  "shadow_version": "v5",
+  "endpoint": "http://10.28.1.110/zabbix/api_jsonrpc.php",
+  "requests_sent": 2,
+  "api_version": "7.0.23",
+  "hosts_returned_count": 7,
+  "target_hosts_missing": [],
+  "automatic_remediation": false,
+  "production_changes": 0,
+  "history_collected": false,
+  "credential_values_logged": false,
+  "final_status": "AUTHENTICATED_READ_ONLY_REQUEST_CONFIRMED"
+}

@@ -1,0 +1,339 @@
+import os
+import time
+import numpy as np
+import pandas as pd
+from zabbix_utils import ZabbixAPI, ItemValue, Sender
+from sklearn.ensemble import IsolationForest
+from datetime import datetime, timedelta
+
+# ==========================================
+# 1. KONFIGURASI ZABBIX API & ENVIRONMENT
+# ==========================================
+ZABBIX_URL = os.getenv("ZABBIX_URL", "http://10.28.1.110/zabbix")
+ZABBIX_USER = os.getenv("ZABBIX_USER", "admin")
+ZABBIX_PASS = os.getenv("ZABBIX_PASS", "1sampai6")
+ZABBIX_SERVER_IP = os.getenv("ZABBIX_SERVER_IP", "10.28.1.110")
+INTERVAL_SECONDS = int(os.getenv("INTERVAL_SECONDS", "60"))
+DAYS_WINDOW = int(os.getenv("DAYS_WINDOW", "30"))
+
+# ==========================================
+# 2. FUNGSI UTILITAS ZABBIX & MAPPING SENSOR
+# ==========================================
+def ensure_item_exists(zapi, host_id, item_name, key_name, value_type=0):
+    """Memastikan item Trapper ada di Zabbix, jika belum buat secara otomatis."""
+    items = zapi.item.get(hostids=host_id, filter={'key_': [key_name]}, output=['itemid'])
+    if not items:
+        try:
+            zapi.item.create({
+                'name': item_name,
+                'key_': key_name,
+                'hostid': host_id,
+                'type': 2, # Zabbix trapper
+                'value_type': value_type, # 0: Numeric float, 3: Numeric unsigned
+                'interfaceid': 0,
+                'delay': '0'
+            })
+            print(f"Item '{item_name}' ({key_name}) berhasil dibuat di host ID {host_id}.")
+        except Exception as e:
+            print(f"Gagal membuat item {key_name} di host {host_id}: {e}")
+
+def get_ups_sensor_dict(item_map):
+    """
+    Memilih sensor UPS valid dari Zabbix items.
+    Mengecualikan battery.temperature karena isu noSuchName.
+    Memastikan hanya input sensor valid yang dipilih.
+    """
+    candidate_keys = [
+        'output.load[upsHighPrecOutputLoad]',
+        'battery.voltage[upsHighPrecBatteryActualVoltage]',
+        'battery.capacity[upsHighPrecBatteryCapacity]',
+        'battery.runtime_remaining[upsAdvBatteryRunTimeRemaining]'
+    ]
+    sensor_dict = {}
+    for k in candidate_keys:
+        if k in item_map:
+            clean_name = k.split('[')[0] if '[' in k else k
+            sensor_dict[clean_name] = item_map[k]
+    return sensor_dict
+
+def get_pac_sensor_dict(item_map, hostname):
+    """
+    Memilih sensor PAC valid per host.
+    Menangani perbedaan key kompresor (compressor.1.status vs compressor.status)
+    dan menolak output AIOps (*.aiops*).
+    """
+    sensor_dict = {}
+    
+    base_keys = ['return.temp.c', 'supply.temp.c', 'return.humidity.rh', 'evaporator.fan.speed']
+    for k in base_keys:
+        if k in item_map:
+            sensor_dict[k] = item_map[k]
+
+    if 'compressor.1.status' in item_map:
+        sensor_dict['compressor.status'] = item_map['compressor.1.status']
+    elif 'compressor.status' in item_map:
+        sensor_dict['compressor.status'] = item_map['compressor.status']
+
+    return sensor_dict
+
+def get_sensor_history(zapi, item_ids_dict, days=30):
+    """Ambil data sensor, selaraskan per menit, tolak data stale, tanpa bfill (tanpa data leakage)."""
+    if not item_ids_dict:
+        raise ValueError("Daftar sensor kosong")
+
+    now_epoch = int(time.time())
+    time_from = now_epoch - int(days * 86400)
+    now_utc = pd.Timestamp.now(tz="UTC")
+    max_age_seconds = max(300, 5 * INTERVAL_SECONDS)
+
+    series_by_name = {}
+    latest_by_name = {}
+
+    for name, item_id in item_ids_dict.items():
+        if not item_id:
+            raise ValueError(f"ID sensor kosong: {name}")
+
+        item_info = zapi.item.get(
+            itemids=[item_id], output=["value_type"]
+        )
+        if not item_info:
+            raise ValueError(f"Item Zabbix tidak ditemukan: {name}")
+
+        value_type = int(item_info[0]["value_type"])
+        history = zapi.history.get(
+            itemids=[item_id],
+            time_from=time_from,
+            time_till=now_epoch,
+            history=value_type,
+            output="extend"
+        )
+        if not history:
+            raise ValueError(f"History kosong: {name}")
+
+        df = pd.DataFrame(history)
+        if not {"clock", "value"}.issubset(df.columns):
+            raise ValueError(f"Kolom clock/value tidak tersedia: {name}")
+
+        df["value"] = pd.to_numeric(df["value"], errors="coerce")
+        df["clock"] = pd.to_datetime(
+            pd.to_numeric(df["clock"], errors="coerce"),
+            unit="s", utc=True, errors="coerce"
+        )
+        df = df.dropna(subset=["clock", "value"])
+        if df.empty:
+            raise ValueError(f"Tidak ada data numerik valid: {name}")
+
+        df = (
+            df.sort_values("clock")
+              .drop_duplicates(subset=["clock"], keep="last")
+        )
+
+        latest_by_name[name] = df["clock"].max()
+        minute_series = (
+            df.set_index("clock")["value"]
+              .resample("1min").last()
+              .rename(name)
+        )
+        series_by_name[name] = minute_series
+
+    # Validasi kesegaran (stale check)
+    stale = {
+        name: int((now_utc - stamp).total_seconds())
+        for name, stamp in latest_by_name.items()
+        if (now_utc - stamp).total_seconds() > max_age_seconds
+    }
+    if stale:
+        raise ValueError(
+            f"Sensor stale (umur detik): {stale}; "
+            f"batas={max_age_seconds}s"
+        )
+
+    merged = pd.concat(series_by_name.values(), axis=1).sort_index()
+
+    # Hanya forward-fill maksimal 2 menit; TIDAK memakai backward-fill (bfill).
+    merged = merged.ffill(limit=2).dropna()
+
+    if len(merged) < 10:
+        raise ValueError(
+            f"Sampel selaras tidak cukup: {len(merged)}; minimal 10"
+        )
+
+    merged = merged.reset_index()
+    merged = merged.rename(columns={merged.columns[0]: "clock"})
+    return merged
+
+# ==========================================
+# 3. MESIN PREDIKTIF (AIOPS)
+# ==========================================
+def calculate_multisensor_rul(df_multisensor, crit_val):
+    """
+    Estimasi anomali (IsolationForest) dan TTF heuristik (slope pada fitur kontinu).
+    Mengutamakan fitur kontinu (seperti load atau temperatur) sebagai proksi utama tren,
+    bukan sensor status diskret (0/1).
+    """
+    feature_cols = [c for c in df_multisensor.columns if c != "clock"]
+    if not feature_cols:
+        raise ValueError("Kolom sensor tidak tersedia")
+
+    df = df_multisensor.copy()
+    df["clock"] = pd.to_datetime(df["clock"], utc=True, errors="coerce")
+    for col in feature_cols:
+        df[col] = pd.to_numeric(df[col], errors="coerce")
+
+    df = (
+        df.replace([np.inf, -np.inf], np.nan)
+          .dropna(subset=["clock"] + feature_cols)
+          .sort_values("clock")
+          .drop_duplicates(subset=["clock"], keep="last")
+    )
+
+    if len(df) < 10:
+        raise ValueError(f"Sampel valid tidak cukup: {len(df)}")
+
+    span_seconds = (df["clock"].iloc[-1] - df["clock"].iloc[0]).total_seconds()
+    if span_seconds < 600:
+        raise ValueError("Rentang data kurang dari 10 menit")
+
+    X = df[feature_cols].to_numpy(dtype=float)
+    if not np.isfinite(X).all():
+        raise ValueError("Data sensor mengandung nilai non-finite")
+
+    model = IsolationForest(contamination=0.05, random_state=42)
+    model.fit(X)
+
+    latest_val = X[-1].reshape(1, -1)
+    prediction = int(model.predict(latest_val)[0])
+    anomaly_score = float(model.decision_function(latest_val)[0])
+    health_score = round(max(0.0, min(100.0, (anomaly_score + 0.5) * 100)), 2)
+
+    # Pilih fitur kontinu non-diskret sebagai primary untuk regresi slope (hindari status 0/1)
+    continuous_candidates = [c for c in feature_cols if not ('status' in c.lower())]
+    primary_col = continuous_candidates[0] if continuous_candidates else feature_cols[0]
+
+    primary = df[primary_col].rolling(window=60, min_periods=1).mean()
+    times = (df["clock"] - df["clock"].iloc[0]).dt.total_seconds().to_numpy() / 3600.0
+
+    if len(np.unique(times)) < 2:
+        raise ValueError("Timestamp unik tidak cukup untuk menghitung tren")
+
+    slope = float(np.polyfit(times, primary.to_numpy(), 1)[0])
+    current_val = float(primary.iloc[-1])
+
+    if slope > 1e-5 and current_val < crit_val:
+        raw_ttf = (crit_val - current_val) / slope
+        hours_to_failure = max(1.0, min(8760.0, float(raw_ttf)))
+    else:
+        # Jika tren stabil/negatif, TTF tidak terbatas (None atau 8760 sebagai representasi stabil)
+        hours_to_failure = None
+
+    return prediction, health_score, hours_to_failure
+
+def determine_action_status(health, ttf):
+    if health < 40 or (ttf is not None and ttf <= 24):
+        return 2
+    elif health < 70 or (ttf is not None and ttf <= 720):
+        return 1
+    else:
+        return 0
+
+# ==========================================
+# 4. SIKLUS EKSEKUSI (DAEMON MULTI-DEVICE)
+# ==========================================
+def run_aiops_cycle():
+    try:
+        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Menghubungkan ke Zabbix API (Multi-Device Thermal & Mechanical Fusion)...")
+        zapi = ZabbixAPI(url=ZABBIX_URL, user=ZABBIX_USER, password=ZABBIX_PASS)
+
+        all_hosts = zapi.host.get(output=['hostid', 'host', 'name'])
+        ups_hosts = [h for h in all_hosts if h['host'].startswith('ME_UPS')]
+        pac_hosts = [h for h in all_hosts if h['host'].startswith('ME_PAC')]
+
+        print(f"Ditemukan {len(ups_hosts)} UPS dan {len(pac_hosts)} PAC.")
+        action_labels = {0: "NORMAL (Aman)", 1: "MAINTENANCE (Preventif)", 2: "REPLACE (Segera Ganti!)"}
+        sender = Sender(server=ZABBIX_SERVER_IP, port=10051)
+
+        # Proses Analisis Setiap UPS
+        for ups in ups_hosts:
+            hostid = ups['hostid']
+            hostname = ups['host']
+            print(f"\n--- Menganalisis UPS: {hostname} (ID: {hostid}) ---")
+
+            ensure_item_exists(zapi, hostid, 'UPS Health Score AIOps', 'ups.health.score', 0)
+            ensure_item_exists(zapi, hostid, 'UPS Time-to-Failure (Hours)', 'ups.ttf.hours', 0)
+            ensure_item_exists(zapi, hostid, 'UPS Policy Action Status', 'ups.action.status', 3)
+            items = zapi.item.get(hostids=hostid, output=['itemid', 'key_'])
+            item_map = {item['key_']: item['itemid'] for item in items}
+
+            sensor_dict = get_ups_sensor_dict(item_map)
+
+            try:
+                if len(sensor_dict) >= 2:
+                    df_ups = get_sensor_history(zapi, sensor_dict, days=DAYS_WINDOW)
+                else:
+                    raise ValueError(f"Sensor UPS tidak lengkap: {list(sensor_dict.keys())}")
+                ups_pred, ups_health, ups_ttf = calculate_multisensor_rul(df_ups, crit_val=95.0)
+            except Exception as e:
+                print(f"[ERROR UPS {hostname}] Prediksi dilewati: {e}")
+                continue
+
+            ups_action = determine_action_status(ups_health, ups_ttf)
+            ttf_display = ups_ttf if ups_ttf is not None else 8760.0
+            print(f"[UPS {hostname}] Health: {ups_health}% | TTF: {ttf_display}h | Aksi: {action_labels[ups_action]}")
+
+            packet = [
+                ItemValue(hostname, 'ups.health.score', ups_health),
+                ItemValue(hostname, 'ups.ttf.hours', ttf_display),
+                ItemValue(hostname, 'ups.action.status', ups_action)
+            ]
+            res = sender.send(packet)
+            print(f"Status Pengiriman UPS {hostname}: {res}")
+
+        # Proses Analisis Setiap PAC
+        for pac in pac_hosts:
+            hostid = pac['hostid']
+            hostname = pac['host']
+            print(f"\n--- Menganalisis PAC: {hostname} (ID: {hostid}) ---")
+
+            ensure_item_exists(zapi, hostid, 'PAC Health Score AIOps', 'pac.health.score', 0)
+            ensure_item_exists(zapi, hostid, 'PAC Time-to-Failure (Hours)', 'pac.ttf.hours', 0)
+            ensure_item_exists(zapi, hostid, 'PAC Policy Action Status', 'pac.action.status', 3)
+            items = zapi.item.get(hostids=hostid, output=['itemid', 'key_'])
+            item_map = {item['key_']: item['itemid'] for item in items}
+
+            sensor_dict = get_pac_sensor_dict(item_map, hostname)
+
+            try:
+                if len(sensor_dict) >= 3:
+                    df_pac = get_sensor_history(zapi, sensor_dict, days=DAYS_WINDOW)
+                else:
+                    raise ValueError(f"Sensor PAC tidak lengkap ({len(sensor_dict)} ditemukan): {list(sensor_dict.keys())}")
+                pac_pred, pac_health, pac_ttf = calculate_multisensor_rul(df_pac, crit_val=35.0)
+            except Exception as e:
+                print(f"[ERROR PAC {hostname}] Prediksi dilewati: {e}")
+                continue
+
+            pac_action = determine_action_status(pac_health, pac_ttf)
+            ttf_display = pac_ttf if pac_ttf is not None else 8760.0
+            print(f"[PAC {hostname}] Health: {pac_health}% | TTF: {ttf_display}h | Aksi: {action_labels[pac_action]}")
+
+            packet = [
+                ItemValue(hostname, 'pac.health.score', pac_health),
+                ItemValue(hostname, 'pac.ttf.hours', ttf_display),
+                ItemValue(hostname, 'pac.action.status', pac_action)
+            ]
+            res = sender.send(packet)
+            print(f"Status Pengiriman PAC {hostname}: {res}")
+
+        print("\nSiklus Analisis Multi-Device Selesai.\n")
+
+    except Exception as e:
+        print(f"Error dalam eksekusi AIOps Multi-Device Cycle: {e}\n")
+
+def main():
+    print(f"Memulai AIOps Multi-Device Predictive Engine Daemon (Interval: {INTERVAL_SECONDS} detik)...")
+    while True:
+        run_aiops_cycle()
+        time.sleep(INTERVAL_SECONDS)
+
+if __name__ == "__main__":
+    main()
