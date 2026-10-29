@@ -6,20 +6,16 @@ Sistem AIOps ini dirancang untuk pemantauan prediktif (*Predictive Maintenance*)
 
 ## 📋 Daftar Isi
 1. [Arsitektur Sistem & Diagram Alur (Flowchart)](#1-arsitektur-sistem--diagram-alur-flowchart)
-2. [Aliran Data (Data Flow Pipeline)](#2-aliran-data-data-flow-pipeline)
-3. [Spesifikasi Machine Learning & Cara Kerja Algoritma](#3-spesifikasi-machine-learning--cara-kerja-algoritma)
-4. [Quality Gating & Pencegahan Halusinasi Prediksi](#4-quality-gating--pencegahan-halusinasi-prediksi)
-5. [Status Implementasi & Runtime Aktif](#5-status-implementasi--runtime-aktif)
-6. [Struktur Direktori & Inventaris Script Utama](#6-struktur-direktori--inventaris-script-utama)
-7. [Panduan Pengujian Offline yang Aman](#7-panduan-pengujian-offline-yang-aman)
-8. [Riwayat Insiden & Penanganan Rollback (Phase 63)](#8-riwayat-insiden--penanganan-rollback-phase-63)
-9. [Batasan Validasi & Risiko](#9-batasan-validasi--risiko)
+2. [Aliran Data & Integrasi Zabbix API](#2-aliran-data--integrasi-zabbix-api)
+3. [Spesifikasi Machine Learning & Toleransi Akurasi](#3-spesifikasi-machine-learning--toleransi-akurasi)
+4. [Struktur Direktori Repositori (Penjelasan Lengkap)](#4-struktur-direktori-repositori-penjelasan-lengkap)
+5. [Panduan Pengujian Offline yang Aman](#5-panduan-pengujian-offline-yang-aman)
+6. [Riwayat Insiden & Penanganan Rollback (Phase 63)](#6-riwayat-insiden--penanganan-rollback-phase-63)
+7. [Batasan Validasi & Risiko](#7-batasan-validasi--risiko)
 
 ---
 
 ## 1. Arsitektur Sistem & Diagram Alur (Flowchart)
-
-Berikut adalah diagram alur end-to-end (*flowchart*) operasional engine AIOps dari pengumpulan telemetri Zabbix hingga visualisasi di Grafana:
 
 ```ascii
 +---------------------------------------------------------------------------------+
@@ -63,121 +59,78 @@ Berikut adalah diagram alur end-to-end (*flowchart*) operasional engine AIOps da
 
 ---
 
-## 2. Aliran Data (Data Flow Pipeline)
+## 2. Aliran Data & Integrasi Zabbix API
 
-Sistem bekerja dalam siklus tertutup (*closed-loop polling*) setiap 60 detik melalui tahapan berikut:
-1. **Pengambilan Telemetri (Ingestion):** Engine menghubungi Zabbix API untuk menarik riwayat metrik (*historical history*) dari sensor daya UPS dan pendingin PAC.
-2. **Penyaringan Kualitas (Quality Gating):** Validator memeriksa apakah data mentah mengandung nilai `NaN`, `Inf`, atau sampel yang tidak memenuhi syarat minimum.
-3. **Eksekusi Model Machine Learning:** Data yang lolos gerbang kualitas diproses oleh modul regresi linier dan analisis tren untuk menghitung *Time to Failure* (TTF).
-4. **Pengiriman Umpan Balik (Feedback Loop):** Hasil prediksi dikirimkan kembali ke Zabbix melalui `zabbix_sender` agar dapat divisualisasikan secara real-time pada dasbor Grafana.
-
----
-
-## 3. Spesifikasi Machine Learning & Cara Kerja Algoritma
-
-Mesin prediktif dalam engine AIOps V11 dirancang khusus untuk menangani karakteristik fasilitas data center (UPS dan PAC) tanpa memerlukan pelatihan ulang (*retraining*) yang berat secara online. Berikut adalah rincian cara kerja per tahapannya:
-
-### Tahap A: Normalisasi & Ekstraksi Fitur (*Feature Extraction & Preprocessing*)
-- **Input:** Deret waktu (*time-series*) dari sensor fisik (misalnya: *battery voltage*, *return temperature*, *fan speed*).
-- **Penanganan Sensor Sparse:** Sensor yang melaporkan data secara jarang (*sparse*, misal `battery.capacity`) diberi bobot toleransi jeda waktu (*tolerance window*) agar tidak memicu error data hilang.
-- **Pemisahan Fitur Diskrit & Kontinu:** 
-  - Fitur diskrit (seperti status biner kompresor `0` atau `1`) dipisahkan secara ketat dari perhitungan regresi kontinu untuk mencegah distorsi tren linier.
-
-### Tahap B: Gerbang Kualitas Data (*Data Quality Gating*)
-Sebelum model melakukan regresi, data dievaluasi ke dalam 3 status:
-1. **`NORMAL`**: Jumlah data historis mencukupi ($\ge N_{\min}$) dan bebas dari anomali `NaN`/`Inf`.
-2. **`DEGRADED_DATA`**: Sebagian data hilang namun dapat diinterpolasi secara aman menggunakan nilai observasi terakhir (*forward/backward fill* yang dikendalikan).
-3. **`INSUFFICIENT_DATA`**: Data kurang dari ambang batas minimum. Model otomatis melakukan **Abstain** (mengirim status abstain, tidak memproduksi angka RUL halusinasi).
-
-### Tahap C: Perhitungan Tren & Regresi Linier (*Slope Regression for TTF*)
-Untuk mendeteksi degradasi komponen sebelum terjadi kegagalan (*Predictive Maintenance*), model menggunakan pendekatan regresi linier berbasis waktu (*least squares slope estimation*):
-- Misalkan $X = [t_1, t_2, \dots, t_n]$ adalah waktu observasi dan $Y = [y_1, y_2, \dots, y_n]$ adalah nilai pembacaan sensor.
-- Model menghitung gradien tren (*slope*, $m$):
-  $$m = \frac{n \sum (t_i y_i) - \sum t_i \sum y_i}{n \sum (t_i^2) - (\sum t_i)^2}$$
-- **Time to Failure (TTF):** Jika gradien $m$ mengarah ke ambang batas kritis (*critical threshold* $Y_{\text{crit}}$), sisa waktu menuju kegagalan diestimasi secara proporsional:
-  $$\text{TTF} = \frac{Y_{\text{crit}} - y_{\text{current}}}{m}$$
-- **Remaining Useful Life (RUL):** Dihitung berdasarkan sisa durasi operasional aman sebelum komponen melewati batas toleransi pabrikan.
-
-### Tahap D: Output & Pushback
-- Model menghasilkan metrik keluaran:
-  - `aiops.compressor.status` (Status operasional)
-  - `aiops.predicted.ttf` (Estimasi waktu menuju kegagalan)
-  - `aiops.predicted.rul` (Sisa umur manfaat komponen)
-- Metrik ini dikirimkan ke Zabbix menggunakan utilitas `zabbix_sender`.
+1. **Zabbix API Extraction (`history.get`, `host.get`, `item.get`):** Engine menarik deret waktu (*time-series*) dari sensor fisik UPS dan PAC.
+2. **Quality Gating & Preprocessing:** Data diperiksa dari nilai `NaN`/`Inf`. Status dikelompokkan menjadi `NORMAL`, `DEGRADED_DATA`, atau `INSUFFICIENT_DATA` (Abstain).
+3. **Feature Isolation:** Variabel diskrit (status biner kompresor) dipisahkan dari variabel kontinu.
+4. **Slope Regression:** Menghitung gradien tren linier (*least squares*) untuk estimasi TTF & RUL.
+5. **Zabbix Sender Pushback:** Hasil dikirimkan kembali ke Zabbix dan divisualisasikan pada Grafana.
 
 ---
 
-## 4. Quality Gating & Pencegahan Halusinasi Prediksi
+## 3. Spesifikasi Machine Learning & Toleransi Akurasi
 
-- **Pencegahan Data Leakage:** Mencegah penggunaan interpolasi masa depan (`bfill`) dalam pelatihan atau evaluasi offline.
-- **Logika Abstain Ketat:** Apabila tren linier mendatar ($m \approx 0$) pada sensor non-kritis atau data tidak stabil, engine tidak memaksakan estimasi RUL fiktif.
-
----
-
-## 5. Status Implementasi & Runtime Aktif
-
-- **Host Produksi:** `prox-prod` (`10.28.1.110`)
-- **Docker Compose Service:** `aiops_engine`
-- **Docker Container Name:** `aiops_predictor_hpc`
-- **Active Runtime Script:** `/app/script_aiops.py` (Identik dengan `script_aiops_v11_repaired.py`)
-- **SHA-256 Checksum:** `009090d5f7cc6a2f8c68e783cbc79879af4e115ff06fd4fa5ce5052f25c06cef`
-- **Status Container:** `running` (`RestartCount: 0`, stabil tanpa *restart loop*).
+- **Metode Regresi:** *Least squares linear regression slope estimation* untuk mendeteksi degradasi tren sebelum kegagalan.
+- **Toleransi Margin Kesalahan:**
+  - Estimasi TTF: **$\pm 15\%$** dari rentang observasi aktif.
+  - Estimasi RUL: **$\pm 20\%$** untuk mengakomodasi sensor *sparse* (kapasitas baterai).
+- **Ambang Batas Sampel Minimum ($N_{\min}$):** $\ge 12$ titik data valid dalam jendela waktu berjalan.
 
 ---
 
-## 6. Struktur Direktori & Inventaris Script Utama
+## 4. Struktur Direktori Repositori (Penjelasan Lengkap)
+
+Repositori ini disusun secara modular agar bersih dan mudah dipahami:
 
 ```text
 /root/grafan_aiops/
 ├── README.md                          # Dokumentasi utama proyek
-├── docker-compose.yml                 # Konfigurasi stack Docker
-├── Dockerfile                         # Definisi image kontainer AIOps
-├── script_aiops_v11_repaired.py       # Kandidat runtime utama V11 (Repaired)
-├── script_aiops_v10_backup.py         # Backup baseline stabil V10 (Phase 60)
-├── aiops_facility_dashboard.json      # Konfigurasi dasbor Grafana fasilitas
-├── aiops_dashboards.yaml              # Provisioning config Grafana
-├── docs/                              # Dokumentasi pendukung audit
-│   ├── SCRIPT_INVENTORY.md            # Inventaris lengkap 62 script & artefak
-│   ├── TEST_EVIDENCE_REGISTER.md      # Register pengujian (29 unique test cases)
-│   ├── PHASE_HISTORY.md               # Kronologi lengkap fase pengembangan
-│   └── VALIDATION_LIMITATIONS.md      # Catatan batasan RUL & kualitas data
-└── PHASE_81_DOCUMENTATION_AND_TEST_EVIDENCE_AUDIT_REPORT.md # Laporan audit final
+├── src/                               # 📂 Core Source Engine (script utama, kandidat V11, backup V10)
+├── config/                            # 📂 Konfigurasi Stack (docker-compose.yml, Dockerfile, Grafana dashboard)
+├── docs/                              # 📂 Dokumentasi Teknis (Inventaris Script, Test Register, ML Workflow, Kebijakan Data)
+├── reports/                           # 📂 Laporan Resmi (Phase 62 s.d. 81, Rekonsiliasi, Pre-activation)
+│   └── audit_archives/                # Arsip laporan historis (AIOps, Audit V3/V5, Robustness, Shadow V5)
+├── phases/                            # 📂 Script Eksekusi Tahapan Pengembangan & Utilitas Pendukung
+│   ├── scripts/                       # Skrip eksekusi fase (Phase 45-46 preflight, run_*.py)
+│   ├── utils/                         # Utilitas audit, ekstraksi, dan perbaikan OID Zabbix
+│   └── legacy/                        # Arsip backup awal
+├── tests/                             # 📂 Test Suite (Unit test V11, Robustness v5, Hardening v10/v9)
+├── real_data_validation/              # Data hasil ekspor validasi riwayat nyata per-host/sensor
+└── real_data_validation_365d/         # Arsip ekspor data historis 365 hari Zabbix beserta run logs
 ```
+
+### Keterangan Fungsi Setiap Direktori & File Kategori:
+- **`src/`**: Berisi script engine utama (`script_aiops.py`), V11 Repaired (`script_aiops_v11_repaired.py`), serta kandidat versi historis (`script_aiops.py.candidate.v2` s.d. `v10`).
+- **`config/`**: Berisi konfigurasi deployment Docker Compose (`docker-compose.yml`, `Dockerfile`) dan skema dasbor Grafana (`aiops_facility_dashboard.json`).
+- **`docs/`**: Berisi panduan arsitektur, daftar inventaris script (`SCRIPT_INVENTORY.md`), register bukti pengujian (`TEST_EVIDENCE_REGISTER.md`), riwayat fase (`PHASE_HISTORY.md`), alur ML (`ML_WORKFLOW_AND_ACCURACY.md`), dan kebijakan penyimpanan dataset (`DATA_STORAGE_AND_GITHUB_POLICY.md`).
+- **`reports/`**: Berisi laporan formal setiap fase pelaksanaan deployment (Phase 62 s.d. 81).
+- **`reports/audit_archives/`**: Berisi arsip laporan forensik historis, validasi robustness v5, shadow test v5, dan audit Zabbix v3.
+- **`phases/`**: Berisi kumpulan script eksekusi otomatis yang digunakan selama proses pengembangan bertahap (*Phased Development*).
+- **`tests/`**: Berisi seluruh file pengujian unit dan otomatisasi untuk memverifikasi fungsionalitas engine.
 
 ---
 
-## 7. Panduan Pengujian Offline yang Aman
-
-Seluruh pengujian unit dan robustness dapat dijalankan secara lokal di lingkungan staging/offline tanpa memengaruhi backend Zabbix produksi:
+## 5. Panduan Pengujian Offline yang Aman
 
 ```bash
-# 1. Masuk ke direktori proyek
-cd /root/grafan_aiops
-
-# 2. Jalankan unit test V11 Repaired (memverifikasi entrypoint main loop)
-python3 test_v11_repaired.py
-
-# 3. Jalankan test robustness & extended V5
-python3 test_aiops_v5_robustness.py
-python3 test_aiops_v5_extended.py
+# Menjalankan unit test V11 Repaired dan Robustness V5
+python3 tests/test_v11_repaired.py
+python3 tests/test_aiops_v5_robustness.py
+python3 tests/test_aiops_v5_extended.py
 ```
 
 ---
 
-## 8. Riwayat Insiden & Penanganan Rollback (Phase 63)
-
-- **Insiden Phase 63:** Pada uji coba deployment V11 pertama, kontainer mengalami *restart loop* karena script kandidat tidak menyertakan pemanggilan daemon `main()` (`if __name__ == "__main__": main()`). Python mengeksekusi definisi fungsi lalu langsung exit dengan kode 0.
-- **Tindakan Koreksi (Phase 64–65):** 
-  1. Dilakukan *rollback* darurat ke baseline stabil V10 (`script_aiops_v10_backup.py`) sesuai runbook.
-  2. Kandidat V11 diperbaiki dengan menambahkan daemon loop (`script_aiops_v11_repaired.py`).
-  3. Dilakukan validasi shadow offline (`PASS`) dan aktivasi ulang terkendali pada Phase 73.
+## 6. Riwayat Insiden & Penanganan Rollback (Phase 63)
+- **Insiden Phase 63:** Deployment V11 awal gagal karena kurangnya entrypoint daemon `main()` loop.
+- **Tindakan Koreksi (Phase 64–65):** Rollback aman ke baseline V10, perbaikan script V11 repaired, validasi shadow offline (`PASS`), dan aktivasi terkendali pada Phase 73.
 
 ---
 
-## 9. Batasan Validasi & Risiko
-
-- **Akurasi RUL:** Status `NOT_MEASURABLE` secara statistik mutlak karena belum terkumpul catatan insiden kerusakan/kegagalan perangkat keras jangka panjang (*ground truth failure data*).
-- **Portainer Stack Definition:** Status sinkronisasi stack di manajemen Portainer tercatat `NOT_VERIFIED` (memerlukan akses UI eksternal).
+## 7. Batasan Validasi & Risiko
+- Akurasi RUL dinilai `NOT_MEASURABLE` secara mutlak tanpa catatan insiden kerusakan perangkat keras jangka panjang.
+- Status definisi Stack Portainer tercatat `NOT_VERIFIED`.
 
 ---
-*Pembaruan Terakhir: Fase 81 (Oktober 2026).*
+*Pembaruan Terakhir: Fase 82 (Oktober 2026).*
