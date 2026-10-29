@@ -1,10 +1,27 @@
 # AIOps Machine Learning Workflow, Pipeline Flow & Accuracy Tolerances
 
-Dokumen ini menyajikan rincian teknis mengenai alur kerja (*workflow*) mesin prediktif AIOps V11, spesifikasi data telemetri yang diolah, tahapan pemrosesan, formulasi matematis regresi, serta toleransi akurasi prediksi dari hasil pengolahan model.
+Dokumen ini menyajikan rincian teknis mengenai alur kerja (*workflow*) mesin prediktif AIOps V11, sumber data (*data sources*) dan provenansinya, spesifikasi parameter telemetri, tahapan pemrosesan, formulasi matematis regresi, serta toleransi akurasi prediksi dari hasil pengolahan model.
 
 ---
 
-## 1. Spesifikasi Data Telemetri yang Diolah oleh Machine Learning
+## 1. Sumber Data dan Provenansi (*Data Sources & Provenance*)
+
+Engine AIOps V11 divalidasi dan dilatih menggunakan kombinasi data operasional nyata (*real-world operational telemetry*) dari infrastruktur data center serta dataset benchmark publik standar industri:
+
+### A. Sumber Data Produksi / Real Telemetry (Zabbix 365-Day Historical Data)
+- **Asal Sumber:** Diekstraksi langsung dari histori database Zabbix server pada fasilitas HPC (`prox-prod`, IP `10.28.1.110`) mencakup rentang data historis hingga 365 hari.
+- **Karakteristik:** Berisi pembacaan sensor asinkron dari perangkat fisik nyata (UPS APC/Schneider dan PAC Mitsubishi/Schneider) yang mengalami fluktuasi beban termal dan daya operasional harian sesungguhnya.
+- **Manifesto & Export Path:** Artefak ekstraksi tersimpan di direktori `/root/grafan_aiops/real_data_validation_365d/` (mencakup `zabbix_events_365d.csv`, manifes ekspor, dan laporan kualitas data).
+
+### B. Sumber Data Dataset Publik & Benchmark Pendukung (*Public Benchmarks*)
+Untuk menguji kekhususan (*robustness*) deteksi anomali dan degradasi baterai/kompresor, model juga divalidasi terhadap dataset benchmark publik standar akademik:
+1. **LBNL Fault Detection and Diagnostics (FDD) Dataset:** Digunakan untuk memvalidasi pola kegagalan termal dan penurunan efisiensi unit penyejuk udara (*Precision Air Conditioner* / PAC).
+2. **NASA Prognostics Center of Excellence (PCoE) Battery Dataset:** Digunakan untuk menguji keakuratan estimasi *Remaining Useful Life* (RUL) dan kurva degradasi tegangan/kapasitas sel baterai UPS.
+- **Manifesto & Path:** Artefak dan manifest tersimpan pada direktori `/root/grafan_aiops/shadow_v5/` (seperti `PUBLIC_DATASET_ACQUISITION_MANIFEST.json`).
+
+---
+
+## 2. Spesifikasi Data Telemetri yang Diolah oleh Machine Learning
 
 Engine AIOps V11 mengolah data time-series dari perangkat infrastruktur daya kritis (**UPS**) dan pendingin ruangan data center (**PAC**). Berikut adalah rincian parameter, satuan, dan fungsi metrik yang digunakan sebagai input model:
 
@@ -27,33 +44,33 @@ Engine AIOps V11 mengolah data time-series dari perangkat infrastruktur daya kri
 
 ---
 
-## 2. Alur Kerja Rinci Pipeline Machine Learning (Step-by-Step Flow)
+## 3. Alur Kerja Rinci Pipeline Machine Learning (Step-by-Step Flow)
 
 Proses pengolahan data dan prediksi pada engine AIOps berjalan dalam siklus tertutup setiap 60 detik melalui 5 tahapan utama:
 
 ```ascii
-[ Step 1: Telemetry Ingestion (UPS & PAC Metrics) ]
-                         │
-                         ▼
-[ Step 2: Quality Gating & Preprocessing ]
-                         │
-                         ├──► [ Status: INSUFFICIENT_DATA ] ──► (Action: ABSTAIN / Skip Prediction)
-                         │
-                         └──► [ Status: NORMAL / DEGRADED ] 
+[ Step 1: Telemetry Ingestion (Zabbix 365d & Benchmark Data Sources) ]
                                    │
                                    ▼
+[ Step 2: Quality Gating & Preprocessing ]
+                                   │
+                                   ├──► [ Status: INSUFFICIENT_DATA ] ──► (Action: ABSTAIN / Skip Prediction)
+                                   │
+                                   └──► [ Status: NORMAL / DEGRADED ] 
+                                             │
+                                             ▼
 [ Step 3: Feature Extraction & Isolation (Continuous vs Discrete) ]
-                         │
-                         ▼
+                                   │
+                                   ▼
 [ Step 4: Slope Regression & TTF / RUL Computation ]
-                         │
-                         ▼
+                                   │
+                                   ▼
 [ Step 5: Zabbix Sender Pushback & Grafana Visualization ]
 ```
 
 ### Rincian Tiap Tahapan:
-1. **Step 1: Telemetry Ingestion (Pengambilan Data)**
-   - Engine terhubung ke Zabbix API untuk menarik riwayat waktu (*time-series history*) dari parameter UPS dan PAC yang tercantum pada tabel di atas.
+1. **Step 1: Telemetry Ingestion (Pengambilan Data dari Sumber)**
+   - Engine mengambil data historis dan real-time dari sumber data Zabbix serta dataset benchmark publik.
 2. **Step 2: Quality Gating & Preprocessing (Gerbang Kualitas)**
    - Validator memeriksa keberadaan nilai `NaN`, `Inf`, atau data kosong.
    - Mengkategorikan data ke dalam tiga status:
@@ -72,7 +89,7 @@ Proses pengolahan data dan prediksi pada engine AIOps berjalan dalam siklus tert
 
 ---
 
-## 3. Toleransi Akurasi Prediksi & Batas Keyakinan (*Accuracy Tolerances*)
+## 4. Toleransi Akurasi Prediksi & Batas Keyakinan (*Accuracy Tolerances*)
 
 Mengingat kompleksitas lingkungan data center HPC dan ketiadaan riwayat kegagalan perangkat keras jangka panjang (*ground truth failure data*), toleransi akurasi dan batas keyakinan model didefinisikan secara konservatif sebagai berikut:
 
