@@ -5,13 +5,14 @@ Sistem AIOps ini dirancang untuk pemantauan prediktif (*Predictive Maintenance*)
 ---
 
 ## 📋 Daftar Isi
-1. [Arsitektur Sistem & Diagram Alur (Flowchart)](#1-arsitektur-sistem--diagram-alur-flowchart)
+1. [Arsitektur Sistem & Diagram Alur](#1-arsitektur-sistem--diagram-alur-flowchart)
 2. [Aliran Data & Integrasi Zabbix API](#2-aliran-data--integrasi-zabbix-api)
-3. [Spesifikasi Machine Learning & Toleransi Akurasi](#3-spesifikasi-machine-learning--toleransi-akurasi)
-4. [Struktur Direktori Repositori (Penjelasan Lengkap)](#4-struktur-direktori-repositori-penjelasan-lengkap)
-5. [Panduan Pengujian Offline yang Aman](#5-panduan-pengujian-offline-yang-aman)
-6. [Riwayat Insiden & Penanganan Rollback (Phase 63)](#6-riwayat-insiden--penanganan-rollback-phase-63)
-7. [Batasan Validasi & Risiko](#7-batasan-validasi--risiko)
+3. [Spesifikasi Machine Learning & Batas Validasi](#3-spesifikasi-machine-learning--batas-validasi)
+4. [Public Datasets & Benchmark Independen](#4-public-datasets--benchmark-independen)
+5. [Struktur Direktori Repositori](#5-struktur-direktori-repositori-penjelasan-lengkap)
+6. [Panduan Pengujian Offline](#6-panduan-pengujian-offline-yang-aman)
+7. [Riwayat Insiden & Penanganan Rollback](#7-riwayat-insiden--penanganan-rollback-phase-63)
+8. [Batasan Validasi & Risiko](#8-batasan-validasi--risiko)
 
 ---
 
@@ -69,17 +70,55 @@ Sistem AIOps ini dirancang untuk pemantauan prediktif (*Predictive Maintenance*)
 
 ---
 
-## 3. Spesifikasi Machine Learning & Toleransi Akurasi
+## 3. Spesifikasi Machine Learning & Batas Validasi
 
-- **Metode Regresi:** *Least squares linear regression slope estimation* untuk mendeteksi degradasi tren sebelum kegagalan.
-- **Toleransi Margin Kesalahan:**
-  - Estimasi TTF: **$\pm 15\%$** dari rentang observasi aktif.
-  - Estimasi RUL: **$\pm 20\%$** untuk mengakomodasi sensor *sparse* (kapasitas baterai).
-- **Ambang Batas Sampel Minimum ($N_{\min}$):** $\ge 12$ titik data valid dalam jendela waktu berjalan.
+Dokumentasi ini membedakan konfigurasi algoritma, target desain, dan akurasi yang benar-benar terukur.
 
----
+- **Isolation Forest:** konfigurasi `contamination=0.05` pada implementasi V11 adalah parameter model, bukan error rate 5% dan bukan bukti akurasi 95%.
+- **Health Score:** merupakan indeks analitik yang diturunkan dari output model. Nilai 80% tidak boleh ditafsirkan sebagai probabilitas 80% bahwa perangkat sehat.
+- **TTF/RUL:** akurasi aktual masih `NOT_MEASURABLE` tanpa ground truth kegagalan/akhir umur yang representatif untuk perangkat produksi.
+- **Target desain historis:** TTF ±15% dan RUL ±20% pernah dicantumkan pada dokumen lama. Angka tersebut belum terbukti sebagai toleransi empiris dan tidak boleh dipublikasikan sebagai akurasi teruji.
+- **Kualitas data:** implementasi V11 yang diaudit menggunakan batas usia data 300 detik, forward-fill terbatas maksimal dua titik, dan pemeriksaan sampel minimum 10 titik pada quality gate terkait. Nilai konfigurasi kandidat V12 harus diverifikasi dari source dan test terbaru sebelum dinyatakan berlaku.
+- **Confidence:** jumlah sampel atau label HIGH/MEDIUM saja bukan probabilitas akurasi yang terkalibrasi. Klaim confidence harus didukung kalibrasi dan evaluasi yang terukur.
 
-## 4. Struktur Direktori Repositori (Penjelasan Lengkap)
+Lihat [ML Workflow and Accuracy](docs/ML_WORKFLOW_AND_ACCURACY.md) untuk rincian keterbatasan dan [Public Datasets and Benchmarks](docs/PUBLIC_DATASETS_AND_BENCHMARKS.md) untuk sumber pembanding.
+
+## 4. Public Datasets & Benchmark Independen
+
+Dataset publik digunakan sebagai benchmark penelitian offline yang terpisah dari telemetri operasional Zabbix.
+
+### LBNL Fault Detection and Diagnostics — RTU
+
+- [Halaman dataset RTU resmi](https://faultdetection.lbl.gov/dataset/rtu/)
+- [Unduh simulated RTU dataset ZIP](https://fdddata.lbl.gov/data/Simulated_LBNL_FDD_Data_Sets_RTU/LBNL_FDD_Data_Sets_RTU.zip)
+- [Unduh semua tiga file dataset RTU](https://fdddata.lbl.gov/data/Simulated_LBNL_FDD_Data_Sets_RTU/LBNL_FDD_Data_Sets_RTU_all_3.zip)
+- [Katalog seluruh dataset LBNL FDD](https://faultdetection.lbl.gov/data/)
+- DOI: [10.25984/1881324](https://doi.org/10.25984/1881324)
+
+LBNL RTU merupakan benchmark HVAC/rooftop unit. Dataset ini dapat mendukung evaluasi konsep fault detection untuk domain pendinginan, tetapi bukan replika PAC produksi. Halaman unduhan dapat meminta informasi pengguna dan cookies. Ikuti proses resmi dan jangan membuat identitas unduhan palsu.
+
+### NASA PCoE Battery
+
+- [Repository resmi NASA PCoE](https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/)
+- [Unduh NASA Battery Data Set #5](https://phm-datasets.s3.amazonaws.com/NASA/5.+Battery+Data+Set.zip)
+- [Unduh NASA Randomized Battery Usage Data Set #11](https://phm-datasets.s3.amazonaws.com/NASA/11.+Randomized+Battery+Usage+Data+Set.zip)
+
+NASA Battery #5 berisi eksperimen baterai lithium-ion dengan charging/discharging pada temperatur berbeda serta pengukuran impedance. Dataset ini adalah benchmark metodologi baterai, bukan representasi otomatis dari chemistry dan karakteristik baterai UPS produksi.
+
+### Status akuisisi dan benchmark
+
+Berdasarkan ringkasan Phase 87.3, framework dan simulasi benchmark dilaporkan telah dijalankan. Bukti yang tersedia belum menunjukkan arsip publik asli dengan ukuran file non-zero, checksum, dan input manifest yang mengikat hasil ke dataset tersebut.
+
+Karena itu:
+- Native LBNL acquisition: `NOT_VERIFIED`.
+- Native NASA acquisition: `NOT_VERIFIED`.
+- Simulation benchmark: `EXECUTED_SIMULATION`, sebagaimana dilaporkan.
+- Real-file public benchmark: `NOT_EXECUTED` sampai bukti arsip dan hasil evaluasi tersedia.
+- Dataset publik tidak dicampurkan ke production Zabbix pipeline.
+
+Status rinci dan tautan unduhan ada di [docs/PUBLIC_DATASETS_AND_BENCHMARKS.md](docs/PUBLIC_DATASETS_AND_BENCHMARKS.md) dan [dataset status manifest](docs/PUBLIC_DATASET_STATUS_MANIFEST.json).
+
+## 5. Struktur Direktori Repositori (Penjelasan Lengkap)
 
 Repositori ini disusun secara modular agar bersih dan mudah dipahami:
 
@@ -111,7 +150,7 @@ Repositori ini disusun secara modular agar bersih dan mudah dipahami:
 
 ---
 
-## 5. Panduan Pengujian Offline yang Aman
+## 6. Panduan Pengujian Offline yang Aman
 
 ```bash
 # Menjalankan unit test V11 Repaired dan Robustness V5
@@ -122,15 +161,15 @@ python3 tests/test_aiops_v5_extended.py
 
 ---
 
-## 6. Riwayat Insiden & Penanganan Rollback (Phase 63)
+## 7. Riwayat Insiden & Penanganan Rollback (Phase 63)
 - **Insiden Phase 63:** Deployment V11 awal gagal karena kurangnya entrypoint daemon `main()` loop.
 - **Tindakan Koreksi (Phase 64–65):** Rollback aman ke baseline V10, perbaikan script V11 repaired, validasi shadow offline (`PASS`), dan aktivasi terkendali pada Phase 73.
 
 ---
 
-## 7. Batasan Validasi & Risiko
+## 8. Batasan Validasi & Risiko
 - Akurasi RUL dinilai `NOT_MEASURABLE` secara mutlak tanpa catatan insiden kerusakan perangkat keras jangka panjang.
 - Status definisi Stack Portainer tercatat `NOT_VERIFIED`.
 
 ---
-*Pembaruan Terakhir: Fase 82 (Oktober 2026).*
+*Pembaruan dokumentasi: 30 Oktober 2026. Dataset publik dicatat sebagai referensi; akuisisi arsip dan benchmark real-file belum terverifikasi.*
