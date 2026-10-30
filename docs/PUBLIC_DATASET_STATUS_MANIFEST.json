@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "documentation_review_date": "2026-10-30",
+  "scope": "Public benchmark references only; no production ingestion or data mixing",
+  "datasets": [
+    {
+      "id": "lbnl_rtu_fdd",
+      "publisher": "Lawrence Berkeley National Laboratory",
+      "landing_page": "https://faultdetection.lbl.gov/dataset/rtu/",
+      "catalogue": "https://faultdetection.lbl.gov/data/",
+      "doi": "https://doi.org/10.25984/1881324",
+      "downloads": [
+        {
+          "label": "Simulated RTU data sets (74 CSV files, source page listed approx. 292 MB)",
+          "url": "https://fdddata.lbl.gov/data/Simulated_LBNL_FDD_Data_Sets_RTU/LBNL_FDD_Data_Sets_RTU.zip"
+        },
+        {
+          "label": "All three RTU data set files (source page listed approx. 293 MB)",
+          "url": "https://fdddata.lbl.gov/data/Simulated_LBNL_FDD_Data_Sets_RTU/LBNL_FDD_Data_Sets_RTU_all_3.zip"
+        }
+      ],
+      "acquisition_status": "NOT_ACQUIRED",
+      "benchmark_status": "SIMULATION_TEST_ONLY",
+      "local_archive_path": null,
+      "archive_size_bytes": null,
+      "sha256": null,
+      "notes": "Official page requires user information/cookies for resource downloads. Do not fabricate user details. Verify actual files and terms before marking acquired."
+    },
+    {
+      "id": "nasa_pcoe_battery_5",
+      "publisher": "NASA Prognostics Center of Excellence",
+      "landing_page": "https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/",
+      "downloads": [
+        {
+          "label": "NASA PCoE Battery Data Set #5",
+          "url": "https://phm-datasets.s3.amazonaws.com/NASA/5.+Battery+Data+Set.zip"
+        }
+      ],
+      "citation": "B. Saha and K. Goebel (2007), Battery Data Set, NASA Prognostics Data Repository, NASA Ames Research Center.",
+      "acquisition_status": "NOT_ACQUIRED",
+      "benchmark_status": "SIMULATION_TEST_ONLY",
+      "local_archive_path": null,
+      "archive_size_bytes": null,
+      "sha256": null,
+      "notes": "Native archive acquisition and checksum are not established by the Phase 87.3 summary. Review terms before redistribution."
+    },
+    {
+      "id": "nasa_pcoe_randomized_battery_11",
+      "publisher": "NASA Prognostics Center of Excellence",
+      "landing_page": "https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/",
+      "downloads": [
+        {
+          "label": "NASA PCoE Randomized Battery Usage Data Set #11",
+          "url": "https://phm-datasets.s3.amazonaws.com/NASA/11.+Randomized+Battery+Usage+Data+Set.zip"
+        }
+      ],
+      "acquisition_status": "NOT_ACQUIRED",
+      "benchmark_status": "NOT_EXECUTED",
+      "local_archive_path": null,
+      "archive_size_bytes": null,
+      "sha256": null,
+      "notes": "Supplementary reference only; not part of the original Phase 87.3 simulation summary."
+    }
+  ]
+}
