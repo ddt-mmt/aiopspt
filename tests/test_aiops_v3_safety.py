@@ -6,7 +6,7 @@ import sys
 import importlib.machinery
 
 # Load candidate v3
-loader = importlib.machinery.SourceFileLoader('script_aiops_v3', '/root/grafan_aiops/script_aiops.py.candidate.v3')
+loader = importlib.machinery.SourceFileLoader('script_aiops_v3', '/root/grafan_aiops/src/candidates/script_aiops.py.candidate.v3')
 script_v3 = loader.load_module()
 
 class TestAIOpsSafetyIsolated(unittest.TestCase):

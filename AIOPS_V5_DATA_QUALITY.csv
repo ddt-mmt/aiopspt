@@ -1,8 +1,0 @@
-host,completeness_rate,missing_rate,invalid_rate,stale_status,samples_accepted,samples_rejected
-ME_PAC1,1.0,0.0,0.0,OK,1440,0
-ME_PAC2,1.0,0.0,0.0,OK,1440,0
-ME_PAC3,1.0,0.0,0.0,OK,1440,0
-ME_PAC4,1.0,0.0,0.0,OK,1440,0
-ME_UPS1,0.95,0.050000000000000044,0.0,OK,1440,0
-ME_UPS2,0.95,0.050000000000000044,0.0,OK,1440,0
-ME_UPS3,0.95,0.050000000000000044,0.0,OK,1440,0

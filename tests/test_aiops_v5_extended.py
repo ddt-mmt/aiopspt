@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import importlib.machinery
 
-loader = importlib.machinery.SourceFileLoader('script_v5_ext', '/root/grafan_aiops/script_aiops.py.candidate.v5')
+loader = importlib.machinery.SourceFileLoader('script_v5_ext', '/root/grafan_aiops/src/candidates/script_aiops.py.candidate.v5')
 v5_mod = loader.load_module()
 
 class TestAIOpsV5ExtendedRobustness(unittest.TestCase):

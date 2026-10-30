@@ -1,5 +1,0 @@
-test_name,category,status,notes
-Unit Test Robustness (v5),Functional,PASS,3/3 tests passed
-"Extended Robustness (NaN/Inf, Insufficient Samples, TTF Abstain)",Safety & Edge Case,PASS,4/4 tests passed
-Zero Zabbix Mutation & Network Isolation,Security,PASS,Mock assertions verified zero writes
-Discrete Feature Exclusion from TTF Slope,Model Correctness,PASS,Compressor status 0/1 excluded from slope regression

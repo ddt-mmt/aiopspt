@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import importlib.machinery
 
-loader = importlib.machinery.SourceFileLoader('script_v8', '/root/grafan_aiops/script_aiops.py.candidate.v8')
+loader = importlib.machinery.SourceFileLoader('script_v8', '/root/grafan_aiops/src/candidates/script_aiops.py.candidate.v8')
 v8_mod = loader.load_module()
 
 class TestHardeningV8(unittest.TestCase):

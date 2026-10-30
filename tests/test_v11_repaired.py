@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime, timezone, timedelta
 
-sys.path.append('/root/grafan_aiops')
+sys.path.append('/root/grafan_aiops/src')
 import script_aiops_v11_repaired as s
 
 class TestV11Repaired(unittest.TestCase):

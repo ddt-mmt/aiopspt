@@ -5,7 +5,7 @@ import numpy as np
 import sys
 import importlib.machinery
 
-loader = importlib.machinery.SourceFileLoader('script_aiops_v2', '/root/grafan_aiops/script_aiops.py.candidate.v2')
+loader = importlib.machinery.SourceFileLoader('script_aiops_v2', '/root/grafan_aiops/src/candidates/script_aiops.py.candidate.v2')
 script_v2 = loader.load_module()
 
 class TestAIOpsCandidateV2(unittest.TestCase):

@@ -3,7 +3,9 @@ version: '3.8'
 services:
   aiops_engine:
     container_name: aiops_predictor_hpc
-    build: .
+    build:
+      context: ..
+      dockerfile: config/Dockerfile
     restart: unless-stopped
     environment:
       - PYTHONUNBUFFERED=1

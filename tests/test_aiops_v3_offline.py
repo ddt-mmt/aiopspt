@@ -4,7 +4,7 @@ import sys
 import importlib.machinery
 
 # Load evaluate_aiops_v3_offline module
-loader = importlib.machinery.SourceFileLoader('eval_offline', '/root/grafan_aiops/evaluate_aiops_v3_offline.py')
+loader = importlib.machinery.SourceFileLoader('eval_offline', '/root/grafan_aiops/phases/utils/evaluate_aiops_v3_offline.py')
 eval_mod = loader.load_module()
 
 class TestAIOpsOfflineEvaluation(unittest.TestCase):
