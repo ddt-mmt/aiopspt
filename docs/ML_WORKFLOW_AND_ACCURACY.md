@@ -1,6 +1,6 @@
 # AIOps Machine Learning Workflow, Pipeline Flow & Accuracy Tolerances
 
-Dokumen ini menyajikan rincian teknis mengenai alur kerja (*workflow*) mesin prediktif AIOps V11, spesifikasi teknis pengambilan data Zabbix API, sumber data (*data sources*) dan provenansinya, tahapan pemrosesan, formulasi matematis regresi, serta toleransi akurasi prediksi dari hasil pengolahan model.
+Dokumen ini menjelaskan alur historis V11 dan persyaratan validasi kandidat V12. Konfigurasi algoritma, target desain, bukti akuisisi dataset, hasil benchmark, dan akurasi terukur dibedakan secara eksplisit. V12 tetap kandidat staging sampai melewati promotion gate.
 
 ---
 
@@ -42,20 +42,64 @@ Engine AIOps V11 berinteraksi secara aktif dengan Zabbix Server menggunakan **Za
 
 ## 2. Sumber Data dan Provenansi (*Data Sources & Provenance*)
 
-Engine AIOps V11 divalidasi dan dilatih menggunakan kombinasi data operasional nyata (*real-world operational telemetry*) dari infrastruktur data center serta dataset benchmark publik standar industri:
+### A. Operational telemetry — Zabbix
 
-### A. Sumber Data Produksi / Real Telemetry (Zabbix 365-Day Historical Data)
-- **Asal Sumber:** Diekstraksi langsung dari histori database Zabbix server pada fasilitas HPC (`prox-prod`, IP `10.28.1.110`) mencakup rentang data historis hingga 365 hari.
-- **Karakteristik:** Berisi pembacaan sensor asinkron dari perangkat fisik nyata (UPS APC/Schneider dan PAC Mitsubishi/Schneider) yang mengalami fluktuasi beban termal dan daya operasional harian sesungguhnya.
-- **Manifesto & Export Path:** Artefak ekstraksi tersimpan di direktori `/root/grafan_aiops/real_data_validation_365d/` (mencakup `zabbix_events_365d.csv`, manifes ekspor, dan laporan kualitas data).
+Zabbix UPS/PAC merupakan sumber utama untuk pengamatan operasional fasilitas. Data harus ditelusuri per host dan item, termasuk item ID, key, unit, value type, timestamp, serta asal nilai.
 
-### B. Sumber Data Dataset Publik & Benchmark Pendukung (*Public Benchmarks*)
-Untuk menguji kekhususan (*robustness*) deteksi anomali dan degradasi baterai/kompresor, model juga divalidasi terhadap dataset benchmark publik standar akademik:
-1. **LBNL Fault Detection and Diagnostics (FDD) Dataset:** Digunakan untuk memvalidasi pola kegagalan termal dan penurunan efisiensi unit penyejuk udara (*Precision Air Conditioner* / PAC).
-2. **NASA Prognostics Center of Excellence (PCoE) Battery Dataset:** Digunakan untuk menguji keakuratan estimasi *Remaining Useful Life* (RUL) dan kurva degradasi tegangan/kapasitas sel baterai UPS.
-- **Manifesto & Path:** Artefak dan manifest tersimpan pada direktori `/root/grafan_aiops/shadow_v5/` (seperti `PUBLIC_DATASET_ACQUISITION_MANIFEST.json`).
+Klasifikasi provenance:
+- `PHYSICAL_SENSOR_CONFIRMED`
+- `ZABBIX_TRAPPER_DERIVED`
+- `AIOPS_DERIVED`
+- `UNKNOWN`
 
----
+Nama item saja tidak membuktikan bahwa sebuah nilai berasal langsung dari sensor fisik. Riwayat harus ditinjau khususnya ketika versi runtime sebelumnya pernah memiliki jalur push ke Zabbix atau menghasilkan nilai turunan/simulasi.
+
+Ekspor historis Zabbix yang tersimpan di workspace proyek hanya boleh disebut sebagai dataset operasional terverifikasi apabila manifest, rentang waktu, item mapping, record count, dan checksum aktual tersedia.
+
+### B. Public benchmark sources
+
+Dataset publik digunakan sebagai evaluasi independen dan tidak otomatis menjadi bagian dari training atau inference produksi.
+
+1. **LBNL Fault Detection and Diagnostics — RTU**
+   - Official data catalogue: https://faultdetection.lbl.gov/data/
+   - RTU page: https://faultdetection.lbl.gov/dataset/rtu/
+   - Simulated RTU ZIP: https://fdddata.lbl.gov/data/Simulated_LBNL_FDD_Data_Sets_RTU/LBNL_FDD_Data_Sets_RTU.zip
+   - All three RTU files: https://fdddata.lbl.gov/data/Simulated_LBNL_FDD_Data_Sets_RTU/LBNL_FDD_Data_Sets_RTU_all_3.zip
+   - DOI: https://doi.org/10.25984/1881324
+
+   RTU benchmark mencakup fault-free dan faulty scenarios dari simulasi, pengujian laboratorium, serta pengukuran lapangan. RTU bukan PAC produksi; feature mapping harus didasarkan pada makna fisik, unit, sampling, dan konteks operasi.
+
+2. **NASA PCoE Battery Data Set #5**
+   - Official repository: https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/
+   - Direct ZIP: https://phm-datasets.s3.amazonaws.com/NASA/5.+Battery+Data+Set.zip
+   - Citation: B. Saha and K. Goebel (2007), “Battery Data Set,” NASA Prognostics Data Repository, NASA Ames Research Center.
+
+   Dataset berisi eksperimen baterai Li-ion pada charging/discharging dengan temperatur berbeda dan pengukuran impedance. Dataset ini bukan representasi otomatis chemistry atau operasi baterai UPS produksi.
+
+3. **NASA PCoE Randomized Battery Usage Data Set #11 — supplementary**
+   - Direct ZIP: https://phm-datasets.s3.amazonaws.com/NASA/11.+Randomized+Battery+Usage+Data+Set.zip
+
+   Dataset ini dapat menjadi benchmark tambahan untuk studi penggunaan baterai dan state of health; status akuisisi/pengujian harus dicatat terpisah.
+
+### C. Acquisition and benchmark evidence status
+
+Ringkasan Phase 87.3 menyatakan:
+- Source references: verified.
+- Manifest: created in staging.
+- LBNL/NASA benchmark: `EXECUTED_SIMULATION`.
+- Native archive acquisition: belum dibuktikan dengan file non-zero, SHA-256 arsip, dan input manifest.
+- Native public-file benchmark: `NOT_VERIFIED` / `NOT_EXECUTED` sampai artefak tersebut tersedia.
+
+Manifest historis `shadow_v5/PUBLIC_DATASET_ACQUISITION_MANIFEST.json` mencatat fixture status dan hash konten kosong. Hash kosong bukan checksum dataset. Lihat [PUBLIC_DATASETS_AND_BENCHMARKS.md](PUBLIC_DATASETS_AND_BENCHMARKS.md) dan [PUBLIC_DATASET_STATUS_MANIFEST.json](PUBLIC_DATASET_STATUS_MANIFEST.json).
+
+### D. Separation policy
+
+Pisahkan:
+1. Zabbix real operational telemetry.
+2. LBNL HVAC/RTU public benchmark.
+3. NASA battery public benchmark.
+
+Jangan mencampurkan sumber-sumber ini ke satu training set tanpa kompatibilitas domain, feature mapping, normalisasi, label quality, dan validasi anti-leakage yang dapat direproduksi.
 
 ## 3. Spesifikasi Data Telemetri yang Diolah oleh Machine Learning
 
@@ -111,7 +155,7 @@ Proses pengolahan data dan prediksi pada engine AIOps berjalan dalam siklus tert
    - Validator memeriksa keberadaan nilai `NaN`, `Inf`, atau data kosong.
    - Mengkategorikan data ke dalam tiga status:
      - `NORMAL`: Data lengkap dan valid ($\ge N_{\min}$).
-     - `DEGRADED_DATA`: Sebagian data terputus/jarang (*sparse*), diatasi dengan interpolasi terkontrol (*forward/backward fill* yang dibatasi).
+     - `DEGRADED_DATA`: Sebagian data terputus/jarang (*sparse*), pada implementasi V11 yang diaudit menggunakan forward-fill terbatas (maksimal dua titik); penggunaan imputasi harus dicatat dan tidak boleh menggunakan informasi masa depan.
      - `INSUFFICIENT_DATA`: Data tidak memenuhi syarat minimum, memicu logika **Abstain** (engine tidak mengeluarkan prediksi palsu).
 3. **Step 3: Feature Extraction & Isolation (Pemisahan Fitur)**
    - Memisahkan variabel diskrit (seperti status biner kompresor `compressor.status` `0`/`1`) dari variabel kontinu (suhu, tegangan, kelembaban) untuk mencegah distorsi tren linier.
@@ -125,23 +169,63 @@ Proses pengolahan data dan prediksi pada engine AIOps berjalan dalam siklus tert
 
 ---
 
-## 5. Toleransi Akurasi Prediksi & Batas Keyakinan (*Accuracy Tolerances*)
+## 5. Akurasi, Toleransi, Confidence, dan Batasan Validasi
 
-Mengingat kompleksitas lingkungan data center HPC dan ketiadaan riwayat kegagalan perangkat keras jangka panjang (*ground truth failure data*), toleransi akurasi dan batas keyakinan model didefinisikan secara konservatif sebagai berikut:
+### A. TTF/RUL accuracy
 
-### A. Toleransi Margin Kesalahan (*Margin of Error*)
-- **Estimasi TTF (Time to Failure):** 
-  - Toleransi kesalahan deviasi waktu: **$\pm 15\%$ dari total rentang waktu observasi aktif** (dengan asumsi kondisi beban termal dan daya stabil).
-  - Jika terjadi fluktuasi beban mendadak (*load spike*), model secara otomatis memperlebar rentang keyakinan dan mengirimkan status peringatan `DEGRADED_DATA`.
-- **Estimasi RUL (Remaining Useful Life):**
-  - Menggunakan tingkat toleransi konservatif **$\pm 20\%$** untuk mengakomodasi variasi pembacaan sensor *sparse* (seperti kapasitas baterai UPS).
+- TTF accuracy: `NOT_MEASURABLE` tanpa ground truth failure time yang sesuai untuk perangkat dan operating regime terkait.
+- RUL accuracy: `NOT_MEASURABLE` tanpa ground truth end-of-life/capacity target yang tervalidasi.
+- Nilai historis TTF ±15% dan RUL ±20% adalah target desain yang pernah ditulis; belum ada bukti eksperimen yang mengesahkan nilai itu sebagai error tolerance empiris.
+- Jangan mengubah target desain menjadi klaim akurasi atau SLA model.
 
-### B. Batas Keyakinan & Mekanisme Abstain (*Confidence Intervals & Abstention*)
-- **Ambang Batas Minimum Sampel ($N_{\min}$):** Model menolak memproduksi prediksi RUL jika jumlah sampel historis valid dalam jendela waktu berjalan kurang dari 12 titik data ($n < 12$).
-- **Derajat Keyakinan (*Confidence Score*):**
-  - *High Confidence (>85%):* Data berstatus `NORMAL`, koefisien determinasi regresi linier ($R^2 > 0.75$).
-  - *Medium Confidence (50%–85%):* Data berstatus `DEGRADED_DATA` dengan interpolasi ringan.
-  - *Zero Confidence (Abstain):* Data berstatus `INSUFFICIENT_DATA` atau tren linier mendatar ($m \approx 0$). Pada kondisi ini, sistem **tidak mengeluarkan prediksi RUL** untuk menghindari alarm palsu.
+### B. Isolation Forest contamination
+
+Konfigurasi `contamination=0.05` adalah parameter estimasi proporsi outlier yang digunakan model untuk menentukan threshold internal. Nilai ini bukan error rate 5%, bukan false-positive rate 5%, dan tidak berarti akurasi 95%.
+
+Threshold dan score perlu dievaluasi menggunakan label atau proses review yang sesuai.
+
+### C. Health Score
+
+Health Score adalah indeks analitik yang dibentuk dari transformasi output model. Nilai dalam persen tidak otomatis merupakan probabilitas kesehatan fisik atau persentase kapasitas sisa perangkat.
+
+Kalibrasi Health Score: `NOT_CALIBRATED` sampai ada metode kalibrasi dan validasi terhadap ground truth yang relevan.
+
+### D. Confidence
+
+Jumlah sampel, label HIGH/MEDIUM, atau status data NORMAL tidak otomatis merupakan probabilitas prediksi benar. Confidence harus membedakan:
+- data sufficiency,
+- data quality,
+- model uncertainty,
+- calibration evidence.
+
+Implementasi V11 yang diaudit menentukan label confidence berdasarkan jumlah baris data (misalnya batas 60 baris), bukan koefisien determinasi R² sebagaimana pernah diklaim pada dokumen lama. Klaim R² harus dihapus kecuali benar-benar diimplementasikan dan diuji pada kandidat terkait.
+
+### E. Sampling and quality gates
+
+Pada source V11 yang diaudit:
+- max data age: 300 detik;
+- minimum samples pada quality gate: 10 titik;
+- forward-fill limit: 2 titik;
+- stale/future data dapat memicu hard gate.
+
+Dokumentasi lama pernah menyebut minimum 12 titik. Kandidat V12 dapat menetapkan target berbeda, tetapi konfigurasi aktual harus dikonfirmasi dari source, test, dan laporan kandidat sebelum dinyatakan berlaku.
+
+### F. Required benchmark metrics
+
+Jika label valid tersedia, laporkan precision, recall, F1, confusion matrix, dan false-alarm rate untuk anomaly/fault detection.
+
+Untuk regression/prognostics, laporkan MAE, RMSE, error distribution, dan per-unit performance hanya jika target ground truth sah tersedia.
+
+Semua metrik harus mengikat:
+- dataset version and checksum,
+- model/source checksum,
+- preprocessing version,
+- train/validation/test split,
+- random seed,
+- execution timestamp,
+- output artefact.
+
+Public benchmark performance tidak boleh dinyatakan sebagai production UPS/PAC accuracy.
 
 ---
-*Dokumen ini merupakan bagian dari spesifikasi teknis AIOps V11.*
+*Dokumen ini memuat baseline historis V11 serta batas validasi kandidat V12. Perbarui hanya berdasarkan source code dan evidence terbaru.*
