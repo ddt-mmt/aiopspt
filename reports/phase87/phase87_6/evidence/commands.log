@@ -1,0 +1,12 @@
+# Commands Log — Phase 87.6
+
+```bash
+# 1. Environment boundary audit and host verification
+hostname -f && ip -4 addr && pwd
+
+# 2. Workspace and directory setup
+mkdir -p /root/grafan_aiops/reports/phase87/phase87_6/{audit,benchmark/lbnl,benchmark/nasa_battery_5,v12,live_shadow_design,tests,reports,evidence}
+
+# 3. Unit tests execution
+python3 -m unittest discover -s /root/grafan_aiops/reports/phase87/phase87_6/tests -p "test_*.py"
+```

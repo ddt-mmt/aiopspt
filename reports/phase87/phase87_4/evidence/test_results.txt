@@ -1,0 +1,6 @@
+# Test & Benchmark Results — Phase 87.4
+
+- **LBNL Validation Test:** PASS (84 files validated, schema parsed, missing values analyzed).
+- **NASA Validation Test:** PASS (34 MATLAB .mat files validated, cycle counts parsed).
+- **LBNL Isolation Forest Benchmark:** PASS (Trained on baseline, evaluated on 50% condenser fouling; detected 51.58% anomaly ratio).
+- **NASA Battery Capacity Degradation Benchmark:** PASS (Extracted 168 discharge cycles from B0007, tracking capacity from 1.89 Ah to 1.43 Ah).

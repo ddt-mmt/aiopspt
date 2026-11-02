@@ -1,0 +1,19 @@
+# Commands Log — Phase 87.4
+
+```bash
+# 1. Check reachability
+python3 -c 'import urllib.request; ...'
+
+# 2. Download archives & compute SHA256
+python3 download_datasets.py
+
+# 3. Inspect archive contents & extract
+python3 inspect_archives.py
+
+# 4. Run dataset validation
+python3 scripts/validate_lbnl.py
+python3 scripts/validate_nasa_battery.py
+
+# 5. Run real-file benchmarks
+python3 scripts/run_benchmarks.py
+```

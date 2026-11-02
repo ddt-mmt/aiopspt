@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-11-02T07:00:00Z",
+  "split_strategy": "battery_level_separation",
+  "train_batteries": ["B0005", "B0006", "B0018"],
+  "test_batteries": ["B0007", "B0025", "B0026", "B0027", "B0028"],
+  "leakage_prevented": true
+}

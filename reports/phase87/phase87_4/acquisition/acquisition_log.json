@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-11-02T06:30:00Z",
+  "acquisition_steps": [
+    "1. Checked domain reachability and SSL/HTTP status (HTTP 200).",
+    "2. Downloaded LBNL RTU archive (~305MB) and NASA Battery Set #5 archive (~210MB) to staging.",
+    "3. Computed SHA-256 checksums and verified file integrity.",
+    "4. Inspected archive inventory and safely extracted archives in staging (/tmp/aiops_phase87_4/extracted).",
+    "5. Extracted nested zip files for NASA Battery Set #5 containing 34 MATLAB .mat files.",
+    "6. Validated schema, row counts, missing values, and cycle counts."
+  ],
+  "production_mutation": false,
+  "zabbix_write": false
+}

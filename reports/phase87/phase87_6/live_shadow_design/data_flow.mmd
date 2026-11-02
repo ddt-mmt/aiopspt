@@ -1,0 +1,6 @@
+graph TD
+    A[Staging Zabbix API] -->|Read-Only Poll| B[V12 Shadow Predictor]
+    B -->|Inference Engine| C[Anomaly & Health Score]
+    C -->|Write-Back (Isolated Items Only)| D[Staging Custom Metrics]
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style D fill:#bbf,stroke:#333,stroke-width:2px

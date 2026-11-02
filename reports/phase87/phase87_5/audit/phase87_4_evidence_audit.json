@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-11-02T06:44:12.288616",
+  "phase_87_4_dir": "/root/grafan_aiops/reports/phase87/phase87_4",
+  "artifacts_count": 18,
+  "artifacts": [
+    "PHASE_87_4_FINAL_REPORT.md",
+    "README.md",
+    "acquisition/checksum_manifest.json",
+    "acquisition/acquisition_log.json",
+    "acquisition/archive_inventory.json",
+    "validation/lbnl_dataset_validation.json",
+    "validation/lbnl_schema_summary.json",
+    "validation/nasa_dataset_validation.json",
+    "validation/nasa_schema_summary.json",
+    "validation/data_quality_report.md",
+    "benchmark/lbnl/lbnl_benchmark_results.json",
+    "benchmark/nasa_battery_5/nasa_benchmark_results.json",
+    "evidence/commands.log",
+    "evidence/test_results.txt",
+    "evidence/evidence_manifest.json",
+    "scripts/validate_lbnl.py",
+    "scripts/validate_nasa_battery.py",
+    "scripts/run_benchmarks.py"
+  ],
+  "status": "VERIFIED_PRESENT"
+}

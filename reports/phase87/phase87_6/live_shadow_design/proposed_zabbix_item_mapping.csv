@@ -1,0 +1,4 @@
+Zabbix Item Key,Target Metric,Write-Back Item Key,Isolation Status
+ME_UPS_Battery_Voltage,Battery Voltage,aiops.v12.ups_voltage_pred,READ_ONLY_DERIVED
+ME_PAC_Supply_Temp,Supply Temperature,aiops.v12.pac_temp_anomaly,READ_ONLY_DERIVED
+ME_UPS_Load,UPS Load,aiops.v12.ups_load_health,READ_ONLY_DERIVED

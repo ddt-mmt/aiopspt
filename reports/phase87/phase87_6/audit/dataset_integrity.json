@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-11-02T07:00:00Z",
+  "datasets": [
+    {
+      "dataset_id": "lbnl_rtu_fdd",
+      "expected_sha256": "9de1dc2e0d997d6e9f130ded3eb3c196fdf4b36005e60f9978351f44e452e5fa",
+      "actual_sha256": "9de1dc2e0d997d6e9f130ded3eb3c196fdf4b36005e60f9978351f44e452e5fa",
+      "status": "VERIFIED_MATCH"
+    },
+    {
+      "dataset_id": "nasa_pcoe_battery_5",
+      "expected_sha256": "82302a7db4fc1b34e0b6676326610438d43b816bdf11a69d1d012a464ef2f92e",
+      "actual_sha256": "82302a7db4fc1b34e0b6676326610438d43b816bdf11a69d1d012a464ef2f92e",
+      "status": "VERIFIED_MATCH"
+    }
+  ]
+}

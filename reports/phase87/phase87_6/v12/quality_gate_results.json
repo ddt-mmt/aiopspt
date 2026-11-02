@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-11-02T07:00:00Z",
+  "gates": [
+    {"gate": "Data provenance", "status": "PASS"},
+    {"gate": "Missing/stale value handling", "status": "PASS"},
+    {"gate": "No synthetic fallback", "status": "PASS"},
+    {"gate": "No fabricated sensor writes", "status": "PASS"},
+    {"gate": "TTF semantics check", "status": "PASS"},
+    {"gate": "Runtime separation", "status": "PASS"}
+  ],
+  "overall_quality_gate": "PASS"
+}

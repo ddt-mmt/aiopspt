@@ -1,0 +1,5 @@
+{
+  "timestamp": "2026-11-02T06:44:19.536565",
+  "comparison_summary": "Isolation Forest significantly outperforms the statistical threshold baseline across LBNL RTU fault scenarios while maintaining controlled false positive rates.",
+  "models_compared": 4
+}

@@ -1,0 +1,245 @@
+{
+  "timestamp": "2026-11-02T06:25:14.646598",
+  "dataset": "NASA_PCOE_BATTERY_5",
+  "total_files_validated": 34,
+  "files": [
+    {
+      "filename": "B0007.mat",
+      "file_size_bytes": 16049460,
+      "battery_id": "B0007",
+      "cycle_count": 616,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0018.mat",
+      "file_size_bytes": 8502218,
+      "battery_id": "B0018",
+      "cycle_count": 319,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0005.mat",
+      "file_size_bytes": 15956874,
+      "battery_id": "B0005",
+      "cycle_count": 616,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0006.mat",
+      "file_size_bytes": 16028159,
+      "battery_id": "B0006",
+      "cycle_count": 616,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0028.mat",
+      "file_size_bytes": 2820196,
+      "battery_id": "B0028",
+      "cycle_count": 80,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0025.mat",
+      "file_size_bytes": 2753821,
+      "battery_id": "B0025",
+      "cycle_count": 80,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0026.mat",
+      "file_size_bytes": 2764789,
+      "battery_id": "B0026",
+      "cycle_count": 80,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0027.mat",
+      "file_size_bytes": 2783781,
+      "battery_id": "B0027",
+      "cycle_count": 80,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0029.mat",
+      "file_size_bytes": 2879840,
+      "battery_id": "B0029",
+      "cycle_count": 97,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0030.mat",
+      "file_size_bytes": 2880995,
+      "battery_id": "B0030",
+      "cycle_count": 97,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0031.mat",
+      "file_size_bytes": 2882510,
+      "battery_id": "B0031",
+      "cycle_count": 97,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0032.mat",
+      "file_size_bytes": 2918592,
+      "battery_id": "B0032",
+      "cycle_count": 97,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0033.mat",
+      "file_size_bytes": 11057919,
+      "battery_id": "B0033",
+      "cycle_count": 486,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0034.mat",
+      "file_size_bytes": 11091182,
+      "battery_id": "B0034",
+      "cycle_count": 486,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0036.mat",
+      "file_size_bytes": 11404549,
+      "battery_id": "B0036",
+      "cycle_count": 486,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0038.mat",
+      "file_size_bytes": 3697900,
+      "battery_id": "B0038",
+      "cycle_count": 122,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0039.mat",
+      "file_size_bytes": 3727683,
+      "battery_id": "B0039",
+      "cycle_count": 122,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0040.mat",
+      "file_size_bytes": 3749942,
+      "battery_id": "B0040",
+      "cycle_count": 122,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0041.mat",
+      "file_size_bytes": 3733558,
+      "battery_id": "B0041",
+      "cycle_count": 163,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0042.mat",
+      "file_size_bytes": 7499364,
+      "battery_id": "B0042",
+      "cycle_count": 275,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0043.mat",
+      "file_size_bytes": 7483891,
+      "battery_id": "B0043",
+      "cycle_count": 275,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0044.mat",
+      "file_size_bytes": 7511915,
+      "battery_id": "B0044",
+      "cycle_count": 275,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0045.mat",
+      "file_size_bytes": 3599285,
+      "battery_id": "B0045",
+      "cycle_count": 184,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0046.mat",
+      "file_size_bytes": 3642687,
+      "battery_id": "B0046",
+      "cycle_count": 184,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0047.mat",
+      "file_size_bytes": 3715274,
+      "battery_id": "B0047",
+      "cycle_count": 184,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0048.mat",
+      "file_size_bytes": 3752042,
+      "battery_id": "B0048",
+      "cycle_count": 184,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0049.mat",
+      "file_size_bytes": 2183593,
+      "battery_id": "B0049",
+      "cycle_count": 62,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0050.mat",
+      "file_size_bytes": 2164473,
+      "battery_id": "B0050",
+      "cycle_count": 62,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0051.mat",
+      "file_size_bytes": 2213520,
+      "battery_id": "B0051",
+      "cycle_count": 62,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0052.mat",
+      "file_size_bytes": 2157035,
+      "battery_id": "B0052",
+      "cycle_count": 62,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0053.mat",
+      "file_size_bytes": 3347771,
+      "battery_id": "B0053",
+      "cycle_count": 137,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0054.mat",
+      "file_size_bytes": 7089384,
+      "battery_id": "B0054",
+      "cycle_count": 253,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0055.mat",
+      "file_size_bytes": 7199776,
+      "battery_id": "B0055",
+      "cycle_count": 252,
+      "status": "PREPROCESSED_VALIDATED"
+    },
+    {
+      "filename": "B0056.mat",
+      "file_size_bytes": 7279819,
+      "battery_id": "B0056",
+      "cycle_count": 252,
+      "status": "PREPROCESSED_VALIDATED"
+    }
+  ]
+}

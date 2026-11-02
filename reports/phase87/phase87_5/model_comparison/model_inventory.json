@@ -1,0 +1,49 @@
+{
+  "timestamp": "2026-11-02T06:44:19.536016",
+  "models": [
+    {
+      "model_id": "statistical_threshold_baseline",
+      "type": "Unsupervised Statistical",
+      "features": [
+        "Compressor Power (Z-score)"
+      ],
+      "false_positive_rate": 0.013,
+      "detection_rate_fault": 0.42,
+      "production_ready": false,
+      "note": "Simple z-score thresholding on primary telemetry."
+    },
+    {
+      "model_id": "isolation_forest_lbnl",
+      "type": "Unsupervised Ensemble (Scikit-Learn)",
+      "features": [
+        "9 HVAC Operational Sensors"
+      ],
+      "false_positive_rate": 0.013,
+      "detection_rate_fault": 0.845,
+      "production_ready": false,
+      "note": "Trained on baseline simulation, evaluated on fouling/undercharge."
+    },
+    {
+      "model_id": "v11_runtime_baseline",
+      "type": "Production Zabbix Telemetry Predictor",
+      "features": [
+        "ME_UPS / ME_PAC operational metrics"
+      ],
+      "false_positive_rate": "N/A (Operational)",
+      "detection_rate_fault": "Operational Rules",
+      "production_ready": true,
+      "note": "Active production runtime. Untouched by public datasets."
+    },
+    {
+      "model_id": "v12_staging_candidate",
+      "type": "Experimental Advanced AIOps",
+      "features": [
+        "Multi-modal anomaly detection"
+      ],
+      "false_positive_rate": "Pending Adapter",
+      "detection_rate_fault": "Pending Adapter",
+      "production_ready": false,
+      "note": "Requires verified dataset adapters before staging evaluation."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-11-02T06:44:19.589132",
+  "python_version": "3.9.25 (main, Jan 14 2026, 00:00:00) \n[GCC 11.5.0 20240719 (Red Hat 11.5.0-11)]",
+  "platform": "Linux-5.14.0-611.26.1.el9_7.x86_64-x86_64-with-glibc2.34",
+  "node": "prox-prod",
+  "packages": {
+    "numpy": "2.0.2",
+    "scipy": "1.13.1",
+    "sklearn": "1.6.1"
+  }
+}

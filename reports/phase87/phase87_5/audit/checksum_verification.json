@@ -1,0 +1,14 @@
+{
+  "lbnl_rtu": {
+    "path": "/tmp/aiops_phase87_4/raw/lbnl_rtu.zip",
+    "size_bytes": 305603469,
+    "sha256": "9de1dc2e0d997d6e9f130ded3eb3c196fdf4b36005e60f9978351f44e452e5fa",
+    "status": "VERIFIED"
+  },
+  "nasa_battery_5": {
+    "path": "/tmp/aiops_phase87_4/raw/nasa_battery_5.zip",
+    "size_bytes": 209708670,
+    "sha256": "82302a7db4fc1b34e0b6676326610438d43b816bdf11a69d1d012a464ef2f92e",
+    "status": "VERIFIED"
+  }
+}

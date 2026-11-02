@@ -1,0 +1,9 @@
+{
+  "timestamp": "2026-11-02T07:00:00Z",
+  "dataset": "NASA_Battery_5",
+  "cross_battery_evaluation": {
+    "rmse": 0.0842,
+    "mae": 0.0651,
+    "rul_status": "RUL_NOT_MEASURABLE"
+  }
+}

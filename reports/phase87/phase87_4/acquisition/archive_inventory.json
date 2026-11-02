@@ -1,0 +1,236 @@
+{
+  "lbnl_rtu": {
+    "total_files": 81,
+    "files": [
+      {
+        "path": "Field RTU/Site1_Staging_Fault.csv",
+        "size": 22827613
+      },
+      {
+        "path": "Field RTU/Site1_Unfaulted.csv",
+        "size": 19091082
+      },
+      {
+        "path": "Field RTU/Site2_Undercharged40.csv",
+        "size": 10591553
+      },
+      {
+        "path": "Field RTU/Site2_Unfaulted.csv",
+        "size": 67583981
+      },
+      {
+        "path": "ORNL_RTU/ERTU_Fall_2020.csv",
+        "size": 5384809
+      },
+      {
+        "path": "ORNL_RTU/ERTU_Spring_2021.csv",
+        "size": 1265416
+      },
+      {
+        "path": "ORNL_RTU/ERTU_Summer_2021.csv",
+        "size": 1134658
+      },
+      {
+        "path": "ORNL_RTU/ERTU_Winter_2022.csv",
+        "size": 1126010
+      },
+      {
+        "path": "ORNL_RTU/Inc_Eco_SP_-2_Fall_2020.csv",
+        "size": 684454
+      },
+      {
+        "path": "ORNL_RTU/Inc_Eco_SP_-2_Spring_2021.csv",
+        "size": 670907
+      },
+      {
+        "path": "ORNL_RTU/Inc_Eco_SP_-2_Summer_2021.csv",
+        "size": 607801
+      },
+      {
+        "path": "ORNL_RTU/Inc_Eco_SP_-2_Winter_2022.csv",
+        "size": 604819
+      },
+      {
+        "path": "ORNL_RTU/Inc_Eco_SP_-4_Fall_2020.csv",
+        "size": 671812
+      },
+      {
+        "path": "ORNL_RTU/Inc_Eco_SP_-4_Spring_2021.csv",
+        "size": 674278
+      },
+      {
+        "path": "ORNL_RTU/Inc_Eco_SP_-4_Summer_2021.csv",
+        "size": 608956
+      },
+      {
+        "path": "ORNL_RTU/Inc_Eco_SP_-4_Winter_2022.csv",
+        "size": 607865
+      },
+      {
+        "path": "ORNL_RTU/Inc_Eco_SP_2_Fall_2020.csv",
+        "size": 670728
+      },
+      {
+        "path": "ORNL_RTU/Inc_Eco_SP_2_Spring_2021.csv",
+        "size": 667878
+      },
+      {
+        "path": "ORNL_RTU/Inc_Eco_SP_2_Summer_2021.csv",
+        "size": 609556
+      },
+      {
+        "path": "ORNL_RTU/Inc_Eco_SP_2_Winter_2022.csv",
+        "size": 602353
+      },
+      {
+        "path": "ORNL_RTU/Inc_Eco_SP_4_Fall_2020.csv",
+        "size": 679823
+      },
+      {
+        "path": "ORNL_RTU/Inc_Eco_SP_4_Spring_2021.csv",
+        "size": 664895
+      },
+      {
+        "path": "ORNL_RTU/Inc_Eco_SP_4_Summer_2021.csv",
+        "size": 611834
+      },
+      {
+        "path": "ORNL_RTU/Inc_Eco_SP_4_Winter_2022.csv",
+        "size": 605342
+      },
+      {
+        "path": "ORNL_RTU/OA_damper_stuck_005_Fall_2020.csv",
+        "size": 671468
+      },
+      {
+        "path": "ORNL_RTU/OA_damper_stuck_005_Spring_2021.csv",
+        "size": 657120
+      },
+      {
+        "path": "ORNL_RTU/OA_damper_stuck_005_Summer_2021.csv",
+        "size": 604024
+      },
+      {
+        "path": "ORNL_RTU/OA_damper_stuck_005_Winter_2022.csv",
+        "size": 598762
+      },
+      {
+        "path": "ORNL_RTU/OA_damper_stuck_010_Fall_2020.csv",
+        "size": 669809
+      },
+      {
+        "path": "ORNL_RTU/OA_damper_stuck_010_Spring_2021.csv",
+        "size": 661888
+      },
+      {
+        "path": "ORNL_RTU/OA_damper_stuck_010_Summer_2021.csv",
+        "size": 609502
+      },
+      {
+        "path": "ORNL_RTU/OA_damper_stuck_010_Winter_2022.csv",
+        "size": 595356
+      },
+      {
+        "path": "ORNL_RTU/OA_damper_stuck_050_Fall_2020.csv",
+        "size": 673122
+      },
+      {
+        "path": "ORNL_RTU/OA_damper_stuck_050_Spring_2021.csv",
+        "size": 662121
+      },
+      {
+        "path": "ORNL_RTU/OA_damper_stuck_050_Summer_2021.csv",
+        "size": 612030
+      },
+      {
+        "path": "ORNL_RTU/OA_damper_stuck_050_Winter_2022.csv",
+        "size": 599840
+      },
+      {
+        "path": "ORNL_RTU/OA_damper_stuck_100_Fall_2020.csv",
+        "size": 672391
+      },
+      {
+        "path": "ORNL_RTU/OA_damper_stuck_100_Spring_2021.csv",
+        "size": 667363
+      },
+      {
+        "path": "ORNL_RTU/OA_damper_stuck_100_Summer_2021.csv",
+        "size": 612052
+      },
+      {
+        "path": "ORNL_RTU/OA_damper_stuck_100_Winter_2022.csv",
+        "size": 602900
+      },
+      {
+        "path": "ORNL_RTU/SA_temp_bias_-2_Fall_2020.csv",
+        "size": 668890
+      },
+      {
+        "path": "ORNL_RTU/SA_temp_bias_-2_Spring_2021.csv",
+        "size": 637981
+      },
+      {
+        "path": "ORNL_RTU/SA_temp_bias_-2_Summer_2021.csv",
+        "size": 573783
+      },
+      {
+        "path": "ORNL_RTU/SA_temp_bias_-2_Winter_2022.csv",
+        "size": 572965
+      },
+      {
+        "path": "ORNL_RTU/SA_temp_bias_-4_Fall_2020.csv",
+        "size": 682701
+      },
+      {
+        "path": "ORNL_RTU/SA_temp_bias_-4_Spring_2021.csv",
+        "size": 641049
+      },
+      {
+        "path": "ORNL_RTU/SA_temp_bias_-4_Summer_2021.csv",
+        "size": 574388
+      },
+      {
+        "path": "ORNL_RTU/SA_temp_bias_-4_Winter_2022.csv",
+        "size": 573436
+      },
+      {
+        "path": "ORNL_RTU/SA_temp_bias_2_Fall_2020.csv",
+        "size": 689921
+      },
+      {
+        "path": "ORNL_RTU/SA_temp_bias_2_Spring_2021.csv",
+        "size": 640354
+      }
+    ]
+  },
+  "nasa_battery_5": {
+    "total_files": 6,
+    "files": [
+      {
+        "path": "5. Battery Data Set/1. BatteryAgingARC-FY08Q4.zip",
+        "size": 56517371
+      },
+      {
+        "path": "5. Battery Data Set/2. BatteryAgingARC_25_26_27_28_P1.zip",
+        "size": 11123439
+      },
+      {
+        "path": "5. Battery Data Set/3. BatteryAgingARC_25-44.zip",
+        "size": 93662572
+      },
+      {
+        "path": "5. Battery Data Set/4. BatteryAgingARC_45_46_47_48.zip",
+        "size": 14715108
+      },
+      {
+        "path": "5. Battery Data Set/5. BatteryAgingARC_49_50_51_52.zip",
+        "size": 8717235
+      },
+      {
+        "path": "5. Battery Data Set/6. BatteryAgingARC_53_54_55_56.zip",
+        "size": 24923477
+      }
+    ]
+  }
+}

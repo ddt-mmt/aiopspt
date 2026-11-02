@@ -1,0 +1,9 @@
+{
+  "timestamp": "2026-11-02T06:26:19.129881",
+  "benchmark": "LBNL_RTU_Isolation_Forest",
+  "train_samples": 5000,
+  "test_samples": 5000,
+  "train_anomaly_ratio": 0.1,
+  "test_anomaly_ratio_condfouling50": 0.5158,
+  "status": "PASS"
+}

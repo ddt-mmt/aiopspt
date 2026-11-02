@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-11-02T06:30:00Z",
+  "phase": "87.4",
+  "environment": "staging",
+  "staging_path": "/tmp/aiops_phase87_4",
+  "datasets": [
+    {
+      "dataset_id": "lbnl_rtu_fdd",
+      "source_url": "https://fdddata.lbl.gov/data/Simulated_LBNL_FDD_Data_Sets_RTU/LBNL_FDD_Data_Sets_RTU.zip",
+      "local_path": "/tmp/aiops_phase87_4/raw/lbnl_rtu.zip",
+      "file_size_bytes": 305603469,
+      "sha256": "9de1dc2e0d997d6e9f130ded3eb3c196fdf4b36005e60f9978351f44e452e5fa",
+      "status": "ACQUIRED_VERIFIED"
+    },
+    {
+      "dataset_id": "nasa_pcoe_battery_5",
+      "source_url": "https://phm-datasets.s3.amazonaws.com/NASA/5.+Battery+Data+Set.zip",
+      "local_path": "/tmp/aiops_phase87_4/raw/nasa_battery_5.zip",
+      "file_size_bytes": 209708670,
+      "sha256": "82302a7db4fc1b34e0b6676326610438d43b816bdf11a69d1d012a464ef2f92e",
+      "status": "ACQUIRED_VERIFIED"
+    }
+  ]
+}

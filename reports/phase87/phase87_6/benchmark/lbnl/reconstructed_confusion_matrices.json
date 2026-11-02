@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-11-02T07:00:00Z",
+  "dataset": "LBNL_RTU_Simulated",
+  "confusion_matrices": {
+    "condenser_fouling_10pct": {
+      "tp": 200,
+      "fn": 1300,
+      "fp": 353,
+      "tn": 1147,
+      "precision": 0.3616,
+      "recall": 0.1333,
+      "f1_score": 0.1948,
+      "detection_rate": 0.1333
+    },
+    "condenser_fouling_30pct": {
+      "tp": 332,
+      "fn": 1168,
+      "fp": 353,
+      "tn": 1147,
+      "precision": 0.4847,
+      "recall": 0.2213,
+      "f1_score": 0.3039,
+      "detection_rate": 0.2213
+    },
+    "condenser_fouling_50pct": {
+      "tp": 773,
+      "fn": 727,
+      "fp": 353,
+      "tn": 1147,
+      "precision": 0.6865,
+      "recall": 0.5153,
+      "f1_score": 0.5887,
+      "detection_rate": 0.5153
+    },
+    "undercharge_20pct": {
+      "tp": 88,
+      "fn": 1412,
+      "fp": 353,
+      "tn": 1147,
+      "precision": 0.1995,
+      "recall": 0.0587,
+      "f1_score": 0.0907,
+      "detection_rate": 0.0587
+    }
+  }
+}
