@@ -1,0 +1,5 @@
+proposed_key,description,value_type,units,update_interval,retention
+aiops.v12.health_score,V12 Analytic Health Score Index (0-100),Float,%,60s,30d
+aiops.v12.anomaly_status,V12 Binary Anomaly Status (0=Normal, 1=Anomaly),Numeric (integer),none,60s,30d
+aiops.v12.data_quality,V12 Data Quality State (NORMAL/DEGRADED),Character,none,60s,30d
+aiops.v12.model_version,V12 Candidate Version String,Character,none,300s,30d

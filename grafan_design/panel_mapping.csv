@@ -1,0 +1,5 @@
+panel_id,panel_title,metric_source,value_type,unit,staging_label
+1,V12 Health Score,aiops.v12.health_score,Float,%,STAGING LIVE SHADOW — NOT PRODUCTION OUTPUT
+2,Anomaly Status,aiops.v12.anomaly_status,Integer,bool,STAGING LIVE SHADOW — NOT PRODUCTION OUTPUT
+3,Data Quality Status,aiops.v12.data_quality,String,none,STAGING LIVE SHADOW — NOT PRODUCTION OUTPUT
+4,Model Version,aiops.v12.model_version,String,none,STAGING LIVE SHADOW — NOT PRODUCTION OUTPUT
