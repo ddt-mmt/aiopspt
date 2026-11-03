@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/ddt-mmt/aiopspt",
+  "branch": "main",
+  "commit_sha": "e301acc",
+  "candidate_path": "source/v12_snapshot/script_aiops_v12_candidate.py",
+  "sha256": "17f01ec80e4af39509f36b976e1e580f455e6c497098308c9dbcc5f9e9673bce",
+  "timestamp": "2026-11-03T00:00:00Z"
+}
