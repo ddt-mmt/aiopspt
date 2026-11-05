@@ -1,0 +1,16 @@
+{
+  "phase": "87.21",
+  "status": "COMPLETED_WITH_BLOCKERS",
+  "change_id": "AIOPS-V12-OPTION-B",
+  "change_owner": "Didit (System Administrator, Project Owner) - APPROVED (Unverified)",
+  "five_stakeholder_approvals": "PENDING",
+  "http_https_security_status": "HTTP_SECURITY_EXCEPTION_PENDING",
+  "production_change_authorization": "NOT_GRANTED",
+  "production_deployment_executed": false,
+  "production_runtime_modified": false,
+  "production_grafana_modified": false,
+  "production_zabbix_modified": false,
+  "v11_runtime_preservation": "PRESERVED",
+  "v12_staging_status": "STAGING_ONLY",
+  "deployment_eligibility": "INELIGIBLE_PENDING_APPROVAL"
+}
