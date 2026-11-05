@@ -1,0 +1,9 @@
+{
+  "status": "BLOCKED_PENDING_APPROVAL",
+  "change_owner_approval": "APPROVED",
+  "remaining_stakeholder_approvals": "PENDING",
+  "http_security_exception": "PENDING",
+  "production_change_authorization": "NOT_GRANTED",
+  "production_deployment_executed": false,
+  "v11_runtime": "preserved"
+}

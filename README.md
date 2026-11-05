@@ -172,4 +172,4 @@ python3 tests/test_aiops_v5_extended.py
 - Status definisi Stack Portainer tercatat `NOT_VERIFIED`.
 
 ---
-*Pembaruan dokumentasi: 30 Oktober 2026. Dataset publik dicatat sebagai referensi; akuisisi arsip dan benchmark real-file belum terverifikasi.*
+*Pembaruan dokumentasi: November 2026 (Phase 87.18). Proyek mencakup pengembangan kandidat V12, live-shadow execution pada staging (`prox-dev`), read-only Zabbix integration, staging Grafana stack (Phase 87.11), integration validation & soak assessment (Phase 87.12), Production Readiness Assessment (Phase 87.13), Authorization Gate & Deployment Hold (Phase 87.14), Stakeholder Approval Collection & Transport Security Closure (Phase 87.15), Formal Approval Verification & Authorization Gate (Phase 87.16), Stakeholder Sign-Off Collection & Approval Evidence Intake (Phase 87.17), and Final Approval Evidence Verification & Production Deployment Eligibility (Phase 87.18: `PHASE_87_18_DEPLOYMENT_EXECUTED = NO`, `PRODUCTION_CHANGE_AUTHORIZATION = NOT_GRANTED`, `PHASE_87_19_DEPLOYMENT_REQUEST_STATUS = BLOCKED_PENDING_APPROVAL`).*
