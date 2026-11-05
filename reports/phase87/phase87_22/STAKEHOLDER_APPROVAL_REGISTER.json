@@ -1,0 +1,46 @@
+{
+  "stakeholder_approvals": [
+    {
+      "role": "Change Owner",
+      "approver": "Didit",
+      "title": "System Administrator",
+      "status": "APPROVED_UNVERIFIED",
+      "authenticity": "UNVERIFIED"
+    },
+    {
+      "role": "AIOps Technical Approver",
+      "approver": "Unassigned",
+      "title": "AIOps Architecture Team",
+      "status": "PENDING",
+      "authenticity": "NOT_RECEIVED"
+    },
+    {
+      "role": "Infrastructure Approver",
+      "approver": "Unassigned",
+      "title": "Data Center Infrastructure",
+      "status": "PENDING",
+      "authenticity": "NOT_RECEIVED"
+    },
+    {
+      "role": "Zabbix Service Owner",
+      "approver": "Unassigned",
+      "title": "Monitoring Operations",
+      "status": "PENDING",
+      "authenticity": "NOT_RECEIVED"
+    },
+    {
+      "role": "Security Approver",
+      "approver": "Unassigned",
+      "title": "Information Security",
+      "status": "PENDING",
+      "authenticity": "NOT_RECEIVED"
+    },
+    {
+      "role": "Operations Approver",
+      "approver": "Unassigned",
+      "title": "SRE / Production Operations",
+      "status": "PENDING",
+      "authenticity": "NOT_RECEIVED"
+    }
+  ]
+}
