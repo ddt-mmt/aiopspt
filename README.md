@@ -9,15 +9,15 @@ Sistem AIOps ini dirancang untuk pemantauan prediktif (*Predictive Maintenance*)
 2. [Aliran Data & Integrasi Zabbix API](#2-aliran-data--integrasi-zabbix-api)
 3. [Spesifikasi Machine Learning & Batas Validasi](#3-spesifikasi-machine-learning--batas-validasi)
 4. [Public Datasets & Benchmark Independen](#4-public-datasets--benchmark-independen)
-5. [Struktur Direktori Repositori](#5-struktur-direktori-repositori-penjelasan-lengkap)
+5. [Struktur Direktori Repositori](#5-struktur-direktori-repositori)
 6. [Panduan Pengujian Offline](#6-panduan-pengujian-offline-yang-aman)
 7. [Riwayat Insiden & Penanganan Rollback](#7-riwayat-insiden--penanganan-rollback-phase-63)
 8. [Batasan Validasi & Risiko](#8-batasan-validasi--risiko)
-9. [Status Proyek Terkini — Phase 87.20](#status-proyek-terkini--5-november-2026-phase-8720)
+9. [Status Proyek Terkini — Phase 87.20](#status-proyek-terkini-phase-8720)
 
 ---
 
-## Status Proyek Terkini — 5 November 2026 (Phase 87.20)
+## Status Proyek Terkini (Phase 87.20)
 
 - **V11 produksi:** dilaporkan tetap menjadi runtime aktif; baseline historis SHA-256 `009090d5f7cc6a2f8c68e783cbc79879af4e115ff06fd4fa5ce5052f25c06cef`.
 - **V12:** kandidat staging dengan SHA-256 `17f01ec80e4af39509f36b976e1e580f455e6c497098308c9dbcc5f9e9673bce`; belum dideploy ke produksi.
