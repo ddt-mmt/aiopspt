@@ -9,10 +9,26 @@ Sistem AIOps ini dirancang untuk pemantauan prediktif (*Predictive Maintenance*)
 2. [Aliran Data & Integrasi Zabbix API](#2-aliran-data--integrasi-zabbix-api)
 3. [Spesifikasi Machine Learning & Batas Validasi](#3-spesifikasi-machine-learning--batas-validasi)
 4. [Public Datasets & Benchmark Independen](#4-public-datasets--benchmark-independen)
-5. [Struktur Direktori Repositori](#5-struktur-direktori-repositori-penjelasan-lengkap)
+5. [Struktur Direktori Repositori](#5-struktur-direktori-repositori)
 6. [Panduan Pengujian Offline](#6-panduan-pengujian-offline-yang-aman)
 7. [Riwayat Insiden & Penanganan Rollback](#7-riwayat-insiden--penanganan-rollback-phase-63)
 8. [Batasan Validasi & Risiko](#8-batasan-validasi--risiko)
+9. [Status Proyek Terkini — Phase 87.20](#status-proyek-terkini-phase-8720)
+
+---
+
+## Status Proyek Terkini (Phase 87.20)
+
+- **V11 produksi:** dilaporkan tetap menjadi runtime aktif; baseline historis SHA-256 `009090d5f7cc6a2f8c68e783cbc79879af4e115ff06fd4fa5ce5052f25c06cef`.
+- **V12:** kandidat staging dengan SHA-256 `17f01ec80e4af39509f36b976e1e580f455e6c497098308c9dbcc5f9e9673bce`; belum dideploy ke produksi.
+- **Change Owner:** Didit — APPROVED berdasarkan deklarasi yang diberikan; identitas dan kewenangan belum diverifikasi independen.
+- **Lima persetujuan stakeholder lainnya:** PENDING.
+- **Pengecualian keamanan HTTP Zabbix:** PENDING; alternatif HTTPS belum diverifikasi.
+- **Otorisasi perubahan produksi:** `NOT_GRANTED`.
+- **Deployment V12 ke produksi:** `NO`.
+- **Grafana produksi:** integrasi Option D belum diotorisasi atau dilaksanakan.
+
+Status di atas berasal dari laporan fase yang tersedia, bukan pemeriksaan live runtime dalam Phase 87.20. Lihat [status proyek](docs/PROJECT_CURRENT_STATUS.md), [riwayat fase](docs/PHASE_HISTORY.md), dan [audit struktur repository](docs/REPOSITORY_STRUCTURE.md).
 
 ---
 
@@ -118,35 +134,11 @@ Karena itu:
 
 Status rinci dan tautan unduhan ada di [docs/PUBLIC_DATASETS_AND_BENCHMARKS.md](docs/PUBLIC_DATASETS_AND_BENCHMARKS.md) dan [dataset status manifest](docs/PUBLIC_DATASET_STATUS_MANIFEST.json).
 
-## 5. Struktur Direktori Repositori (Penjelasan Lengkap)
+## 5. Struktur Direktori Repositori
 
-Repositori ini disusun secara modular agar bersih dan mudah dipahami:
+Inventaris path repository yang dapat diamati langsung di GitHub tersedia pada [docs/REPOSITORY_STRUCTURE.md](docs/REPOSITORY_STRUCTURE.md). Dokumen tersebut memisahkan path yang teramati dari layout workspace historis `/root/grafan_aiops`.
 
-```text
-/root/grafan_aiops/
-├── README.md                          # Dokumentasi utama proyek
-├── src/                               # 📂 Core Source Engine (script utama, kandidat V11, backup V10)
-├── config/                            # 📂 Konfigurasi Stack (docker-compose.yml, Dockerfile, Grafana dashboard)
-├── docs/                              # 📂 Dokumentasi Teknis (Inventaris Script, Test Register, ML Workflow, Kebijakan Data)
-├── reports/                           # 📂 Laporan Resmi (Phase 62 s.d. 81, Rekonsiliasi, Pre-activation)
-│   └── audit_archives/                # Arsip laporan historis (AIOps, Audit V3/V5, Robustness, Shadow V5)
-├── phases/                            # 📂 Script Eksekusi Tahapan Pengembangan & Utilitas Pendukung
-│   ├── scripts/                       # Skrip eksekusi fase (Phase 45-46 preflight, run_*.py)
-│   ├── utils/                         # Utilitas audit, ekstraksi, dan perbaikan OID Zabbix
-│   └── legacy/                        # Arsip backup awal
-├── tests/                             # 📂 Test Suite (Unit test V11, Robustness v5, Hardening v10/v9)
-├── real_data_validation/              # Data hasil ekspor validasi riwayat nyata per-host/sensor
-└── real_data_validation_365d/         # Arsip ekspor data historis 365 hari Zabbix beserta run logs
-```
-
-### Keterangan Fungsi Setiap Direktori & File Kategori:
-- **`src/`**: Berisi script engine utama (`script_aiops.py`), V11 Repaired (`script_aiops_v11_repaired.py`), serta kandidat versi historis (`script_aiops.py.candidate.v2` s.d. `v10`).
-- **`config/`**: Berisi konfigurasi deployment Docker Compose (`docker-compose.yml`, `Dockerfile`) dan skema dasbor Grafana (`aiops_facility_dashboard.json`).
-- **`docs/`**: Berisi panduan arsitektur, daftar inventaris script (`SCRIPT_INVENTORY.md`), register bukti pengujian (`TEST_EVIDENCE_REGISTER.md`), riwayat fase (`PHASE_HISTORY.md`), alur ML (`ML_WORKFLOW_AND_ACCURACY.md`), dan kebijakan penyimpanan dataset (`DATA_STORAGE_AND_GITHUB_POLICY.md`).
-- **`reports/`**: Berisi laporan formal setiap fase pelaksanaan deployment (Phase 62 s.d. 81).
-- **`reports/audit_archives/`**: Berisi arsip laporan forensik historis, validasi robustness v5, shadow test v5, dan audit Zabbix v3.
-- **`phases/`**: Berisi kumpulan script eksekusi otomatis yang digunakan selama proses pengembangan bertahap (*Phased Development*).
-- **`tests/`**: Berisi seluruh file pengujian unit dan otomatisasi untuk memverifikasi fungsionalitas engine.
+**Catatan:** inventaris tersebut belum dapat diklaim lengkap secara rekursif. Path yang hanya disebut pada dokumentasi lama tidak boleh dianggap pasti ada pada branch GitHub saat ini. Untuk inventaris final, diperlukan ekspor recursive Git tree atau `git ls-tree -r --name-only HEAD` dari clone bersih.
 
 ---
 
@@ -172,4 +164,4 @@ python3 tests/test_aiops_v5_extended.py
 - Status definisi Stack Portainer tercatat `NOT_VERIFIED`.
 
 ---
-*Pembaruan dokumentasi: November 2026 (Phase 87.18). Proyek mencakup pengembangan kandidat V12, live-shadow execution pada staging (`prox-dev`), read-only Zabbix integration, staging Grafana stack (Phase 87.11), integration validation & soak assessment (Phase 87.12), Production Readiness Assessment (Phase 87.13), Authorization Gate & Deployment Hold (Phase 87.14), Stakeholder Approval Collection & Transport Security Closure (Phase 87.15), Formal Approval Verification & Authorization Gate (Phase 87.16), Stakeholder Sign-Off Collection & Approval Evidence Intake (Phase 87.17), and Final Approval Evidence Verification & Production Deployment Eligibility (Phase 87.18: `PHASE_87_18_DEPLOYMENT_EXECUTED = NO`, `PRODUCTION_CHANGE_AUTHORIZATION = NOT_GRANTED`, `PHASE_87_19_DEPLOYMENT_REQUEST_STATUS = BLOCKED_PENDING_APPROVAL`).*
+*Pembaruan dokumentasi: 5 November 2026 (Phase 87.20). Phase 87.19 mempublikasikan dokumentasi ke GitHub dengan deployment produksi tetap diblokir. Phase 87.20 memperbaiki README, kronologi fase, status proyek, dan audit struktur repository. Inventaris struktur tetap diberi batasan sampai recursive Git tree tersedia. Otorisasi produksi tetap `NOT_GRANTED`; V12 belum dideploy ke produksi.*
