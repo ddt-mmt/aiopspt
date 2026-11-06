@@ -1,0 +1,23 @@
+{
+  "phase": "87.23",
+  "status": "COMPLETED_WITH_BLOCKERS",
+  "audit_date": "2026-11-06",
+  "repository": "https://github.com/ddt-mmt/aiopspt",
+  "branch": "main",
+  "baseline_commit": "df06ebe14a3f8ce4ef545dd09bd79efc93060256",
+  "statuses": {
+    "phase_status": "COMPLETED_WITH_BLOCKERS",
+    "baseline_verification": "VERIFIED",
+    "change_owner_authority": "APPROVED_UNVERIFIED",
+    "stakeholder_approval_status": "PENDING",
+    "http_https_security_status": "HTTP_SECURITY_EXCEPTION_PENDING",
+    "sha256_verification_status": "PASS",
+    "github_signature_status": "UNVERIFIED",
+    "repository_integrity_status": "PASS",
+    "production_non_interference": "VERIFIED",
+    "deployment_eligibility": "INELIGIBLE_PENDING_APPROVAL",
+    "production_change_authorization": "NOT_GRANTED",
+    "production_deployment_executed": "NO",
+    "v12_production_activation": "NO"
+  }
+}

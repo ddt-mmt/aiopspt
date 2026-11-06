@@ -1,0 +1,60 @@
+{
+  "change_id": "AIOPS-V12-OPTION-B",
+  "change_scope": "OPTION_B_PRODUCTION_READ_ONLY_SHADOW",
+  "stakeholders": [
+    {
+      "role": "Change Owner",
+      "approver": "Didit",
+      "title": "System Administrator",
+      "status": "APPROVED_UNVERIFIED",
+      "authenticity": "UNVERIFIED",
+      "timestamp": "2026-11-06T00:00:00Z",
+      "evidence_source": "Project Owner Declaration"
+    },
+    {
+      "role": "AIOps Technical Approver",
+      "approver": "Unassigned",
+      "title": "AIOps Architecture Team",
+      "status": "PENDING",
+      "authenticity": "NOT_RECEIVED",
+      "timestamp": null,
+      "evidence_source": null
+    },
+    {
+      "role": "Infrastructure Approver",
+      "approver": "Unassigned",
+      "title": "Data Center Infrastructure",
+      "status": "PENDING",
+      "authenticity": "NOT_RECEIVED",
+      "timestamp": null,
+      "evidence_source": null
+    },
+    {
+      "role": "Zabbix Service Owner",
+      "approver": "Unassigned",
+      "title": "Monitoring Operations",
+      "status": "PENDING",
+      "authenticity": "NOT_RECEIVED",
+      "timestamp": null,
+      "evidence_source": null
+    },
+    {
+      "role": "Security Approver",
+      "approver": "Unassigned",
+      "title": "Information Security",
+      "status": "PENDING",
+      "authenticity": "NOT_RECEIVED",
+      "timestamp": null,
+      "evidence_source": null
+    },
+    {
+      "role": "Operations Approver",
+      "approver": "Unassigned",
+      "title": "SRE / Production Operations",
+      "status": "PENDING",
+      "authenticity": "NOT_RECEIVED",
+      "timestamp": null,
+      "evidence_source": null
+    }
+  ]
+}

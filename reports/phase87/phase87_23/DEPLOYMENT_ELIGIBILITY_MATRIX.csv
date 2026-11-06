@@ -1,0 +1,11 @@
+requirement,mandatory,status,pass_criteria
+Change Owner,YES,APPROVED_UNVERIFIED,Approval verified
+AIOps Technical Approver,YES,PENDING,Formal approval verified
+Infrastructure Approver,YES,PENDING,Formal approval verified
+Zabbix Service Owner,YES,PENDING,Formal approval verified
+Security Approver,YES,PENDING,Formal approval verified
+Operations Approver,YES,PENDING,Formal approval verified
+HTTP Exception or HTTPS,YES,HTTP_SECURITY_EXCEPTION_PENDING,Security closure verified
+Option B Scope,YES,VERIFIED,No unauthorized expansion
+Production Isolation,YES,VERIFIED,No production side effects
+Evidence Integrity,YES,PASS,Checksum verification passed

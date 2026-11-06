@@ -1,0 +1,11 @@
+{
+  "evaluation_date": "2026-11-06",
+  "deployment_eligibility": "INELIGIBLE_PENDING_APPROVAL",
+  "production_change_authorization": "NOT_GRANTED",
+  "production_deployment_executed": "NO",
+  "v12_production_activation": "NO",
+  "blockers": [
+    "Five stakeholder approvals are pending",
+    "HTTP security exception is pending"
+  ]
+}
