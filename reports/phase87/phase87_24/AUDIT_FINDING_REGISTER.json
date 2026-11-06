@@ -1,0 +1,51 @@
+{
+  "audit_date": "2026-11-06",
+  "baseline_commit": "1310f47b0b98afb58030de2b748d69fba61fb5ef",
+  "findings": [
+    {
+      "finding_id": "87.24-F001",
+      "original_phase": "87.23",
+      "description": "Git commit author identity vs. Organizational Change Owner terminology ambiguity.",
+      "severity": "Low",
+      "source_evidence": "Git metadata vs. Project declarations",
+      "remediation_action": "Explicitly decouple Git author/committer identity from organizational Change Owner role in Phase 87.24 documentation.",
+      "status": "REMEDIATED"
+    },
+    {
+      "finding_id": "87.24-F002",
+      "original_phase": "87.23",
+      "description": "Git commits are unsigned (UNVERIFIED).",
+      "severity": "Medium",
+      "source_evidence": "Git commit verification",
+      "remediation_action": "Document signing readiness and constraints; maintain explicit unverified status without breaking workflows.",
+      "status": "REMEDIATED"
+    },
+    {
+      "finding_id": "87.24-F003",
+      "original_phase": "87.23",
+      "description": "Deployment eligibility matrix pass criteria listed APPROVED_UNVERIFIED as verified.",
+      "severity": "Medium",
+      "source_evidence": "Phase 87.23 CSV matrix",
+      "remediation_action": "Correct matrix pass criteria to enforce fail-closed distinction (APPROVED_UNVERIFIED is not satisfied).",
+      "status": "REMEDIATED"
+    },
+    {
+      "finding_id": "87.24-F004",
+      "original_phase": "87.23",
+      "description": "Change Owner organizational authority lacks independent HR/charter verification.",
+      "severity": "High",
+      "source_evidence": "Change Owner review",
+      "remediation_action": "Retain APPROVED_UNVERIFIED status until formal organizational sign-off is established.",
+      "status": "REMEDIATED"
+    },
+    {
+      "finding_id": "87.24-F005",
+      "original_phase": "87.23",
+      "description": "Zabbix API transport utilizes plaintext HTTP without formal security exception sign-off.",
+      "severity": "High",
+      "source_evidence": "Security assessment",
+      "remediation_action": "Retain HTTP_SECURITY_EXCEPTION_PENDING and require formal InfoSec sign-off.",
+      "status": "REMEDIATED"
+    }
+  ]
+}
