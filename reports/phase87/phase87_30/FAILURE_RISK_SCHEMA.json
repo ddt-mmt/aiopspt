@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FailureRiskAssessment",
+  "type": "object",
+  "properties": {
+    "asset_id": { "type": "string" },
+    "assessment_timestamp": { "type": "string", "format": "date-time" },
+    "risk_status": { "enum": ["LOW_RISK_INDICATION", "ELEVATED_RISK_INDICATION", "HIGH_RISK_INDICATION", "CRITICAL_RISK_INDICATION", "RISK_NOT_ASSESSABLE"] },
+    "contributing_factors": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "uncertainty_status": { "type": "string" },
+    "explanation": { "type": "string" }
+  },
+  "required": ["asset_id", "assessment_timestamp", "risk_status", "explanation"]
+}

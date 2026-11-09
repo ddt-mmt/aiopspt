@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RulTtfEvidenceRecord",
+  "type": "object",
+  "properties": {
+    "asset_id": { "type": "string" },
+    "component_identity": { "type": "string" },
+    "event_type": { "enum": ["CONFIRMED_FAILURE", "CONFIRMED_REPLACEMENT", "PREVENTIVE_REPLACEMENT", "SCHEDULED_MAINTENANCE", "UNCONFIRMED_ALARM", "SENSOR_FAULT", "UNKNOWN_EVENT"] },
+    "event_timestamp": { "type": ["string", "null"], "format": "date-time" },
+    "verification_status": { "enum": ["VERIFIED", "PARTIAL", "UNVERIFIED", "SIMULATED"] },
+    "rul_measurable": { "type": "boolean" }
+  },
+  "required": ["asset_id", "component_identity", "event_type", "verification_status", "rul_measurable"]
+}
