@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EquipmentKnowledgeBaseRecord",
+  "type": "object",
+  "properties": {
+    "equipment_id": { "type": "string" },
+    "host_id": { "type": "string" },
+    "manufacturer": { "type": "string" },
+    "model": { "type": "string" },
+    "serial_number": { "type": ["string", "null"] },
+    "equipment_category": { "enum": ["UPS", "PAC", "INVERTER", "BATTERY", "SWITCH", "ROUTER"] },
+    "component_category": { "type": "string" },
+    "installation_date": { "type": ["string", "null"], "format": "date" },
+    "commissioning_date": { "type": ["string", "null"], "format": "date" },
+    "manufacturer_specifications": {
+      "type": "object",
+      "properties": {
+        "design_operating_range": { "type": "object" },
+        "recommended_operating_range": { "type": "object" },
+        "temperature_limits": {
+          "type": "object",
+          "properties": {
+            "min_celsius": { "type": "number" },
+            "max_celsius": { "type": "number" }
+          }
+        },
+        "voltage_range": {
+          "type": "object",
+          "properties": {
+            "min_volts": { "type": "number" },
+            "max_volts": { "type": "number" }
+          }
+        },
+        "design_life_hours": { "type": "integer" },
+        "recommended_maintenance_interval_hours": { "type": "integer" },
+        "safety_operating_limit": { "type": "object" }
+      },
+      "required": ["design_operating_range", "recommended_operating_range"]
+    },
+    "evidence_provenance": {
+      "type": "object",
+      "properties": {
+        "source_document_title": { "type": "string" },
+        "document_revision": { "type": "string" },
+        "verification_status": {
+          "enum": ["VERIFIED_MANUFACTURER_SOURCE", "VERIFIED_STANDARD", "VERIFIED_TECHNICAL_RESEARCH", "SECONDARY_SOURCE", "INFERRED", "UNVERIFIED", "NOT_AVAILABLE", "NOT_APPLICABLE"]
+        },
+        "confidence_score": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+      },
+      "required": ["verification_status"]
+    }
+  },
+  "required": ["equipment_id", "manufacturer", "model", "equipment_category", "manufacturer_specifications", "evidence_provenance"]
+}

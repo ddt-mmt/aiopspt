@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ManufacturerReferenceRecord",
+  "type": "object",
+  "properties": {
+    "reference_id": { "type": "string" },
+    "manufacturer": { "type": "string" },
+    "applicable_models": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "document_title": { "type": "string" },
+    "document_version": { "type": "string" },
+    "parameter_name": { "type": "string" },
+    "standard_value": { "type": "number" },
+    "unit": { "type": "string" },
+    "verification_status": { "enum": ["VERIFIED_MANUFACTURER_SOURCE", "VERIFIED_STANDARD", "VERIFIED_TECHNICAL_RESEARCH", "SECONDARY_SOURCE", "INFERRED", "UNVERIFIED", "NOT_AVAILABLE", "NOT_APPLICABLE"] }
+  },
+  "required": ["reference_id", "manufacturer", "document_title", "parameter_name", "verification_status"]
+}

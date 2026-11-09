@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ModelValidationRecord",
+  "type": "object",
+  "properties": {
+    "validation_id": { "type": "string" },
+    "model_version": { "type": "string" },
+    "evaluation_dataset_version": { "type": "string" },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "mae": { "type": ["number", "null"] },
+        "rmse": { "type": ["number", "null"] },
+        "f1_score": { "type": ["number", "null"] },
+        "false_positive_rate": { "type": ["number", "null"] }
+      }
+    },
+    "validation_result": { "enum": ["PASS", "FAIL", "NOT_MEASURABLE"] }
+  },
+  "required": ["validation_id", "model_version", "evaluation_dataset_version", "validation_result"]
+}

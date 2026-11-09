@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PromotionGateRecord",
+  "type": "object",
+  "properties": {
+    "gate_id": { "type": "string" },
+    "stage_from": { "enum": ["DEVELOPMENT", "OFFLINE_VALIDATION", "STAGING", "SHADOW", "TECHNICAL_ACCEPTANCE"] },
+    "stage_to": { "enum": ["OFFLINE_VALIDATION", "STAGING", "SHADOW", "TECHNICAL_ACCEPTANCE", "PRODUCTION_RELEASE"] },
+    "status": { "enum": ["APPROVED", "BLOCKED", "PENDING"] },
+    "approver_roles": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "evidence_reference": { "type": "string" }
+  },
+  "required": ["gate_id", "stage_from", "stage_to", "status", "approver_roles"]
+}

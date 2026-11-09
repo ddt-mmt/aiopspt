@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DeviceDigitalProfile",
+  "type": "object",
+  "properties": {
+    "equipment_id": { "type": "string" },
+    "profile_version": { "type": "string" },
+    "learning_mode": { "enum": ["INDIVIDUAL_DEVICE_MODEL", "EQUIPMENT_FAMILY_MODEL"] },
+    "operational_baseline": {
+      "type": "object",
+      "properties": {
+        "mean_load_percentage": { "type": "number" },
+        "mean_temperature_celsius": { "type": "number" },
+        "operating_regimes_recognized": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "data_quality_metrics": {
+      "type": "object",
+      "properties": {
+        "completeness_ratio": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "staleness_ratio": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "anomaly_status": { "enum": ["NO_ANOMALY", "ANOMALY_NOT_EVALUATED", "INSUFFICIENT_DATA", "SENSOR_UNAVAILABLE", "MODEL_UNAVAILABLE"] }
+      },
+      "required": ["completeness_ratio", "anomaly_status"]
+    }
+  },
+  "required": ["equipment_id", "profile_version", "learning_mode", "data_quality_metrics"]
+}
