@@ -1,0 +1,23 @@
+{
+  "database_version": "1.0.0",
+  "specifications": [
+    {
+      "category": "UPS",
+      "parameter": "recommended_temperature_celsius",
+      "min_value": 20.0,
+      "max_value": 25.0,
+      "unit": "Celsius",
+      "source_reference": "DOC_IEEE_1188",
+      "verification_status": "VERIFIED_STANDARD"
+    },
+    {
+      "category": "PAC",
+      "parameter": "recommended_return_air_temperature_celsius",
+      "min_value": 18.0,
+      "max_value": 27.0,
+      "unit": "Celsius",
+      "source_reference": "DOC_ASHRAE_TC99",
+      "verification_status": "VERIFIED_STANDARD"
+    }
+  ]
+}

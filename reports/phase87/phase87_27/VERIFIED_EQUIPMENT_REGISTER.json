@@ -1,0 +1,97 @@
+{
+  "register_version": "1.0.0",
+  "staging_host": "prox-dev / 10.28.1.100",
+  "assets": [
+    {
+      "asset_id": "ME_UPS1",
+      "category": "UPS",
+      "manufacturer": "UNKNOWN",
+      "model": "MODEL_IDENTIFICATION_REQUIRED",
+      "identity_status": "PARTIAL",
+      "rated_capacity": null,
+      "capacity_unit": "kVA",
+      "battery_chemistry": "VRLA",
+      "battery_configuration": "STANDARD_STRING",
+      "operating_environment": "DATA_CENTER_ROOM",
+      "verification_timestamp": "2026-11-09T00:00:00Z"
+    },
+    {
+      "asset_id": "ME_UPS2",
+      "category": "UPS",
+      "manufacturer": "UNKNOWN",
+      "model": "MODEL_IDENTIFICATION_REQUIRED",
+      "identity_status": "PARTIAL",
+      "rated_capacity": null,
+      "capacity_unit": "kVA",
+      "battery_chemistry": "VRLA",
+      "battery_configuration": "STANDARD_STRING",
+      "operating_environment": "DATA_CENTER_ROOM",
+      "verification_timestamp": "2026-11-09T00:00:00Z"
+    },
+    {
+      "asset_id": "ME_UPS3",
+      "category": "UPS",
+      "manufacturer": "UNKNOWN",
+      "model": "MODEL_IDENTIFICATION_REQUIRED",
+      "identity_status": "PARTIAL",
+      "rated_capacity": null,
+      "capacity_unit": "kVA",
+      "battery_chemistry": "VRLA",
+      "battery_configuration": "STANDARD_STRING",
+      "operating_environment": "DATA_CENTER_ROOM",
+      "verification_timestamp": "2026-11-09T00:00:00Z"
+    },
+    {
+      "asset_id": "ME_PAC1",
+      "category": "PAC",
+      "manufacturer": "UNKNOWN",
+      "model": "MODEL_IDENTIFICATION_REQUIRED",
+      "identity_status": "PARTIAL",
+      "rated_capacity": null,
+      "capacity_unit": "TR",
+      "compressor_type": "SCROLL",
+      "refrigerant": "R410A",
+      "operating_environment": "DATA_CENTER_ROOM",
+      "verification_timestamp": "2026-11-09T00:00:00Z"
+    },
+    {
+      "asset_id": "ME_PAC2",
+      "category": "PAC",
+      "manufacturer": "UNKNOWN",
+      "model": "MODEL_IDENTIFICATION_REQUIRED",
+      "identity_status": "PARTIAL",
+      "rated_capacity": null,
+      "capacity_unit": "TR",
+      "compressor_type": "SCROLL",
+      "refrigerant": "R410A",
+      "operating_environment": "DATA_CENTER_ROOM",
+      "verification_timestamp": "2026-11-09T00:00:00Z"
+    },
+    {
+      "asset_id": "ME_PAC3",
+      "category": "PAC",
+      "manufacturer": "UNKNOWN",
+      "model": "MODEL_IDENTIFICATION_REQUIRED",
+      "identity_status": "PARTIAL",
+      "rated_capacity": null,
+      "capacity_unit": "TR",
+      "compressor_type": "SCROLL",
+      "refrigerant": "R410A",
+      "operating_environment": "DATA_CENTER_ROOM",
+      "verification_timestamp": "2026-11-09T00:00:00Z"
+    },
+    {
+      "asset_id": "ME_PAC4",
+      "category": "PAC",
+      "manufacturer": "UNKNOWN",
+      "model": "MODEL_IDENTIFICATION_REQUIRED",
+      "identity_status": "PARTIAL",
+      "rated_capacity": null,
+      "capacity_unit": "TR",
+      "compressor_type": "SCROLL",
+      "refrigerant": "R410A",
+      "operating_environment": "DATA_CENTER_ROOM",
+      "verification_timestamp": "2026-11-09T00:00:00Z"
+    }
+  ]
+}

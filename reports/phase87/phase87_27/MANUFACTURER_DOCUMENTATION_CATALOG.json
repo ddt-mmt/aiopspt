@@ -1,0 +1,25 @@
+{
+  "catalog_version": "1.0.0",
+  "documents": [
+    {
+      "document_id": "DOC_IEEE_1188",
+      "title": "IEEE Recommended Practice for Maintenance, Testing, and Replacement of VRLA Batteries",
+      "publisher": "IEEE",
+      "applicable_family": "STATIONARY_BATTERIES",
+      "applicable_model": "GENERIC_VRLA",
+      "revision": "2015",
+      "publication_date": "2015-06-15",
+      "verification_status": "VERIFIED_STANDARD"
+    },
+    {
+      "document_id": "DOC_ASHRAE_TC99",
+      "title": "ASHRAE Thermal Guidelines for Data Processing Environments",
+      "publisher": "ASHRAE",
+      "applicable_family": "PAC_ENVIRONMENTAL",
+      "applicable_model": "GENERIC_PAC",
+      "revision": "5th Edition",
+      "publication_date": "2021-01-01",
+      "verification_status": "VERIFIED_STANDARD"
+    }
+  ]
+}

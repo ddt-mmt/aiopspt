@@ -1,0 +1,21 @@
+{
+  "mapping_version": "1.0.0",
+  "sensors": [
+    {
+      "asset_id": "ME_UPS1",
+      "sensor_category": "BATTERY",
+      "physical_measurement": "temperature",
+      "unit": "Celsius",
+      "valid_range": [0.0, 50.0],
+      "verification_status": "VERIFIED"
+    },
+    {
+      "asset_id": "ME_PAC1",
+      "sensor_category": "ENVIRONMENT",
+      "physical_measurement": "return_air_temperature",
+      "unit": "Celsius",
+      "valid_range": [10.0, 40.0],
+      "verification_status": "VERIFIED"
+    }
+  ]
+}
