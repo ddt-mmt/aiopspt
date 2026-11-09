@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BehavioralAnomalyEvidence",
+  "type": "object",
+  "properties": {
+    "asset_id": { "type": "string" },
+    "event_timestamp": { "type": "string", "format": "date-time" },
+    "sensor_reference": { "type": "string" },
+    "observed_value": { "type": "number" },
+    "expected_behavior": { "type": "number" },
+    "deviation_magnitude": { "type": "number" },
+    "operating_regime": { "type": "string" },
+    "severity": { "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"] },
+    "confidence": { "type": "number" },
+    "explanation": { "type": "string" }
+  },
+  "required": ["asset_id", "event_timestamp", "sensor_reference", "observed_value", "expected_behavior", "severity", "explanation"]
+}

@@ -1,0 +1,76 @@
+{
+  "profiles_version": "1.0.0",
+  "staging_environment": "prox-dev / 10.28.1.100",
+  "devices": [
+    {
+      "asset_id": "ME_UPS1",
+      "category": "UPS",
+      "baseline_status": "LEARNED",
+      "mean_load_percentage": 45.2,
+      "mean_temperature_celsius": 23.5,
+      "operating_regimes_recognized": ["IDLE_OR_LOW_LOAD", "NORMAL_LOAD", "BATTERY_CHARGING"],
+      "data_quality_status": "VALID",
+      "confidence_level": "MODERATE_CONFIDENCE"
+    },
+    {
+      "asset_id": "ME_UPS2",
+      "category": "UPS",
+      "baseline_status": "LEARNED",
+      "mean_load_percentage": 52.1,
+      "mean_temperature_celsius": 24.0,
+      "operating_regimes_recognized": ["IDLE_OR_LOW_LOAD", "NORMAL_LOAD", "BATTERY_CHARGING"],
+      "data_quality_status": "VALID",
+      "confidence_level": "MODERATE_CONFIDENCE"
+    },
+    {
+      "asset_id": "ME_UPS3",
+      "category": "UPS",
+      "baseline_status": "LEARNED",
+      "mean_load_percentage": 48.0,
+      "mean_temperature_celsius": 23.8,
+      "operating_regimes_recognized": ["IDLE_OR_LOW_LOAD", "NORMAL_LOAD", "BATTERY_CHARGING"],
+      "data_quality_status": "VALID",
+      "confidence_level": "MODERATE_CONFIDENCE"
+    },
+    {
+      "asset_id": "ME_PAC1",
+      "category": "PAC",
+      "baseline_status": "LEARNED",
+      "mean_load_percentage": 70.5,
+      "mean_temperature_celsius": 22.1,
+      "operating_regimes_recognized": ["IDLE", "NORMAL_COOLING", "COMPRESSOR_RUNNING"],
+      "data_quality_status": "VALID",
+      "confidence_level": "MODERATE_CONFIDENCE"
+    },
+    {
+      "asset_id": "ME_PAC2",
+      "category": "PAC",
+      "baseline_status": "LEARNED",
+      "mean_load_percentage": 68.2,
+      "mean_temperature_celsius": 22.4,
+      "operating_regimes_recognized": ["IDLE", "NORMAL_COOLING", "COMPRESSOR_RUNNING"],
+      "data_quality_status": "VALID",
+      "confidence_level": "MODERATE_CONFIDENCE"
+    },
+    {
+      "asset_id": "ME_PAC3",
+      "category": "PAC",
+      "baseline_status": "LEARNED",
+      "mean_load_percentage": 72.0,
+      "mean_temperature_celsius": 21.9,
+      "operating_regimes_recognized": ["IDLE", "NORMAL_COOLING", "COMPRESSOR_RUNNING"],
+      "data_quality_status": "VALID",
+      "confidence_level": "MODERATE_CONFIDENCE"
+    },
+    {
+      "asset_id": "ME_PAC4",
+      "category": "PAC",
+      "baseline_status": "LEARNED",
+      "mean_load_percentage": 69.5,
+      "mean_temperature_celsius": 22.2,
+      "operating_regimes_recognized": ["IDLE", "NORMAL_COOLING", "COMPRESSOR_RUNNING"],
+      "data_quality_status": "VALID",
+      "confidence_level": "MODERATE_CONFIDENCE"
+    }
+  ]
+}

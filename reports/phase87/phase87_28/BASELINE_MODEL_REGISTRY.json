@@ -1,0 +1,12 @@
+{
+  "registry_version": "1.0.0",
+  "models": [
+    {
+      "model_id": "MOD_BEHAVIORAL_V12_OFFLINE",
+      "algorithm": "ROBUST_STATISTICAL_AND_ISOLATION_FOREST",
+      "training_dataset_version": "staging_30d_v1",
+      "validation_status": "OFFLINE_VALIDATED",
+      "promotion_status": "ISOLATED_STAGING_ACTIVE"
+    }
+  ]
+}
