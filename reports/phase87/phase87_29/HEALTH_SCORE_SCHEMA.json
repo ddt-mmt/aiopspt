@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DynamicHealthScore",
+  "type": "object",
+  "properties": {
+    "asset_id": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "health_score_status": { "enum": ["EVALUATED", "NOT_EVALUATED", "INSUFFICIENT_DATA"] },
+    "condition_score": { "type": ["number", "null"], "minimum": 0.0, "maximum": 100.0 },
+    "stability_score": { "type": ["number", "null"], "minimum": 0.0, "maximum": 100.0 },
+    "data_quality_score": { "type": ["number", "null"], "minimum": 0.0, "maximum": 100.0 },
+    "decomposition": { "type": "object" },
+    "explanation": { "type": "string" }
+  },
+  "required": ["asset_id", "timestamp", "health_score_status", "explanation"]
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PredictionUncertainty",
+  "type": "object",
+  "properties": {
+    "prediction_id": { "type": "string" },
+    "confidence_state": { "enum": ["HIGH_CONFIDENCE", "MEDIUM_CONFIDENCE", "LOW_CONFIDENCE", "INSUFFICIENT_DATA", "OUT_OF_DISTRIBUTION", "NOT_CALIBRATED", "NOT_VALIDATED"] },
+    "data_completeness": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+    "data_freshness_seconds": { "type": "integer" },
+    "interval_width": { "type": ["number", "null"] }
+  },
+  "required": ["prediction_id", "confidence_state", "data_completeness"]
+}
