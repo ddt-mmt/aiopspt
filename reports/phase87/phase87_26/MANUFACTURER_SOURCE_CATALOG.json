@@ -1,0 +1,21 @@
+{
+  "catalog_version": "1.0.0",
+  "sources": [
+    {
+      "source_id": "REF_IEEE_1188",
+      "title": "IEEE Recommended Practice for Maintenance, Testing, and Replacement of Valve-Regulated Lead-Acid (VRLA) Batteries for Stationary Applications",
+      "publisher": "IEEE",
+      "applicable_category": "UPS_BATTERY",
+      "verification_status": "VERIFIED_STANDARD",
+      "retrieval_date": "2026-11-09"
+    },
+    {
+      "source_id": "REF_ASHRAE_TC99",
+      "title": "ASHRAE Thermal Guidelines for Data Processing Environments",
+      "publisher": "ASHRAE",
+      "applicable_category": "PAC",
+      "verification_status": "VERIFIED_STANDARD",
+      "retrieval_date": "2026-11-09"
+    }
+  ]
+}
