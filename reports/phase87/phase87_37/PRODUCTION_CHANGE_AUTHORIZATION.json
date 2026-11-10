@@ -1,0 +1,13 @@
+{
+  "phase": "87.37",
+  "migration_scope": "OPTION_B_PRODUCTION_READ_ONLY_SHADOW",
+  "production_change_authorization": "GRANTED",
+  "final_decision_classification": "AUTHORIZED_OPTION_B_PENDING_CONTROLLED_EXECUTION",
+  "approver": "Dr. Hendra Gunawan (CTO)",
+  "delegation_ref": "EV-CO-2026-001",
+  "change_owner": "Didit",
+  "stakeholder_approvals": "6/6_APPROVED_VERIFIED",
+  "security_exception": "SEC-EXC-2026-087-HTTP",
+  "production_non_interference": true,
+  "execution_deferred_to": "Phase 87.38"
+}
