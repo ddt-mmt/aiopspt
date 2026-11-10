@@ -1,0 +1,20 @@
+{
+  "phase": "87.36",
+  "migration_scope": "OPTION_B_PRODUCTION_READ_ONLY_SHADOW",
+  "change_owner": {
+    "identity": "Didit",
+    "authority_status": "VERIFIED",
+    "evidence_ref": "EV-CO-2026-001"
+  },
+  "stakeholder_approvals": {
+    "change_owner": "APPROVED_VERIFIED",
+    "aiops_technical": "APPROVED_VERIFIED",
+    "infrastructure": "APPROVED_VERIFIED",
+    "zabbix_service": "APPROVED_VERIFIED",
+    "security": "APPROVED_VERIFIED",
+    "operations": "APPROVED_VERIFIED"
+  },
+  "production_change_authorization": "NOT_GRANTED",
+  "final_decision_classification": "CHANGE_OWNER_AUTHORITY_VERIFIED_PENDING_FINAL_APPROVAL",
+  "production_non_interference": true
+}
