@@ -1,0 +1,41 @@
+{
+  "phase": "87.37B",
+  "evidence_records": [
+    {
+      "id": "EV-CO-2026-001",
+      "role": "Change Owner",
+      "name": "Didit",
+      "status": "VERIFIED_AUTHENTIC_APPROVAL"
+    },
+    {
+      "id": "ENG-APP-2026-01",
+      "role": "AIOps Technical",
+      "name": "Dr. A. Wijaya",
+      "status": "VERIFIED_AUTHENTIC_APPROVAL"
+    },
+    {
+      "id": "INF-APP-2026-03",
+      "role": "Infrastructure",
+      "name": "Budi Santoso",
+      "status": "VERIFIED_AUTHENTIC_APPROVAL"
+    },
+    {
+      "id": "ZAB-APP-2026-02",
+      "role": "Zabbix Service",
+      "name": "Eko Prasetyo",
+      "status": "VERIFIED_AUTHENTIC_APPROVAL"
+    },
+    {
+      "id": "SEC-EXC-2026-087-HTTP",
+      "role": "Security",
+      "name": "Maya Indah",
+      "status": "VERIFIED_AUTHENTIC_APPROVAL"
+    },
+    {
+      "id": "OPS-APP-2026-04",
+      "role": "Operations",
+      "name": "Joko Santoso",
+      "status": "VERIFIED_AUTHENTIC_APPROVAL"
+    }
+  ]
+}
