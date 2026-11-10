@@ -1,0 +1,20 @@
+{
+  "change_id": "CR-AIOPS-V12-OPTION-B-001",
+  "change_scope": "OPTION_B_PRODUCTION_READ_ONLY_SHADOW",
+  "environment": "PRODUCTION_SHADOW",
+  "approvals": {
+    "change_owner": "APPROVED_UNVERIFIED",
+    "aiops_technical_approver": "PENDING",
+    "infrastructure_approver": "PENDING",
+    "zabbix_service_owner": "PENDING",
+    "security_approver": "PENDING",
+    "operations_approver": "PENDING"
+  },
+  "transport_security_status": "EXCEPTION_PENDING",
+  "equipment_identity_limitations": "PARTIAL_VERIFIED",
+  "risk_acceptance": "PARTIAL_ACCEPTED",
+  "rollback_readiness": "READY",
+  "production_change_authorization": "NOT_GRANTED",
+  "final_decision_matrix": "BLOCKED_PENDING_APPROVAL",
+  "authorization_timestamp": "2026-11-10T00:00:00Z"
+}
