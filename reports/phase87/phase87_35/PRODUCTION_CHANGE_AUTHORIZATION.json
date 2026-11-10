@@ -1,0 +1,8 @@
+{
+  "phase": "87.35",
+  "scope": "OPTION_B_PRODUCTION_READ_ONLY_SHADOW",
+  "production_change_authorization": "NOT_GRANTED",
+  "decision_classification": "BLOCKED_CHANGE_OWNER_VERIFICATION",
+  "executive_approver": "Dr. Hendra Gunawan",
+  "timestamp": "2026-11-10T14:00:00Z"
+}
