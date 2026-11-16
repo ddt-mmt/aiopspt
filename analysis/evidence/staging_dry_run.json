@@ -1,0 +1,59 @@
+{
+  "verification": "staging_dry_run",
+  "generated_utc": "2026-11-16T08:16:48.717596+00:00",
+  "engine": "src/script_aiops.py",
+  "command": "DRY_RUN=1 run_aiops_cycle()",
+  "elapsed_seconds": 20.78,
+  "writes_to_zabbix": 0,
+  "no_synthetic_sensor_write": true,
+  "no_random_fallback": true,
+  "dry_run_markers_found": 6,
+  "readings": [
+    {
+      "kind": "UPS",
+      "host": "ME_UPS1",
+      "health": "62.22",
+      "ttf": "8760.0"
+    },
+    {
+      "kind": "UPS",
+      "host": "ME_UPS2",
+      "health": "67.6",
+      "ttf": "8760.0"
+    },
+    {
+      "kind": "UPS",
+      "host": "ME_UPS3",
+      "health": "71.2",
+      "ttf": "8760.0"
+    },
+    {
+      "kind": "PAC",
+      "host": "ME_PAC1",
+      "health": "58.57",
+      "ttf": "8760.0"
+    },
+    {
+      "kind": "PAC",
+      "host": "ME_PAC2",
+      "health": "57.36",
+      "ttf": "8760.0"
+    },
+    {
+      "kind": "PAC",
+      "host": "ME_PAC3",
+      "health": "62.5",
+      "ttf": "8760.0"
+    },
+    {
+      "kind": "PAC",
+      "host": "ME_PAC4",
+      "health": "UNAVAILABLE",
+      "ttf": "UNAVAILABLE"
+    }
+  ],
+  "distinct_health_values": 6,
+  "distinct_explanation": "nilai health berbeda antar-host & deterministik (bukan uniform acak)",
+  "abstain_count": 1,
+  "raw_log_tail": "2026-11-16 15:16:31,763 [INFO] --- Menganalisis UPS: ME_UPS2 (ID: 10697) ---\n2026-11-16 15:16:32,666 [INFO] Forward-fill audit log (per-feature budget, grid=60s): {'output.load': 6751, 'battery.voltage': 42068, 'battery.capacity': 42333, 'battery.runtime_remaining': 34338, 'ups.status': 42939}\n2026-11-16 15:16:33,585 [INFO] \u26a1 [UPS ME_UPS2] Health: 67.6% | TTF: 8760.0h | Aksi: MAINTENANCE (Preventif)\n2026-11-16 15:16:33,585 [INFO] [DRY_RUN] UPS ME_UPS2 \u2014 tidak mengirim (health=67.6, ttf=8760.0, action=1)\n2026-11-16 15:16:33,585 [INFO] --- Menganalisis UPS: ME_UPS3 (ID: 10701) ---\n2026-11-16 15:16:34,636 [INFO] Forward-fill audit log (per-feature budget, grid=60s): {'output.load': 6298, 'battery.voltage': 35629, 'battery.capacity': 42569, 'battery.runtime_remaining': 22117, 'ups.status': 42834}\n2026-11-16 15:16:35,547 [INFO] \u26a1 [UPS ME_UPS3] Health: 71.2% | TTF: 8760.0h | Aksi: NORMAL (Aman)\n2026-11-16 15:16:35,547 [INFO] [DRY_RUN] UPS ME_UPS3 \u2014 tidak mengirim (health=71.2, ttf=8760.0, action=0)\n2026-11-16 15:16:35,547 [INFO] --- Menganalisis PAC: ME_PAC1 (ID: 10689) ---\n2026-11-16 15:16:38,267 [INFO] Forward-fill audit log (per-feature budget, grid=60s): {'return.temp.c': 6, 'supply.temp.c': 7, 'return.humidity.rh': 3, 'evaporator.fan.speed': 2, 'compressor.status': 4}\n2026-11-16 15:16:39,164 [INFO] \u2744\ufe0f [PAC ME_PAC1] Health: 58.57% | TTF: 8760.0h | Aksi: MAINTENANCE (Preventif)\n2026-11-16 15:16:39,164 [INFO] [DRY_RUN] PAC ME_PAC1 \u2014 tidak mengirim (health=58.57, ttf=8760.0, action=1)\n2026-11-16 15:16:39,164 [INFO] --- Menganalisis PAC: ME_PAC2 (ID: 10690) ---\n2026-11-16 15:16:41,892 [INFO] Forward-fill audit log (per-feature budget, grid=60s): {'return.temp.c': 6, 'supply.temp.c': 7, 'return.humidity.rh': 3, 'evaporator.fan.speed': 2, 'compressor.status': 2}\n2026-11-16 15:16:42,855 [INFO] \u2744\ufe0f [PAC ME_PAC2] Health: 57.36% | TTF: 8760.0h | Aksi: MAINTENANCE (Preventif)\n2026-11-16 15:16:42,855 [INFO] [DRY_RUN] PAC ME_PAC2 \u2014 tidak mengirim (health=57.36, ttf=8760.0, action=1)\n2026-11-16 15:16:42,856 [INFO] --- Menganalisis PAC: ME_PAC3 (ID: 10696) ---\n2026-11-16 15:16:45,263 [INFO] Forward-fill audit log (per-feature budget, grid=60s): {'return.temp.c': 0, 'supply.temp.c': 0, 'return.humidity.rh': 1, 'evaporator.fan.speed': 5052, 'compressor.status': 0}\n2026-11-16 15:16:46,083 [INFO] \u2744\ufe0f [PAC ME_PAC3] Health: 62.5% | TTF: 8760.0h | Aksi: MAINTENANCE (Preventif)\n2026-11-16 15:16:46,083 [INFO] [DRY_RUN] PAC ME_PAC3 \u2014 tidak mengirim (health=62.5, ttf=8760.0, action=1)\n2026-11-16 15:16:46,083 [INFO] --- Menganalisis PAC: ME_PAC4 (ID: 10698) ---\n2026-11-16 15:16:48,487 [WARNING] PAC ME_PAC4 ABSTAIN: FUTURE_DATA - Timestamp di masa depan terdeteksi (hard gate aktif): {'evaporator.fan.speed': 10}\n2026-11-16 15:16:48,487 [INFO] \u2744\ufe0f [PAC ME_PAC4] Health: UNAVAILABLE | TTF: UNAVAILABLE | Aksi: ABSTAIN (Data Tidak Cukup) (tidak ada push)\n2026-11-16 15:16:48,487 [INFO] Siklus Analisis V11 (fixed) Multi-Device Selesai.\n"
+}

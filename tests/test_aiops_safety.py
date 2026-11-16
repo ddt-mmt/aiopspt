@@ -134,5 +134,23 @@ class TestAbstainOnBadData(unittest.TestCase):
         self.assertEqual(self.engine.determine_action_status_hardened_v11(None, None, 1, False), -1)
 
 
+class TestDryRunGuard(unittest.TestCase):
+    """DRY_RUN must prevent any Zabbix write — needed for safe shadow/staging."""
+
+    def test_ensure_item_exists_noop_in_dry_run(self):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("engine", SRC)
+        engine = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(engine)
+
+        class BoomZapi:
+            def item(self):
+                raise AssertionError("Zabbix write attempted under DRY_RUN")
+
+        engine.DRY_RUN = True
+        # Must return silently without touching zapi.
+        engine.ensure_item_exists(BoomZapi(), 999, "X", "x.key", 0)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
