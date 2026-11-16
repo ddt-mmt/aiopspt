@@ -1,0 +1,201 @@
+{
+  "benchmark": "LBNL RTU \u2014 Fault Detection (IsolationForest vs Robust-Z)",
+  "generated_utc": "2026-11-16T08:18:09.435143+00:00",
+  "random_seed": 42,
+  "protocol": {
+    "train": "baseline first 50% (assumed healthy)",
+    "test_normal": "baseline last 50%",
+    "test_faulty": "24 simulated fault files",
+    "unit": "row (1-min sample)",
+    "features": [
+      "RTU_COMP_WATT",
+      "RTU_OA_FLOW",
+      "RTU_OA_TEMP",
+      "RTU_RA_TEMP",
+      "RTU_REFG_COND_PRES",
+      "RTU_REFG_COND_TEMP",
+      "RTU_REFG_SUCT_PRES",
+      "RTU_REFG_SUCT_TEMP",
+      "RTU_SA_FAN_WATT",
+      "RTU_SA_FLOW",
+      "RTU_SA_TEMP",
+      "RTU_TOT_WATT"
+    ],
+    "isolation_forest_contamination": 0.05,
+    "robust_z_threshold": 3.5
+  },
+  "data_source": {
+    "dataset": "lbnl_rtu_fdd",
+    "manifest": "analysis/benchmark/DATASET_ACQUISITION_MANIFEST.json",
+    "archive_sha256": "9de1dc2e0d997d6e9f130ded3eb3c196fdf4b36005e60f9978351f44e452e5fa",
+    "subset": "Simulated RTU (25 files: 1 baseline + 24 faulty)"
+  },
+  "metrics_isolation_forest": {
+    "TP": 43336,
+    "FP": 536,
+    "FN": 100664,
+    "TN": 2464,
+    "precision": 0.9878,
+    "recall": 0.3009,
+    "f1": 0.4613,
+    "false_alarm_rate": 0.1787,
+    "accuracy": 0.3116
+  },
+  "metrics_robust_z_baseline": {
+    "TP": 80544,
+    "FP": 790,
+    "FN": 63456,
+    "TN": 2210,
+    "precision": 0.9903,
+    "recall": 0.5593,
+    "f1": 0.7149,
+    "false_alarm_rate": 0.2633,
+    "accuracy": 0.563
+  },
+  "per_fault_file": [
+    {
+      "file": "RTU_sim_condfouling10.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.124,
+      "rz_flag_rate": 1.0
+    },
+    {
+      "file": "RTU_sim_condfouling20.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.1387,
+      "rz_flag_rate": 1.0
+    },
+    {
+      "file": "RTU_sim_condfouling30.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.1748,
+      "rz_flag_rate": 1.0
+    },
+    {
+      "file": "RTU_sim_condfouling40.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.2195,
+      "rz_flag_rate": 1.0
+    },
+    {
+      "file": "RTU_sim_condfouling50.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.3192,
+      "rz_flag_rate": 1.0
+    },
+    {
+      "file": "RTU_sim_evapfouling10.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.1397,
+      "rz_flag_rate": 0.2503
+    },
+    {
+      "file": "RTU_sim_evapfouling20.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.2617,
+      "rz_flag_rate": 0.2645
+    },
+    {
+      "file": "RTU_sim_evapfouling30.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.4382,
+      "rz_flag_rate": 0.2677
+    },
+    {
+      "file": "RTU_sim_evapfouling40.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.5798,
+      "rz_flag_rate": 0.5695
+    },
+    {
+      "file": "RTU_sim_evapfouling50.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.8475,
+      "rz_flag_rate": 0.8062
+    },
+    {
+      "file": "RTU_sim_liquidpipe01bar.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.1307,
+      "rz_flag_rate": 0.2507
+    },
+    {
+      "file": "RTU_sim_liquidpipe04bar.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.1887,
+      "rz_flag_rate": 0.2572
+    },
+    {
+      "file": "RTU_sim_liquidpipe08bar.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.386,
+      "rz_flag_rate": 0.4545
+    },
+    {
+      "file": "RTU_sim_liquidpipe10bar.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.7835,
+      "rz_flag_rate": 0.8365
+    },
+    {
+      "file": "RTU_sim_overcharge10.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.1077,
+      "rz_flag_rate": 0.2468
+    },
+    {
+      "file": "RTU_sim_overcharge15.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.118,
+      "rz_flag_rate": 0.2522
+    },
+    {
+      "file": "RTU_sim_overcharge20.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.2608,
+      "rz_flag_rate": 0.7493
+    },
+    {
+      "file": "RTU_sim_suctionpipe01bar.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.1245,
+      "rz_flag_rate": 0.2417
+    },
+    {
+      "file": "RTU_sim_suctionpipe03bar.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.1877,
+      "rz_flag_rate": 0.2897
+    },
+    {
+      "file": "RTU_sim_suctionpipe06bar.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.308,
+      "rz_flag_rate": 0.9635
+    },
+    {
+      "file": "RTU_sim_suctionpipe09bar.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 1.0,
+      "rz_flag_rate": 1.0
+    },
+    {
+      "file": "RTU_sim_undercharge10.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.1155,
+      "rz_flag_rate": 0.2497
+    },
+    {
+      "file": "RTU_sim_undercharge15.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.1277,
+      "rz_flag_rate": 0.2437
+    },
+    {
+      "file": "RTU_sim_undercharge20.csv",
+      "n_rows": 6000,
+      "iso_flag_rate": 0.141,
+      "rz_flag_rate": 0.2305
+    }
+  ]
+}

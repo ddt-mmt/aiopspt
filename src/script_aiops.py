@@ -33,6 +33,11 @@ ZABBIX_SERVER_IP = os.getenv("ZABBIX_SERVER_IP", "10.28.1.110")
 INTERVAL_SECONDS = int(os.getenv("INTERVAL_SECONDS", "60"))
 DAYS_WINDOW = int(os.getenv("DAYS_WINDOW", "30"))
 
+# DRY_RUN=1 → hitung semua, TAPI jangan kirim apa pun ke Zabbix dan jangan
+# membuat item. Mode aman untuk shadow/staging: membuktikan mesin bekerja
+# pada data nyata tanpa mengubah apa pun di produksi.
+DRY_RUN = os.getenv("DRY_RUN", "0") == "1"
+
 # Ambang staleness default + per-fitur (detik). Diukur dari interval update SNMP:
 #   output.load/temp  : ~60s  → 600s aman
 #   battery.voltage   : ~180-2700s → perlu ~6 jam
@@ -120,6 +125,8 @@ SENSOR_CONFIG = {
 
 def ensure_item_exists(zapi, host_id, item_name, key_name, value_type=0):
     """Membuat item TXT/derived bila belum ada. HANYA untuk metrik turunan AIOps."""
+    if DRY_RUN:
+        return
     items = zapi.item.get(hostids=host_id, filter={'key_': [key_name]}, output=['itemid'])
     if not items:
         try:
@@ -513,6 +520,9 @@ def run_aiops_cycle():
                 ItemValue(hostname, 'ups.ttf.hours', ttf),
                 ItemValue(hostname, 'ups.action.status', action),
             ]
+            if DRY_RUN:
+                logger.info(f"[DRY_RUN] UPS {hostname} — tidak mengirim (health={health}, ttf={ttf}, action={action})")
+                continue
             try:
                 res = sender.send(packet)
                 logger.info(f"Status Pengiriman UPS {hostname}: {res}")
@@ -564,6 +574,9 @@ def run_aiops_cycle():
                 ItemValue(hostname, 'pac.ttf.hours', ttf),
                 ItemValue(hostname, 'pac.action.status', action),
             ]
+            if DRY_RUN:
+                logger.info(f"[DRY_RUN] PAC {hostname} — tidak mengirim (health={health}, ttf={ttf}, action={action})")
+                continue
             try:
                 res = sender.send(packet)
                 logger.info(f"Status Pengiriman PAC {hostname}: {res}")
