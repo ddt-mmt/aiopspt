@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "analysis/scripts/build_benchmark_manifest.py",
+  "scope": "Native public-benchmark acquisition for S2 thesis evaluation. Offline only; NOT mixed into production telemetry.",
+  "acquisition_date": "2026-11-16",
+  "policy": "Raw archives stored locally under analysis/benchmark/data/ and excluded from git (see .gitignore). Only this manifest, hashes, and analysis code are committed.",
+  "datasets": [
+    {
+      "id": "nasa_pcoe_battery_5",
+      "publisher": "NASA Prognostics Center of Excellence",
+      "landing_page": "https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/",
+      "download_url": "https://phm-datasets.s3.amazonaws.com/NASA/5.+Battery+Data+Set.zip",
+      "citation": "B. Saha and K. Goebel (2007), 'Battery Data Set', NASA Prognostics Data Repository, NASA Ames Research Center, Moffett Field, CA.",
+      "acquisition_status": "ACQUIRED_VERIFIED",
+      "archive_local_path": "analysis/benchmark/data/nasa_battery_5/archive.zip",
+      "archive_size_bytes": 209708670,
+      "archive_sha256": "82302a7db4fc1b34e0b6676326610438d43b816bdf11a69d1d012a464ef2f92e",
+      "archive_zip_test": "OK (no errors detected)",
+      "extracted_artifacts": {
+        "type": "MATLAB .mat (BatteryAgingARC)",
+        "local_dir": "analysis/benchmark/data/nasa_battery_5/mat/",
+        "mat_file_count": 34,
+        "battery_ids": ["B0005","B0006","B0007","B0018","B0025","B0026","B0027","B0028","B0029","B0030","B0031","B0032","B0033","B0034","B0036","B0038","B0039","B0040","B0041","B0042","B0043","B0044","B0045","B0046","B0047","B0048","B0049","B0050","B0051","B0052","B0053","B0054","B0055","B0056"]
+      },
+      "ground_truth": "Per-cycle discharge Capacity (Ah) → End-of-Life at 70% of rated 2.0 Ah = 1.4 Ah. Supports RUL regression with real failure labels.",
+      "benchmark_status": "READY_FOR_EVALUATION",
+      "notes": "Canonical NASA battery prognostics benchmark. 1-min sampling; charge/discharge/impedance cycles per cell."
+    },
+    {
+      "id": "lbnl_rtu_fdd",
+      "publisher": "Lawrence Berkeley National Laboratory (FDD research collection)",
+      "landing_page": "https://faultdetection.lbl.gov/dataset/rtu/",
+      "catalogue": "https://faultdetection.lbl.gov/data/",
+      "doi": "https://doi.org/10.25984/1881324",
+      "download_url": "https://fdddata.lbl.gov/data/Simulated_LBNL_FDD_Data_Sets_RTU/LBNL_FDD_Data_Sets_RTU.zip",
+      "license": "Creative Commons Attribution 4.0 (per Data.gov catalogue listing; confirm on landing page before redistribution).",
+      "acquisition_status": "ACQUIRED_VERIFIED",
+      "archive_local_path": "analysis/benchmark/data/lbnl_rtu/archive.zip",
+      "archive_size_bytes": 305603469,
+      "archive_sha256": "9de1dc2e0d997d6e9f130ded3eb3c196fdf4b36005e60f9978351f44e452e5fa",
+      "archive_zip_test": "OK",
+      "extracted_artifacts": {
+        "type": "CSV time series (1-min)",
+        "local_dir": "analysis/benchmark/data/lbnl_rtu/extracted/",
+        "csv_file_count": 81,
+        "groups": ["Simulated RTU", "ORNL_RTU", "Field RTU"],
+        "fault_classes": {
+          "baseline": ["RTU_sim_baseline", "Site1_Unfaulted", "Site2_Unfaulted", "ERTU"],
+          "condenser_fouling": ["condfouling10/20/30/40/50"],
+          "evaporator_fouling": ["evapfouling10/20/30/40/50"],
+          "refrigerant_charge": ["undercharge10/15/20", "overcharge10/15/20"],
+          "liquid_line_restriction": ["liquidpipe01/04/08/10bar"],
+          "suction_line_restriction": ["suctionpipe01/03/06/09bar"],
+          "damper_stuck": ["OA_damper_stuck_005/010/050/100"],
+          "supply_air_temp_bias": ["SA_temp_bias_-2/-4/0/+2/+4"],
+          "economizer_shift": ["Inc_Eco_SP_-2/-4/+2/+4"],
+          "field_faults": ["Site1_Staging_Fault", "Site2_Undercharged40"]
+        }
+      },
+      "ground_truth": "Filename-encoded fault class + severity (labeled). Supports supervised fault-detection evaluation (precision/recall/F1/FAR).",
+      "domain_limitation": "RTU != production PAC. Concept/feature mapping only where physical meaning, unit, sampling, and context are compatible. Do NOT transfer thresholds directly to production PAC.",
+      "benchmark_status": "READY_FOR_EVALUATION",
+      "notes": "Simulated + ORNL field + lab-field. Simulated set shares a single column schema; field sets differ."
+    }
+  ],
+  "verification": {
+    "method": "HTTP 200 + non-zero archive size + sha256 + unzip integrity test + artifact count",
+    "all_datasets_acquired": true,
+    "previously_documented_status": "NOT_ACQUIRED (docs/PUBLIC_DATASET_STATUS_MANIFEST.json, 2026-10-30)",
+    "status_change": "NOT_ACQUIRED → ACQUIRED_VERIFIED (this manifest)"
+  }
+}

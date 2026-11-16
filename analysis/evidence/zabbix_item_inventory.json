@@ -1,0 +1,2492 @@
+{
+  "ME_UPS1": {
+    "hostid": "10688",
+    "item_count": 56,
+    "items": [
+      {
+        "itemid": "90780",
+        "key_": "battery.capacity",
+        "name": "UPS battery.capacity",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "59597",
+        "key_": "battery.capacity[upsHighPrecBatteryCapacity]",
+        "name": "Battery capacity",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794807017",
+        "lastvalue": "100"
+      },
+      {
+        "itemid": "60430",
+        "key_": "battery.external_packs_bad[upsAdvBatteryNumOfBadBattPacks.0]",
+        "name": "0: External battery packs bad",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794800830",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "59598",
+        "key_": "battery.external_packs_count[upsAdvBatteryNumOfBattPacks]",
+        "name": "External battery packs count",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794803598",
+        "lastvalue": "72"
+      },
+      {
+        "itemid": "59599",
+        "key_": "battery.last_replace_date[upsBasicBatteryLastReplaceDate]",
+        "name": "Battery last replace date",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794803599",
+        "lastvalue": "07/16/22"
+      },
+      {
+        "itemid": "59600",
+        "key_": "battery.replace_indicator[upsAdvBatteryReplaceIndicator]",
+        "name": "Battery replace indicator",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794800360",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "90781",
+        "key_": "battery.runtime_remaining",
+        "name": "UPS battery.runtime_remaining",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "59601",
+        "key_": "battery.runtime_remaining[upsAdvBatteryRunTimeRemaining]",
+        "name": "Battery runtime remaining",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794813284",
+        "lastvalue": "1680"
+      },
+      {
+        "itemid": "59602",
+        "key_": "battery.status[upsBasicBatteryStatus]",
+        "name": "Battery status",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794800362",
+        "lastvalue": "2"
+      },
+      {
+        "itemid": "90779",
+        "key_": "battery.temp",
+        "name": "UPS battery.temp",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814160",
+        "lastvalue": "27.6"
+      },
+      {
+        "itemid": "59603",
+        "key_": "battery.temperature[upsHighPrecBatteryTemperature]",
+        "name": "Battery temperature",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90778",
+        "key_": "battery.voltage",
+        "name": "UPS battery.voltage",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814160",
+        "lastvalue": "52.7"
+      },
+      {
+        "itemid": "59604",
+        "key_": "battery.voltage[upsHighPrecBatteryActualVoltage]",
+        "name": "Battery voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794812544",
+        "lastvalue": "215.9"
+      },
+      {
+        "itemid": "59605",
+        "key_": "input.fail[upsAdvInputLineFailCause]",
+        "name": "Input fail cause",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794800365",
+        "lastvalue": "9"
+      },
+      {
+        "itemid": "59606",
+        "key_": "input.frequency[upsHighPrecInputFrequency]",
+        "name": "Input frequency",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794813026",
+        "lastvalue": "50"
+      },
+      {
+        "itemid": "59607",
+        "key_": "input.voltage[upsHighPrecInputLineVoltage]",
+        "name": "Input voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814167",
+        "lastvalue": "235.4"
+      },
+      {
+        "itemid": "90828",
+        "key_": "machine.alarm.text",
+        "name": "Machine Alarm Text Message",
+        "type": "2",
+        "value_type": "4",
+        "lastclock": "0",
+        "lastvalue": ""
+      },
+      {
+        "itemid": "59608",
+        "key_": "output.current[upsHighPrecOutputCurrent]",
+        "name": "Output current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814168",
+        "lastvalue": "101.9"
+      },
+      {
+        "itemid": "90777",
+        "key_": "output.load",
+        "name": "UPS output.load",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814160",
+        "lastvalue": "69.9"
+      },
+      {
+        "itemid": "59609",
+        "key_": "output.load[upsHighPrecOutputLoad]",
+        "name": "Output load",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814169",
+        "lastvalue": "49.300000000000004"
+      },
+      {
+        "itemid": "59610",
+        "key_": "output.status[upsBasicOutputStatus]",
+        "name": "Output status",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794809730",
+        "lastvalue": "2"
+      },
+      {
+        "itemid": "59611",
+        "key_": "output.voltage[upsHighPrecOutputVoltage]",
+        "name": "Output voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814111",
+        "lastvalue": "231.10000000000002"
+      },
+      {
+        "itemid": "60424",
+        "key_": "phase.input.current[upsPhaseInputCurrent.1.1.1]",
+        "name": "1: Phase input current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814084",
+        "lastvalue": "97"
+      },
+      {
+        "itemid": "60425",
+        "key_": "phase.input.current[upsPhaseInputCurrent.1.1.2]",
+        "name": "2: Phase input current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814085",
+        "lastvalue": "95"
+      },
+      {
+        "itemid": "60426",
+        "key_": "phase.input.current[upsPhaseInputCurrent.1.1.3]",
+        "name": "3: Phase input current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814146",
+        "lastvalue": "97"
+      },
+      {
+        "itemid": "60427",
+        "key_": "phase.input.voltage[upsPhaseInputVoltage.1.1.1]",
+        "name": "1: Phase input voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794813967",
+        "lastvalue": "236"
+      },
+      {
+        "itemid": "60428",
+        "key_": "phase.input.voltage[upsPhaseInputVoltage.1.1.2]",
+        "name": "2: Phase input voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814208",
+        "lastvalue": "234"
+      },
+      {
+        "itemid": "60429",
+        "key_": "phase.input.voltage[upsPhaseInputVoltage.1.1.3]",
+        "name": "3: Phase input voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794813789",
+        "lastvalue": "235"
+      },
+      {
+        "itemid": "60431",
+        "key_": "phase.output.current[upsPhaseOutputCurrent.1.1.1]",
+        "name": "1: Phase output current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814091",
+        "lastvalue": "92"
+      },
+      {
+        "itemid": "60432",
+        "key_": "phase.output.current[upsPhaseOutputCurrent.1.1.2]",
+        "name": "2: Phase output current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814092",
+        "lastvalue": "101"
+      },
+      {
+        "itemid": "60433",
+        "key_": "phase.output.current[upsPhaseOutputCurrent.1.1.3]",
+        "name": "3: Phase output current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814093",
+        "lastvalue": "92"
+      },
+      {
+        "itemid": "60434",
+        "key_": "phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.1]",
+        "name": "1: Phase output load, %",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814094",
+        "lastvalue": "44"
+      },
+      {
+        "itemid": "60435",
+        "key_": "phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.2]",
+        "name": "2: Phase output load, %",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814155",
+        "lastvalue": "48"
+      },
+      {
+        "itemid": "60436",
+        "key_": "phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.3]",
+        "name": "3: Phase output load, %",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814096",
+        "lastvalue": "45"
+      },
+      {
+        "itemid": "60437",
+        "key_": "phase.output.voltage[upsPhaseOutputVoltage.1.1.1]",
+        "name": "1: Phase output voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794813977",
+        "lastvalue": "231"
+      },
+      {
+        "itemid": "60438",
+        "key_": "phase.output.voltage[upsPhaseOutputVoltage.1.1.2]",
+        "name": "2: Phase output voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814038",
+        "lastvalue": "231"
+      },
+      {
+        "itemid": "60439",
+        "key_": "phase.output.voltage[upsPhaseOutputVoltage.1.1.3]",
+        "name": "3: Phase output voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814099",
+        "lastvalue": "230"
+      },
+      {
+        "itemid": "59612",
+        "key_": "snmptrap.fallback",
+        "name": "SNMP traps (fallback)",
+        "type": "17",
+        "value_type": "2",
+        "lastclock": "0",
+        "lastvalue": ""
+      },
+      {
+        "itemid": "59613",
+        "key_": "system.contact[sysContact.0]",
+        "name": "System contact details",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800913",
+        "lastvalue": "BRIN"
+      },
+      {
+        "itemid": "59614",
+        "key_": "system.descr[sysDescr.0]",
+        "name": "System description",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800914",
+        "lastvalue": "APC Web/SNMP Management Card (MB:v4.2.9 PF:v3.2.0.7 PN:apc_hw21_aos_3.2.0.7.bin AF1:v3.2.0.1 AN1:apc_hw21_px_3.2.0.1.bin MN:AP9641 HR:5 SN: ZA2416030765 MD:04/29/2024) (Embedded PowerNet SNMP Agent SW v2.2 compatible)"
+      },
+      {
+        "itemid": "59615",
+        "key_": "system.hw.uptime[hrSystemUptime.0]",
+        "name": "Uptime (hardware)",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794814205",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "59616",
+        "key_": "system.location[sysLocation.0]",
+        "name": "System location",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800916",
+        "lastvalue": "BRIN"
+      },
+      {
+        "itemid": "59617",
+        "key_": "system.model[upsBasicIdentModel]",
+        "name": "Model",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800917",
+        "lastvalue": "Symmetra 160K"
+      },
+      {
+        "itemid": "59618",
+        "key_": "system.name[sysName.0]",
+        "name": "System name",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800918",
+        "lastvalue": "UPS#1"
+      },
+      {
+        "itemid": "59619",
+        "key_": "system.net.uptime[sysUpTime.0]",
+        "name": "Uptime (network)",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794814209",
+        "lastvalue": "25456339"
+      },
+      {
+        "itemid": "59620",
+        "key_": "system.objectid[sysObjectID.0]",
+        "name": "System object ID",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800920",
+        "lastvalue": ".1.3.6.1.4.1.318.1.3.13.2"
+      },
+      {
+        "itemid": "59621",
+        "key_": "system.sn[upsAdvIdentSerialNumber]",
+        "name": "Serial number",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800921",
+        "lastvalue": "QD2228240273"
+      },
+      {
+        "itemid": "90688",
+        "key_": "ups.action.status",
+        "name": "UPS Policy Action Status",
+        "type": "2",
+        "value_type": "3",
+        "lastclock": "1794814160",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "90706",
+        "key_": "ups.battery.temp",
+        "name": "UPS Battery Temperature (C)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90707",
+        "key_": "ups.battery.voltage",
+        "name": "UPS Battery Voltage (V)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90685",
+        "key_": "ups.health.score",
+        "name": "UPS Health Score AIOps",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814160",
+        "lastvalue": "67.19"
+      },
+      {
+        "itemid": "90821",
+        "key_": "ups.maintenance.battery.status",
+        "name": "UPS Battery Maintenance Status",
+        "type": "2",
+        "value_type": "3",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90705",
+        "key_": "ups.output.load",
+        "name": "UPS Output Load (%)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90782",
+        "key_": "ups.status",
+        "name": "UPS ups.status",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90686",
+        "key_": "ups.ttf.hours",
+        "name": "UPS Time-to-Failure (Hours)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814160",
+        "lastvalue": "8760"
+      },
+      {
+        "itemid": "59622",
+        "key_": "zabbix[host,snmp,available]",
+        "name": "SNMP agent availability",
+        "type": "5",
+        "value_type": "3",
+        "lastclock": "1794800382",
+        "lastvalue": "1"
+      }
+    ]
+  },
+  "ME_UPS2": {
+    "hostid": "10697",
+    "item_count": 62,
+    "items": [
+      {
+        "itemid": "90786",
+        "key_": "battery.capacity",
+        "name": "UPS battery.capacity",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "60452",
+        "key_": "battery.capacity[upsHighPrecBatteryCapacity]",
+        "name": "Battery capacity",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794799112",
+        "lastvalue": "100"
+      },
+      {
+        "itemid": "60507",
+        "key_": "battery.external_packs_bad[upsAdvBatteryNumOfBadBattPacks.0]",
+        "name": "0: External battery packs bad",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794798207",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "60453",
+        "key_": "battery.external_packs_count[upsAdvBatteryNumOfBattPacks]",
+        "name": "External battery packs count",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794800853",
+        "lastvalue": "44"
+      },
+      {
+        "itemid": "60454",
+        "key_": "battery.last_replace_date[upsBasicBatteryLastReplaceDate]",
+        "name": "Battery last replace date",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800854",
+        "lastvalue": "09/10/21"
+      },
+      {
+        "itemid": "60455",
+        "key_": "battery.replace_indicator[upsAdvBatteryReplaceIndicator]",
+        "name": "Battery replace indicator",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794797615",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "90787",
+        "key_": "battery.runtime_remaining",
+        "name": "UPS battery.runtime_remaining",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "60456",
+        "key_": "battery.runtime_remaining[upsAdvBatteryRunTimeRemaining]",
+        "name": "Battery runtime remaining",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794813936",
+        "lastvalue": "3840"
+      },
+      {
+        "itemid": "60457",
+        "key_": "battery.status[upsBasicBatteryStatus]",
+        "name": "Battery status",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794800377",
+        "lastvalue": "2"
+      },
+      {
+        "itemid": "90785",
+        "key_": "battery.temp",
+        "name": "UPS battery.temp",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814161",
+        "lastvalue": "27.7"
+      },
+      {
+        "itemid": "60458",
+        "key_": "battery.temperature[upsHighPrecBatteryTemperature]",
+        "name": "Battery temperature",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90784",
+        "key_": "battery.voltage",
+        "name": "UPS battery.voltage",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814161",
+        "lastvalue": "52.6"
+      },
+      {
+        "itemid": "60459",
+        "key_": "battery.voltage[upsHighPrecBatteryActualVoltage]",
+        "name": "Battery voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794798339",
+        "lastvalue": "216.10000000000002"
+      },
+      {
+        "itemid": "60501",
+        "key_": "external.sensor.humidity[uioSensorStatusHumidity.1.1.1]",
+        "name": ": Humidity sensor",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794800361",
+        "lastvalue": "-1"
+      },
+      {
+        "itemid": "60502",
+        "key_": "external.sensor.humidity[uioSensorStatusHumidity.1.2.1]",
+        "name": ": Humidity sensor",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794800362",
+        "lastvalue": "-1"
+      },
+      {
+        "itemid": "60503",
+        "key_": "external.sensor.status[uioSensorStatusAlarmStatus.1.1.1]",
+        "name": ": Sensor alarm status",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794800363",
+        "lastvalue": "4"
+      },
+      {
+        "itemid": "60504",
+        "key_": "external.sensor.status[uioSensorStatusAlarmStatus.1.2.1]",
+        "name": ": Sensor alarm status",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794800364",
+        "lastvalue": "4"
+      },
+      {
+        "itemid": "60505",
+        "key_": "external.sensor.temperature[uioSensorStatusTemperatureDegC.1.1.1]",
+        "name": ": Temperature sensor",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794800365",
+        "lastvalue": "-1"
+      },
+      {
+        "itemid": "60506",
+        "key_": "external.sensor.temperature[uioSensorStatusTemperatureDegC.1.2.1]",
+        "name": ": Temperature sensor",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794800366",
+        "lastvalue": "-1"
+      },
+      {
+        "itemid": "60460",
+        "key_": "input.fail[upsAdvInputLineFailCause]",
+        "name": "Input fail cause",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794800380",
+        "lastvalue": "9"
+      },
+      {
+        "itemid": "60461",
+        "key_": "input.frequency[upsHighPrecInputFrequency]",
+        "name": "Input frequency",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794813041",
+        "lastvalue": "50"
+      },
+      {
+        "itemid": "60462",
+        "key_": "input.voltage[upsHighPrecInputLineVoltage]",
+        "name": "Input voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814182",
+        "lastvalue": "221.3"
+      },
+      {
+        "itemid": "90829",
+        "key_": "machine.alarm.text",
+        "name": "Machine Alarm Text Message",
+        "type": "2",
+        "value_type": "4",
+        "lastclock": "0",
+        "lastvalue": ""
+      },
+      {
+        "itemid": "60463",
+        "key_": "output.current[upsHighPrecOutputCurrent]",
+        "name": "Output current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814183",
+        "lastvalue": "34"
+      },
+      {
+        "itemid": "90783",
+        "key_": "output.load",
+        "name": "UPS output.load",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814161",
+        "lastvalue": "70.1"
+      },
+      {
+        "itemid": "60464",
+        "key_": "output.load[upsHighPrecOutputLoad]",
+        "name": "Output load",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814184",
+        "lastvalue": "14.8"
+      },
+      {
+        "itemid": "60465",
+        "key_": "output.status[upsBasicOutputStatus]",
+        "name": "Output status",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794803805",
+        "lastvalue": "2"
+      },
+      {
+        "itemid": "60466",
+        "key_": "output.voltage[upsHighPrecOutputVoltage]",
+        "name": "Output voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814126",
+        "lastvalue": "231.10000000000002"
+      },
+      {
+        "itemid": "60508",
+        "key_": "phase.input.current[upsPhaseInputCurrent.1.1.1]",
+        "name": "1: Phase input current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814048",
+        "lastvalue": "31"
+      },
+      {
+        "itemid": "60509",
+        "key_": "phase.input.current[upsPhaseInputCurrent.1.1.2]",
+        "name": "2: Phase input current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814049",
+        "lastvalue": "33"
+      },
+      {
+        "itemid": "60510",
+        "key_": "phase.input.current[upsPhaseInputCurrent.1.1.3]",
+        "name": "3: Phase input current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794813990",
+        "lastvalue": "32"
+      },
+      {
+        "itemid": "60511",
+        "key_": "phase.input.voltage[upsPhaseInputVoltage.1.1.1]",
+        "name": "1: Phase input voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814111",
+        "lastvalue": "221"
+      },
+      {
+        "itemid": "60512",
+        "key_": "phase.input.voltage[upsPhaseInputVoltage.1.1.2]",
+        "name": "2: Phase input voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814172",
+        "lastvalue": "220"
+      },
+      {
+        "itemid": "60513",
+        "key_": "phase.input.voltage[upsPhaseInputVoltage.1.1.3]",
+        "name": "3: Phase input voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814173",
+        "lastvalue": "222"
+      },
+      {
+        "itemid": "60514",
+        "key_": "phase.output.current[upsPhaseOutputCurrent.1.1.1]",
+        "name": "1: Phase output current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814174",
+        "lastvalue": "33"
+      },
+      {
+        "itemid": "60515",
+        "key_": "phase.output.current[upsPhaseOutputCurrent.1.1.2]",
+        "name": "2: Phase output current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794813035",
+        "lastvalue": "27"
+      },
+      {
+        "itemid": "60516",
+        "key_": "phase.output.current[upsPhaseOutputCurrent.1.1.3]",
+        "name": "3: Phase output current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814176",
+        "lastvalue": "30"
+      },
+      {
+        "itemid": "60517",
+        "key_": "phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.1]",
+        "name": "1: Phase output load, %",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794810457",
+        "lastvalue": "14"
+      },
+      {
+        "itemid": "60518",
+        "key_": "phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.2]",
+        "name": "2: Phase output load, %",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814058",
+        "lastvalue": "11"
+      },
+      {
+        "itemid": "60519",
+        "key_": "phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.3]",
+        "name": "3: Phase output load, %",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794813759",
+        "lastvalue": "12"
+      },
+      {
+        "itemid": "60520",
+        "key_": "phase.output.voltage[upsPhaseOutputVoltage.1.1.1]",
+        "name": "1: Phase output voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814180",
+        "lastvalue": "231"
+      },
+      {
+        "itemid": "60521",
+        "key_": "phase.output.voltage[upsPhaseOutputVoltage.1.1.2]",
+        "name": "2: Phase output voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814001",
+        "lastvalue": "231"
+      },
+      {
+        "itemid": "60522",
+        "key_": "phase.output.voltage[upsPhaseOutputVoltage.1.1.3]",
+        "name": "3: Phase output voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794813582",
+        "lastvalue": "231"
+      },
+      {
+        "itemid": "60467",
+        "key_": "snmptrap.fallback",
+        "name": "SNMP traps (fallback)",
+        "type": "17",
+        "value_type": "2",
+        "lastclock": "0",
+        "lastvalue": ""
+      },
+      {
+        "itemid": "60468",
+        "key_": "system.contact[sysContact.0]",
+        "name": "System contact details",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800868",
+        "lastvalue": "Unknown"
+      },
+      {
+        "itemid": "60469",
+        "key_": "system.descr[sysDescr.0]",
+        "name": "System description",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800869",
+        "lastvalue": "APC Web/SNMP Management Card (MB:v4.2.9 PF:v2.5.0.8 PN:apc_hw21_aos_2.5.0.8.bin AF1:v2.5.0.1 AN1:apc_hw21_px_2.5.0.1.bin MN:0G-9354B HR:13 SN: QD2436110420 MD:10/27/2024) (Embedded PowerNet SNMP Agent SW v2.2 compatible)"
+      },
+      {
+        "itemid": "60470",
+        "key_": "system.hw.uptime[hrSystemUptime.0]",
+        "name": "Uptime (hardware)",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794814190",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "60471",
+        "key_": "system.location[sysLocation.0]",
+        "name": "System location",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800871",
+        "lastvalue": "Unknown"
+      },
+      {
+        "itemid": "60472",
+        "key_": "system.model[upsBasicIdentModel]",
+        "name": "Model",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800872",
+        "lastvalue": "Symmetra 160K"
+      },
+      {
+        "itemid": "60473",
+        "key_": "system.name[sysName.0]",
+        "name": "System name",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800873",
+        "lastvalue": "UPS#2"
+      },
+      {
+        "itemid": "60474",
+        "key_": "system.net.uptime[sysUpTime.0]",
+        "name": "Uptime (network)",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794814194",
+        "lastvalue": "24707048"
+      },
+      {
+        "itemid": "60475",
+        "key_": "system.objectid[sysObjectID.0]",
+        "name": "System object ID",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800875",
+        "lastvalue": ".1.3.6.1.4.1.318.1.3.23.2"
+      },
+      {
+        "itemid": "60476",
+        "key_": "system.sn[upsAdvIdentSerialNumber]",
+        "name": "Serial number",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800876",
+        "lastvalue": "QD2135140308"
+      },
+      {
+        "itemid": "90692",
+        "key_": "ups.action.status",
+        "name": "UPS Policy Action Status",
+        "type": "2",
+        "value_type": "3",
+        "lastclock": "1794814161",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "90709",
+        "key_": "ups.battery.temp",
+        "name": "UPS Battery Temperature (C)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90710",
+        "key_": "ups.battery.voltage",
+        "name": "UPS Battery Voltage (V)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90690",
+        "key_": "ups.health.score",
+        "name": "UPS Health Score AIOps",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814161",
+        "lastvalue": "65.78"
+      },
+      {
+        "itemid": "90822",
+        "key_": "ups.maintenance.battery.status",
+        "name": "UPS Battery Maintenance Status",
+        "type": "2",
+        "value_type": "3",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90708",
+        "key_": "ups.output.load",
+        "name": "UPS Output Load (%)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90788",
+        "key_": "ups.status",
+        "name": "UPS ups.status",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90691",
+        "key_": "ups.ttf.hours",
+        "name": "UPS Time-to-Failure (Hours)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814161",
+        "lastvalue": "8760"
+      },
+      {
+        "itemid": "60477",
+        "key_": "zabbix[host,snmp,available]",
+        "name": "SNMP agent availability",
+        "type": "5",
+        "value_type": "3",
+        "lastclock": "1794800337",
+        "lastvalue": "1"
+      }
+    ]
+  },
+  "ME_UPS3": {
+    "hostid": "10701",
+    "item_count": 56,
+    "items": [
+      {
+        "itemid": "90792",
+        "key_": "battery.capacity",
+        "name": "UPS battery.capacity",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "60847",
+        "key_": "battery.capacity[upsHighPrecBatteryCapacity]",
+        "name": "Battery capacity",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794796327",
+        "lastvalue": "100"
+      },
+      {
+        "itemid": "60896",
+        "key_": "battery.external_packs_bad[upsAdvBatteryNumOfBadBattPacks.0]",
+        "name": "0: External battery packs bad",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794800396",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "60848",
+        "key_": "battery.external_packs_count[upsAdvBatteryNumOfBattPacks]",
+        "name": "External battery packs count",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794812048",
+        "lastvalue": "48"
+      },
+      {
+        "itemid": "60849",
+        "key_": "battery.last_replace_date[upsBasicBatteryLastReplaceDate]",
+        "name": "Battery last replace date",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794812049",
+        "lastvalue": "10/30/24"
+      },
+      {
+        "itemid": "60850",
+        "key_": "battery.replace_indicator[upsAdvBatteryReplaceIndicator]",
+        "name": "Battery replace indicator",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794800350",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "90793",
+        "key_": "battery.runtime_remaining",
+        "name": "UPS battery.runtime_remaining",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "60851",
+        "key_": "battery.runtime_remaining[upsAdvBatteryRunTimeRemaining]",
+        "name": "Battery runtime remaining",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814091",
+        "lastvalue": "4680"
+      },
+      {
+        "itemid": "60852",
+        "key_": "battery.status[upsBasicBatteryStatus]",
+        "name": "Battery status",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794800352",
+        "lastvalue": "2"
+      },
+      {
+        "itemid": "90791",
+        "key_": "battery.temp",
+        "name": "UPS battery.temp",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814162",
+        "lastvalue": "27.7"
+      },
+      {
+        "itemid": "60853",
+        "key_": "battery.temperature[upsHighPrecBatteryTemperature]",
+        "name": "Battery temperature",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90790",
+        "key_": "battery.voltage",
+        "name": "UPS battery.voltage",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814162",
+        "lastvalue": "52.6"
+      },
+      {
+        "itemid": "60854",
+        "key_": "battery.voltage[upsHighPrecBatteryActualVoltage]",
+        "name": "Battery voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814034",
+        "lastvalue": "217.10000000000002"
+      },
+      {
+        "itemid": "60855",
+        "key_": "input.fail[upsAdvInputLineFailCause]",
+        "name": "Input fail cause",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794795555",
+        "lastvalue": "9"
+      },
+      {
+        "itemid": "60856",
+        "key_": "input.frequency[upsHighPrecInputFrequency]",
+        "name": "Input frequency",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794813016",
+        "lastvalue": "50"
+      },
+      {
+        "itemid": "60857",
+        "key_": "input.voltage[upsHighPrecInputLineVoltage]",
+        "name": "Input voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814157",
+        "lastvalue": "221.70000000000002"
+      },
+      {
+        "itemid": "90830",
+        "key_": "machine.alarm.text",
+        "name": "Machine Alarm Text Message",
+        "type": "2",
+        "value_type": "4",
+        "lastclock": "0",
+        "lastvalue": ""
+      },
+      {
+        "itemid": "60858",
+        "key_": "output.current[upsHighPrecOutputCurrent]",
+        "name": "Output current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814158",
+        "lastvalue": "33"
+      },
+      {
+        "itemid": "90789",
+        "key_": "output.load",
+        "name": "UPS output.load",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814162",
+        "lastvalue": "70.2"
+      },
+      {
+        "itemid": "60859",
+        "key_": "output.load[upsHighPrecOutputLoad]",
+        "name": "Output load",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814159",
+        "lastvalue": "14.600000000000001"
+      },
+      {
+        "itemid": "60860",
+        "key_": "output.status[upsBasicOutputStatus]",
+        "name": "Output status",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794796040",
+        "lastvalue": "2"
+      },
+      {
+        "itemid": "60861",
+        "key_": "output.voltage[upsHighPrecOutputVoltage]",
+        "name": "Output voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814041",
+        "lastvalue": "231"
+      },
+      {
+        "itemid": "60906",
+        "key_": "phase.input.current[upsPhaseInputCurrent.1.1.1]",
+        "name": "1: Phase input current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814146",
+        "lastvalue": "31"
+      },
+      {
+        "itemid": "60907",
+        "key_": "phase.input.current[upsPhaseInputCurrent.1.1.2]",
+        "name": "2: Phase input current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814207",
+        "lastvalue": "32"
+      },
+      {
+        "itemid": "60908",
+        "key_": "phase.input.current[upsPhaseInputCurrent.1.1.3]",
+        "name": "3: Phase input current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814208",
+        "lastvalue": "31"
+      },
+      {
+        "itemid": "60909",
+        "key_": "phase.input.voltage[upsPhaseInputVoltage.1.1.1]",
+        "name": "1: Phase input voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814209",
+        "lastvalue": "222"
+      },
+      {
+        "itemid": "60910",
+        "key_": "phase.input.voltage[upsPhaseInputVoltage.1.1.2]",
+        "name": "2: Phase input voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814150",
+        "lastvalue": "221"
+      },
+      {
+        "itemid": "60911",
+        "key_": "phase.input.voltage[upsPhaseInputVoltage.1.1.3]",
+        "name": "3: Phase input voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814151",
+        "lastvalue": "222"
+      },
+      {
+        "itemid": "60897",
+        "key_": "phase.output.current[upsPhaseOutputCurrent.1.1.1]",
+        "name": "1: Phase output current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814197",
+        "lastvalue": "33"
+      },
+      {
+        "itemid": "60898",
+        "key_": "phase.output.current[upsPhaseOutputCurrent.1.1.2]",
+        "name": "2: Phase output current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794813958",
+        "lastvalue": "25"
+      },
+      {
+        "itemid": "60899",
+        "key_": "phase.output.current[upsPhaseOutputCurrent.1.1.3]",
+        "name": "3: Phase output current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794811019",
+        "lastvalue": "25"
+      },
+      {
+        "itemid": "60900",
+        "key_": "phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.1]",
+        "name": "1: Phase output load, %",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794794460",
+        "lastvalue": "14"
+      },
+      {
+        "itemid": "60901",
+        "key_": "phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.2]",
+        "name": "2: Phase output load, %",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794813901",
+        "lastvalue": "11"
+      },
+      {
+        "itemid": "60902",
+        "key_": "phase.output.load.percent[upsPhaseOutputPercentLoad.1.1.3]",
+        "name": "3: Phase output load, %",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794813962",
+        "lastvalue": "10"
+      },
+      {
+        "itemid": "60903",
+        "key_": "phase.output.voltage[upsPhaseOutputVoltage.1.1.1]",
+        "name": "1: Phase output voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814143",
+        "lastvalue": "231"
+      },
+      {
+        "itemid": "60904",
+        "key_": "phase.output.voltage[upsPhaseOutputVoltage.1.1.2]",
+        "name": "2: Phase output voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814144",
+        "lastvalue": "230"
+      },
+      {
+        "itemid": "60905",
+        "key_": "phase.output.voltage[upsPhaseOutputVoltage.1.1.3]",
+        "name": "3: Phase output voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814145",
+        "lastvalue": "231"
+      },
+      {
+        "itemid": "60862",
+        "key_": "snmptrap.fallback",
+        "name": "SNMP traps (fallback)",
+        "type": "17",
+        "value_type": "2",
+        "lastclock": "0",
+        "lastvalue": ""
+      },
+      {
+        "itemid": "60863",
+        "key_": "system.contact[sysContact.0]",
+        "name": "System contact details",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800363",
+        "lastvalue": "Unknown"
+      },
+      {
+        "itemid": "60864",
+        "key_": "system.descr[sysDescr.0]",
+        "name": "System description",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800364",
+        "lastvalue": "APC Web/SNMP Management Card (MB:v4.1.0 PF:v6.9.6 PN:apc_hw05_aos_696.bin AF1:v6.9.6 AN1:apc_hw05_px2_696.bin MN:0G-9354A HR:0C SN: QD2132110318 MD:08/25/2021) (Embedded PowerNet SNMP Agent SW v2.2 compatible)"
+      },
+      {
+        "itemid": "60865",
+        "key_": "system.hw.uptime[hrSystemUptime.0]",
+        "name": "Uptime (hardware)",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794814195",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "60866",
+        "key_": "system.location[sysLocation.0]",
+        "name": "System location",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800366",
+        "lastvalue": "Unknown"
+      },
+      {
+        "itemid": "60867",
+        "key_": "system.model[upsBasicIdentModel]",
+        "name": "Model",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800367",
+        "lastvalue": "Symmetra 160K"
+      },
+      {
+        "itemid": "60868",
+        "key_": "system.name[sysName.0]",
+        "name": "System name",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800368",
+        "lastvalue": "UPS#3"
+      },
+      {
+        "itemid": "60869",
+        "key_": "system.net.uptime[sysUpTime.0]",
+        "name": "Uptime (network)",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794814199",
+        "lastvalue": "2162873"
+      },
+      {
+        "itemid": "60870",
+        "key_": "system.objectid[sysObjectID.0]",
+        "name": "System object ID",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800370",
+        "lastvalue": ".1.3.6.1.4.1.318.1.3.23.2"
+      },
+      {
+        "itemid": "60871",
+        "key_": "system.sn[upsAdvIdentSerialNumber]",
+        "name": "Serial number",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800371",
+        "lastvalue": "QD2443240848"
+      },
+      {
+        "itemid": "90695",
+        "key_": "ups.action.status",
+        "name": "UPS Policy Action Status",
+        "type": "2",
+        "value_type": "3",
+        "lastclock": "1794814162",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "90712",
+        "key_": "ups.battery.temp",
+        "name": "UPS Battery Temperature (C)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90713",
+        "key_": "ups.battery.voltage",
+        "name": "UPS Battery Voltage (V)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90693",
+        "key_": "ups.health.score",
+        "name": "UPS Health Score AIOps",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814162",
+        "lastvalue": "65.1"
+      },
+      {
+        "itemid": "90823",
+        "key_": "ups.maintenance.battery.status",
+        "name": "UPS Battery Maintenance Status",
+        "type": "2",
+        "value_type": "3",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90711",
+        "key_": "ups.output.load",
+        "name": "UPS Output Load (%)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90794",
+        "key_": "ups.status",
+        "name": "UPS ups.status",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90694",
+        "key_": "ups.ttf.hours",
+        "name": "UPS Time-to-Failure (Hours)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814162",
+        "lastvalue": "8760"
+      },
+      {
+        "itemid": "60872",
+        "key_": "zabbix[host,snmp,available]",
+        "name": "SNMP agent availability",
+        "type": "5",
+        "value_type": "3",
+        "lastclock": "1794811292",
+        "lastvalue": "1"
+      }
+    ]
+  },
+  "ME_PAC1": {
+    "hostid": "10689",
+    "item_count": 45,
+    "items": [
+      {
+        "itemid": "90722",
+        "key_": "aiops.compressor.status",
+        "name": "AIOps Compressor Status",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90721",
+        "key_": "aiops.evaporator.fan.speed",
+        "name": "AIOps Evaporator Fan Speed (%)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90720",
+        "key_": "aiops.return.humidity.rh",
+        "name": "AIOps Return Humidity (%RH)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90718",
+        "key_": "aiops.return.temp.c",
+        "name": "AIOps Return Temperature (C)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90719",
+        "key_": "aiops.supply.temp.c",
+        "name": "AIOps Supply Temperature (C)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "59986",
+        "key_": "battery.capacity[upsHighPrecBatteryCapacity]",
+        "name": "Battery capacity",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "59987",
+        "key_": "battery.external_packs_count[upsAdvBatteryNumOfBattPacks]",
+        "name": "External battery packs count",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "59988",
+        "key_": "battery.last_replace_date[upsBasicBatteryLastReplaceDate]",
+        "name": "Battery last replace date",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "0",
+        "lastvalue": ""
+      },
+      {
+        "itemid": "59989",
+        "key_": "battery.replace_indicator[upsAdvBatteryReplaceIndicator]",
+        "name": "Battery replace indicator",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "59990",
+        "key_": "battery.runtime_remaining[upsAdvBatteryRunTimeRemaining]",
+        "name": "Battery runtime remaining",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "59991",
+        "key_": "battery.status[upsBasicBatteryStatus]",
+        "name": "Battery status",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "59992",
+        "key_": "battery.temperature[upsHighPrecBatteryTemperature]",
+        "name": "Battery temperature",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "59993",
+        "key_": "battery.voltage[upsHighPrecBatteryActualVoltage]",
+        "name": "Battery voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "60383",
+        "key_": "compressor.1.status",
+        "name": "Compressor 1 Status",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794814185",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "90714",
+        "key_": "compressor.status",
+        "name": "Compressor Status",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "60384",
+        "key_": "evaporator.fan.speed",
+        "name": "Evaporator Fan Speed (%)",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814185",
+        "lastvalue": "95"
+      },
+      {
+        "itemid": "90738",
+        "key_": "fan.status",
+        "name": "Fan Status",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90739",
+        "key_": "icmpping",
+        "name": "ICMP Ping",
+        "type": "3",
+        "value_type": "3",
+        "lastclock": "1794814185",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "59994",
+        "key_": "input.fail[upsAdvInputLineFailCause]",
+        "name": "Input fail cause",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "59995",
+        "key_": "input.frequency[upsHighPrecInputFrequency]",
+        "name": "Input frequency",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "59996",
+        "key_": "input.voltage[upsHighPrecInputLineVoltage]",
+        "name": "Input voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90824",
+        "key_": "machine.alarm.text",
+        "name": "Machine Alarm Text Message",
+        "type": "2",
+        "value_type": "4",
+        "lastclock": "0",
+        "lastvalue": ""
+      },
+      {
+        "itemid": "59997",
+        "key_": "output.current[upsHighPrecOutputCurrent]",
+        "name": "Output current",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "59998",
+        "key_": "output.load[upsHighPrecOutputLoad]",
+        "name": "Output load",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "59999",
+        "key_": "output.status[upsBasicOutputStatus]",
+        "name": "Output status",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "60000",
+        "key_": "output.voltage[upsHighPrecOutputVoltage]",
+        "name": "Output voltage",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90689",
+        "key_": "pac.action.status",
+        "name": "PAC Policy Action Status",
+        "type": "2",
+        "value_type": "3",
+        "lastclock": "1794814165",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "90684",
+        "key_": "pac.health.score",
+        "name": "PAC Health Score AIOps",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814165",
+        "lastvalue": "75.46"
+      },
+      {
+        "itemid": "90817",
+        "key_": "pac.maintenance.filter.status",
+        "name": "PAC Filter Maintenance Status",
+        "type": "2",
+        "value_type": "3",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90687",
+        "key_": "pac.ttf.hours",
+        "name": "PAC Time-to-Failure (Hours)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814165",
+        "lastvalue": "8760"
+      },
+      {
+        "itemid": "60385",
+        "key_": "return.humidity.rh",
+        "name": "Return Humidity (%RH)",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814185",
+        "lastvalue": "548.6"
+      },
+      {
+        "itemid": "60386",
+        "key_": "return.temp.c",
+        "name": "Return Temperature (C)",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814185",
+        "lastvalue": "23.900000000000002"
+      },
+      {
+        "itemid": "60001",
+        "key_": "snmptrap.fallback",
+        "name": "SNMP traps (fallback)",
+        "type": "17",
+        "value_type": "2",
+        "lastclock": "0",
+        "lastvalue": ""
+      },
+      {
+        "itemid": "60387",
+        "key_": "supply.temp.c",
+        "name": "Supply Temperature (C)",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814185",
+        "lastvalue": "16.1"
+      },
+      {
+        "itemid": "60002",
+        "key_": "system.contact[sysContact.0]",
+        "name": "System contact details",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800402",
+        "lastvalue": "Unknown"
+      },
+      {
+        "itemid": "60003",
+        "key_": "system.descr[sysDescr.0]",
+        "name": "System description",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800403",
+        "lastvalue": "APC Uniflair LE (MB:v4.1.0 PF:v7.0.8 PN:apc_hw06_aos_708.bin AF1:v7.0.4 AN1:apc_hw06_ledx2g_704.bin MN:0N-9582AC HR:11 SN: E12234T00190 MD:05/30/2022) "
+      },
+      {
+        "itemid": "60004",
+        "key_": "system.hw.uptime[hrSystemUptime.0]",
+        "name": "Uptime (hardware)",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794814204",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "60005",
+        "key_": "system.location[sysLocation.0]",
+        "name": "System location",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800405",
+        "lastvalue": "BRIN "
+      },
+      {
+        "itemid": "60006",
+        "key_": "system.model[upsBasicIdentModel]",
+        "name": "Model",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "0",
+        "lastvalue": ""
+      },
+      {
+        "itemid": "60007",
+        "key_": "system.name[sysName.0]",
+        "name": "System name",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800407",
+        "lastvalue": "PAC #1 Uniflair 61.7 kW"
+      },
+      {
+        "itemid": "60008",
+        "key_": "system.net.uptime[sysUpTime.0]",
+        "name": "Uptime (network)",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794814208",
+        "lastvalue": "17939710"
+      },
+      {
+        "itemid": "60009",
+        "key_": "system.objectid[sysObjectID.0]",
+        "name": "System object ID",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "1794800409",
+        "lastvalue": ".1.3.6.1.4.1.318.1.3.14.19"
+      },
+      {
+        "itemid": "60010",
+        "key_": "system.sn[upsAdvIdentSerialNumber]",
+        "name": "Serial number",
+        "type": "20",
+        "value_type": "1",
+        "lastclock": "0",
+        "lastvalue": ""
+      },
+      {
+        "itemid": "60388",
+        "key_": "unit.state",
+        "name": "Unit State",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "60011",
+        "key_": "zabbix[host,snmp,available]",
+        "name": "SNMP agent availability",
+        "type": "5",
+        "value_type": "3",
+        "lastclock": "1794800351",
+        "lastvalue": "1"
+      }
+    ]
+  },
+  "ME_PAC2": {
+    "hostid": "10690",
+    "item_count": 19,
+    "items": [
+      {
+        "itemid": "90727",
+        "key_": "aiops.compressor.status",
+        "name": "AIOps Compressor Status",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90726",
+        "key_": "aiops.evaporator.fan.speed",
+        "name": "AIOps Evaporator Fan Speed (%)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90725",
+        "key_": "aiops.return.humidity.rh",
+        "name": "AIOps Return Humidity (%RH)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90723",
+        "key_": "aiops.return.temp.c",
+        "name": "AIOps Return Temperature (C)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90724",
+        "key_": "aiops.supply.temp.c",
+        "name": "AIOps Supply Temperature (C)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "60389",
+        "key_": "compressor.1.status",
+        "name": "Compressor 1 Status",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794814186",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "90715",
+        "key_": "compressor.status",
+        "name": "Compressor Status",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "60390",
+        "key_": "evaporator.fan.speed",
+        "name": "Evaporator Fan Speed (%)",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814186",
+        "lastvalue": "95"
+      },
+      {
+        "itemid": "90740",
+        "key_": "fan.status",
+        "name": "Fan Status",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90741",
+        "key_": "icmpping",
+        "name": "ICMP Ping",
+        "type": "3",
+        "value_type": "3",
+        "lastclock": "1794814187",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "90825",
+        "key_": "machine.alarm.text",
+        "name": "Machine Alarm Text Message",
+        "type": "2",
+        "value_type": "4",
+        "lastclock": "0",
+        "lastvalue": ""
+      },
+      {
+        "itemid": "90698",
+        "key_": "pac.action.status",
+        "name": "PAC Policy Action Status",
+        "type": "2",
+        "value_type": "3",
+        "lastclock": "1794814168",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "90696",
+        "key_": "pac.health.score",
+        "name": "PAC Health Score AIOps",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814168",
+        "lastvalue": "80.4"
+      },
+      {
+        "itemid": "90818",
+        "key_": "pac.maintenance.filter.status",
+        "name": "PAC Filter Maintenance Status",
+        "type": "2",
+        "value_type": "3",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90697",
+        "key_": "pac.ttf.hours",
+        "name": "PAC Time-to-Failure (Hours)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814168",
+        "lastvalue": "8760"
+      },
+      {
+        "itemid": "60391",
+        "key_": "return.humidity.rh",
+        "name": "Return Humidity (%RH)",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814186",
+        "lastvalue": "591.3000000000001"
+      },
+      {
+        "itemid": "60392",
+        "key_": "return.temp.c",
+        "name": "Return Temperature (C)",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814186",
+        "lastvalue": "22.400000000000002"
+      },
+      {
+        "itemid": "60393",
+        "key_": "supply.temp.c",
+        "name": "Supply Temperature (C)",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814186",
+        "lastvalue": "14.3"
+      },
+      {
+        "itemid": "60394",
+        "key_": "unit.state",
+        "name": "Unit State",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "0",
+        "lastvalue": "0"
+      }
+    ]
+  },
+  "ME_PAC3": {
+    "hostid": "10696",
+    "item_count": 17,
+    "items": [
+      {
+        "itemid": "90732",
+        "key_": "aiops.compressor.status",
+        "name": "AIOps Compressor Status",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90731",
+        "key_": "aiops.evaporator.fan.speed",
+        "name": "AIOps Evaporator Fan Speed (%)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90730",
+        "key_": "aiops.return.humidity.rh",
+        "name": "AIOps Return Humidity (%RH)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90728",
+        "key_": "aiops.return.temp.c",
+        "name": "AIOps Return Temperature (C)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90729",
+        "key_": "aiops.supply.temp.c",
+        "name": "AIOps Supply Temperature (C)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "60733",
+        "key_": "compressor.status",
+        "name": "Compressor Status",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794814153",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "90716",
+        "key_": "evaporator.fan.speed",
+        "name": "Evaporator Fan Speed (%)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814171",
+        "lastvalue": "73.8"
+      },
+      {
+        "itemid": "60735",
+        "key_": "fan.status",
+        "name": "Fan Status",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794814155",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "60729",
+        "key_": "icmpping",
+        "name": "ICMP Ping",
+        "type": "3",
+        "value_type": "3",
+        "lastclock": "1794814189",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "90826",
+        "key_": "machine.alarm.text",
+        "name": "Machine Alarm Text Message",
+        "type": "2",
+        "value_type": "4",
+        "lastclock": "0",
+        "lastvalue": ""
+      },
+      {
+        "itemid": "90701",
+        "key_": "pac.action.status",
+        "name": "PAC Policy Action Status",
+        "type": "2",
+        "value_type": "3",
+        "lastclock": "1794814171",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "90699",
+        "key_": "pac.health.score",
+        "name": "PAC Health Score AIOps",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814171",
+        "lastvalue": "80.91"
+      },
+      {
+        "itemid": "90819",
+        "key_": "pac.maintenance.filter.status",
+        "name": "PAC Filter Maintenance Status",
+        "type": "2",
+        "value_type": "3",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90700",
+        "key_": "pac.ttf.hours",
+        "name": "PAC Time-to-Failure (Hours)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814171",
+        "lastvalue": "8760"
+      },
+      {
+        "itemid": "60726",
+        "key_": "return.humidity.rh",
+        "name": "Return Humidity (%RH)",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814206",
+        "lastvalue": "53.5"
+      },
+      {
+        "itemid": "60722",
+        "key_": "return.temp.c",
+        "name": "Return Temperature (C)",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814202",
+        "lastvalue": "22.400000000000002"
+      },
+      {
+        "itemid": "60724",
+        "key_": "supply.temp.c",
+        "name": "Supply Temperature (C)",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814204",
+        "lastvalue": "11.600000000000001"
+      }
+    ]
+  },
+  "ME_PAC4": {
+    "hostid": "10698",
+    "item_count": 17,
+    "items": [
+      {
+        "itemid": "90737",
+        "key_": "aiops.compressor.status",
+        "name": "AIOps Compressor Status",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90736",
+        "key_": "aiops.evaporator.fan.speed",
+        "name": "AIOps Evaporator Fan Speed (%)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90735",
+        "key_": "aiops.return.humidity.rh",
+        "name": "AIOps Return Humidity (%RH)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90733",
+        "key_": "aiops.return.temp.c",
+        "name": "AIOps Return Temperature (C)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90734",
+        "key_": "aiops.supply.temp.c",
+        "name": "AIOps Supply Temperature (C)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "60734",
+        "key_": "compressor.status",
+        "name": "Compressor Status",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794814154",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "90717",
+        "key_": "evaporator.fan.speed",
+        "name": "Evaporator Fan Speed (%)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814174",
+        "lastvalue": "74.8"
+      },
+      {
+        "itemid": "60736",
+        "key_": "fan.status",
+        "name": "Fan Status",
+        "type": "20",
+        "value_type": "3",
+        "lastclock": "1794814156",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "60730",
+        "key_": "icmpping",
+        "name": "ICMP Ping",
+        "type": "3",
+        "value_type": "3",
+        "lastclock": "1794814191",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "90827",
+        "key_": "machine.alarm.text",
+        "name": "Machine Alarm Text Message",
+        "type": "2",
+        "value_type": "4",
+        "lastclock": "0",
+        "lastvalue": ""
+      },
+      {
+        "itemid": "90704",
+        "key_": "pac.action.status",
+        "name": "PAC Policy Action Status",
+        "type": "2",
+        "value_type": "3",
+        "lastclock": "1794814174",
+        "lastvalue": "1"
+      },
+      {
+        "itemid": "90702",
+        "key_": "pac.health.score",
+        "name": "PAC Health Score AIOps",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814174",
+        "lastvalue": "75.79"
+      },
+      {
+        "itemid": "90820",
+        "key_": "pac.maintenance.filter.status",
+        "name": "PAC Filter Maintenance Status",
+        "type": "2",
+        "value_type": "3",
+        "lastclock": "0",
+        "lastvalue": "0"
+      },
+      {
+        "itemid": "90703",
+        "key_": "pac.ttf.hours",
+        "name": "PAC Time-to-Failure (Hours)",
+        "type": "2",
+        "value_type": "0",
+        "lastclock": "1794814174",
+        "lastvalue": "8760"
+      },
+      {
+        "itemid": "60727",
+        "key_": "return.humidity.rh",
+        "name": "Return Humidity (%RH)",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814207",
+        "lastvalue": "50.5"
+      },
+      {
+        "itemid": "60723",
+        "key_": "return.temp.c",
+        "name": "Return Temperature (C)",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814203",
+        "lastvalue": "22.3"
+      },
+      {
+        "itemid": "60725",
+        "key_": "supply.temp.c",
+        "name": "Supply Temperature (C)",
+        "type": "20",
+        "value_type": "0",
+        "lastclock": "1794814205",
+        "lastvalue": "11.3"
+      }
+    ]
+  }
+}

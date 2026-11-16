@@ -1,0 +1,29 @@
+AIOps Analysis — Evidence Summary (read-only capture)
+captured_utc: 2026-11-16T07:30:15Z
+zabbix_api: http://10.28.1.110/zabbix/api_jsonrpc.php
+
+== 30-day data-volume / range comparison ==
+
+--- ME_UPS1 ---
+  output.load                                          {'status': 'OK', 'n': 5000, 'min': 67.3, 'max': 70.2, 'mean': 68.734, 'stdev': 0.87, 'last': 67.5}
+  output.load[upsHighPrecOutputLoad]                   {'status': 'OK', 'n': 5000, 'min': 48.0, 'max': 52.4, 'mean': 49.825, 'stdev': 0.775, 'last': 49.800000000000004}
+  battery.voltage                                      {'status': 'OK', 'n': 5000, 'min': 52.6, 'max': 53.4, 'mean': 53.004, 'stdev': 0.235, 'last': 53.3}
+  battery.voltage[upsHighPrecBatteryActualVoltage]     {'status': 'OK', 'n': 3331, 'min': 191.2, 'max': 217.0, 'mean': 215.976, 'stdev': 0.865, 'last': 215.0}
+  return.temp.c                                        {'status': 'ITEM_MISSING'}
+  return.humidity.rh                                   {'status': 'ITEM_MISSING'}
+  ups.health.score                                     {'status': 'OK', 'n': 5000, 'min': 33.45, 'max': 72.25, 'mean': 64.03, 'stdev': 6.549, 'last': 62.81}
+  pac.health.score                                     {'status': 'ITEM_MISSING'}
+  ups.ttf.hours                                        {'status': 'OK', 'n': 5000, 'min': 8760.0, 'max': 8760.0, 'mean': 8760.0, 'stdev': 0.0, 'last': 8760.0}
+  pac.ttf.hours                                        {'status': 'ITEM_MISSING'}
+
+--- ME_PAC1 ---
+  output.load                                          {'status': 'ITEM_MISSING'}
+  output.load[upsHighPrecOutputLoad]                   {'status': 'OK', 'n': 0}
+  battery.voltage                                      {'status': 'ITEM_MISSING'}
+  battery.voltage[upsHighPrecBatteryActualVoltage]     {'status': 'OK', 'n': 0}
+  return.temp.c                                        {'status': 'OK', 'n': 5000, 'min': 25.2, 'max': 30.6, 'mean': 27.457, 'stdev': 1.23, 'last': 29.200000000000003}
+  return.humidity.rh                                   {'status': 'OK', 'n': 5000, 'min': 540.8, 'max': 695.4, 'mean': 596.752, 'stdev': 29.084, 'last': 640.1}
+  ups.health.score                                     {'status': 'ITEM_MISSING'}
+  pac.health.score                                     {'status': 'OK', 'n': 5000, 'min': 39.41, 'max': 64.77, 'mean': 54.648, 'stdev': 5.077, 'last': 43.07}
+  ups.ttf.hours                                        {'status': 'ITEM_MISSING'}
+  pac.ttf.hours                                        {'status': 'OK', 'n': 5000, 'min': 8760.0, 'max': 8760.0, 'mean': 8760.0, 'stdev': 0.0, 'last': 8760.0}

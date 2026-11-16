@@ -1,0 +1,409 @@
+{
+  "benchmark": "NASA PCoE Battery #5 \u2014 RUL regression",
+  "generated_utc": "2026-11-16T08:30:55.889764+00:00",
+  "random_seed": 42,
+  "protocol": {
+    "eol_definition_Ah": 1.4,
+    "eol_fraction_of_rated": 0.7,
+    "rated_Ah": 2.0,
+    "predict_at_life_fractions": [
+      0.5,
+      0.6,
+      0.7,
+      0.8
+    ],
+    "leakage_control": "model trained only on cycles <= prediction point; future cycles never used",
+    "unit": "discharge cycles"
+  },
+  "data_source": {
+    "dataset": "nasa_pcoe_battery_5",
+    "manifest": "analysis/benchmark/DATASET_ACQUISITION_MANIFEST.json",
+    "archive_sha256": "82302a7db4fc1b34e0b6676326610438d43b816bdf11a69d1d012a464ef2f92e"
+  },
+  "validity_filter": {
+    "rule": "battery is valid for RUL if its FIRST discharge capacity > EOL_Ah (i.e., it starts healthy) and it later reaches EOL",
+    "reason": "Cells B0025-B0056 include randomized/alternate protocols that begin below rated EOL; counting them makes EOL fire at cycle 0 and corrupts the metric. Excluded from headline metrics.",
+    "canonical_subset": [
+      "B0005",
+      "B0006",
+      "B0007",
+      "B0018"
+    ],
+    "canonical_note": "These four are the cells used in the majority of published NASA RUL studies; reported separately for literature comparability."
+  },
+  "batteries_analyzed": [
+    {
+      "battery": "B0005",
+      "n_discharge_cycles": 168,
+      "cap_first": 1.8565,
+      "cap_last": 1.3251,
+      "eol_cycle": 124,
+      "reached_eol": true,
+      "valid_for_rul": true
+    },
+    {
+      "battery": "B0006",
+      "n_discharge_cycles": 168,
+      "cap_first": 2.0353,
+      "cap_last": 1.1857,
+      "eol_cycle": 108,
+      "reached_eol": true,
+      "valid_for_rul": true
+    },
+    {
+      "battery": "B0007",
+      "n_discharge_cycles": 168,
+      "cap_first": 1.8911,
+      "cap_last": 1.4325,
+      "eol_cycle": null,
+      "reached_eol": false,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0018",
+      "n_discharge_cycles": 132,
+      "cap_first": 1.855,
+      "cap_last": 1.3411,
+      "eol_cycle": 96,
+      "reached_eol": true,
+      "valid_for_rul": true
+    },
+    {
+      "battery": "B0025",
+      "n_discharge_cycles": 28,
+      "cap_first": 1.847,
+      "cap_last": 1.7678,
+      "eol_cycle": null,
+      "reached_eol": false,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0026",
+      "n_discharge_cycles": 28,
+      "cap_first": 1.8133,
+      "cap_last": 1.7688,
+      "eol_cycle": 5,
+      "reached_eol": true,
+      "valid_for_rul": true
+    },
+    {
+      "battery": "B0027",
+      "n_discharge_cycles": 28,
+      "cap_first": 1.8233,
+      "cap_last": 1.7701,
+      "eol_cycle": null,
+      "reached_eol": false,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0028",
+      "n_discharge_cycles": 28,
+      "cap_first": 1.8047,
+      "cap_last": 1.7172,
+      "eol_cycle": null,
+      "reached_eol": false,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0029",
+      "n_discharge_cycles": 40,
+      "cap_first": 1.6975,
+      "cap_last": 1.6121,
+      "eol_cycle": null,
+      "reached_eol": false,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0030",
+      "n_discharge_cycles": 40,
+      "cap_first": 1.6561,
+      "cap_last": 1.5628,
+      "eol_cycle": null,
+      "reached_eol": false,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0031",
+      "n_discharge_cycles": 40,
+      "cap_first": 1.6667,
+      "cap_last": 1.6673,
+      "eol_cycle": null,
+      "reached_eol": false,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0032",
+      "n_discharge_cycles": 40,
+      "cap_first": 1.7049,
+      "cap_last": 1.6358,
+      "eol_cycle": null,
+      "reached_eol": false,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0033",
+      "n_discharge_cycles": 197,
+      "cap_first": 0.0684,
+      "cap_last": 1.3153,
+      "eol_cycle": 0,
+      "reached_eol": true,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0034",
+      "n_discharge_cycles": 197,
+      "cap_first": 0.7459,
+      "cap_last": 1.2803,
+      "eol_cycle": 0,
+      "reached_eol": true,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0036",
+      "n_discharge_cycles": 197,
+      "cap_first": 1.002,
+      "cap_last": 1.5591,
+      "eol_cycle": 0,
+      "reached_eol": true,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0038",
+      "n_discharge_cycles": 47,
+      "cap_first": 0.8981,
+      "cap_last": 1.5301,
+      "eol_cycle": 0,
+      "reached_eol": true,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0039",
+      "n_discharge_cycles": 47,
+      "cap_first": 0.119,
+      "cap_last": 1.3153,
+      "eol_cycle": 0,
+      "reached_eol": true,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0040",
+      "n_discharge_cycles": 47,
+      "cap_first": 0.6735,
+      "cap_last": 0.557,
+      "eol_cycle": 0,
+      "reached_eol": true,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0041",
+      "n_discharge_cycles": 67,
+      "cap_first": 0.0556,
+      "cap_last": 0.8365,
+      "eol_cycle": 0,
+      "reached_eol": true,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0042",
+      "n_discharge_cycles": 112,
+      "cap_first": 1.7287,
+      "cap_last": 1.3375,
+      "eol_cycle": 5,
+      "reached_eol": true,
+      "valid_for_rul": true
+    },
+    {
+      "battery": "B0043",
+      "n_discharge_cycles": 112,
+      "cap_first": 1.7138,
+      "cap_last": 1.2768,
+      "eol_cycle": 5,
+      "reached_eol": true,
+      "valid_for_rul": true
+    },
+    {
+      "battery": "B0044",
+      "n_discharge_cycles": 112,
+      "cap_first": 1.6865,
+      "cap_last": 1.2486,
+      "eol_cycle": 5,
+      "reached_eol": true,
+      "valid_for_rul": true
+    },
+    {
+      "battery": "B0045",
+      "n_discharge_cycles": 72,
+      "cap_first": 1.082,
+      "cap_last": 0.6069,
+      "eol_cycle": 0,
+      "reached_eol": true,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0046",
+      "n_discharge_cycles": 72,
+      "cap_first": 1.7282,
+      "cap_last": 1.1538,
+      "eol_cycle": 16,
+      "reached_eol": true,
+      "valid_for_rul": true
+    },
+    {
+      "battery": "B0047",
+      "n_discharge_cycles": 72,
+      "cap_first": 1.6743,
+      "cap_last": 1.1567,
+      "eol_cycle": 9,
+      "reached_eol": true,
+      "valid_for_rul": true
+    },
+    {
+      "battery": "B0048",
+      "n_discharge_cycles": 72,
+      "cap_first": 1.658,
+      "cap_last": 1.2231,
+      "eol_cycle": 11,
+      "reached_eol": true,
+      "valid_for_rul": true
+    },
+    {
+      "battery": "B0049",
+      "n_discharge_cycles": 25,
+      "cap_first": 0.8584,
+      "cap_last": 0.6914,
+      "eol_cycle": 0,
+      "reached_eol": true,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0050",
+      "n_discharge_cycles": 21,
+      "cap_first": 0.8631,
+      "cap_last": 0.2781,
+      "eol_cycle": 0,
+      "reached_eol": true,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0051",
+      "n_discharge_cycles": 25,
+      "cap_first": 0.6435,
+      "cap_last": 0.6778,
+      "eol_cycle": 0,
+      "reached_eol": true,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0053",
+      "n_discharge_cycles": 56,
+      "cap_first": 1.0691,
+      "cap_last": 0.0,
+      "eol_cycle": 0,
+      "reached_eol": true,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0054",
+      "n_discharge_cycles": 103,
+      "cap_first": 0.7399,
+      "cap_last": 0.0,
+      "eol_cycle": 0,
+      "reached_eol": true,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0055",
+      "n_discharge_cycles": 102,
+      "cap_first": 0.799,
+      "cap_last": 0.9908,
+      "eol_cycle": 0,
+      "reached_eol": true,
+      "valid_for_rul": false
+    },
+    {
+      "battery": "B0056",
+      "n_discharge_cycles": 102,
+      "cap_first": 0.7853,
+      "cap_last": 1.1291,
+      "eol_cycle": 0,
+      "reached_eol": true,
+      "valid_for_rul": false
+    }
+  ],
+  "metrics_by_model": {
+    "naive": {
+      "n_predictions": 15,
+      "MAE_cycles": 32.0,
+      "RMSE_cycles": 36.509,
+      "bias_mean_error": -32.0,
+      "median_abs_error": 33.0,
+      "max_abs_error": 62.0,
+      "p90_abs_error": 52.4
+    },
+    "linear": {
+      "n_predictions": 15,
+      "MAE_cycles": 13.223,
+      "RMSE_cycles": 22.088,
+      "bias_mean_error": 4.698,
+      "median_abs_error": 7.09,
+      "max_abs_error": 74.02,
+      "p90_abs_error": 24.014
+    },
+    "sqrt": {
+      "n_predictions": 15,
+      "MAE_cycles": 84.113,
+      "RMSE_cycles": 142.115,
+      "bias_mean_error": 81.744,
+      "median_abs_error": 54.0,
+      "max_abs_error": 470.5,
+      "p90_abs_error": 160.786
+    },
+    "exp": {
+      "n_predictions": 15,
+      "MAE_cycles": 22.741,
+      "RMSE_cycles": 36.228,
+      "bias_mean_error": 18.516,
+      "median_abs_error": 13.63,
+      "max_abs_error": 117.3,
+      "p90_abs_error": 43.436
+    }
+  },
+  "metrics_by_model_canonical_subset": {
+    "naive": {
+      "n_predictions": 12,
+      "MAE_cycles": 38.667,
+      "RMSE_cycles": 40.727,
+      "bias_mean_error": -38.667,
+      "median_abs_error": 38.5,
+      "max_abs_error": 62.0,
+      "p90_abs_error": 53.6
+    },
+    "linear": {
+      "n_predictions": 12,
+      "MAE_cycles": 14.993,
+      "RMSE_cycles": 24.501,
+      "bias_mean_error": 7.408,
+      "median_abs_error": 10.0,
+      "max_abs_error": 74.02,
+      "p90_abs_error": 28.196
+    },
+    "sqrt": {
+      "n_predictions": 12,
+      "MAE_cycles": 103.661,
+      "RMSE_cycles": 158.862,
+      "bias_mean_error": 103.661,
+      "median_abs_error": 68.61,
+      "max_abs_error": 470.5,
+      "p90_abs_error": 190.279
+    },
+    "exp": {
+      "n_predictions": 12,
+      "MAE_cycles": 26.978,
+      "RMSE_cycles": 40.399,
+      "bias_mean_error": 24.594,
+      "median_abs_error": 16.55,
+      "max_abs_error": 117.3,
+      "p90_abs_error": 51.449
+    }
+  }
+}

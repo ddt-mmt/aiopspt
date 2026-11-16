@@ -1,0 +1,429 @@
+{
+  "ME_UPS1": [
+    {
+      "itemid": "90777",
+      "key_": "output.load",
+      "name": "UPS output.load",
+      "type": "2",
+      "lastvalue": "69.9"
+    },
+    {
+      "itemid": "90779",
+      "key_": "battery.temp",
+      "name": "UPS battery.temp",
+      "type": "2",
+      "lastvalue": "27.6"
+    },
+    {
+      "itemid": "90778",
+      "key_": "battery.voltage",
+      "name": "UPS battery.voltage",
+      "type": "2",
+      "lastvalue": "52.7"
+    },
+    {
+      "itemid": "90705",
+      "key_": "ups.output.load",
+      "name": "UPS Output Load (%)",
+      "type": "2",
+      "lastvalue": "0"
+    },
+    {
+      "itemid": "90706",
+      "key_": "ups.battery.temp",
+      "name": "UPS Battery Temperature (C)",
+      "type": "2",
+      "lastvalue": "0"
+    },
+    {
+      "itemid": "90707",
+      "key_": "ups.battery.voltage",
+      "name": "UPS Battery Voltage (V)",
+      "type": "2",
+      "lastvalue": "0"
+    },
+    {
+      "itemid": "59609",
+      "key_": "output.load[upsHighPrecOutputLoad]",
+      "name": "Output load",
+      "type": "20",
+      "lastvalue": "49.300000000000004"
+    },
+    {
+      "itemid": "59604",
+      "key_": "battery.voltage[upsHighPrecBatteryActualVoltage]",
+      "name": "Battery voltage",
+      "type": "20",
+      "lastvalue": "215.9"
+    },
+    {
+      "itemid": "90685",
+      "key_": "ups.health.score",
+      "name": "UPS Health Score AIOps",
+      "type": "2",
+      "lastvalue": "67.19"
+    },
+    {
+      "itemid": "90686",
+      "key_": "ups.ttf.hours",
+      "name": "UPS Time-to-Failure (Hours)",
+      "type": "2",
+      "lastvalue": "8760"
+    },
+    {
+      "itemid": "90688",
+      "key_": "ups.action.status",
+      "name": "UPS Policy Action Status",
+      "type": "2",
+      "lastvalue": "1"
+    }
+  ],
+  "ME_UPS2": [
+    {
+      "itemid": "90783",
+      "key_": "output.load",
+      "name": "UPS output.load",
+      "type": "2",
+      "lastvalue": "70.1"
+    },
+    {
+      "itemid": "90785",
+      "key_": "battery.temp",
+      "name": "UPS battery.temp",
+      "type": "2",
+      "lastvalue": "27.7"
+    },
+    {
+      "itemid": "90784",
+      "key_": "battery.voltage",
+      "name": "UPS battery.voltage",
+      "type": "2",
+      "lastvalue": "52.6"
+    },
+    {
+      "itemid": "90708",
+      "key_": "ups.output.load",
+      "name": "UPS Output Load (%)",
+      "type": "2",
+      "lastvalue": "0"
+    },
+    {
+      "itemid": "90709",
+      "key_": "ups.battery.temp",
+      "name": "UPS Battery Temperature (C)",
+      "type": "2",
+      "lastvalue": "0"
+    },
+    {
+      "itemid": "90710",
+      "key_": "ups.battery.voltage",
+      "name": "UPS Battery Voltage (V)",
+      "type": "2",
+      "lastvalue": "0"
+    },
+    {
+      "itemid": "60464",
+      "key_": "output.load[upsHighPrecOutputLoad]",
+      "name": "Output load",
+      "type": "20",
+      "lastvalue": "14.8"
+    },
+    {
+      "itemid": "60459",
+      "key_": "battery.voltage[upsHighPrecBatteryActualVoltage]",
+      "name": "Battery voltage",
+      "type": "20",
+      "lastvalue": "216.10000000000002"
+    },
+    {
+      "itemid": "90690",
+      "key_": "ups.health.score",
+      "name": "UPS Health Score AIOps",
+      "type": "2",
+      "lastvalue": "65.78"
+    },
+    {
+      "itemid": "90691",
+      "key_": "ups.ttf.hours",
+      "name": "UPS Time-to-Failure (Hours)",
+      "type": "2",
+      "lastvalue": "8760"
+    },
+    {
+      "itemid": "90692",
+      "key_": "ups.action.status",
+      "name": "UPS Policy Action Status",
+      "type": "2",
+      "lastvalue": "1"
+    }
+  ],
+  "ME_UPS3": [
+    {
+      "itemid": "90789",
+      "key_": "output.load",
+      "name": "UPS output.load",
+      "type": "2",
+      "lastvalue": "70.2"
+    },
+    {
+      "itemid": "90791",
+      "key_": "battery.temp",
+      "name": "UPS battery.temp",
+      "type": "2",
+      "lastvalue": "27.7"
+    },
+    {
+      "itemid": "90790",
+      "key_": "battery.voltage",
+      "name": "UPS battery.voltage",
+      "type": "2",
+      "lastvalue": "52.6"
+    },
+    {
+      "itemid": "90711",
+      "key_": "ups.output.load",
+      "name": "UPS Output Load (%)",
+      "type": "2",
+      "lastvalue": "0"
+    },
+    {
+      "itemid": "90712",
+      "key_": "ups.battery.temp",
+      "name": "UPS Battery Temperature (C)",
+      "type": "2",
+      "lastvalue": "0"
+    },
+    {
+      "itemid": "90713",
+      "key_": "ups.battery.voltage",
+      "name": "UPS Battery Voltage (V)",
+      "type": "2",
+      "lastvalue": "0"
+    },
+    {
+      "itemid": "60859",
+      "key_": "output.load[upsHighPrecOutputLoad]",
+      "name": "Output load",
+      "type": "20",
+      "lastvalue": "14.600000000000001"
+    },
+    {
+      "itemid": "60854",
+      "key_": "battery.voltage[upsHighPrecBatteryActualVoltage]",
+      "name": "Battery voltage",
+      "type": "20",
+      "lastvalue": "217.10000000000002"
+    },
+    {
+      "itemid": "90693",
+      "key_": "ups.health.score",
+      "name": "UPS Health Score AIOps",
+      "type": "2",
+      "lastvalue": "65.1"
+    },
+    {
+      "itemid": "90694",
+      "key_": "ups.ttf.hours",
+      "name": "UPS Time-to-Failure (Hours)",
+      "type": "2",
+      "lastvalue": "8760"
+    },
+    {
+      "itemid": "90695",
+      "key_": "ups.action.status",
+      "name": "UPS Policy Action Status",
+      "type": "2",
+      "lastvalue": "1"
+    }
+  ],
+  "ME_PAC1": [
+    {
+      "itemid": "59998",
+      "key_": "output.load[upsHighPrecOutputLoad]",
+      "name": "Output load",
+      "type": "20",
+      "lastvalue": "0"
+    },
+    {
+      "itemid": "59993",
+      "key_": "battery.voltage[upsHighPrecBatteryActualVoltage]",
+      "name": "Battery voltage",
+      "type": "20",
+      "lastvalue": "0"
+    },
+    {
+      "itemid": "60386",
+      "key_": "return.temp.c",
+      "name": "Return Temperature (C)",
+      "type": "20",
+      "lastvalue": "23.900000000000002"
+    },
+    {
+      "itemid": "60387",
+      "key_": "supply.temp.c",
+      "name": "Supply Temperature (C)",
+      "type": "20",
+      "lastvalue": "16.1"
+    },
+    {
+      "itemid": "60385",
+      "key_": "return.humidity.rh",
+      "name": "Return Humidity (%RH)",
+      "type": "20",
+      "lastvalue": "548.6"
+    },
+    {
+      "itemid": "90684",
+      "key_": "pac.health.score",
+      "name": "PAC Health Score AIOps",
+      "type": "2",
+      "lastvalue": "75.46"
+    },
+    {
+      "itemid": "90687",
+      "key_": "pac.ttf.hours",
+      "name": "PAC Time-to-Failure (Hours)",
+      "type": "2",
+      "lastvalue": "8760"
+    },
+    {
+      "itemid": "90689",
+      "key_": "pac.action.status",
+      "name": "PAC Policy Action Status",
+      "type": "2",
+      "lastvalue": "1"
+    }
+  ],
+  "ME_PAC2": [
+    {
+      "itemid": "60392",
+      "key_": "return.temp.c",
+      "name": "Return Temperature (C)",
+      "type": "20",
+      "lastvalue": "22.400000000000002"
+    },
+    {
+      "itemid": "60393",
+      "key_": "supply.temp.c",
+      "name": "Supply Temperature (C)",
+      "type": "20",
+      "lastvalue": "14.3"
+    },
+    {
+      "itemid": "60391",
+      "key_": "return.humidity.rh",
+      "name": "Return Humidity (%RH)",
+      "type": "20",
+      "lastvalue": "591.3000000000001"
+    },
+    {
+      "itemid": "90696",
+      "key_": "pac.health.score",
+      "name": "PAC Health Score AIOps",
+      "type": "2",
+      "lastvalue": "80.4"
+    },
+    {
+      "itemid": "90697",
+      "key_": "pac.ttf.hours",
+      "name": "PAC Time-to-Failure (Hours)",
+      "type": "2",
+      "lastvalue": "8760"
+    },
+    {
+      "itemid": "90698",
+      "key_": "pac.action.status",
+      "name": "PAC Policy Action Status",
+      "type": "2",
+      "lastvalue": "1"
+    }
+  ],
+  "ME_PAC3": [
+    {
+      "itemid": "60722",
+      "key_": "return.temp.c",
+      "name": "Return Temperature (C)",
+      "type": "20",
+      "lastvalue": "22.400000000000002"
+    },
+    {
+      "itemid": "60724",
+      "key_": "supply.temp.c",
+      "name": "Supply Temperature (C)",
+      "type": "20",
+      "lastvalue": "11.600000000000001"
+    },
+    {
+      "itemid": "60726",
+      "key_": "return.humidity.rh",
+      "name": "Return Humidity (%RH)",
+      "type": "20",
+      "lastvalue": "53.5"
+    },
+    {
+      "itemid": "90699",
+      "key_": "pac.health.score",
+      "name": "PAC Health Score AIOps",
+      "type": "2",
+      "lastvalue": "80.91"
+    },
+    {
+      "itemid": "90700",
+      "key_": "pac.ttf.hours",
+      "name": "PAC Time-to-Failure (Hours)",
+      "type": "2",
+      "lastvalue": "8760"
+    },
+    {
+      "itemid": "90701",
+      "key_": "pac.action.status",
+      "name": "PAC Policy Action Status",
+      "type": "2",
+      "lastvalue": "1"
+    }
+  ],
+  "ME_PAC4": [
+    {
+      "itemid": "60723",
+      "key_": "return.temp.c",
+      "name": "Return Temperature (C)",
+      "type": "20",
+      "lastvalue": "22.3"
+    },
+    {
+      "itemid": "60725",
+      "key_": "supply.temp.c",
+      "name": "Supply Temperature (C)",
+      "type": "20",
+      "lastvalue": "11.3"
+    },
+    {
+      "itemid": "60727",
+      "key_": "return.humidity.rh",
+      "name": "Return Humidity (%RH)",
+      "type": "20",
+      "lastvalue": "50.5"
+    },
+    {
+      "itemid": "90702",
+      "key_": "pac.health.score",
+      "name": "PAC Health Score AIOps",
+      "type": "2",
+      "lastvalue": "75.79"
+    },
+    {
+      "itemid": "90703",
+      "key_": "pac.ttf.hours",
+      "name": "PAC Time-to-Failure (Hours)",
+      "type": "2",
+      "lastvalue": "8760"
+    },
+    {
+      "itemid": "90704",
+      "key_": "pac.action.status",
+      "name": "PAC Policy Action Status",
+      "type": "2",
+      "lastvalue": "1"
+    }
+  ]
+}

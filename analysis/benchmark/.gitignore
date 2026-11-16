@@ -1,0 +1,8 @@
+# Raw benchmark data stays LOCAL (repo policy: docs/DATA_STORAGE_AND_GITHUB_POLICY.md)
+# Only manifests, hashes, code, and reports are committed.
+data/
+*.zip
+*.mat
+
+__pycache__/
+*.pyc
