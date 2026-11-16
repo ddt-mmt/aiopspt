@@ -145,6 +145,33 @@ class TestAbstainOnBadData(unittest.TestCase):
         self.assertEqual(self.engine.determine_action_status_hardened_v11(None, None, 1, False), -1)
 
 
+class TestPerKindThresholds(unittest.TestCase):
+    """Health thresholds must be per-kind (UPS vs PAC), not one global 40/70."""
+
+    def setUp(self):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("engine", SRC)
+        self.engine = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(self.engine)
+
+    def test_ups_and_pac_have_distinct_thresholds(self):
+        self.assertIn("ups", self.engine.THRESHOLDS_BY_KIND)
+        self.assertIn("pac", self.engine.THRESHOLDS_BY_KIND)
+        ups = self.engine.THRESHOLDS_BY_KIND["ups"]
+        pac = self.engine.THRESHOLDS_BY_KIND["pac"]
+        self.assertNotEqual(ups, pac)
+
+    def test_action_uses_kind(self):
+        # A health value that is GREEN for PAC (threshold 62) could be YELLOW for UPS
+        # (threshold 65) — proving kind is actually applied.
+        ups = self.engine.THRESHOLDS_BY_KIND["ups"][1]   # yellow_below
+        pac = self.engine.THRESHOLDS_BY_KIND["pac"][1]
+        h = (ups + pac) / 2.0 - 0.5   # between the two green cutoffs
+        a_ups = self.engine.determine_action_status_hardened_v11(h, 8760, 1, False, kind="ups")
+        a_pac = self.engine.determine_action_status_hardened_v11(h, 8760, 1, False, kind="pac")
+        self.assertNotEqual(a_ups, a_pac)
+
+
 class TestDryRunGuard(unittest.TestCase):
     """DRY_RUN must prevent any Zabbix write — needed for safe shadow/staging."""
 

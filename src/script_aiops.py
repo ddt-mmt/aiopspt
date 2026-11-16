@@ -48,6 +48,18 @@ MAX_AGE_DEFAULT = int(os.getenv("MAX_AGE_DEFAULT", "21600"))  # 6 jam
 # depan jam engine; default 300s menyerap skew normal tanpa menerima data asli
 # dari masa depan. Lihat F-7c.
 FUTURE_TOLERANCE_SECONDS = int(os.getenv("FUTURE_TOLERANCE_SECONDS", "300"))
+
+# ---------------------------------------------------------------------------
+# Ambang Health Score PER-JENIS (UPS vs PAC) — (red_below, yellow_below).
+# Diturunkan dari DISTRIBUSI BERSIH (SPC: red = mean-2.5σ, yellow = mean-1.5σ),
+# bukan angka bulat. UPS: mean 74.4 σ6.0 → 59/65. PAC: mean 73.7 σ7.7 → 54/62.
+# Kalibrasi awal (jendela ~7-8 jam pasca perbaikan sensor); perbarui saat 30 hari
+# data bersih tersedia. Lihat analysis/deployment/HEALTH_THRESHOLD_CALIBRATION.md.
+# ---------------------------------------------------------------------------
+THRESHOLDS_BY_KIND = {
+    "ups": (59, 65),
+    "pac": (54, 62),
+}
 SENSOR_MAX_AGE = {
     'output.load': 600,
     'battery.voltage': 21600,
@@ -458,13 +470,29 @@ def calculate_multisensor_rul_v11(df_multisensor, sensor_configs=None):
     return prediction, raw_anomaly_score, health_score, hours_to_failure, confidence, exceeded_critical
 
 
-def determine_action_status_hardened_v11(health, ttf, prediction, exceeded_critical):
+def determine_action_status_hardened_v11(health, ttf, prediction, exceeded_critical,
+                                         kind="ups"):
+    """Klasifikasi aksi berdasarkan Health Score + TTF.
+
+    Ambang Health kini PER-JENIS (UPS vs PAC). UPS dan PAC punya karakteristik
+    anomali & distribusi Health berbeda, jadi ambang tunggal 40/70 terlalu kasar.
+
+    Ambang diturunkan dari DISTRIBUSI BERSIH (metode kontrol-statistik SPC):
+      RED    < mean - 2.5*std   (outlier bawah, ~kritis)
+      YELLOW  mean-2.5std .. mean-1.5std   (perhatian)
+      GREEN  >= mean - 1.5*std   (normal)
+    Lihat THRESHOLDS_BY_KIND dan analysis/deployment/HEALTH_THRESHOLD_CALIBRATION.md.
+    CATATAN: kalibrasi awal memakai jendela bersih pendek (~7-8 jam pasca-perbaikan
+    sensor); angka dapat disegarkan saat data bersih 30 hari tersedia.
+    """
     if health is None:
         return -1
 
-    if exceeded_critical or (ttf is not None and ttf <= 24) or (health < 40):
+    red, yellow = THRESHOLDS_BY_KIND.get(kind, THRESHOLDS_BY_KIND["ups"])
+
+    if exceeded_critical or (ttf is not None and ttf <= 24) or (health < red):
         return 2
-    elif prediction == -1 or health < 70 or (ttf is not None and ttf <= 720):
+    elif prediction == -1 or health < yellow or (ttf is not None and ttf <= 720):
         return 1
     else:
         return 0
@@ -591,7 +619,7 @@ def run_aiops_cycle():
                     )
                     if df_ups is not None:
                         pred, raw_score, health, ttf, conf, exc_crit = calculate_multisensor_rul_v11(df_ups)
-                        action = determine_action_status_hardened_v11(health, ttf, pred, exc_crit)
+                        action = determine_action_status_hardened_v11(health, ttf, pred, exc_crit, kind="ups")
                     else:
                         logger.warning(f"UPS {hostname} ABSTAIN: {q_status} - {q_msg}")
                 else:
@@ -657,7 +685,7 @@ def run_aiops_cycle():
                     )
                     if df_pac is not None:
                         pred, raw_score, health, ttf, conf, exc_crit = calculate_multisensor_rul_v11(df_pac)
-                        action = determine_action_status_hardened_v11(health, ttf, pred, exc_crit)
+                        action = determine_action_status_hardened_v11(health, ttf, pred, exc_crit, kind="pac")
                     else:
                         logger.warning(f"PAC {hostname} ABSTAIN: {q_status} - {q_msg}")
                 else:

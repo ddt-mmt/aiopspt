@@ -233,7 +233,7 @@
         "type": "alexanderzobnin-zabbix-datasource",
         "uid": "dfzvifoy1efpcb"
       },
-      "description": "Health Score AIOps (Isolation Forest). BUKAN probabilitas; belum terkalibrasi. Ambang: <40 REPLACE (merah), 40-70 MAINTENANCE (kuning), >70 NORMAL (hijau) \u2014 sesuai kebijakan operasional.",
+      "description": "Health Score AIOps (Isolation Forest) \u2014 UPS. BUKAN probabilitas; belum terkalibrasi.\nAmbang UPS dari distribusi bersih (SPC): MERAH <59, KUNING 59-65, HIJAU >= 65.\nKalibrasi awal (jendela pendek pasca-perbaikan sensor); lihat HEALTH_THRESHOLD_CALIBRATION.md.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -251,11 +251,11 @@
               },
               {
                 "color": "yellow",
-                "value": 40
+                "value": 59
               },
               {
                 "color": "green",
-                "value": 70
+                "value": 65
               }
             ]
           },
@@ -377,7 +377,7 @@
         "type": "alexanderzobnin-zabbix-datasource",
         "uid": "dfzvifoy1efpcb"
       },
-      "description": "Health Score AIOps (Isolation Forest). BUKAN probabilitas; belum terkalibrasi. Ambang: <40 REPLACE (merah), 40-70 MAINTENANCE (kuning), >70 NORMAL (hijau) \u2014 sesuai kebijakan operasional.",
+      "description": "Health Score AIOps (Isolation Forest) \u2014 PAC. BUKAN probabilitas; belum terkalibrasi.\nAmbang PAC dari distribusi bersih (SPC): MERAH <54, KUNING 54-62, HIJAU >= 62.\nKalibrasi awal (jendela pendek pasca-perbaikan sensor); lihat HEALTH_THRESHOLD_CALIBRATION.md.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -395,11 +395,11 @@
               },
               {
                 "color": "yellow",
-                "value": 40
+                "value": 54
               },
               {
                 "color": "green",
-                "value": 70
+                "value": 62
               }
             ]
           },
@@ -1089,7 +1089,8 @@
     "analyzed-2026-11-16",
     "telemetry-provenance-fixed",
     "panels-units-split-2026-11-16",
-    "ttf-band-added"
+    "ttf-band-added",
+    "health-thresholds-per-kind-2026-11-16"
   ],
   "templating": {
     "list": [
@@ -1175,6 +1176,6 @@
   "timezone": "",
   "title": "AIOps Power & Thermal Facility (HPC)-a",
   "uid": "aiops-facility-hpc-a",
-  "version": 8,
+  "version": 9,
   "weekStart": ""
 }
