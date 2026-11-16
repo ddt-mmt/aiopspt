@@ -44,6 +44,10 @@ DRY_RUN = os.getenv("DRY_RUN", "0") == "1"
 #   battery.capacity  : sparse     → ~12 jam
 MIN_SAMPLES = int(os.getenv("MIN_SAMPLES", "10"))
 MAX_AGE_DEFAULT = int(os.getenv("MAX_AGE_DEFAULT", "21600"))  # 6 jam
+# Toleransi skew clock "masa depan" (detik). Sensor PAC berstempel ~14-15s di
+# depan jam engine; default 300s menyerap skew normal tanpa menerima data asli
+# dari masa depan. Lihat F-7c.
+FUTURE_TOLERANCE_SECONDS = int(os.getenv("FUTURE_TOLERANCE_SECONDS", "300"))
 SENSOR_MAX_AGE = {
     'output.load': 600,
     'battery.voltage': 21600,
@@ -215,8 +219,8 @@ def get_sensor_history_and_metadata(zapi, item_ids_dict, days=30):
 
 
 def validate_schema_and_quality(series_by_name, latest_by_name, sample_counts, mandatory_features,
-                                now_utc, max_age_seconds=3600, min_samples=10, future_tolerance_seconds=10,
-                                per_feature_max_age=None):
+                                now_utc, max_age_seconds=3600, min_samples=10,
+                                future_tolerance_seconds=None, per_feature_max_age=None):
     """Gerbang kualitas data.
 
     FIX (F-7b): staleness kini PER-FITUR dan default 3600s (bukan 300s).
@@ -231,6 +235,14 @@ def validate_schema_and_quality(series_by_name, latest_by_name, sample_counts, m
         series_by_name = dict(series_by_name)
     else:
         return "INSUFFICIENT_DATA", "series_by_name is None"
+
+    # F-7c: toleransi "masa depan" diukur dari clock-skew nyata. Sensor PAC
+    # terbukti berstempel ~14-15s di depan jam engine (skew NTP, bukan data
+    # masa depan asli). Default 10s terlalu ketat → semua PAC ABSTAIN tiap
+    # siklus. Default baru 300s: cukup menyerap skew normal, tetap menolak
+    # data yang benar-benar jauh di masa depan.
+    if future_tolerance_seconds is None:
+        future_tolerance_seconds = FUTURE_TOLERANCE_SECONDS
 
     missing_mandatory = [f for f in mandatory_features if f not in series_by_name or sample_counts.get(f, 0) == 0]
     if missing_mandatory:
@@ -598,16 +610,17 @@ def run_aiops_cycle():
             logger.info(f"⚡ [UPS {hostname}] Health: {health}% | TTF: {ttf}h | Band(80%): {band_txt} | Aksi: {action_labels.get(action, 'UNKNOWN')}")
 
             # F-1: HANYA metrik turunan. Tidak menulis output.load/battery.* sensor.
+            # Band SELALU dikirim: -1 = "tidak dapat diestimasi" (sentinel, BUKAN 0,
+            # agar tidak terbaca sebagai 'ganti sekarang'). Lihat F-8.
+            b_lo = band_lo if band_lo is not None else -1
+            b_hi = band_hi if band_hi is not None else -1
             packet = [
                 ItemValue(hostname, 'ups.health.score', health),
                 ItemValue(hostname, 'ups.ttf.hours', ttf),
                 ItemValue(hostname, 'ups.action.status', action),
+                ItemValue(hostname, 'ups.ttf.low.hours', b_lo),
+                ItemValue(hostname, 'ups.ttf.high.hours', b_hi),
             ]
-            if band_lo is not None:
-                packet += [
-                    ItemValue(hostname, 'ups.ttf.low.hours', band_lo),
-                    ItemValue(hostname, 'ups.ttf.high.hours', band_hi),
-                ]
             if DRY_RUN:
                 logger.info(f"[DRY_RUN] UPS {hostname} — tidak mengirim (health={health}, ttf={ttf}, action={action})")
                 continue
@@ -661,16 +674,16 @@ def run_aiops_cycle():
             logger.info(f"❄️ [PAC {hostname}] Health: {health}% | TTF: {ttf}h | Band(80%): {band_txt} | Aksi: {action_labels.get(action, 'UNKNOWN')}")
 
             # F-1: HANYA metrik turunan. Tidak menulis return.temp.c/compressor.status sensor.
+            # Band SELALU dikirim (-1 = tidak dapat diestimasi; lihat F-8).
+            b_lo = band_lo if band_lo is not None else -1
+            b_hi = band_hi if band_hi is not None else -1
             packet = [
                 ItemValue(hostname, 'pac.health.score', health),
                 ItemValue(hostname, 'pac.ttf.hours', ttf),
                 ItemValue(hostname, 'pac.action.status', action),
+                ItemValue(hostname, 'pac.ttf.low.hours', b_lo),
+                ItemValue(hostname, 'pac.ttf.high.hours', b_hi),
             ]
-            if band_lo is not None:
-                packet += [
-                    ItemValue(hostname, 'pac.ttf.low.hours', band_lo),
-                    ItemValue(hostname, 'pac.ttf.high.hours', band_hi),
-                ]
             if DRY_RUN:
                 logger.info(f"[DRY_RUN] PAC {hostname} — tidak mengirim (health={health}, ttf={ttf}, action={action})")
                 continue

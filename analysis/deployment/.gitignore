@@ -1,0 +1,2 @@
+# Raw pre-deploy engine backup contains a hardcoded credential → keep LOCAL only.
+backup_*/script_aiops_before.py

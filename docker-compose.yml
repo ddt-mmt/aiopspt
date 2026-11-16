@@ -1,0 +1,19 @@
+# Restored 2026-11-16 (was deleted in root cleanup). Matches the running
+# `aiops_predictor_hpc` container config. Secrets come from .env (gitignored).
+services:
+  aiops_engine:
+    container_name: aiops_predictor_hpc
+    build:
+      context: .
+      dockerfile: config/Dockerfile
+    image: grafan_aiops-aiops_engine:latest
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+      - ZABBIX_URL=http://10.28.1.110/zabbix
+      - ZABBIX_USER=admin
+      - ZABBIX_PASS=${ZABBIX_PASS}
+      - ITEM_ID_UPS=59609
+      - ITEM_ID_PAC=60386
+      - ZABBIX_SERVER_IP=10.28.1.110
+      - INTERVAL_SECONDS=60
