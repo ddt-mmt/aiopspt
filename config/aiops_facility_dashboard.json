@@ -233,7 +233,7 @@
         "type": "alexanderzobnin-zabbix-datasource",
         "uid": "dfzvifoy1efpcb"
       },
-      "description": "Health Score AIOps = transformasi decision_function Isolation Forest atas telemetri multivar. INI BUKAN probabilitas kesehatan fisik dan belum terkalibrasi (NOT_CALIBRATED). Bila data tidak memenuhi syarat, engine memilih ABSTAIN (tidak mengirim nilai) \u2014 bukan angka acak.",
+      "description": "Health Score AIOps (Isolation Forest). BUKAN probabilitas; belum terkalibrasi. Ambang: <40 REPLACE (merah), 40-70 MAINTENANCE (kuning), >70 NORMAL (hijau) \u2014 sesuai kebijakan operasional.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -377,7 +377,7 @@
         "type": "alexanderzobnin-zabbix-datasource",
         "uid": "dfzvifoy1efpcb"
       },
-      "description": "Health Score AIOps (Isolation Forest). BUKAN probabilitas, belum terkalibrasi. Bila data tidak cukup \u2192 ABSTAIN.",
+      "description": "Health Score AIOps (Isolation Forest). BUKAN probabilitas; belum terkalibrasi. Ambang: <40 REPLACE (merah), 40-70 MAINTENANCE (kuning), >70 NORMAL (hijau) \u2014 sesuai kebijakan operasional.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -529,11 +529,6 @@
       "type": "row"
     },
     {
-      "datasource": {
-        "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "dfzvifoy1efpcb"
-      },
-      "description": "Telemetri SNMP ASLI (read-only). 'Output load' dan 'Battery voltage' berasal dari sensor fisik (item SNMP ber-tanda [).\nCATATAN: item 'Battery temperature' (SNMP) saat ini tidak mengirim data \u2014 seri akan kosong sampai polling SNMP-nya aktif.\nTidak ada nilai sintetik yang ditulis ke panel ini oleh engine AIOps.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -581,15 +576,41 @@
             ]
           }
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Output load"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percent"
+              },
+              {
+                "id": "custom.axisPlacement",
+                "value": "left"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Battery voltage"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "volt"
+              },
+              {
+                "id": "custom.axisPlacement",
+                "value": "right"
+              }
+            ]
+          }
+        ]
       },
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 0,
-        "y": 16
-      },
-      "id": 10,
       "options": {
         "legend": {
           "calcs": [
@@ -610,6 +631,16 @@
         }
       },
       "pluginVersion": "10.0.0",
+      "type": "timeseries",
+      "id": 10,
+      "title": "\u26a1 UPS Output Load (%) & Battery Voltage (V)",
+      "description": "Dua satuan berbeda \u2192 dua sumbu (kiri %, kanan V).",
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 16
+      },
       "targets": [
         {
           "datasource": {
@@ -629,31 +660,13 @@
           },
           "group": "",
           "host": "$ups_host",
-          "item": "Battery temperature",
-          "queryType": 0,
-          "resultFormat": "time_series"
-        },
-        {
-          "datasource": {
-            "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "dfzvifoy1efpcb"
-          },
-          "group": "",
-          "host": "$ups_host",
           "item": "Battery voltage",
           "queryType": 0,
           "resultFormat": "time_series"
         }
-      ],
-      "title": "\u26a1 UPS Output Load, Battery Temp & Voltage",
-      "type": "timeseries"
+      ]
     },
     {
-      "datasource": {
-        "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "dfzvifoy1efpcb"
-      },
-      "description": "Telemetri SNMP ASLI (read-only) dari unit PAC.\nCATATAN KUALITAS DATA: 'Return Humidity (%RH)' saat ini terbaca ~5xx-6xx (kemungkinan skala/unit salah di sisi item SNMP) \u2014 nilai mentah ditampilkan apa adanya, belum dikoreksi.\nTidak ada nilai sintetik yang ditulis ke panel ini oleh engine AIOps.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -701,15 +714,57 @@
             ]
           }
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Return Temperature (C)"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "celsius"
+              },
+              {
+                "id": "custom.axisPlacement",
+                "value": "left"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Supply Temperature (C)"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "celsius"
+              },
+              {
+                "id": "custom.axisPlacement",
+                "value": "left"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Return Humidity (%RH)"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "humidity"
+              },
+              {
+                "id": "custom.axisPlacement",
+                "value": "right"
+              }
+            ]
+          }
+        ]
       },
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 12,
-        "y": 16
-      },
-      "id": 11,
       "options": {
         "legend": {
           "calcs": [
@@ -730,6 +785,16 @@
         }
       },
       "pluginVersion": "10.0.0",
+      "type": "timeseries",
+      "id": 11,
+      "title": "\u2744\ufe0f PAC Return/Supply Temp (\u00b0C) & Return Humidity (%RH)",
+      "description": "Suhu (\u00b0C, sumbu kiri) dan kelembapan (%RH, sumbu kanan).\nSumber humidity diperbaiki: sebelumnya membaca OID absolute-humidity (gr/lbm) \u2192 ~550%RH; kini %RH sebenarnya (~45-55%).",
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 16
+      },
       "targets": [
         {
           "datasource": {
@@ -764,9 +829,253 @@
           "queryType": 0,
           "resultFormat": "time_series"
         }
+      ]
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Battery temperature"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "celsius"
+              },
+              {
+                "id": "custom.axisPlacement",
+                "value": "left"
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "max",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true,
+          "values": [
+            "lastNotNull"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.0.0",
+      "type": "timeseries",
+      "id": 12,
+      "title": "\u26a1 UPS Battery Temperature (\u2103)",
+      "description": "Suhu baterai (\u00b0C). Sumber diperbaiki: sebelumnya OID tidak ada (noSuchName) \u2192 seri mati.\nME_UPS3 tidak mengekspos sensor ini (keterbatasan perangkat, item dinonaktifkan).",
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 25
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "dfzvifoy1efpcb"
+          },
+          "group": "",
+          "host": "$ups_host",
+          "item": "Battery temperature",
+          "queryType": 0,
+          "resultFormat": "time_series"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "\ud83c\udfaf TTF & Tolerance Band per Host (jam)",
+      "description": "Rentang toleransi TTF (analogi indikator bahan bakar).\npoint = estimasi terbaik; low/high = batas 80% (residual bootstrap).\n-1 = tidak dapat diestimasi; 8760 = tidak ada tren degradasi (batas atas).",
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "dfzvifoy1efpcb"
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 25
+      },
+      "options": {
+        "showHeader": true,
+        "footer": {
+          "show": false,
+          "reducer": [
+            "sum"
+          ],
+          "countRows": false,
+          "fields": ""
+        },
+        "cellHeight": "sm",
+        "sortBy": [
+          {
+            "displayName": "Host",
+            "desc": false
+          }
+        ]
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "pluginVersion": "10.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "dfzvifoy1efpcb"
+          },
+          "group": "",
+          "host": "$ups_host",
+          "item": "UPS Time-to-Failure (Hours)",
+          "queryType": 0,
+          "resultFormat": "table"
+        },
+        {
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "dfzvifoy1efpcb"
+          },
+          "group": "",
+          "host": "$ups_host",
+          "item": "UPS TTF Band Low (Hours)",
+          "queryType": 0,
+          "resultFormat": "table"
+        },
+        {
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "dfzvifoy1efpcb"
+          },
+          "group": "",
+          "host": "$ups_host",
+          "item": "UPS TTF Band High (Hours)",
+          "queryType": 0,
+          "resultFormat": "table"
+        },
+        {
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "dfzvifoy1efpcb"
+          },
+          "group": "",
+          "host": "$pac_host",
+          "item": "PAC Time-to-Failure (Hours)",
+          "queryType": 0,
+          "resultFormat": "table"
+        },
+        {
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "dfzvifoy1efpcb"
+          },
+          "group": "",
+          "host": "$pac_host",
+          "item": "PAC TTF Band Low (Hours)",
+          "queryType": 0,
+          "resultFormat": "table"
+        },
+        {
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "dfzvifoy1efpcb"
+          },
+          "group": "",
+          "host": "$pac_host",
+          "item": "PAC TTF Band High (Hours)",
+          "queryType": 0,
+          "resultFormat": "table"
+        }
       ],
-      "title": "\u2744\ufe0f PAC Return Temp, Supply Temp & Humidity",
-      "type": "timeseries"
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "lastNotNull"
+            ]
+          }
+        }
+      ],
+      "type": "table"
     }
   ],
   "refresh": "10s",
@@ -778,7 +1087,9 @@
     "zabbix",
     "hpc",
     "analyzed-2026-11-16",
-    "telemetry-provenance-fixed"
+    "telemetry-provenance-fixed",
+    "panels-units-split-2026-11-16",
+    "ttf-band-added"
   ],
   "templating": {
     "list": [
@@ -864,6 +1175,6 @@
   "timezone": "",
   "title": "AIOps Power & Thermal Facility (HPC)-a",
   "uid": "aiops-facility-hpc-a",
-  "version": 6,
+  "version": 8,
   "weekStart": ""
 }

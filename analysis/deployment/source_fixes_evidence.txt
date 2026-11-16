@@ -1,0 +1,16 @@
+Source fixes applied 2026-11-16 (Zabbix item corrections, verified):
+
+F-9 humidity (Schneider PAC template 10694, item 60380):
+  OLD oid .318.1.1.27.1.4.1.2.1.3.1.18  (= gr/lbm absolute humidity, mislabeled %RH)
+  NEW oid .318.1.1.27.1.4.1.2.1.3.1.17  (= true %RH, divisor 10 -> x0.1)
+    ME_PAC1: 45 %RH  oid=.1.3.6.1.4.1.318.1.1.27.1.4.1.2.1.3.1.17
+    ME_PAC2: 47.300000000000004 %RH  oid=.1.3.6.1.4.1.318.1.1.27.1.4.1.2.1.3.1.17
+    ME_PAC3: 54.2 %RH  oid=.1.3.6.1.4.1.9839.2.1.2.6.0
+    ME_PAC4: 51.6 %RH  oid=.1.3.6.1.4.1.9839.2.1.2.6.0
+
+F-10 battery temperature (APC UPS template 10395, item 34201):
+  OLD oid .318.1.1.1.2.3.2.0  (noSuchName on these UPS -> dead series)
+  NEW oid .318.1.1.1.2.2.2.0  (upsAdvBatteryTemperature, whole degrees C; x0.1 removed)
+    ME_UPS1: 25 C  oid=get[1.3.6.1.4.1.318.1.1.1.2.2.2.0]
+    ME_UPS2: 22 C  oid=get[1.3.6.1.4.1.318.1.1.1.2.2.2.0]
+    ME_UPS3: 0 C  oid=get[1.3.6.1.4.1.318.1.1.1.2.2.2.0]  (device lacks OID -> item disabled)
