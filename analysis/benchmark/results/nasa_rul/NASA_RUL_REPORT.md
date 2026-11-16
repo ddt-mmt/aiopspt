@@ -1,5 +1,5 @@
 # NASA Battery #5 — RUL Benchmark Results
-Generated: 2026-11-16T08:18:00.085167+00:00
+Generated: 2026-11-16T08:30:55.889764+00:00
 EOL threshold: 1.4 Ah (70% of 2.0 Ah rated)
 Predict at life fractions: [0.5, 0.6, 0.7, 0.8]
 Leakage control: model trained only on cycles <= prediction point; future cycles never used

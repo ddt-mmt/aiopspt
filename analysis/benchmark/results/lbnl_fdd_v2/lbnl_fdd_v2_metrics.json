@@ -1,0 +1,205 @@
+{
+  "benchmark": "LBNL RTU \u2014 fault detection v2 (scored, threshold-tuned)",
+  "generated_utc": "2026-11-16T08:31:19.486011+00:00",
+  "random_seed": 42,
+  "protocol": {
+    "window_minutes": 60,
+    "window_FAR_target": 0.05,
+    "row_threshold": "per-row FAR 5% on held-out healthy",
+    "window_decision": "window alarms if flagged-row fraction > healthy-window quantile"
+  },
+  "data_source": {
+    "dataset": "lbnl_rtu_fdd",
+    "archive_sha256": "9de1dc2e0d997d6e9f130ded3eb3c196fdf4b36005e60f9978351f44e452e5fa"
+  },
+  "detectors": {
+    "isolation_forest": {
+      "roc_auc": 0.6212,
+      "pr_auc_average_precision": 0.9838,
+      "operating_points": {
+        "FAR_target_0.01": {
+          "threshold": 0.6488,
+          "TP": 552,
+          "FP": 30,
+          "FN": 143448,
+          "TN": 2970,
+          "precision": 0.9485,
+          "recall": 0.0038,
+          "f1": 0.0076,
+          "false_alarm_rate": 0.01,
+          "balanced_accuracy": 0.4969,
+          "MCC": -0.0139
+        },
+        "FAR_target_0.05": {
+          "threshold": 0.627,
+          "TP": 5039,
+          "FP": 150,
+          "FN": 138961,
+          "TN": 2850,
+          "precision": 0.9711,
+          "recall": 0.035,
+          "f1": 0.0676,
+          "false_alarm_rate": 0.05,
+          "balanced_accuracy": 0.4925,
+          "MCC": -0.0115
+        },
+        "FAR_target_0.1": {
+          "threshold": 0.5975,
+          "TP": 21196,
+          "FP": 300,
+          "FN": 122804,
+          "TN": 2700,
+          "precision": 0.986,
+          "recall": 0.1472,
+          "f1": 0.2562,
+          "false_alarm_rate": 0.1,
+          "balanced_accuracy": 0.5236,
+          "MCC": 0.0189
+        }
+      }
+    },
+    "robust_z": {
+      "roc_auc": 0.6878,
+      "pr_auc_average_precision": 0.9907,
+      "operating_points": {
+        "FAR_target_0.01": {
+          "threshold": 10.3454,
+          "TP": 36552,
+          "FP": 30,
+          "FN": 107448,
+          "TN": 2970,
+          "precision": 0.9992,
+          "recall": 0.2538,
+          "f1": 0.4048,
+          "false_alarm_rate": 0.01,
+          "balanced_accuracy": 0.6219,
+          "MCC": 0.0797
+        },
+        "FAR_target_0.05": {
+          "threshold": 9.5287,
+          "TP": 39314,
+          "FP": 150,
+          "FN": 104686,
+          "TN": 2850,
+          "precision": 0.9962,
+          "recall": 0.273,
+          "f1": 0.4286,
+          "false_alarm_rate": 0.05,
+          "balanced_accuracy": 0.6115,
+          "MCC": 0.0712
+        },
+        "FAR_target_0.1": {
+          "threshold": 8.5099,
+          "TP": 43275,
+          "FP": 300,
+          "FN": 100725,
+          "TN": 2700,
+          "precision": 0.9931,
+          "recall": 0.3005,
+          "f1": 0.4614,
+          "false_alarm_rate": 0.1,
+          "balanced_accuracy": 0.6003,
+          "MCC": 0.0621
+        }
+      }
+    },
+    "residual": {
+      "roc_auc": 0.6336,
+      "pr_auc_average_precision": 0.989,
+      "operating_points": {
+        "FAR_target_0.01": {
+          "threshold": 1.9161,
+          "TP": 36210,
+          "FP": 30,
+          "FN": 107790,
+          "TN": 2970,
+          "precision": 0.9992,
+          "recall": 0.2515,
+          "f1": 0.4018,
+          "false_alarm_rate": 0.01,
+          "balanced_accuracy": 0.6207,
+          "MCC": 0.0792
+        },
+        "FAR_target_0.05": {
+          "threshold": 1.6539,
+          "TP": 39673,
+          "FP": 150,
+          "FN": 104327,
+          "TN": 2850,
+          "precision": 0.9962,
+          "recall": 0.2755,
+          "f1": 0.4316,
+          "false_alarm_rate": 0.05,
+          "balanced_accuracy": 0.6128,
+          "MCC": 0.0717
+        },
+        "FAR_target_0.1": {
+          "threshold": 1.5802,
+          "TP": 43198,
+          "FP": 300,
+          "FN": 100802,
+          "TN": 2700,
+          "precision": 0.9931,
+          "recall": 0.3,
+          "f1": 0.4608,
+          "false_alarm_rate": 0.1,
+          "balanced_accuracy": 0.6,
+          "MCC": 0.0619
+        }
+      }
+    }
+  },
+  "window_level_detection": {
+    "isolation_forest": {
+      "row_threshold_FAR05": 0.627,
+      "window_hitfrac_threshold": 0.2333,
+      "TP": 96,
+      "FP": 1,
+      "FN": 2304,
+      "TN": 49,
+      "precision": 0.9897,
+      "recall": 0.04,
+      "f1": 0.0769,
+      "false_alarm_rate": 0.02,
+      "balanced_accuracy": 0.51,
+      "MCC": 0.0145
+    },
+    "robust_z": {
+      "row_threshold_FAR05": 9.5287,
+      "window_hitfrac_threshold": 0.0667,
+      "TP": 628,
+      "FP": 2,
+      "FN": 1772,
+      "TN": 48,
+      "precision": 0.9968,
+      "recall": 0.2617,
+      "f1": 0.4145,
+      "false_alarm_rate": 0.04,
+      "balanced_accuracy": 0.6108,
+      "MCC": 0.0717
+    },
+    "residual": {
+      "row_threshold_FAR05": 1.6539,
+      "window_hitfrac_threshold": 0.1992,
+      "TP": 681,
+      "FP": 3,
+      "FN": 1719,
+      "TN": 47,
+      "precision": 0.9956,
+      "recall": 0.2838,
+      "f1": 0.4416,
+      "false_alarm_rate": 0.06,
+      "balanced_accuracy": 0.6119,
+      "MCC": 0.0705
+    }
+  },
+  "comparison_vs_v1": {
+    "v1_engine_isolation_forest": {
+      "precision": 0.9878,
+      "recall": 0.3009,
+      "f1": 0.4613,
+      "note": "single contamination=0.05 threshold"
+    },
+    "note": "v2 picks the operating point explicitly; compare recall/F1 at matched FAR."
+  }
+}

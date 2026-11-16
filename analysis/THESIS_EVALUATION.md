@@ -30,14 +30,34 @@
 5. **Datasets publik kini benar-benar diakuisisi.** Sebelumnya `NOT_ACQUIRED` dengan hash
    payload kosong; sekarang LBNL (305 MB) & NASA (210 MB) terunduh, terverifikasi SHA-256,
    dan siap dipakai (`analysis/benchmark/DATASET_ACQUISITION_MANIFEST.json`).
+6. **Toleransi prediksi kini JUJUR (interval terkalibrasi).** Menggunakan **conformal
+   prediction**, band 80% benar-benar berisi nilai sebenarnya **86%** dari waktu — sedangkan
+   bootstrap naive yang "terlihat presisi" (±9 siklus) hanya mencakup **21%** (band yang
+   **berbohong**, analepsi indikator bahan bakar). Engine juga kini mengeluarkan **band TTF**
+   (lo–point–hi), bukan angka tunggal.
 
 ---
+
+## 0b. Posisi konseptual: prediksi = rentang, bukan titik
+
+Prediksi sisa umur (RUL/TTF) **tidak mungkin 100% pasti** — sama seperti indikator bahan bakar
+kendaraan berubah saat menanjak, macet, atau gaya berkendara berubah. Nilai tunggal
+("RUL = 50") menyesatkan; yang benar adalah **rentang + tingkat keyakinan**, mis. *"RUL ≈ 50,
+band 80%: 35–68"*. Kontribusi metodologis dokumen ini: **mengukur apakah rentang itu jujur**
+(calibration) dan **seberapa ketat** (sharpness) — bukan sekadar mempersempit angka.
+
+Dua istilah kunci (standar literatur prognostik):
+- **PICP (Prediction Interval Coverage Probability):** fraksi nilai sebenarnya yang jatuh di
+  dalam band. Harus ≈ tingkat nominal (mis. band 80% → PICP ≈ 0.80).
+- **MPIW (Mean Prediction Interval Width):** lebar rata-rata band. Semakin sempit semakin
+  tajam — **asalkan PICP terjaga**. Band sempit dengan PICP rendah = kebohongan.
 
 ## 1. Pertanyaan penelitian & posisi kontribusi
 
 - **RQ1 (integritas):** apakah keluaran sistem mewakili telemetri sensor sebenarnya?
 - **RQ2 (prognostik):** seberapa akurat estimasi RUL/TTF terhadap ground truth nyata?
 - **RQ3 (deteksi):** seberapa baik deteksi anomali menemukan kerusakan berlabel?
+- **RQ4 (toleransi):** seberapa jujur dan ketat rentang prediksi (interval) yang dilaporkan?
 
 Kontribusi metodologis: kerangka evaluasi **leakage-aware** + **manifest akuisisi ber-hash**
 + **pemisahan domain** (referensi publik ≠ telemetri operasional) yang dapat direproduksi.
@@ -152,6 +172,58 @@ terhadap baseline, atau model supervised.
 
 Fault berat mudah terdeteksi; fault halus (undercharge/overcharge ringan) hampir tidak.
 
+**v2 — evaluasi berbasis SKOR + pemilihan titik operasi** (`results/lbnl_fdd_v2/`).
+v1 memakai satu ambang tetap; v2 mengevaluasi skor kontinu sehingga operator memilih
+trade-off false-alarm vs recall.
+
+| Detektor | ROC-AUC | recall @ FAR 5% | F1 @ FAR 5% |
+|---|---|---|---|
+| Isolation Forest (engine) | 0.621 | 0.035 | 0.068 |
+| Robust-Z | 0.688 | 0.273 | 0.429 |
+| Residual-to-baseline | 0.634 | 0.276 | 0.432 |
+
+**Peringatan metrik penting:** PR-AUC yang tampak tinggi (0.98) adalah **artefak
+ketidakseimbangan kelas** (baris rusak justru mayoritas pada set uji gabungan), bukan
+kualitas deteksi. Untuk gambaran seimbang gunakan **ROC-AUC / balanced-accuracy / MCC** —
+dan di sana terlihat deteksi level-baris memang **sulit** (ROC-AUC 0.62–0.69).
+
+**Deteksi level-JENDELA (relevan operator; FAR dikontrol dari jendela sehat):**
+
+| Detektor | recall (window 60 mnt) | F1 | FAR |
+|---|---|---|---|
+| Isolation Forest (engine) | 0.040 | 0.077 | 0.02 |
+| Robust-Z | 0.262 | 0.415 | 0.04 |
+| Residual-to-baseline | 0.284 | 0.442 | 0.06 |
+
+**Kesimpulan deteksi:** pada kontrol false-alarm yang jujur, ketiga detektor unsupervised
+**lemah**, dan Isolation Forest engine adalah yang terlemah. Baseline statistik sederhana
+(Robust-Z / residual) lebih baik. Ini temuan negatif yang valid dan penting untuk tesis:
+*pendekatan unsupervised generik tidak cukup untuk FDD halus* — arah lanjutan: fitur
+residual per-parameter, model supervised, atau residual terhadap baseline musiman.
+
+### 3.4 Toleransi prediksi — Interval Terkalibrasi (RQ baru, inti analogi bahan bakar)
+Sumber: `analysis/benchmark/results/nasa_rul_intervals/`.
+Prediksi titik memakai median residual-bootstrap; band dibangun dengan **split-conformal**
+(leave-one-battery-out) sehingga lebar ditentukan dari kesalahan model pada data yang ditahan.
+
+| Metode band | Nominal | **Coverage empiris (PICP)** | Mean width (MPIW, siklus) |
+|---|---|---|---|
+| Bootstrap naive | 80% | **0.21** ❌ | 9.2 |
+| **Conformal** | 50% | 0.57 | 18.7 |
+| **Conformal** | 80% | **0.86** ✅ | 57.3 |
+| **Conformal** | 90% | 0.86 | 114.7 |
+
+**Interpretasi (inti tesis):** bootstrap naive menghasilkan band **sempit tapi bohong** —
+mengklaim 80% namun hanya 21% benar (nilai sebenarnya di luar rentang 4 dari 5 kali).
+Conformal **memperlebar** band (80% → ~57 siklus) sehingga coverage ≈ nominal: inilah
+"batas toleransi sejujur mungkin". **Band yang lebar tetapi benar > band sempit yang salah.**
+
+**Di engine produksi:** fungsi `compute_ttf_band_for_df` kini mengeluarkan band TTF
+(`ups.ttf.low/high.hours`, `pac.ttf.low/high.hours`). Pada data nyata saat ini, band
+melaporkan `8760–8760h` bila tidak terdeteksi tren degradasi (bukan mengarang lebar),
+dan `n/a` bila tak dapat diekstrapolasi. Contoh keluaran nyata (DRY_RUN):
+`UPS ME_UPS1 … TTF: 8760.0h | Band(80%): 8760.0-8760.0h`.
+
 ---
 
 ## 4. Batasan (wajib dinyatakan — integritas ilmiah)
@@ -178,12 +250,21 @@ Fault berat mudah terdeteksi; fault halus (undercharge/overcharge ringan) hampir
   abstain saat data kurang) — setelah perbaikan integritas.
 - **RQ2:** ✅ akurasi prognostik **terukur**: linear MAE ≈ 15 siklus (kanonik) vs naive ≈ 39;
   bias positif & ekor error besar → model masih sederhana tapi lebih baik dari baseline.
-- **RQ3:** ✅ deteksi **terukur**: engine F1 ≈ 0.46 (recall rendah 0.30); baseline Robust-Z
-  F1 ≈ 0.71 → arah perbaikan jelas.
+- **RQ3:** ✅ deteksi **terukur**: pada kontrol false-alarm jujur, ROC-AUC 0.62–0.69
+  (deteksi level-baris sulit), recall window 0.04–0.28. Engine Isolation Forest
+  **terlemah**; baseline statistik lebih baik → arah perbaikan jelas.
+- **RQ4 (baru — toleransi):** ✅ interval prediksi **terkalibrasi**: conformal 80% → PICP 0.86
+  (jujur), sedangkan bootstrap naive → PICP 0.21 (bohong). Engine kini mengeluarkan band
+  TTF, bukan angka tunggal.
 
-**Pesan tesis:** integritas data dulu, baru akurasi. Sistem yang mengarang angka membuat
-"akurasi" tak bermakna; sistem yang jujur (walau modelnya sederhana) menghasilkan metrik
-yang dapat dipertanggungjawabkan.
+**Pesan tesis (tiga lapis):**
+1. **Integritas data dulu, baru akurasi.** Sistem yang mengarang angka membuat "akurasi"
+   tak bermakna (lihat F-1/F-2).
+2. **Prediksi yang benar = rentang yang jujur, bukan angka sempit.** Band sempit yang salah
+   (PICP 0.21) lebih buruk daripada band lebar yang benar (PICP 0.86) — persis indikator
+   bahan bakar yang tidak berbohong.
+3. **Metrik seimbang wajib.** PR-AUC tinggi bisa menipu akibat ketidakseimbangan kelas;
+   laporkan ROC-AUC/MCC/coverage agar tidak menyesatkan.
 
 ---
 
@@ -199,8 +280,12 @@ python3 tests/test_aiops_safety.py
 # 2. Benchmark RUL (NASA)
 python3 analysis/benchmark/run_nasa_rul_benchmark.py   # -> results/nasa_rul/
 
-# 3. Benchmark deteksi (LBNL)
-python3 analysis/benchmark/run_lbnl_fdd_benchmark.py   # -> results/lbnl_fdd/
+# 3. Benchmark deteksi (LBNL) — v1 (ambang tunggal) & v2 (skor + titik operasi)
+python3 analysis/benchmark/run_lbnl_fdd_benchmark.py       # -> results/lbnl_fdd/
+python3 analysis/benchmark/run_lbnl_detector_v2.py         # -> results/lbnl_fdd_v2/
+
+# 3b. Interval prediksi RUL (tolerance band, conformal)
+python3 analysis/benchmark/run_rul_intervals.py            # -> results/nasa_rul_intervals/
 
 # 4. Verifikasi staging (read-only, DRY_RUN)
 ZABBIX_PASS=... python3 analysis/scripts/staging_dry_run.py
@@ -214,6 +299,7 @@ ZABBIX_PASS=... python3 analysis/scripts/verify_dashboard_bindings.py
 |---|---|
 | Integritas keluaran | `evidence/staging_dry_run.json` |
 | Akurasi RUL | `benchmark/results/nasa_rul/{metrics.json,predictions.csv,REPORT.md}` |
-| Deteksi kerusakan | `benchmark/results/lbnl_fdd/{metrics.json,REPORT.md}` |
+| Interval RUL (tolerance band) | `benchmark/results/nasa_rul_intervals/{rul_intervals.json,per_point.csv,REPORT.md}` |
+| Deteksi kerusakan (v1 & v2) | `benchmark/results/lbnl_fdd*/{metrics.json,REPORT.md}` |
 | Akuisisi data | `benchmark/DATASET_ACQUISITION_MANIFEST.json` |
 | Akar masalah (sebelum) | `README.md`, `FINDINGS.md`, `evidence/data_volume_compare.json` |

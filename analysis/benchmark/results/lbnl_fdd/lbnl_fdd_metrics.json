@@ -1,6 +1,6 @@
 {
   "benchmark": "LBNL RTU \u2014 Fault Detection (IsolationForest vs Robust-Z)",
-  "generated_utc": "2026-11-16T08:18:09.435143+00:00",
+  "generated_utc": "2026-11-16T08:31:05.113394+00:00",
   "random_seed": 42,
   "protocol": {
     "train": "baseline first 50% (assumed healthy)",

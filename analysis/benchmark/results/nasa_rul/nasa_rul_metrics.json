@@ -1,6 +1,6 @@
 {
   "benchmark": "NASA PCoE Battery #5 \u2014 RUL regression",
-  "generated_utc": "2026-11-16T08:18:00.085167+00:00",
+  "generated_utc": "2026-11-16T08:30:55.889764+00:00",
   "random_seed": 42,
   "protocol": {
     "eol_definition_Ah": 1.4,
