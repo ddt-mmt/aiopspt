@@ -458,6 +458,84 @@ def determine_action_status_hardened_v11(health, ttf, prediction, exceeded_criti
         return 0
 
 
+def estimate_ttf_band(df_multisensor, primary_col, direction, crit_value,
+                      level=0.80, n_boot=300, seed=42):
+    """Estimasi TTF dengan RENTANG (tolerance band), bukan angka tunggal.
+
+    Analogi indikator bahan bakar: nilai tunggal menyesatkan; yang berguna adalah
+    rentang yang lebarnya mencerminkan ketidakpastian. Di sini rentang diturunkan
+    dari residual bootstrap regresi slope: TTF dihitung ulang dari banyak refit.
+
+    Mengembalikan (lo, point, hi) dalam jam, atau (None, None, None) bila tidak
+    ada tren degradasi (slope tidak cukup) — lalu band dilaporkan sebagai tak-tersedia.
+    """
+    if df_multisensor is None or df_multisensor.empty or primary_col not in df_multisensor.columns:
+        return None, None, None
+    df = df_multisensor[[c for c in [primary_col, 'clock'] if c in df_multisensor.columns]].copy()
+    df['clock'] = pd.to_datetime(df['clock'], utc=True, errors='coerce')
+    df[primary_col] = pd.to_numeric(df[primary_col], errors='coerce')
+    df = df.replace([np.inf, -np.inf], np.nan).dropna().sort_values('clock')
+    if len(df) < 12:
+        return None, None, None
+
+    y = df[primary_col].rolling(window=60, min_periods=1).mean().to_numpy(dtype=float)
+    t = (df['clock'] - df['clock'].iloc[0]).dt.total_seconds().to_numpy() / 3600.0
+    if len(np.unique(t)) < 2:
+        return None, None, None
+
+    slope, intercept = np.polyfit(t, y, 1)
+    fitted = slope * t + intercept
+    resid = y - fitted
+
+    def ttf_from_slope_intercept(s, b):
+        cur = s * t[-1] + b
+        if direction == 'up':
+            if crit_value is None or s <= 1e-5:
+                return None
+            return (crit_value - cur) / s
+        else:
+            if crit_value is None or s >= -1e-5:
+                return None
+            return (cur - crit_value) / abs(s)
+
+    point = ttf_from_slope_intercept(slope, intercept)
+    if point is None:
+        return None, None, None
+    point = max(0.0, min(8760.0, float(point)))
+
+    rng = np.random.default_rng(seed)
+    boots = []
+    for _ in range(n_boot):
+        rs = rng.choice(resid, size=len(resid), replace=True)
+        s, b = np.polyfit(t, fitted + rs, 1)
+        v = ttf_from_slope_intercept(s, b)
+        if v is not None and np.isfinite(v):
+            boots.append(max(0.0, min(8760.0, float(v))))
+    if len(boots) < 20:
+        return None, None, None
+    lo = float(np.quantile(boots, (1 - level) / 2))
+    hi = float(np.quantile(boots, 1 - (1 - level) / 2))
+    return round(lo, 1), round(point, 1), round(hi, 1)
+
+
+def compute_ttf_band_for_df(df_multisensor, sensor_configs=None):
+    """Pilih sensor primer (sama seperti calculate_multisensor_rul_v11) lalu
+    hitung band TTF (lo, point, hi). Mengembalikan (None, None, None) bila
+    kombinasi sensor/arah tidak dapat diekstrapolasi."""
+    if df_multisensor is None or df_multisensor.empty:
+        return None, None, None
+    feature_cols = [c for c in df_multisensor.columns if c != "clock"]
+    if not feature_cols:
+        return None, None, None
+    configs = sensor_configs or SENSOR_CONFIG
+    continuous = [c for c in feature_cols if not ('status' in str(c).lower() or 'state' in str(c).lower())]
+    primary_col = continuous[0] if continuous else feature_cols[0]
+    cfg = configs.get(primary_col, {})
+    direction = cfg.get('direction', 'up')
+    crit = cfg.get('crit_high') if direction == 'up' else cfg.get('crit_low')
+    return estimate_ttf_band(df_multisensor, primary_col, direction, crit)
+
+
 def run_aiops_cycle():
     try:
         logger.info(f"[{datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')} UTC] "
@@ -483,6 +561,8 @@ def run_aiops_cycle():
             ensure_item_exists(zapi, hostid, 'UPS Health Score AIOps', 'ups.health.score', 0)
             ensure_item_exists(zapi, hostid, 'UPS Time-to-Failure (Hours)', 'ups.ttf.hours', 0)
             ensure_item_exists(zapi, hostid, 'UPS Policy Action Status', 'ups.action.status', 3)
+            ensure_item_exists(zapi, hostid, 'UPS TTF Band Low (Hours)', 'ups.ttf.low.hours', 0)
+            ensure_item_exists(zapi, hostid, 'UPS TTF Band High (Hours)', 'ups.ttf.high.hours', 0)
 
             sensor_dict = _resolve_sensor_itemids(zapi, hostid, UPS_MANDATORY + UPS_OPTIONAL)
 
@@ -512,7 +592,10 @@ def run_aiops_cycle():
                 logger.info(f"⚡ [UPS {hostname}] Health: UNAVAILABLE | TTF: UNAVAILABLE | Aksi: {action_labels[-1]} (tidak ada push)")
                 continue
 
-            logger.info(f"⚡ [UPS {hostname}] Health: {health}% | TTF: {ttf}h | Aksi: {action_labels.get(action, 'UNKNOWN')}")
+            # Tolerance band (fuel-gauge range): lo/point/hi dalam jam.
+            band_lo, band_pt, band_hi = compute_ttf_band_for_df(df_ups)
+            band_txt = (f"{band_lo}-{band_hi}h" if band_lo is not None else "n/a")
+            logger.info(f"⚡ [UPS {hostname}] Health: {health}% | TTF: {ttf}h | Band(80%): {band_txt} | Aksi: {action_labels.get(action, 'UNKNOWN')}")
 
             # F-1: HANYA metrik turunan. Tidak menulis output.load/battery.* sensor.
             packet = [
@@ -520,6 +603,11 @@ def run_aiops_cycle():
                 ItemValue(hostname, 'ups.ttf.hours', ttf),
                 ItemValue(hostname, 'ups.action.status', action),
             ]
+            if band_lo is not None:
+                packet += [
+                    ItemValue(hostname, 'ups.ttf.low.hours', band_lo),
+                    ItemValue(hostname, 'ups.ttf.high.hours', band_hi),
+                ]
             if DRY_RUN:
                 logger.info(f"[DRY_RUN] UPS {hostname} — tidak mengirim (health={health}, ttf={ttf}, action={action})")
                 continue
@@ -538,6 +626,8 @@ def run_aiops_cycle():
             ensure_item_exists(zapi, hostid, 'PAC Health Score AIOps', 'pac.health.score', 0)
             ensure_item_exists(zapi, hostid, 'PAC Time-to-Failure (Hours)', 'pac.ttf.hours', 0)
             ensure_item_exists(zapi, hostid, 'PAC Policy Action Status', 'pac.action.status', 3)
+            ensure_item_exists(zapi, hostid, 'PAC TTF Band Low (Hours)', 'pac.ttf.low.hours', 0)
+            ensure_item_exists(zapi, hostid, 'PAC TTF Band High (Hours)', 'pac.ttf.high.hours', 0)
 
             sensor_dict = _resolve_sensor_itemids(zapi, hostid, PAC_MANDATORY + PAC_OPTIONAL)
 
@@ -566,7 +656,9 @@ def run_aiops_cycle():
                 logger.info(f"❄️ [PAC {hostname}] Health: UNAVAILABLE | TTF: UNAVAILABLE | Aksi: {action_labels[-1]} (tidak ada push)")
                 continue
 
-            logger.info(f"❄️ [PAC {hostname}] Health: {health}% | TTF: {ttf}h | Aksi: {action_labels.get(action, 'UNKNOWN')}")
+            band_lo, band_pt, band_hi = compute_ttf_band_for_df(df_pac)
+            band_txt = (f"{band_lo}-{band_hi}h" if band_lo is not None else "n/a")
+            logger.info(f"❄️ [PAC {hostname}] Health: {health}% | TTF: {ttf}h | Band(80%): {band_txt} | Aksi: {action_labels.get(action, 'UNKNOWN')}")
 
             # F-1: HANYA metrik turunan. Tidak menulis return.temp.c/compressor.status sensor.
             packet = [
@@ -574,6 +666,11 @@ def run_aiops_cycle():
                 ItemValue(hostname, 'pac.ttf.hours', ttf),
                 ItemValue(hostname, 'pac.action.status', action),
             ]
+            if band_lo is not None:
+                packet += [
+                    ItemValue(hostname, 'pac.ttf.low.hours', band_lo),
+                    ItemValue(hostname, 'pac.ttf.high.hours', band_hi),
+                ]
             if DRY_RUN:
                 logger.info(f"[DRY_RUN] PAC {hostname} — tidak mengirim (health={health}, ttf={ttf}, action={action})")
                 continue
