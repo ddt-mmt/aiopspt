@@ -31,7 +31,7 @@
         "y": 0
       },
       "id": 1,
-      "title": "🚨 AIOps Executive Summary & Policy Action Status",
+      "title": "\ud83d\udea8 AIOps Executive Summary & Policy Action Status",
       "type": "row"
     },
     {
@@ -122,7 +122,7 @@
           "resultFormat": "time_series"
         }
       ],
-      "title": "⚡ UPS Policy Action Status",
+      "title": "\u26a1 UPS Policy Action Status",
       "type": "stat"
     },
     {
@@ -213,7 +213,7 @@
           "resultFormat": "time_series"
         }
       ],
-      "title": "❄️ PAC Policy Action Status",
+      "title": "\u2744\ufe0f PAC Policy Action Status",
       "type": "stat"
     },
     {
@@ -225,7 +225,7 @@
         "y": 6
       },
       "id": 4,
-      "title": "🧠 Predictive Health Score (Isolation Forest RUL) & Time-to-Failure (TTF)",
+      "title": "\ud83e\udde0 Predictive Health Score (Isolation Forest RUL) & Time-to-Failure (TTF)",
       "type": "row"
     },
     {
@@ -233,7 +233,7 @@
         "type": "alexanderzobnin-zabbix-datasource",
         "uid": "dfzvifoy1efpcb"
       },
-      "description": "Skor kesehatan UPS (0-100%) dihitung menggunakan algoritma Machine Learning Unsupervised 'Isolation Forest' berdasarkan multivariat telemetri 30 hari (Standar ISO 13381-1).",
+      "description": "Health Score AIOps = transformasi decision_function Isolation Forest atas telemetri multivar. INI BUKAN probabilitas kesehatan fisik dan belum terkalibrasi (NOT_CALIBRATED). Bila data tidak memenuhi syarat, engine memilih ABSTAIN (tidak mengirim nilai) \u2014 bukan angka acak.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -295,7 +295,7 @@
           "resultFormat": "time_series"
         }
       ],
-      "title": "⚡ UPS Health Score (%)",
+      "title": "\u26a1 UPS Health Score (%)",
       "type": "gauge"
     },
     {
@@ -303,7 +303,7 @@
         "type": "alexanderzobnin-zabbix-datasource",
         "uid": "dfzvifoy1efpcb"
       },
-      "description": "Estimasi sisa waktu operasional (TTF dalam jam) dihitung via Regresi Linear tren degradasi sensor jangka panjang (30 hari).",
+      "description": "TTF = ekstrapolasi tren linier (slope) ke ambang kritis. Bersifat HEURISTIK dan belum tervalidasi (akurasi NOT_MEASURABLE tanpa ground truth kegagalan). Nilai 8760h = tidak ada tren degradasi terdeteksi / batas atas.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -369,7 +369,7 @@
           "resultFormat": "time_series"
         }
       ],
-      "title": "⚡ UPS Time-to-Failure (TTF)",
+      "title": "\u26a1 UPS Time-to-Failure (TTF)",
       "type": "bargauge"
     },
     {
@@ -377,7 +377,7 @@
         "type": "alexanderzobnin-zabbix-datasource",
         "uid": "dfzvifoy1efpcb"
       },
-      "description": "Skor kesehatan PAC (0-100%) dihitung menggunakan algoritma Machine Learning Unsupervised 'Isolation Forest' berdasarkan multivariat telemetri 30 hari (Standar ISO 13381-1).",
+      "description": "Health Score AIOps (Isolation Forest). BUKAN probabilitas, belum terkalibrasi. Bila data tidak cukup \u2192 ABSTAIN.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -439,7 +439,7 @@
           "resultFormat": "time_series"
         }
       ],
-      "title": "❄️ PAC Health Score (%)",
+      "title": "\u2744\ufe0f PAC Health Score (%)",
       "type": "gauge"
     },
     {
@@ -447,7 +447,7 @@
         "type": "alexanderzobnin-zabbix-datasource",
         "uid": "dfzvifoy1efpcb"
       },
-      "description": "Estimasi sisa waktu operasional (TTF dalam jam) dihitung via Regresi Linear tren degradasi sensor jangka panjang (30 hari).",
+      "description": "TTF heuristik dari slope linier; belum tervalidasi (NOT_MEASURABLE). 8760h = tidak ada tren degradasi / batas atas.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -513,7 +513,7 @@
           "resultFormat": "time_series"
         }
       ],
-      "title": "❄️ PAC Time-to-Failure (TTF)",
+      "title": "\u2744\ufe0f PAC Time-to-Failure (TTF)",
       "type": "bargauge"
     },
     {
@@ -525,7 +525,7 @@
         "y": 15
       },
       "id": 9,
-      "title": "📈 Raw Telemetry & Multi-Sensor Fusion Trends",
+      "title": "\ud83d\udcc8 Raw Telemetry & Multi-Sensor Fusion Trends",
       "type": "row"
     },
     {
@@ -533,7 +533,7 @@
         "type": "alexanderzobnin-zabbix-datasource",
         "uid": "dfzvifoy1efpcb"
       },
-      "description": "Tren historis telemetri UPS: Output Load (%), Battery Temperature (°C), dan Battery Voltage (V).",
+      "description": "Telemetri SNMP ASLI (read-only). 'Output load' dan 'Battery voltage' berasal dari sensor fisik (item SNMP ber-tanda [).\nCATATAN: item 'Battery temperature' (SNMP) saat ini tidak mengirim data \u2014 seri akan kosong sampai polling SNMP-nya aktif.\nTidak ada nilai sintetik yang ditulis ke panel ini oleh engine AIOps.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -618,7 +618,7 @@
           },
           "group": "",
           "host": "$ups_host",
-          "item": "ups.output.load",
+          "item": "Output load",
           "queryType": 0,
           "resultFormat": "time_series"
         },
@@ -629,7 +629,7 @@
           },
           "group": "",
           "host": "$ups_host",
-          "item": "ups.battery.temp",
+          "item": "Battery temperature",
           "queryType": 0,
           "resultFormat": "time_series"
         },
@@ -640,12 +640,12 @@
           },
           "group": "",
           "host": "$ups_host",
-          "item": "ups.battery.voltage",
+          "item": "Battery voltage",
           "queryType": 0,
           "resultFormat": "time_series"
         }
       ],
-      "title": "⚡ UPS Output Load, Battery Temp & Voltage",
+      "title": "\u26a1 UPS Output Load, Battery Temp & Voltage",
       "type": "timeseries"
     },
     {
@@ -653,7 +653,7 @@
         "type": "alexanderzobnin-zabbix-datasource",
         "uid": "dfzvifoy1efpcb"
       },
-      "description": "Tren historis telemetri PAC: Return Temperature (°C), Supply Temperature (°C), dan Return Humidity (%RH).",
+      "description": "Telemetri SNMP ASLI (read-only) dari unit PAC.\nCATATAN KUALITAS DATA: 'Return Humidity (%RH)' saat ini terbaca ~5xx-6xx (kemungkinan skala/unit salah di sisi item SNMP) \u2014 nilai mentah ditampilkan apa adanya, belum dikoreksi.\nTidak ada nilai sintetik yang ditulis ke panel ini oleh engine AIOps.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -738,7 +738,7 @@
           },
           "group": "",
           "host": "$pac_host",
-          "item": "return.temp.c",
+          "item": "Return Temperature (C)",
           "queryType": 0,
           "resultFormat": "time_series"
         },
@@ -749,7 +749,7 @@
           },
           "group": "",
           "host": "$pac_host",
-          "item": "supply.temp.c",
+          "item": "Supply Temperature (C)",
           "queryType": 0,
           "resultFormat": "time_series"
         },
@@ -760,12 +760,12 @@
           },
           "group": "",
           "host": "$pac_host",
-          "item": "return.humidity.rh",
+          "item": "Return Humidity (%RH)",
           "queryType": 0,
           "resultFormat": "time_series"
         }
       ],
-      "title": "❄️ PAC Return Temp, Supply Temp & Humidity",
+      "title": "\u2744\ufe0f PAC Return Temp, Supply Temp & Humidity",
       "type": "timeseries"
     }
   ],
@@ -776,7 +776,9 @@
     "aiops",
     "facility",
     "zabbix",
-    "hpc"
+    "hpc",
+    "analyzed-2026-11-16",
+    "telemetry-provenance-fixed"
   ],
   "templating": {
     "list": [
@@ -862,6 +864,6 @@
   "timezone": "",
   "title": "AIOps Power & Thermal Facility (HPC)-a",
   "uid": "aiops-facility-hpc-a",
-  "version": 5,
+  "version": 6,
   "weekStart": ""
 }
